@@ -8,8 +8,10 @@
 </head>
 <body>
 <div class="container mt-5">
-    <h2>Hoş Geldiniz, {{ editor.username }}</h2>
-    <a href="{{ url_for('logout') }}" class="btn btn-danger mb-4">Çıkış Yap</a>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Hoş Geldiniz, {{ editor.username }}</h2>
+        <a href="{{ url_for('logout') }}" class="btn btn-danger">Çıkış Yap</a>
+    </div>
     
     <div class="row">
         {% if editor.can_haber %}
