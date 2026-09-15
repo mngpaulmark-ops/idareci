@@ -120,15 +120,15 @@ def regenerate_all_kose():
                     <div class="panel-heading">Görüş & Politika Notları / {title}</div>
                     <div class="panel-body">
                         <div class="col-md-12">
-                            <div style="float: left; margin-right: 15px; margin-bottom: 15px; text-align: center;">
+                            {'''<div style="float: left; margin-right: 15px; margin-bottom: 15px; text-align: center;">
                                 <a href="kose-yazar-{yazar_id}.html">
                                     <img src="{yazar_pic}" style="max-width: 150px;"/>
                                     <br/><b>{yazar_name}</b>
                                 </a>
-                            </div>
+                            </div>''' if str(yazar_id) != '1' else ''}
                             <h3>{title}</h3>
                             <hr/>
-                            {'''<img src="themes/burokratlar/tema/images/yucel_can_banner.jpg" style="width:100%; max-width:100%; border-radius:8px; margin-bottom:20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/><br/>''' if str(yazar_id) == '1' else ''}
+                            {'''<img src="themes/burokratlar/tema/images/yucel_can_banner.jpg" style="width:100%; max-width:600px; display:block; margin: 0 auto 20px auto; border-radius:8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/><br/>''' if str(yazar_id) == '1' else ''}
                             <div class="content-text">
                                 {content}
                             </div>
