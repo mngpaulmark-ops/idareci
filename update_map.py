@@ -59,6 +59,12 @@ new_func = """def regenerate_temsilcilik_html():
                     "projection": "mercator",
                     "backgroundAlpha": 1,
                     "backgroundColor": "rgba(255,255,255,1)",
+                    "zoomControl": {
+                        "zoomControlEnabled": true,
+                        "panControlEnabled": false,
+                        "homeButtonEnabled": true
+                    },
+                    "maintainAspectRatio": true,
                     "balloon": {{
                         "horizontalPadding": 15,
                         "borderAlpha": 0,
