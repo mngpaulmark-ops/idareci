@@ -403,7 +403,7 @@ document.getElementById("daily-hadith").innerText = hadiths[day % hadiths.length
 <div class="panel-heading">İdareci ve Bürokratlar Birliği / Temsilcilikler</div>
 <div class="panel-body">
 <div class="box">
-<script src="/themes/burokratlar/tema/js/ammap.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/ammap.js" type="text/javascript"></script>
 <script src="https://www.amcharts.com/lib/3/maps/js/turkeyLow.js" type="text/javascript"></script>
 <script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -461,14 +461,14 @@ document.getElementById("daily-hadith").innerText = hadiths[day % hadiths.length
                 "map": "turkeyLow",
                 "getAreasFromMap": true,
                 
-                "areas": [{"id": "TR-06", "title": "Ankara", "color": "rgba(0,201,181,0.8)", "customData": "<div style='text-align:center;'><img src='/data/uploads/temsilci_1789322211_logo.jpg' style='width:60px; height:60px; border-radius:50%; object-fit:cover; margin-bottom:5px;'><br><b>Dernek Genel Merkezi</b><br>0 312 232 32 42</div>"}, {"id": "TR-25", "title": "Erzurum", "color": "rgba(0,201,181,0.8)", "customData": "<div style='text-align:center;'><img src='/images/default-avatar.png' style='width:60px; height:60px; border-radius:50%; object-fit:cover; margin-bottom:5px;'><br><b>Turgay DOLU</b><br>05494242325</div>"}]
+                "areas": [{"id": "TR-06", "title": "Ankara", "color": "rgba(0,201,181,0.8)", "customData": "<div style='text-align:center;'><img src='data/uploads/temsilci_1789322211_logo.jpg' style='width:60px; height:60px; border-radius:50%; object-fit:cover; margin-bottom:5px;'><br><b>Dernek Genel Merkezi</b><br>0 312 232 32 42</div>"}, {"id": "TR-25", "title": "Erzurum", "color": "rgba(0,201,181,0.8)", "customData": "<div style='text-align:center;'><img src='images/default-avatar.png' style='width:60px; height:60px; border-radius:50%; object-fit:cover; margin-bottom:5px;'><br><b>Turgay DOLU</b><br>05494242325</div>"}]
             };
             
             var worldChart = AmCharts.makeChart("mapWorld", commonSettings);
             worldChart.dataProvider = {
                 "map": "worldLow",
                 "getAreasFromMap": true,
-                "areas": [{"id": "DE", "title": "Almanya", "color": "rgba(0,201,181,0.8)", "customData": "<div style='text-align:center;'><img src='/images/default-avatar.png' style='width:60px; height:60px; border-radius:50%; object-fit:cover; margin-bottom:5px;'><br><b>Ahmet Yılmaz</b><br>+49 123 456 789</div>"}]
+                "areas": [{"id": "DE", "title": "Almanya", "color": "rgba(0,201,181,0.8)", "customData": "<div style='text-align:center;'><img src='images/default-avatar.png' style='width:60px; height:60px; border-radius:50%; object-fit:cover; margin-bottom:5px;'><br><b>Ahmet Yılmaz</b><br>+49 123 456 789</div>"}]
             };
     </script>
 <style>
@@ -492,7 +492,7 @@ document.getElementById("daily-hadith").innerText = hadiths[day % hadiths.length
 <div class="row" style="margin-top:40px;">
 <div class="col-12 col-md-6 col-lg-4" style="margin-bottom:20px; display:flex;">
 <div class="card border-0 shadow-sm" style="background:#fff; border-radius:10px; padding:15px; display:flex; flex-direction:row; align-items:center; width:100%; border: 1px solid #f1f1f1;">
-<img onerror="this.src='/images/default-avatar.png'; this.onerror=null;" src="/images/default-avatar.png" style="width:70px; height:70px; border-radius:50%; object-fit:cover; margin-right:15px; border:2px solid #eaeaea;"/>
+<img onerror="this.src='images/default-avatar.png'; this.onerror=null;" src="images/default-avatar.png" style="width:70px; height:70px; border-radius:50%; object-fit:cover; margin-right:15px; border:2px solid #eaeaea;"/>
 <div>
 <h5 style="color:#800000; font-size:16px; font-weight:700; margin-bottom:5px;">Ahmet Yılmaz</h5>
 <div style="font-size:13px; color:#555; font-weight:500;">Almanya Temsilcisi</div>
@@ -502,7 +502,7 @@ document.getElementById("daily-hadith").innerText = hadiths[day % hadiths.length
 </div>
 <div class="col-12 col-md-6 col-lg-4" style="margin-bottom:20px; display:flex;">
 <div class="card border-0 shadow-sm" style="background:#fff; border-radius:10px; padding:15px; display:flex; flex-direction:row; align-items:center; width:100%; border: 1px solid #f1f1f1;">
-<img onerror="this.src='/images/default-avatar.png'; this.onerror=null;" src="/data/uploads/temsilci_1789322211_logo.jpg" style="width:70px; height:70px; border-radius:50%; object-fit:cover; margin-right:15px; border:2px solid #eaeaea;"/>
+<img onerror="this.src='images/default-avatar.png'; this.onerror=null;" src="data/uploads/temsilci_1789322211_logo.jpg" style="width:70px; height:70px; border-radius:50%; object-fit:cover; margin-right:15px; border:2px solid #eaeaea;"/>
 <div>
 <h5 style="color:#800000; font-size:16px; font-weight:700; margin-bottom:5px;">Dernek Genel Merkezi</h5>
 <div style="font-size:13px; color:#555; font-weight:500;">Ankara Temsilcisi</div>
@@ -512,7 +512,7 @@ document.getElementById("daily-hadith").innerText = hadiths[day % hadiths.length
 </div>
 <div class="col-12 col-md-6 col-lg-4" style="margin-bottom:20px; display:flex;">
 <div class="card border-0 shadow-sm" style="background:#fff; border-radius:10px; padding:15px; display:flex; flex-direction:row; align-items:center; width:100%; border: 1px solid #f1f1f1;">
-<img onerror="this.src='/images/default-avatar.png'; this.onerror=null;" src="/images/default-avatar.png" style="width:70px; height:70px; border-radius:50%; object-fit:cover; margin-right:15px; border:2px solid #eaeaea;"/>
+<img onerror="this.src='images/default-avatar.png'; this.onerror=null;" src="images/default-avatar.png" style="width:70px; height:70px; border-radius:50%; object-fit:cover; margin-right:15px; border:2px solid #eaeaea;"/>
 <div>
 <h5 style="color:#800000; font-size:16px; font-weight:700; margin-bottom:5px;">Turgay DOLU</h5>
 <div style="font-size:13px; color:#555; font-weight:500;">Erzurum Temsilcisi</div>

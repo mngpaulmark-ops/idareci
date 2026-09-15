@@ -776,7 +776,7 @@ def regenerate_temsilcilik_html():
     list_html = ""
     
     for rep in reps:
-        img_url = f"/{rep.image_path}" if rep.image_path else "/images/default-avatar.png"
+        img_url = f"{rep.image_path}" if rep.image_path else "images/default-avatar.png"
         
         custom_data = f"<div style='text-align:center;'><img src='{img_url}' style='width:60px; height:60px; border-radius:50%; object-fit:cover; margin-bottom:5px;'><br><b>{rep.name}</b><br>{rep.phone or ''}</div>"
         
@@ -795,7 +795,7 @@ def regenerate_temsilcilik_html():
         list_html += f'''
         <div class="col-12 col-md-6 col-lg-4" style="margin-bottom:20px; display:flex;">
             <div class="card border-0 shadow-sm" style="background:#fff; border-radius:10px; padding:15px; display:flex; flex-direction:row; align-items:center; width:100%; border: 1px solid #f1f1f1;">
-                <img src="{img_url}" style="width:70px; height:70px; border-radius:50%; object-fit:cover; margin-right:15px; border:2px solid #eaeaea;" onerror="this.src='/images/default-avatar.png'; this.onerror=null;">
+                <img src="{img_url}" style="width:70px; height:70px; border-radius:50%; object-fit:cover; margin-right:15px; border:2px solid #eaeaea;" onerror="this.src='images/default-avatar.png'; this.onerror=null;">
                 <div>
                     <h5 style="color:#800000; font-size:16px; font-weight:700; margin-bottom:5px;">{rep.name}</h5>
                     <div style="font-size:13px; color:#555; font-weight:500;">{rep.city_name} Temsilcisi</div>
@@ -809,7 +809,7 @@ def regenerate_temsilcilik_html():
     world_json = json.dumps(world_areas, ensure_ascii=False)
     
     temsil_html = f'''
-    <script type="text/javascript" src="/themes/burokratlar/tema/js/ammap.js"></script>
+    <script type="text/javascript" src="themes/burokratlar/tema/js/ammap.js"></script>
     <script type="text/javascript" src="https://www.amcharts.com/lib/3/maps/js/turkeyLow.js"></script>
     <script type="text/javascript" src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
     <script type="text/javascript">
@@ -969,7 +969,7 @@ def regenerate_yonkur_html():
 
                 <div class="card border-0 shadow" style="background:#fff; border-radius:15px; padding:25px 15px; text-align:center; box-shadow:0 8px 20px rgba(0,0,0,0.08); width:100%; border: 1px solid #f1f1f1;">
 
-                    <img src="/{member['image_path']}" style="width:130px; height:130px; border-radius:50%; object-fit:cover; margin:0 auto 20px auto; border:4px solid #eaeaea; box-shadow:0 4px 10px rgba(0,0,0,0.1);" onerror="this.src='/images/default-avatar.png'; this.onerror=null;">
+                    <img src="/{member['image_path']}" style="width:130px; height:130px; border-radius:50%; object-fit:cover; margin:0 auto 20px auto; border:4px solid #eaeaea; box-shadow:0 4px 10px rgba(0,0,0,0.1);" onerror="this.src='images/default-avatar.png'; this.onerror=null;">
 
                     <h5 style="color:#800000; font-size:17px; font-weight:700; margin-bottom:8px; line-height:1.3;">{member['name']}</h5>
 
