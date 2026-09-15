@@ -103,6 +103,9 @@ new_func = """def regenerate_temsilcilik_html():
             turkeyChart.dataProvider = {{
                 "map": "turkeyLow",
                 "getAreasFromMap": true,
+                "zoomLevel": 0.9,
+                "zoomLongitude": 35.5,
+                "zoomLatitude": 39.0,
                 "areas": {turkey_json}
             }};
             
