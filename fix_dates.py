@@ -1,9 +1,30 @@
-import sqlite3
+import glob
 
-conn = sqlite3.connect('instance/cms.db')
-c = conn.cursor()
-c.execute("UPDATE kose_yazisi SET date_added = '2000-01-01 00:00:00' WHERE date_added LIKE '2026-09-12 17:29:48%'")
-conn.commit()
-conn.close()
+count_1 = 0
+count_2 = 0
 
-print("Updated dates for old bulk articles.")
+for f in glob.glob('**/*.html', recursive=True):
+    try:
+        with open(f, 'r', encoding='utf-8') as file:
+            c = file.read()
+        
+        changed = False
+        
+        if '24.11.20220' in c:
+            c = c.replace('24.11.20220', '24.11.2022')
+            changed = True
+            count_1 += 1
+            
+        if '23.02.20222' in c:
+            c = c.replace('23.02.20222', '23.02.2022')
+            changed = True
+            count_2 += 1
+            
+        if changed:
+            with open(f, 'w', encoding='utf-8') as file:
+                file.write(c)
+    except Exception as e:
+        pass
+
+print(f"Fixed 24.11.20220 in {count_1} files.")
+print(f"Fixed 23.02.20222 in {count_2} files.")
