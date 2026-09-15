@@ -1,0 +1,219 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Yan Blok Ayarları (Dijital İşlemler, Faydalı Bağlantılar vs.)</h1>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Dijital İşlemler -->
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Dijital İşlemler Portalı
+                <button class="btn btn-primary btn-xs pull-right" data-toggle="modal" data-target="#addModal" data-category="dijital">Yeni Ekle</button>
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead><tr><th>Sıra</th><th>Başlık</th><th>Link</th><th>Renk</th><th>İşlem</th></tr></thead>
+                    <tbody>
+                        {% for item in dijital %}
+                        <tr>
+                            <td>{{ item.order }}</td>
+                            <td>{{ item.title }}</td>
+                            <td>{{ item.url }}</td>
+                            <td>{{ item.badge }}</td>
+                            <td>
+                                <a href="{{ url_for('admin_side_links_toggle', id=item.id) }}" class="btn btn-xs btn-{{ 'success' if item.is_active else 'default' }}">{{ 'Aktif' if item.is_active else 'Pasif' }}</a>
+                                <button class="btn btn-xs btn-warning" data-toggle="modal" data-target="#editModal{{ item.id }}">Düzenle</button>
+                                <a href="{{ url_for('admin_side_links_delete', id=item.id) }}" class="btn btn-xs btn-danger" onclick="return confirm('Silmek istediğinize emin misiniz?')">Sil</a>
+                            </td>
+                        </tr>
+                        
+                        <!-- Edit Modal -->
+                        <div class="modal fade" id="editModal{{ item.id }}" tabindex="-1" role="dialog">
+                          <div class="modal-dialog" role="document">
+                            <form action="{{ url_for('admin_side_links_edit', id=item.id) }}" method="POST">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h4 class="modal-title">Düzenle</h4>
+                              </div>
+                              <div class="modal-body">
+                                <div class="form-group"><label>Başlık</label><input type="text" name="title" class="form-control" value="{{ item.title }}"></div>
+                                <div class="form-group"><label>Link</label><input type="text" name="url" class="form-control" value="{{ item.url }}"></div>
+                                <div class="form-group"><label>Renk (Örn: #800000 veya #e2e8f0)</label><input type="text" name="badge" class="form-control" value="{{ item.badge }}"></div>
+                                <div class="form-group"><label>Sıra</label><input type="number" name="order" class="form-control" value="{{ item.order }}"></div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                                <button type="submit" class="btn btn-primary">Kaydet</button>
+                              </div>
+                            </div>
+                            </form>
+                          </div>
+                        </div>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Gündem -->
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Gündem & Buluşmalar
+                <button class="btn btn-primary btn-xs pull-right" data-toggle="modal" data-target="#addModal" data-category="gundem">Yeni Ekle</button>
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead><tr><th>Sıra</th><th>Başlık</th><th>Link</th><th>Tarih/Etiket</th><th>İşlem</th></tr></thead>
+                    <tbody>
+                        {% for item in gundem %}
+                        <tr>
+                            <td>{{ item.order }}</td>
+                            <td>{{ item.title }}</td>
+                            <td>{{ item.url }}</td>
+                            <td>{{ item.badge }}</td>
+                            <td>
+                                <a href="{{ url_for('admin_side_links_toggle', id=item.id) }}" class="btn btn-xs btn-{{ 'success' if item.is_active else 'default' }}">{{ 'Aktif' if item.is_active else 'Pasif' }}</a>
+                                <button class="btn btn-xs btn-warning" data-toggle="modal" data-target="#editModal{{ item.id }}">Düzenle</button>
+                                <a href="{{ url_for('admin_side_links_delete', id=item.id) }}" class="btn btn-xs btn-danger" onclick="return confirm('Silmek istediğinize emin misiniz?')">Sil</a>
+                            </td>
+                        </tr>
+                        
+                        <!-- Edit Modal -->
+                        <div class="modal fade" id="editModal{{ item.id }}" tabindex="-1" role="dialog">
+                          <div class="modal-dialog" role="document">
+                            <form action="{{ url_for('admin_side_links_edit', id=item.id) }}" method="POST">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h4 class="modal-title">Düzenle</h4>
+                              </div>
+                              <div class="modal-body">
+                                <div class="form-group"><label>Başlık</label><input type="text" name="title" class="form-control" value="{{ item.title }}"></div>
+                                <div class="form-group"><label>Link</label><input type="text" name="url" class="form-control" value="{{ item.url }}"></div>
+                                <div class="form-group"><label>Tarih/Etiket (Örn: Yakında, 14 Mayıs)</label><input type="text" name="badge" class="form-control" value="{{ item.badge }}"></div>
+                                <div class="form-group"><label>Sıra</label><input type="number" name="order" class="form-control" value="{{ item.order }}"></div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                                <button type="submit" class="btn btn-primary">Kaydet</button>
+                              </div>
+                            </div>
+                            </form>
+                          </div>
+                        </div>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Faydalı Bağlantılar -->
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Faydalı Bağlantılar
+                <button class="btn btn-primary btn-xs pull-right" data-toggle="modal" data-target="#addModal" data-category="faydali">Yeni Ekle</button>
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead><tr><th>Sıra</th><th>Başlık</th><th>Link</th><th>İşlem</th></tr></thead>
+                    <tbody>
+                        {% for item in faydali %}
+                        <tr>
+                            <td>{{ item.order }}</td>
+                            <td>{{ item.title }}</td>
+                            <td>{{ item.url }}</td>
+                            <td>
+                                <a href="{{ url_for('admin_side_links_toggle', id=item.id) }}" class="btn btn-xs btn-{{ 'success' if item.is_active else 'default' }}">{{ 'Aktif' if item.is_active else 'Pasif' }}</a>
+                                <button class="btn btn-xs btn-warning" data-toggle="modal" data-target="#editModal{{ item.id }}">Düzenle</button>
+                                <a href="{{ url_for('admin_side_links_delete', id=item.id) }}" class="btn btn-xs btn-danger" onclick="return confirm('Silmek istediğinize emin misiniz?')">Sil</a>
+                            </td>
+                        </tr>
+                        
+                        <!-- Edit Modal -->
+                        <div class="modal fade" id="editModal{{ item.id }}" tabindex="-1" role="dialog">
+                          <div class="modal-dialog" role="document">
+                            <form action="{{ url_for('admin_side_links_edit', id=item.id) }}" method="POST">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h4 class="modal-title">Düzenle</h4>
+                              </div>
+                              <div class="modal-body">
+                                <div class="form-group"><label>Başlık</label><input type="text" name="title" class="form-control" value="{{ item.title }}"></div>
+                                <div class="form-group"><label>Link</label><input type="text" name="url" class="form-control" value="{{ item.url }}"></div>
+                                <div class="form-group"><label>Sıra</label><input type="number" name="order" class="form-control" value="{{ item.order }}"></div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                                <button type="submit" class="btn btn-primary">Kaydet</button>
+                              </div>
+                            </div>
+                            </form>
+                          </div>
+                        </div>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- E-Bülten -->
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">E-Bülten Formu Görünümü</div>
+            <div class="panel-body">
+                {% if ebulten %}
+                <p>Mevcut Başlık: <strong>{{ ebulten.title }}</strong></p>
+                <form action="{{ url_for('admin_side_links_edit', id=ebulten.id) }}" method="POST">
+                    <div class="form-group">
+                        <label>Başlık Düzenle</label>
+                        <input type="text" name="title" class="form-control" value="{{ ebulten.title }}">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Güncelle</button>
+                    <a href="{{ url_for('admin_side_links_toggle', id=ebulten.id) }}" class="btn btn-{{ 'danger' if ebulten.is_active else 'success' }}">{{ 'Formu Siteden Gizle' if ebulten.is_active else 'Formu Sitede Göster' }}</a>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <form action="{{ url_for('admin_side_links_add') }}" method="POST">
+    <input type="hidden" name="category" id="addCategory">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Yeni Ekle</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group"><label>Başlık</label><input type="text" name="title" class="form-control" required></div>
+        <div class="form-group"><label>Link</label><input type="text" name="url" class="form-control"></div>
+        <div class="form-group"><label>Renk/Etiket (Dijital veya Gündem ise doldurun)</label><input type="text" name="badge" class="form-control"></div>
+        <div class="form-group"><label>Sıra</label><input type="number" name="order" class="form-control" value="0"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+        <button type="submit" class="btn btn-primary">Ekle</button>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>
+
+<script>
+$('#addModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget);
+  var category = button.data('category');
+  var modal = $(this);
+  modal.find('#addCategory').val(category);
+});
+</script>
+{% endblock %}

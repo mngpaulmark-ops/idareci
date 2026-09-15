@@ -1,0 +1,728 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="tr" xml:lang="tr" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#"><head>
+<base href="/"/>
+<title> Hakkımızda İdareci ve Bürokratlar Birliği Derneği</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content=" -İdareci ve Bürokratlar Birliği Derneği 2009" name="description"/>
+<meta content="İdareci ve Bürokratlar Birliği Derneği" name="keywords"/>
+<meta content="İdareci ve Bürokratlar Birliği Derneği" name="Author"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content=" Hakkımızda / İdareci ve Bürokratlar Birliği Derneği" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="data/logo.jpg" property="og:image"/>
+<meta content="" property="og:url"/>
+<meta content="https://burokratlarbirligi.org" property="og:site_name"/>
+<meta content=" - İdareci ve Bürokratlar Birliği Derneği 2009" property="og:description"/>
+<meta content="facebook.com/yucel.can.796" property="fb:admins"/>
+<meta content="210306796005157" property="fb:app_id"/>
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="tema/js/pngfix.js"></script>
+<![endif]-->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Oswald&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@500&amp;family=Barlow:wght@200;500;700&amp;family=Cabin:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;300;500&amp;display=swap" rel="stylesheet"/>
+<!-- <link rel="stylesheet" href="themes/burokratlar/tema/css/all.min.css">
+<![endif]-->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<script src="themes/burokratlar/tema/js/jquery.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/jquery-migrate.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/jquery.bgswitcher.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/jquery.cycle.all.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.slideshoww').cycle({
+		fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+	});
+});
+</script>
+<style type="text/css">
+.slideshoww { max-width:100%; left:0px;  margin:0 auto; top:-1px; background-color:#FFF; }
+.slideshoww img {position: absolute; top: 0px; left: 0px; z-index:-999; max-width:100%; background-color: #eee; }
+</style>
+<script src="panel/tema/js/datepicker/js/jquery-ui-1.8.17.custom.min.js"></script>
+<script src="themes/burokratlar/tema/js/jq_maskedinput.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function($) {
+$("#phone").mask("0(999) 999-9999");
+$(".saat").mask("99:99");
+$("#securitycode").mask("9999");
+})
+</script>
+<link charset="utf-8" href="themes/burokratlar/tema/js/validator/validationEngine.jquery.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="themes/burokratlar/tema/js/validator/jquery.validationEngine-tr.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/validator/jquery.validationEngine.js" type="text/javascript"></script>
+<script type="text/javascript"> 
+    $(document).ready(function() {
+        $("#Form").validationEngine()
+    })
+</script>
+<script src="themes/burokratlar/tema/js/jcarousellite.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    jQuery("#kayan_alan").jCarouselLite({
+        vertical: true, //dikey yapmak için
+        hoverPause:true, //üzerine gelince durasý için
+        visible: 5, //3 adet gösterilmesi için
+        auto:1500, //bekleme süresi
+        speed:1000, //hareket hýzý
+        btnPrev: "#onceki", //onceki yazi
+        btnNext: "#sonraki", //sonraki yazi
+		mouseWheel: true
+    });
+});
+</script>
+<script src="themes/burokratlar/tema/js/jqcycle_all.js" type="text/javascript"></script>
+<script type="text/javascript"> 
+    $(document).ready(function() {
+        $('.solalanreresim').cycle({
+            fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+            timeout:'3000'
+        });
+        
+        $('.ustalanreresim').cycle({
+            fx: 'zoom', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+            timeout:'3000'
+        });
+        
+        $('.yakinetkinlikler .slide').cycle({
+            fx: 'scrollUp', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+            timeout:'5000',
+            resizeContainer: false,
+            cleartype: false,
+            slideResize: false
+        });
+    });
+    $(window).load(function() {
+        var slideshow = $(".slideshow").cycle({
+            fx: "fade",
+            timeout: 12000,
+            prev: ".slider-prev",
+            next: ".slider-next",
+            pager:  ".slider-pager",
+            fit:  2,
+            
+            pagerAnchorBuilder: function(idx, slide) {
+                return '<li><a href="#">'+(idx+1)+'</a></li>';
+            },
+
+        });
+    });
+</script>
+<script src="themes/burokratlar/tema/js/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/fancybox/jquery.fancybox.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/fancybox/helpers/jquery.fancybox-media.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/fancybox/fancybox/jquery.mousewheel-3.0.2.pack.js" type="text/javascript"></script>
+<link href="themes/burokratlar/tema/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" rel="stylesheet"/>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancybox").fancybox({
+		autoSize	: true,
+		openEffect	: 'none',
+		closeEffect	: 'none',
+		minHeight : 500
+		});
+	});
+</script>
+<script src="themes/burokratlar/tema/js/lightbox/jq_colorbox_lightbox.js" type="text/javascript"></script>
+<link href="themes/burokratlar/tema/js/lightbox/colorbox.css" media="screen" rel="stylesheet"/>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+	  $('a[rel*=colorbox]').colorbox();
+	  $('a[rel*=fotogaleri]').colorbox();
+	  $(".renkpaleti a").colorbox();
+	});
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.nav li').hover(
+            function () {
+                //alt menüleri göster
+
+                $('ul', this).stop(true,true,true).slideDown(200);
+
+            },
+            function () {
+                //alt menüleri gizle
+                $('ul', this).stop(true,true,true).slideUp(200);
+            }
+        );
+        
+        //alt kısım opacity efekti içindir
+        $('.nav li ul li').hover(
+            function () {
+                //üzerine gelince opacity
+                $(this).stop(true,true,true).animate({
+                    opacity: 1
+                  }, 300 );
+
+            },
+            function () {
+                //üzerinden gidince opacity
+                $(this).stop(true,true,true).animate({
+                    opacity: 0.9
+                  }, 300 );
+            }
+        );
+    });
+    function initMenu() {
+        $('#left-menu ul').hide();
+        $('#left-menu li a').click(
+        function() {
+            var checkElement = $(this).next();
+            if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+                checkElement.slideUp('normal');
+                return false;
+            }
+            if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+                if ( $(this).attr('class') != 'altmenu' ) {
+                    //$('#left-menu ul:visible').slideUp('normal');
+                }
+                checkElement.slideDown('normal');
+                return false;
+            }
+          }
+        );
+      }
+    $(document).ready(function() { initMenu(); });
+</script>
+<script src="themes/burokratlar/tema/js/tasarim/etkinlik_takvimi/js/jquery.eventCalendar.js"></script>
+<link href="themes/burokratlar/tema/js/tasarim/etkinlik_takvimi/css/eventCalendar.css" rel="stylesheet"/>
+<link href="themes/burokratlar/tema/js/tasarim/etkinlik_takvimi/css/eventCalendar_theme_responsive.css" rel="stylesheet"/>
+<script type="text/javascript">
+    $(document).ready(function() {     
+		
+		var eventsInline = [
+		{ "date": "1457179200000", "saat": "14:00", "type": "meeting", "title": "28 ŞUBAT YAŞAYAN BİRİ", "description": "GENİŞ BİR BAKIŞ AÇISIYLA 28 ŞUBAT BU HAFTAKİ KONFERANS KONUMUZ VE KONUĞUMUZ 54. HÜKÜMETİN DEVLET BAKANI VE AK PARTİ ETİK KURULU BAŞKANI SAYIN AHMET CEMİL TUNÇ", "url": "#" },
+		{ "date": "1457775936000", "saat": "14:00", "type": "meeting", "title": "MİLLET ANAYASASINA", "description": "Dost meclisinin bu haftaki konuğu Cumhurbaşkanı Başdanışmanı Sayın Av. Şeref Malkoç Katılacaktır.", "url": "#" },
+		{ "date": "1460228400000", "saat": "", "type": "meeting", "title": "SULTAN II ABDÜLHAMİD'DEN RECEP TAYYİP ERDOĞAN'A", "description": "BU KONFERANS ÇOK KONUŞULACAK.  Sultan Abdülhamit'e ait bilinmeyenler,", "url": "" },
+		{ "date": "1459364400000", "saat": "", "type": "meeting", "title": "Terör,  Göç ve Dokunulmazlık", "description": "ŞİMDİDEN BU TARİHİ VE SAATİ NOT EDIN...Terörün gerçek yüzü nedir, hedefi kimdir?Terör örgütleri ve hamileri kimlerdir?Terör örgütünün iç ve dış bağlantıları...Neden terör daha çok belli bir coğrafyadadır?Terõrün zararaları, tehlikeleri, etkileri, bilinmeyenleri....Teröre dair daha neler neler...Göç...Göç ve terörün bağlantıları...Göç sosyolojidi ve psikolojisi...İç ve dış göç...Dokunulmazlıklar...Dokunulmazlıkların ölçüsü, sınırı, bağlantıları...Terör, göç ve dokunulmazlıkların bağlantı ve ilişkileri..&nbsp;Batı ve Dünyanın bakışı, samimiyeti, etkisi......Ve daha neler neler...", "url": "#" },
+		{ "date": "1463097600000", "saat": "", "type": "meeting", "title": " PKK Medyası ve PKK İle Mücadelenin psikolojik Boyutu", "description": "Bu tarihi lüten not ediniz...Pkk...Sistematik dezanformasyon ve Pkk...Pkknın kara propagandası...Pkknın medyayı kullanma araçları...Pkkya destek veren Avrupa Ülkeleri...Daha neler neler...", "url": "" },
+		{ "date": "1464307200000", "saat": "", "type": "meeting", "title": "Küresel Meydan Okumalar ve Tükiye'nin Dış Politikası", "description": "Dost Meclisimizin Bu haftaki Konuğu STAR Gazetesi Ankara Temsilcisi olan Sayın Mustafa KARTOĞLU bey ile &ldquo;Küresel Meydan Okumalar ve Tükiye'nin Dış Politikası&quot; İsimli Konferansı siz değerli konuklarımız ile buluşturmaktadır. ", "url": "" },
+		{ "date": "1533682800000", "saat": "", "type": "meeting", "title": "Olağanüstü Kongre Kararı", "description": "YK. Kurulumuz Toplanarak almış olduğu Olağanüstü Kongre kararı doğrulturunsa 08.08.2018&nbsp;tarihinde&nbsp;toplanmasına, 06.08.2018 tarihinde ÇOĞUNLUK ARANMAKSINIZ 16.08.2018 Perşembe Saat 19.00'da İDARECİ ve BÜROKRATLAR BİRLİĞİ DERNEĞİNDE OLAĞAN ÜSTÜ KONGRE yapılacaktır.&nbsp;", "url": "" },
+		{ "date": "1534377600000", "saat": "", "type": "meeting", "title": "Olağanüstü Kongre Kararı", "description": "Olağanüstü Kongremiz 16.08.2018 Perşembe günü saat 19.00'da NEFF CAFE-NEFFGİLE Toplantı Salonunda yapılacaktır.( Atatürk Caddesi. Keçiören Girişi FTZ Arkası No:17 Keçiören-ANKARA) Teşriflerinizi bekler,Kongremizin; Derneğimize, Vatanımıza, İslam Alemine ve İnsanlığa hayırlı olmasını temenni ederiz.Yücel CAN", "url": "" },
+		{ "date": "1747094400000", "saat": "", "type": "meeting", "title": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Birlikte Güçlüyüz Ruhu İle Kahramanlık Eserleri Programı", "description": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Birlikte Güçlüyüz Ruhu İle Kahramanlık Eserleri Programına  Teşriflerinizden Mutluluk Duyarız", "url": "" },
+		{ "date": "1747162800000", "saat": "", "type": "meeting", "title": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Birlikte Güçlüyüz Ruhu İle Kahramanlık Eserleri Programı", "description": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Birlikte Güçlüyüz Ruhu İle Kahramanlık Eserleri Programına Teşriflerinizden Mutluluk Duyarız", "url": "" },
+		];
+            $("#eventCalendarLocale").eventCalendar({
+				jsonData: eventsInline,
+                cacheJson: false,
+                showDescription: true,
+				eventsLimit: 2,
+                monthNames: [ "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
+                    "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık" ],
+                dayNames: [ 'Pazar','Pazartesi','Salı','Çarşamba',
+                    'Perşembe','Cuma','Cumartesi' ],
+                dayNamesShort: [ 'Paz','Pzt','Sal','Çar', 'Per','Cum','Cmt' ],
+                txt_noEvents: "Periyotta etkinlik bulunamadı",
+                txt_SpecificEvents_prev: "",
+                txt_SpecificEvents_after: " Etkinlikleri:",
+                txt_next: "Sonraki",
+                txt_prev: "Önceki",
+                txt_NextEvents: "Yaklaşan Etkinlikler:",
+                txt_GoToEventUrl: "Detaylı Görüntüle"
+            });
+        });
+</script>
+<script src="themes/burokratlar/tema/js/tasarim/jcarousel/jquery.jcarousel.min.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/tasarim/jcarousel/jcarousel.responsive.js" type="text/javascript"></script>
+<link href="themes/burokratlar/tema/js/tasarim/jcarousel/jcarousel.responsive.css" rel="stylesheet"/>
+<script src="themes/burokratlar/tema/js/tasarim/kayan_duyuru/jquery.ticker.js" type="text/javascript"></script>
+<link href="themes/burokratlar/tema/js/tasarim/kayan_duyuru/ticker-style.css" rel="stylesheet"/>
+<script>
+    $(document).ready(function() {
+        $("#duyurular").ticker({
+            speed: 0.10,           // The speed of the reveal
+            debugMode: false,       // Show some helpful errors in the console or as alerts
+            controls: false,        // Whether or not to show the jQuery News Ticker controls
+            titleText: '',   // To remove the title set this to an empty String
+            displayType: 'reveal', // Animation type - current options are 'reveal' or 'fade'
+            direction: 'ltr',       // Ticker direction - current options are 'ltr' or 'rtl'
+            pauseOnItems: 2000,    // The pause on a news item before being replaced
+            fadeInSpeed: 600,      // Speed of fade in animation
+            fadeOutSpeed: 300      // Speed of fade out animation
+        });
+    });
+</script>
+<script src="themes/burokratlar/tema/js/tasarim/bootstrap.min.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/tasarim/custom.js" type="text/javascript"></script>
+<link href="themes/burokratlar/tema/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesnt work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="tema/js/tasarim/html5shiv.js"></script>
+<script src="tema/js/tasarim/respond.min.js"></script>
+<![endif]-->
+<link href="themes/burokratlar/tema/css/tasarim.css" rel="stylesheet" type="text/css"/>
+<link href="themes/burokratlar/tema/css/style.css?v=10" media="screen" rel="stylesheet" type="text/css"/>
+<link href="themes/burokratlar/tema/css/mesaj_kutulari/css.css" rel="stylesheet" type="text/css"/>
+<meta content="#dogrulama" name="google-site-verification"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet"/><link href="kurumsal.css" rel="stylesheet"/></head>
+<body>
+<header id="header">
+<div class="event">
+<div class="container">
+<div class="row">
+<div class="col-md-6 col-sm-6 col-xs-12">
+<div class="pull-left">
+<div class="ustlogoalt"></div>
+</div>
+</div>
+<div class="col-md-3 col-sm-3 col-xs-12">
+<div class="pull-right">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="header-banner">
+<div id="bs-demo"></div>
+<div class="row">
+<div class="col-md-12 col-xs-12">
+<a href="#" title="İdareci ve Bürokratlar Birliği Derneği"> <img alt="İdareci ve Bürokratlar Birliği Derneği" class="logo img-responsive" src="data/9595428-logo.png" style="margin-top:15px;"/> </a>
+
+<div style="left:0; background-color: rgb(255, 255, 255); width: 100%; position: absolute; top: 20px; z-index: -100; height: 155px;">
+</div>
+
+<div class="top-banner-img" style="position:absolute; right: 0px; top: 0px; height: 155px; z-index: -90; max-width: 70%; overflow: hidden;">
+<img alt="Biz Birlikte Gclyz" src="themes/burokratlar/tema/images/top_banner.png" style="height: 100%; width: 100%; object-fit: contain; object-position: right;"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="container">
+<nav class="navbar navbar-default" id="navbar" role="navigation">
+<div class="icon">
+<i class="glyphicon glyphicon glyphicon glyphicon-align-left"></i>
+</div>
+<div class="navbar-header">
+<button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div> <!-- .navbar-header -->
+<nav class="collapse navbar-collapse bs-navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav">
+<li class="home"><a href="anasayfa.html"><img alt="Ana Sayfa" src="themes/burokratlar/tema/images/ico-home.png"/></a></li>
+<li><a href="anasayfa.html" target="_self">Ana Sayfa</a></li>
+<li class="dropdown"><a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" target="_self">Derneğimiz</a>
+<ul class="dropdown-menu" role="menu">
+<li><a href="hakkimizda.html" target="_self">Hakkımızda</a></li>
+<li><a href="tuzugumuz.html" target="_self">Tüzüğümüz</a></li>
+<li><a href="yonetimkurulu.html" target="_self">Yönetim Kurulu</a></li>
+<li><a href="baskanlik-ve-birimler.html" target="_self">Başkanlık ve Birimler</a></li>
+<li><a href="yuksek-istisare-onur-kurulu-uyesi.html" target="_self">Yüksek İstişare ve Onur Kurulu</a></li>
+<li><a href="diger-kurullar.html" target="_self">Diğer Kurullar</a></li>
+<li><a href="temsilcilik.html" target="_self">Temsilcilik</a></li>
+</ul></li>
+<li><a href="haber-listesi.html" target="_self">Haberler</a></li>
+<li><a href="etkinlik.html" target="_self">Etkinlikler</a></li>
+<li><a href="resimler.html" target="_self">Fotoğraf Galerisi</a></li>
+<li><a href="iletisim.html" target="_self">İletişim</a></li>
+</ul>
+</nav>
+</nav>
+</div> <!-- .container -->
+<div class="page-index container">
+<div class="whitebg">
+<!--		<div class="icon">
+			<i class="glyphicon glyphicon-resize-full"></i> 
+		</div>-->
+<div class="row">
+<div class="col-md-3" id="left">
+<div class="left-menu">
+<div class="panel panel-primary">
+<div class="panel-heading">
+<img alt="Menu" src="themes/burokratlar/tema/images/icon-menu.png"/> Derneğimiz
+						</div>
+<div class="panel-body">
+<!--div style="position:absolute; width:65px; height:65px; background:url(data/7831298-baskan.png) no-repeat; right:25px; top:10px;"></div-->
+<ul id="left-menu">
+<li><a href="hakkimizda.html" target="_self">»  Hakkımızda</a></li>
+<li><a href="yonetimkurulu.html" target="_self">»  Yönetim Kurulu</a></li>
+<li><a href="baskanlik-ve-birimler.html" target="_self">»  Başkanlık ve Birimler</a></li>
+<li><a href="yuksek-istisare-onur-kurulu-uyesi.html" target="_self">»  Yüksek İstişare ve Onur Kurulu</a></li>
+<li><a href="diger-kurullar.html" target="_self">»  Diğer Kurullar</a></li>
+<li><a href="temsilcilik.html" target="_self">»  Temsilcilikler</a></li>
+<li><a href="haber-listesi.html" target="_self">»  Haberler</a></li>
+<li><a href="etkinlik.html" target="_self">»  Etkinlikler</a></li>
+</ul>
+</div>
+</div> <!-- .panel .panel-primary -->
+<!-- .panel .panel-darkprimary -->
+<!-- .panel .panel-lightred -->
+<!-- .panel .panel-red -->
+<!--div class="reklam">
+						<p><img style="display: block; margin-left: auto; margin-right: auto;" src="themes/burokratlar/tema/images/banner.png" alt="" width="250" height="250" /></p>
+					</div-->
+<div class="panel panel-primary hadis-i-serif" style="margin-top: 0px; border-color: #800000; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+<div class="panel-heading" style="background-color: #800000; border-color: #800000; color: white; font-weight: bold; font-size: 15px; padding: 12px 15px;">
+<i aria-hidden="true" class="fa fa-book" style="margin-right:8px;"></i> Günün Hadis-i Şerifi
+    </div>
+<div class="panel-body" style="background-color: #fdfaf6; padding: 25px 20px;">
+<div style="text-align: center; color: #800000; font-size: 20px; margin-bottom: 12px; opacity: 0.6;">
+<i aria-hidden="true" class="fa fa-quote-left"></i>
+</div>
+<div id="daily-hadith" style="font-size: 16px; font-style: italic; font-weight: 600; color: #444; line-height: 1.7; text-align: center; font-family: 'Georgia', 'Times New Roman', serif;">
+</div>
+<div style="text-align: center; color: #800000; font-size: 20px; margin-top: 12px; opacity: 0.6;">
+<i aria-hidden="true" class="fa fa-quote-right"></i>
+</div>
+</div>
+</div>
+<script>
+const hadiths = [
+    "Ameller niyetlere göredir.", 
+    "Sizin en hayırlınız Kur'an'ı öğrenen ve öğretendir.", 
+    "İman yetmiş küsur şubedir.", 
+    "Müslüman, elinden ve dilinden diğer Müslümanların güvende olduğu kimsedir.", 
+    "Kim Allah'a ve ahiret gününe inanıyorsa komşusuna iyilik etsin.", 
+    "Kolaylaştırın, zorlaştırmayın; müjdeleyin, nefret ettirmeyin.", 
+    "Din nasihattir.", 
+    "Söz taşıyanlar cennete giremez.", 
+    "Merhamet etmeyene merhamet edilmez.", 
+    "İşçiye ücretini teri kurumadan veriniz."
+]; 
+const day = Math.floor((new Date() - new Date(new Date().getFullYear(),0,0)) / 1000 / 60 / 60 / 24); 
+document.getElementById("daily-hadith").innerText = hadiths[day % hadiths.length];
+</script>
+<div class="panel panel-kurumsal mb-4 side-dijital" style="display: none !important;"><div class="panel-heading text-center font-bold" style="background:#0f2b48; color:white; padding: 10px;">Dijital İşlemler Portalı</div><div class="panel-body text-center p-4"><a class="btn btn-primary w-full mb-2" href="uyelik.html" style="background:#800000; border:none; display:block; padding:8px; color:white; border-radius:4px; text-decoration:none;">Üyelik Başvurusu</a><a class="btn btn-primary w-full mb-2" href="#" style="background:#e2e8f0; border:none; display:block; padding:8px; color:#0f2b48; border-radius:4px; text-decoration:none;">Aidat Sorgulama</a></div></div><div class="panel panel-kurumsal mb-4 side-gundem" style=""><div class="panel-heading text-center font-bold" style="background:#0f2b48; color:white; padding: 10px;">Gündem &amp; Buluşmalar</div><div class="panel-body p-4"><ul class="list-none p-0 m-0 text-sm"><li class="border-b py-2 mb-2"><span style="background:#800000; color:white; padding:2px 6px; border-radius:4px; font-size:12px;">Yakında</span> <a href="#" style="color:#0f2b48; font-weight:bold; text-decoration:none;">Politika Notu Yayını</a></li><li class="border-b py-2 mb-2"><span style="background:#800000; color:white; padding:2px 6px; border-radius:4px; font-size:12px;">14 Mayıs</span> <a href="#" style="color:#0f2b48; font-weight:bold; text-decoration:none;">Dost Meclisi Buluşması</a></li></ul></div></div><div class="panel panel-kurumsal mb-4 side-ebulten" style="display: none !important;"><div class="panel-heading text-center font-bold" style="background:#0f2b48; color:white; padding: 10px;">E-Bülten &amp; Politika Notlarına Abone Olun</div><div class="panel-body text-center p-4"><input class="form-control mb-2 p-2 border rounded w-full" placeholder="E-Posta Adresiniz" style="width:100%; box-sizing:border-box;" type="email"/><button class="btn btn-primary w-full mt-2" style="background:#800000; border:none; padding:8px; color:white; border-radius:4px; width:100%;">Abone Ol</button></div></div><div class="panel panel-cyan links side-faydali" style=""><div class="panel-heading"><img alt="Link" src="themes/burokratlar/tema/images/icon-link.png"/>Faydalı Bağlantılar</div><div class="panel-body"><ul><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.tccb.gov.tr/" target="_blank">Cumhurbaşkanlığı</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.tbmm.gov.tr/" target="_blank">Türkiye Büyük Millet Meclisi</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.turkiye.gov.tr/" target="_blank">E-devlet</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.icisleri.gov.tr/" target="_blank">T.C. İçişleri Bakanlığı</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.resmigazete.gov.tr/" target="_blank">Resmin Gazete</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.cimer.gov.tr/" target="_blank">Cumhurbaşkanlığı İ.M. (CİMER)</a></li></ul></div></div><div class="side-banner" id="yanaplat-banner" style="margin-top: 20px; margin-bottom: 0px; text-align: center;">
+<img alt="Milli İrade Platformu" src="data/yanaplat.gif" style="width: 100%; height: 220px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: 1px solid #ccc;"/>
+</div>
+</div> <!-- .left-menu -->
+</div> <!-- #left -->
+<div class="col-md-9" id="main">
+<div class="main">
+<div class="panel panel-primary">
+<div class="panel-heading">İdareci ve Bürokratlar Birliği Derneği / Tüzüğümüz</div>
+<div class="panel-body">
+<div class="box"><p style="font-weight: normal;"><span style="font-weight: bold;">İDARECİ VE BÜROKRATLAR BİRLİĞİ DERNEĞİ TÜZÜĞÜ</span></p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Derneğin Adı ve Merkezi</span></p>
+<p style="font-weight: normal;">Madde 1- Derneğin Adı: İdareci Ve Bürokratlar Birliği Derneği” dir.</p>
+<p style="font-weight: normal;">Derneğin genel merkezi Ankara’dadır.</p>
+<p style="font-weight: normal;">Dernek, yurt içinde ve yurt dışında şube açabilir.</p>
+<p style="font-weight: normal;">Derneğin logosu: Kırmızı beyaz turkuaz renkte olup derneğin isminin ilk harfleri ve insan sureti logonun ortasında yer alarak logonun etrafına derneğin ismi, kuruluş tarihi ve biz birlikte güçlüyüz ifadesinin yazıldığı şekilde olduğu gibidir.</p><p style="font-weight: normal;">
+</p><center><img src="data/logo.jpg"/></center>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Derneğin Amacı;</span></p>
+<p style="font-weight: normal;">Madde 2-Dernek, yönetenlerle yönetilenler arasında iletişimi kuvvetlendirmek ilişkileri daha iyi bir düzeye getirmek liyakat ve insani değerler doğrultusunda çalışmalarda bulunmak, idari ve bürokrasinin sadeleşmesi ve idarenin şeffaflaşması hususunda rehberlik ve danışmanlık etmek, liyakatli, vasıflı ve donanımlı; ilkeli idareci ve bürokratların yetiştirilmesi yönünde çalışmalar yürütmek, idarede liyakat, insanı, kültürel, inanç ve ahlaki değerlerin varlığının önemi hatırlatılarak, öğretilerek etkinliğini arttırmak ve toplum ile idareyi kaynaştırıcı projeler geliştirmek amacı ile kurulmuştur.</p>
+<p style="font-weight: normal;">Dernek; çalışmalarını yürütürken Ülkemizin milli, manevi, inanç, kültürel ve ortak değerleri üzerinde birlik ve beraberlik oluşturmak; birlikte yaşama kültürü ile her türlü terör ve bölücülüğe karşı mücadele ederek ortak vatan, millet, bayrak, devlet gibi değerlerimizin korunması, ülkemizin istikrarlı bir şekilde büyümesi, gelişmesi ve evrensel hukuk normlarına uygun demokratik hukuk devleti anlayışının yerleşmesi, ülkemizin yurt içinde ve yurt dışında tanıtılması, her türlü çıkarlarının korunması ulusal ve uluslararası boyutta barışa, kardeşliğe, huzura ve insana hizmet; sivil toplumun kurumsallaşması ve sivil toplum kuruluşlarının etkinliklerinin arttırılması konularını gözeterek insana hizmet etme ve hizmetkâr yönetici olma yönünde sınır tanımamayı gözetir.</p>
+<p style="font-weight: normal;">Ar-Ge ve İnovasyon çerçevesinde ihtiyaç duyulan uygulamalar ve oluşumlar için destekleyici ve tamamlayıcı çalışmalar yapar.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Dernekçe Sürdürülecek Çalışma Konuları ve Biçimleri</span></p>
+<p style="font-weight: normal;">1-Faaliyetlerinin etkinleştirilmesi ve geliştirilmesi için araştırmalar yapmak, </p>
+<p style="font-weight: normal;">2-Kurs, seminer, konferans ve panel gibi eğitim çalışmaları düzenlemek,</p>
+<p style="font-weight: normal;">3-Amacın gerçekleştirilmesi için gerekli olan her türlü bilgi, belge, doküman ve yayınları temin etmek, dokümantasyon merkezi oluşturmak, çalışmalarını duyurmak için amaçları doğrultusunda gazete, dergi, kitap ve bülten gibi yayınlar çıkarmak,</p>
+<p style="font-weight: normal;">4-Amacın gerçekleştirilmesi için sağlıklı bir çalışma ortamını sağlamak, her türlü teknik araç ve gereci, demirbaş ve kırtasiye malzemelerini temin etmek,</p>
+<p style="font-weight: normal;">5-Gerekli izinler alınmak şartıyla yardım toplama faaliyetlerinde bulunmak ve yurt içinden ve yurt dışından bağış kabul etmek,</p>
+<p style="font-weight: normal;">6-Tüzük amaçlarının gerçekleştirilmesi için ihtiyaç duyduğu gelirleri temin etmek amacıyla iktisadi, ticari ve sanayi işletmeler kurmak ve işletmek,</p>
+<p style="font-weight: normal;">7-Üyelerinin yararlanmaları ve boş zamanlarını değerlendirebilmeleri için lokal açmak, sosyal ve kültürel tesisler kurmak ve bunları tefriş etmek,</p>
+<p style="font-weight: normal;">8-Üyeleri arasında beşeri münasebetlerin geliştirilmesi ve devam ettirilmesi için yemekli toplantılar, konser, balo, tiyatro, sergi, spor, gezi ve eğlenceli etkinlikler vb. düzenlemek veya üyelerinin bu tür etkinliklerden yararlanmalarını sağlamak, gençlik ve spor alanlarında kulüp kurmak,</p>
+<p style="font-weight: normal;">9-Dernek faaliyetleri için ihtiyaç duyulan taşınır, taşınmaz mal satın almak, satmak, kiralamak, kiraya vermek ve taşınmazlar üzerinde ayni hak tesis etmek,</p>
+<p style="font-weight: normal;">10-Amacın gerçekleştirilmesi için gerek görülmesi durumunda yurt içinde ve yurt dışında vakıf kurmak, federasyon kurmak, konfederasyon kurmak veya kurulu bir federasyona ya da konfederasyona katılmak, platforma katılmak, gençlik ve spor kulübü kurmak, işletmek, mevcut spor kulüpleri ile iş birliği yapmak gerekli izin alınarak derneklerin kurabileceği tesisleri kurmak,</p>
+<p style="font-weight: normal;">11-Uluslararası faaliyette bulunmak, yurt dışındaki dernek veya kuruluşlara üye olmak ve bu kuruluşlarla ortak çalışmalar yapmak veya yardımlaşmak,</p>
+<p style="font-weight: normal;">12-Amacın gerçekleştirilmek üzere, benzer amaçlı derneklerden işçi ve işveren sendikalarından ve mesleki kuruluşlardan maddi yardım almak ve adı geçen kurumlara maddi yardımda bulunmak.</p>
+<p style="font-weight: normal;">13- Amacın gerçekleştirilmesi için gerekli görülmesi halinde 5072 sayılı Dernek ve Vakıfların Kamu Kurum ve Kuruluşları ile İlişkilerine Dair Kanun hükümleri saklı kalmak üzere, kamu kurum ve kuruluşları ile görev alanlarına giren konularda ortak projeler yürütmek, uluslararası projeler hazırlamak, bu tür projelerde ortak olarak yer almak,</p>
+<p style="font-weight: normal;">14-Dernek üyelerinin yiyecek, giyecek gibi zaruri ihtiyaç maddelerini ve diğer mal ve hizmetlerle kısa vadeli kredi ihtiyaçlarını karşılamak amacıyla sandık kurmak,</p>
+<p style="font-weight: normal;">15-Gerekli görülen yerlerde şube ve temsilcilikler açmak,</p>
+<p style="font-weight: normal;">16-Derneğin amacı ile ilgisi bulunan ve kanunlarla yasaklanmayan alanlarda, diğer derneklerle veya vakıf, sendika ve benzeri sivil toplum kuruluşlarıyla ortak bir amacı gerçekleştirmek için plâtformlar oluşturmak,</p>
+<p style="font-weight: normal;">17- Gerekli durumlarda komisyon ve benzeri bir çalışma grubu oluşturarak çözüme yönelik faaliyetlerin veya düzenlemelerin yapılmasını sağlamak, bu amaçla enstitü, akademi gibi kuruluşlar açarak çalışmalarda bulunmak,</p>
+<p style="font-weight: normal;">18- Üyeler arasında Ar-Ge ve İnovasyon çalışmaları kapsamında köprü görevi üstlenmek,</p>
+<p style="font-weight: normal;">19- Ülkelerin idaresinden kaynaklanan savaş, göç gibi istenmeyen durumlarda insani yardım ve müdahalelerde bulunmak, değişik risklere karşı koruyucu, önleyici, yardım ve destek çalışmalarında bulunmak,</p>
+<p style="font-weight: normal;">20-Amacın gerçekleştirilmesi için ihtiyaç duyulan ve kanunların yasaklamadığı her türlü faaliyette bulunmak; birlik, beraberlik, paylaşma gibi duygu ve hasletlerin geliştirilmesine öncelik vermek,</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Derneğin Faaliyet Alanı</span></p>
+<p style="font-weight: normal;">Dernek, sosyal alanda yurt içinde ve yurt dışında faaliyet gösterir.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Üye Olma Hakkı ve Üyelik İşlemleri</span></p>
+<p style="font-weight: normal;">Madde 3- Fiil ehliyetine sahip bulunan ve derneğin amaç ve ilkelerini benimseyerek bu doğrultuda çalışmayı kabul eden ve Mevzuatın öngördüğü koşullarını taşıyan her gerçek ve tüzel kişi bu derneğe üye olma hakkına sahiptir. Ancak, yabancı gerçek kişilerin üye olabilmesi için Türkiye’de yerleşme hakkına sahip olması da gerekir. Onursal üyelik için bu koşul aranmaz.</p>
+<p style="font-weight: normal;">Dernek başkanlığına yazılı olarak yapılacak üyelik başvurusu, dernek yönetim kurulunca en çok otuz gün içinde üyeliğe kabul veya isteğin reddi şeklinde karara bağlanır ve sonuç yazıyla başvuru sahibine bildirilir. Başvurusu kabul edilen üye, bu amaçla tutulacak deftere kaydedilir.</p>
+<p style="font-weight: normal;">Derneğin asıl üyeleri, derneğin kurucuları ile müracaatları üzerine yönetim kurulunca üyeliğe kabul edilen kişilerdir.</p>
+<p style="font-weight: normal;">Derneğe maddi ve manevi bakımdan önemli destek sağlamış bulunanlar yönetim kurulu kararı ile onursal üye olarak kabul edilebilir. Dernek Kurucu Genel Başkanı Derneğin Onursal Başkanı Üyeliği devam eden kurucular da onursal üyedir.</p>
+<p style="font-weight: normal;">Derneğin şube sayısı üçten fazla olduğunda dernek merkezinde kayıtlı bulunanların üyelik kayıtları şubelere aktarılır. Yeni üyelik müracaatları şubelere yapılır. Üyeliğe kabul ve üyelikten silinme işlemleri şube yönetim kurulları tarafından yapılır ve en çok otuz gün içinde bir yazıyla Genel Merkeze bildirilir.  </p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Üyelikten Çıkma</span></p>
+<p style="font-weight: normal;">Madde 4-Her üye yazılı olarak bildirmek kaydıyla, dernekten çıkma hakkına sahiptir.</p>
+<p style="font-weight: normal;">Üyenin istifa dilekçesi yönetim kuruluna ulaştığı anda çıkış işlemleri sonuçlanmış sayılır. Üyelikten ayrılma, üyenin derneğe olan birikmiş borçlarını sona erdirmez.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Üyelikten Çıkarılma</span></p>
+<p style="font-weight: normal;">Madde 5-Dernek üyeliğinden çıkarılmayı gerektiren haller.</p>
+<p style="font-weight: normal;">1- Dernek tüzüğüne aykırı davranışlarda bulunmak,</p>
+<p style="font-weight: normal;">2- Verilen görevlerden sürekli kaçınmak,</p>
+<p style="font-weight: normal;">3- Yazılı ikazlara rağmen üyelik aidatını altı ay içinde ödememek,</p>
+<p style="font-weight: normal;">4- Dernek organlarınca verilen kararlara uymamak.</p>
+<p style="font-weight: normal;">5- Üye olma şartlarını kaybetmiş olmak,</p>
+<p style="font-weight: normal;">6- Dernek mekân veya etkinliklerinde içki içmek, kumar oynak veya toplumca hoş karşılanmayacak davranışlarda bulunmak,</p>
+<p style="font-weight: normal;">7- Suça veya yasa dışı eylemlere karışmak,</p>
+<p style="font-weight: normal;">Yukarıda sayılan durumlardan birinin tespiti halinde yönetim kurulu kararı ile üyelikten çıkarılabilir.</p>
+<p style="font-weight: normal;">Dernekten çıkan veya çıkarılanlar, üye kayıt defterinden silinir ve dernek malvarlığında hak iddia edemez.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Dernek Organları</span></p>
+<p style="font-weight: normal;">Madde 6-Derneğin organları aşağıda gösterilmiştir.</p>
+<p style="font-weight: normal;">1-Genel kurul,</p>
+<p style="font-weight: normal;">2-Yönetim Kurulu,</p>
+<p style="font-weight: normal;">3-Denetim Kurulu,</p>
+<p style="font-weight: normal;">Dernek Genel Kurulunun Kuruluş Şekli, Toplanma Zamanı ve Çağrı ve Toplantı Usulü</p>
+<p style="font-weight: normal;">Madde 7- Genel kurul, derneğin en yetkili karar organı olup; derneğe kayıtlı üyelerden oluşur. Derneğin şubesinin açılması durumunda ise şube sayısı üçe kadar genel merkez ve şubelerinde kayıtlı üyelerden; şube sayısı üçten fazla olması durumunda ise genel merkezdeki kayıtlı üyeler şubelere nakledilerek şubelerin genel kurullarında seçilen delegelerden oluşur.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Genel kurul;</span></p>
+<p style="font-weight: normal;">1-Bu tüzükte belli edilen zamanda olağan,</p>
+<p style="font-weight: normal;">2-Yönetim veya denetim kurulunun gerekli gördüğü hallerde veya dernek üyelerinden beşte birinin yazılı başvurusu üzerine, yönetim kurulunca olağanüstü toplantıya çağrılır. Yönetim kurulu, genel kurulu toplantıya çağırmazsa; üyelerden birinin başvurusu üzerine sulh hâkimi, üç üyeyi genel kurulu toplantıya çağırmakla görevlendirir.</p>
+<p style="font-weight: normal;">Olağan genel kurul, 3 yılda bir, Kasım ayı içerisinde, yönetim kurulunca belirlenecek gün yer ve saatte toplanır.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Çağrı Usulü</span></p>
+<p style="font-weight: normal;">Yönetim kurulu, dernek tüzüğüne göre genel kurula katılma hakkı bulunan üyelerin listesini düzenler. Genel kurula katılma hakkı bulunan üyeler, en az on beş gün önceden, toplantının günü, saati, yeri ve gündemi en az bir gazetede veya derneğin internet sayfasında ilan edilmek, yazılı olarak bildirilmek, üyenin bildirdiği elektronik posta adresine ya da iletişim numarasına mesaj gönderilmek veya mahalli yayın araçları kullanılmak suretiyle toplantıya çağrılır. Bu çağrıda, çoğunluk sağlanamaması sebebiyle toplantı yapılamazsa, ikinci toplantının hangi gün, saat ve yerde yapılacağı da belirtilir. İlk toplantı ile ikinci toplantı arasındaki süre yedi günden az, altmış günden fazla olamaz.</p>
+<p style="font-weight: normal;">Toplantı, çoğunluk sağlanamaması sebebinin dışında başka bir nedenle geri bırakılırsa, bu durum geri bırakma sebepleri de belirtilmek suretiyle, ilk toplantı için yapılan çağrı usulüne uygun olarak üyelere duyurulur. İkinci toplantının geri bırakma tarihinden itibaren en geç altı ay içinde yapılması zorunludur. Üyeler ikinci toplantıya, birinci fıkrada belirtilen esaslara göre yeniden çağrılır.</p>
+<p style="font-weight: normal;">Genel kurul toplantısı bir defadan fazla geri bırakılamaz.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Toplantı Usulü</span></p>
+<p style="font-weight: normal;">Genel kurul, katılma hakkı bulunan üyelerin salt çoğunluğunun, tüzük değişikliği ve derneğin feshi hallerinde ise üçte ikisinin katılımıyla toplanır; çoğunluğun sağlanamaması sebebiyle toplantının ertelenmesi durumunda ikinci toplantıda çoğunluk aranmaz. Ancak, bu toplantıya katılan üye sayısı, yönetim ve denetim kurulları üye tam sayısının iki katından az olamaz.</p>
+<p style="font-weight: normal;">Genel kurula katılma hakkı bulunan üyelerin listesi toplantı yerinde hazır bulundurulur. Toplantı yerine girecek üyelerin resmi makamlarca verilmiş kimlik belgeleri, yönetim kurulu üyeleri veya yönetim kurulunca görevlendirilecek görevliler tarafından kontrol edilir. Üyeler, yönetim kurulunca düzenlenen listedeki adları karşısına imza koyarak toplantı yerine girerler.</p>
+<p style="font-weight: normal;">Toplantı yeter sayısı sağlanmışsa durum bir tutanakla tespit edilir ve toplantı yönetim kurulu başkanı veya görevlendireceği yönetim kurulu üyelerinden biri tarafından açılır. Toplantı yeter sayısı sağlanamaması halinde de yönetim kurulunca bir tutanak düzenlenir.</p>
+<p style="font-weight: normal;">Açılıştan sonra, toplantıyı yönetmek üzere bir başkan ve yeteri kadar başkan vekili ile yazman seçilerek divan heyeti oluşturulur.</p>
+<p style="font-weight: normal;">Dernek organlarının seçimi için yapılacak oylamalarda, oy kullanan üyelerin divan heyetine kimliklerini göstermeleri ve hazirun listesindeki isimlerinin karşılarını imzalamaları zorunludur.</p>
+<p style="font-weight: normal;">Toplantının yönetimi ve güvenliğinin sağlanması divan başkanına aittir.</p>
+<p style="font-weight: normal;">Genel kurulda, yalnızca gündemde yer alan maddeler görüşülür. Ancak toplantıda hazır bulunan üyelerin onda biri tarafından görüşülmesi yazılı olarak istenen konuların gündeme alınması zorunludur.</p>
+<p style="font-weight: normal;">Genel kurulda her üyenin bir oy hakkı vardır; üye oyunu şahsen kullanmak zorundadır. Onursal üyeler genel kurul toplantılarına katılabilir ancak oy kullanamazlar. Tüzel kişinin üye olması halinde, tüzel kişinin yönetim kurulu başkanı veya temsille görevlendireceği kişi oy kullanır.</p>
+<p style="font-weight: normal;">Toplantıda görüşülen konular ve alınan kararlar bir tutanağa yazılır ve divan başkanı ile yazmanlar tarafından birlikte imzalanır.  Toplantı sonunda, tutanak ve diğer belgeler yönetim kurulu başkanına teslim edilir. Yönetim kurulu başkanı bu belgelerin korunmasından ve yeni seçilen yönetim kuruluna yedi gün içinde teslim etmekten sorumludur.</p>
+<p style="font-weight: normal;">Genel Kurulun Oy kullanma ve Karar Alma Usul ve Şekilleri</p>
+<p style="font-weight: normal;">Madde 8-Genel kurulda, aksine karar alınmamışsa, oylamalar açık olarak yapılır. Açık oylamada,  genel kurul başkanının belirteceği yöntem uygulanır.</p>
+<p style="font-weight: normal;">Gizli oylama yapılacak olması durumunda ise, toplantı başkanı tarafından mühürlenmiş kâğıtlar veya oy pusulaları üyeler tarafından gereği yapıldıktan sonra içi boş bir kaba atılır ve oy vermenin bitiminden sonra açık dökümü yapılarak sonuç belirlenir.</p>
+<p style="font-weight: normal;">Genel kurul kararları, toplantıya katılan üyelerin salt çoğunluğuyla alınır. Şu kadar ki, tüzük değişikliği ve derneğin feshi kararları, ancak toplantıya katılan üyelerin üçte iki çoğunluğuyla alınabilir.</p>
+<p style="font-weight: normal;">Toplantısız veya Çağrısız Alınan Kararlar*</p>
+<p style="font-weight: normal;">Bütün üyelerin bir araya gelmeksizin yazılı katılımıyla alınan kararlar ile dernek üyelerinin tamamının bu tüzükte yazılı çağrı usulüne uymaksızın bir araya gelerek aldığı kararlar geçerlidir.      Bu şekilde karar alınması olağan toplantı yerine geçmez.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Genel Kurulun Görev ve Yetkileri</span></p>
+<p style="font-weight: normal;">Madde 9-Aşağıda yazılı hususlar genel kurulca görüşülüp karara bağlanır.   </p>
+<p style="font-weight: normal;">1-Dernek organlarının seçilmesi,</p>
+<p style="font-weight: normal;">2-Dernek tüzüğünün değiştirilmesi,</p>
+<p style="font-weight: normal;">3-Yönetim ve denetim kurulları raporlarının görüşülmesi ve yönetim kurulunun ibrası,</p>
+<p style="font-weight: normal;">4-Yönetim kurulunca hazırlanan bütçenin görüşülüp aynen veya değiştirilerek kabul edilmesi,</p>
+<p style="font-weight: normal;">5-Derneğin diğer organlarının denetlenmesi ve gerek görüldüğünde haklı sebeplerle onların görevden alınması,</p>
+<p style="font-weight: normal;">6- Üyeliğin reddi veya üyelikten çıkarma hakkında verilen yönetim kurulu kararlarına karşı yapılan itirazların incelenmesi ve karara bağlanması,</p>
+<p style="font-weight: normal;">7-Dernek için gerekli olan taşınmaz malların satın alınması veya mevcut taşınmaz malların satılması hususunda yönetim kuruluna yetki verilmesi,</p>
+<p style="font-weight: normal;">8-Yönetim kurulunca dernek çalışmaları ile ilgili olarak hazırlanacak yönetmelikleri inceleyip aynen veya değiştirilerek onaylanması,</p>
+<p style="font-weight: normal;">9-Dernek yönetim ve denetim kurullarının kamu görevlisi olmayan başkan ve üyelerine verilecek ücret ile her türlü ödenek, yolluk ve tazminatlar ile dernek hizmetleri için görevlendirilecek üyelere verilecek gündelik ve yolluk miktarlarının tespit edilmesi,</p>
+<p style="font-weight: normal;">10-Derneğin federasyona katılması ve ayrılmasının kararlaştırılması,</p>
+<p style="font-weight: normal;">11-Derneğin şubelerinin açılmasının kararlaştırılması ve açılmasına karar verilen şube ile ilgili işlemlerin yürütülmesi hususunda yönetim kuruluna yetki verilmesi,</p>
+<p style="font-weight: normal;">12-Derneğin uluslararası faaliyette bulunması, yurt dışındaki dernek ve kuruluşlara üye olarak katılması veya ayrılması,</p>
+<p style="font-weight: normal;">13-Derneğin vakıf kurması,</p>
+<p style="font-weight: normal;">14-Derneğin fesih edilmesi,</p>
+<p style="font-weight: normal;">15-Yönetim kurulunun diğer önerilerinin incelenip karara bağlanması,</p>
+<p style="font-weight: normal;">16-Derneğin en yetkili organı olarak derneğin diğer bir organına verilmemiş olan işlerin görülmesi ve yetkilerin kullanılması,</p>
+<p style="font-weight: normal;">17-Mevzuatta genel kurulca yapılması belirtilen diğer görevlerin yerine getirilmesi,</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Yönetim Kurulunun Teşkili, Görev ve Yetkileri</span></p>
+<p style="font-weight: normal;">Madde 10-Yönetim Kurulu on üç asıl ve on üç yedek üye olarak genel kurulca seçilir. Başkan kendi asil ve yedek üyeleri ile aday olur. Ayrıca aday listesinin birinci sırası Başkan olarak seçilmiş sayılır.</p>
+<p style="font-weight: normal;">Yönetim kurulu, seçimden sonraki ilk toplantısında bir kararla görev bölüşümü yaparak Başkan, Yönetim kurulunda bir Başkanvekili Genel Başkan Yardımcısı, Genel Sekreter ve yardımcısı, sayman ve asıl üye’yi belirler.</p>
+<p style="font-weight: normal;">Haber verilmesi şartı ile yönetim kurulu toplantıya çağrılabilir, Yönetim kurulu salt çoğunluk ile toplanır, toplantıya katılanların çoğunluğu ile karar verilir. Mazeretsiz olarak üç toplantıya katılmayan üye yönetimden kurulu üyeliğinden istifa etmiş sayılır.</p>
+<p style="font-weight: normal;">Yönetim kurulu asıl üyeliğinde istifa veya başka sebeplerden dolayı boşalma olduğu taktirde genel kurulda aldığı oy çokluğu sırasına göre yedek üyelerin göreve çağrılması mecburidir.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Yönetim Kurulunun Görev ve Yetkileri</span></p>
+<p style="font-weight: normal;">Yönetim kurulu aşağıdaki hususları yerine getirir.</p>
+<p style="font-weight: normal;">1-Derneği temsil etmek veya bu hususta kendi üyelerinden birine veya bir üçüncü kişiye yetki vermek,</p>
+<p style="font-weight: normal;">2-Gelir ve gider hesaplarına ilişkin işlemleri yapmak ve gelecek döneme ait bütçeyi hazırlayarak genel kurula sunmak,</p>
+<p style="font-weight: normal;">3-Derneğin çalışmaları ile ilgili yönetmelikleri hazırlayarak genel kurul onayına sunmak,</p>
+<p style="font-weight: normal;">4-Genel kurulun verdiği yetki ile taşınmaz mal satın almak, derneğe ait taşınır ve taşınmaz malları satmak, bina veya tesis inşa ettirmek, kira sözleşmesi yapmak, dernek lehine rehin ipotek veya ayni haklar tesis ettirmek,</p>
+<p style="font-weight: normal;">5-Genel kurulun verdiği yetki ile şube açmaya ilişkin işlemlerin yürütülmesini sağlamak,</p>
+<p style="font-weight: normal;">6-Derneğin şubelerinin denetlenmesini sağlamak,</p>
+<p style="font-weight: normal;">7-Gereli görülen yerlerde temsilcilik açılmasını sağlamak,</p>
+<p style="font-weight: normal;">8-Genel kurulda alınan kararları uygulamak,</p>
+<p style="font-weight: normal;">9-Her faaliyet yılı sonunda derneğin işletme hesabı tablosu veya bilanço ve gelir tablosu ile yönetim kurulu çalışmalarını açıklayan raporunu düzenlemek,  toplandığında genel kurula sunmak,</p>
+<p style="font-weight: normal;">10-Bütçenin uygulanmasını sağlamak,</p>
+<p style="font-weight: normal;">11-Derneğe üye alınması veya üyelikten çıkarılma hususlarında karar vermek,</p>
+<p style="font-weight: normal;">12-Derneğin amacını gerçekleştirmek için yetkisi dahilinde her çeşit kararı almak ve uygulamak,</p>
+<p style="font-weight: normal;">13-Mevzuatın kendisine verdiği diğer görevleri yapmak ve yetkileri kullanmak,</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Denetim Kurulunun Teşkili, Görev ve Yetkileri</span></p>
+<p style="font-weight: normal;">Madde 11-Denetim Kurulu, dokuz asıl ve dokuz yedek üye olarak genel kurulca seçilir.</p>
+<p style="font-weight: normal;">Denetim kurulu asıl üyeliğinde istifa veya başka sebeplerden dolayı boşalma olduğu takdirde genel kurulda aldığı oy çokluğu sırasına göre yedek üyelerin göreve çağrılması mecburidir.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Denetim Kurulunun Görev ve Yetkileri</span></p>
+<p style="font-weight: normal;">Denetim kurulu; derneğin, tüzüğünde gösterilen amaç ve amacın gerçekleştirilmesi için sürdürüleceği belirtilen çalışma konuları doğrultusunda faaliyet gösterip göstermediğini, defter, hesap ve kayıtların mevzuata ve dernek tüzüğüne uygun olarak tutulup tutulmadığını, dernek tüzüğünde tespit edilen esas ve usullere göre ve bir yılı geçmeyen aralıklarla denetler ve denetim sonuçlarını bir rapor halinde yönetim kuruluna ve toplandığında genel kurula sunar.</p>
+<p style="font-weight: normal;">Denetim kurulu, gerektiğinde genel kurulun toplantıya çağrılmasını isteyebilir.</p>
+<p style="font-weight: normal;">Yüksek İstişare ve Onur Kurulu: Dernek çalışmalarına maddi ve manevi katkı sağlayanları onore ve taltif etmek, daha fazla desteklerini almak, istişare etmek, fikirlerini öğrenmek amacıyla kurulan kurul ile ile ilgili çalışma yapmak ve kurulun başkanı ve üyelerin seçimi ile ilgili olarak yönetim kurulu kurulu yetkilidir.</p>
+<p style="font-weight: normal;">İdareci ve Bürokratlar Birliği Derneği Akademisi (İBA): Öğrenmek, anlatmak, incelemek, araştırmak, eğitim vermek, kurslar düzenlemek, seminer ve konferanslar düzenlemek, fikir araştırmalarında bulunmak, ar-ge ve inovasyon çalışmalarında bulunmak, bilim, kültür, spor, sanat gibi alanlarda çalışma yapmak, eserler yayınlamak, gerektiğinde anket uygulamak; eğitimci, araştırmacı, yazar, bilim adamı, basın mensupları ve meslek gruplarından oluşan akademi ile ilgili çalışmalardan yönetim kurulu başkanı ve yönetim kurulu yetkilidir.</p>
+<p style="font-weight: normal;"> İdareci ve Bürokratlar Birliği Derneği Gençlik ve Spor Kulübü: Spor kulübünün forma renkleri kırmızı, beyaz, turkuazdır. Dernek Başkanı aynı zamanda spor kulübünün de başkanıdır. Spor Kulübü ile ilgili dernek başkanı ve yönetim kurulu yetkilidir.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Derneğin Gelir Kaynakları</span></p>
+<p style="font-weight: normal;">Madde 12- Derneğin gelir kaynakları aşağıda sayılmıştır.</p>
+<p style="font-weight: normal;">1-Üye aidatı: Üyelerden giriş ödentisi olarak yönetim kurulu yetkilidir. Üye aidatı yönetim kurulu asil üyeleri için 50 TL, dernek üyesi temsilci üyeler için 15, diğer üyeler için 10 TL’dir.</p>
+<p style="font-weight: normal;">2-Şube ödentisi: Derneğin genel giderlerini karşılamak üzere şubeler tarafından tahsil edilen üye ödentilerinin %50’si altı ayda bir genel merkeze gönderilir,</p>
+<p style="font-weight: normal;">3-Gerçek ve tüzel kişilerin kendi isteği ile derneğe yaptıkları bağış ve yardımlar,</p>
+<p style="font-weight: normal;">4-Dernek tarafından tertiplenen çay ve yemekli toplantı, gezi ve eğlence, temsil, konser, spor yarışması ve konferans gibi faaliyetlerden sağlanan gelirler,</p>
+<p style="font-weight: normal;">5-Derneğin mal varlığından elde edilen gelirler,</p>
+<p style="font-weight: normal;">6-Yardım toplama hakkındaki mevzuat hükümlerine uygun olarak toplanacak bağış ve yardımlar,</p>
+<p style="font-weight: normal;">7-Derneğin, amacını gerçekleştirmek için ihtiyaç duyduğu geliri temin etmek amacıyla giriştiği ticari faaliyetlerden elde edilen kazançlar,</p>
+<p style="font-weight: normal;">8-Diğer gelirler.</p>
+<p style="font-weight: normal;">Derneğin Defter Tutma Esas ve Usulleri ve Tutulacak Defterler *</p>
+<p style="font-weight: normal;">Madde 13-Defter tutma esasları;</p>
+<p style="font-weight: normal;">Dernekte, işletme hesabı esasına göre defter tutulur. Ancak, yıllık brüt gelirin Dernekler Yönetmeliğinin 31. Maddesinde belirtilen haddi aşması durumunda takip eden hesap döneminden başlayarak bilanço esasına göre defter tutulur.</p>
+<p style="font-weight: normal;">Bilanço esasına geçilmesi durumunda, üst üste iki hesap döneminde yukarıda belirtilen haddin altına düşülürse, takip eden yıldan itibaren işletme hesabı esasına dönülebilir.</p>
+<p style="font-weight: normal;">Yukarıda belirtilen hadde bağlı kalmaksızın yönetim kurulu kararı ile bilanço esasına göre defter tutulabilir.</p>
+<p style="font-weight: normal;">Derneğin ticari işletmesi açılması durumunda, bu ticari işletme için, ayrıca Vergi Usul Kanunu hükümlerine göre defter tutulur.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Kayıt Usulü</span></p>
+<p style="font-weight: normal;">Derneğin defter ve kayıtları Dernekler Yönetmeliğinde belirtilen usul ve esasa uygun olarak tutulur.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Tutulacak Defterler</span></p>
+<p style="font-weight: normal;">Dernekte, aşağıda yazılı defterler tutulur.</p>
+<p style="font-weight: normal;">a)İşletme hesabı esasında tutulacak defterler ve uyulacak esaslar aşağıdaki gibidir:</p>
+<p style="font-weight: normal;">1-Karar Defteri: Yönetim kurulu kararları tarih ve numara sırasıyla bu deftere yazılır ve kararların altı toplantıya katılan üyelerce imzalanır.</p>
+<p style="font-weight: normal;">2-Üye Kayıt Defteri: Derneğe üye olarak girenlerin kimlik bilgileri, derneğe giriş ve çıkış tarihleri bu deftere işlenir. Üyelerin ödedikleri giriş ve yıllık aidat miktarları bu deftere işlenebilir.</p>
+<p style="font-weight: normal;">3-Evrak Kayıt Defteri: Gelen ve giden evraklar, tarih ve sıra numarası ile bu deftere kaydedilir. Gelen evrakın asılları ve giden evrakın kopyaları dosyalanır. Elektronik posta yoluyla gelen veya giden evraklar çıktısı alınmak suretiyle saklanır.</p>
+<p style="font-weight: normal;">4-İşletme Hesabı Defteri: Dernek adına alınan gelirler ve yapılan giderler açık ve düzenli olarak bu deftere işlenir.</p>
+<p style="font-weight: normal;">5-Alındı Belgesi Kayıt Defteri: Alındı belgelerinin seri ve sıra numaraları, bu belgeleri alan ve iade edelerin adı, soyadı ve imzaları ile aldıkları ve iade ettikleri tarihler bu deftere işlenir.</p>
+<p style="font-weight: normal;">6-Demirbaş Defteri: Derneğe ait demirbaşların edinme tarihi ve şekli ile kullanıldıkları veya verildikleri yerler ve kullanım sürelerini dolduranların kayıttan düşürülmesi bu deftere işlenir.</p>
+<p style="font-weight: normal;">Alındı Belgesi Kayıt Defteri ile Demirbaş Defterinin tutulması zorunlu değildir.</p>
+<p style="font-weight: normal;">b)Bilanço esasında tutulacak defterler ve uyulacak esaslar aşağıdaki gibidir:</p>
+<p style="font-weight: normal;">1-(a) bendinin 1, 2 ve 3 üncü alt bentlerinde kayıtlı defterler bilanço esasında defter tutulması durumunda da tutulur.</p>
+<p style="font-weight: normal;">2-Yevmiye Defteri ve Büyük Defter: Bu defterlerin tutulma usulü ile kayıt şekli Vergi Usul Kanunu ile bu Kanununun Maliye Bakanlığına verdiği yetkiye istinaden yayımlanan Muhasebe Sistemi Uygulama Genel Tebliğleri esaslarına göre yapılır.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Defterlerin Tasdiki</span></p>
+<p style="font-weight: normal;">Dernekte, tutulması zorunlu olan defterler (Büyük Defter hariç), kullanmaya başlamadan önce il dernekler müdürlüğüne veya notere tasdik ettirilir. Bu defterlerin kullanılmasına sayfaları bitene kadar devam edilir ve defterlerin ara tasdiki yapılmaz. Ancak, bilanço esasına göre tutulan Yevmiye Defteri’nin kullanılacağı yıldan önce gelen son ayda, her yıl yeniden tasdik ettirilmesi zorunludur.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Gelir Tablosu ve Bilanço Düzenlenmesi</span></p>
+<p style="font-weight: normal;">İşletme hesabı esasına göre kayıt tutulması durumunda yıl sonlarında (31 Aralık) (Dernekler Yönetmeliği EK-16’da belirtilen) “İşletme Hesabı Tablosu” düzenlenir. Bilanço esasına göre defter tutulması durumunda ise, yılsonlarında (31 Aralık), Maliye Bakanlığınca yayımlanan Muhasebe Sistemi Uygulama Genel Tebliğlerini esas alarak bilanço ve gelir tablosu düzenlenir.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Derneğin Gelir ve Gider İşlemleri</span></p>
+<p style="font-weight: normal;">Madde 14-Gelir ve gider belgeleri;</p>
+<p style="font-weight: normal;">Dernek gelirleri, (Dernekler Yönetmeliği EK- 17’de örneği bulunan) “Alındı Belgesi” ile tahsil edilir. Dernek gelirlerinin bankalar aracılığı ile tahsili halinde banka tarafından düzenlenen hesap belgesi veya hesap özeti gibi belgeler alındı belgesi yerine geçer.</p>
+<p style="font-weight: normal;">Dernek giderleri ise fatura, perakende satış fişi, serbest meslek makbuzu gibi harcama belgeleri ile yapılır. Ancak derneğin, Gelir Vergisi Kanununun 94’üncü maddesi kapsamında bulunan ödemeleri için Vergi Usul Kanunu hükümlerine göre gider pusulası, bu kapsamda da bulunmayan ödemeleri için (Dernekler Yönetmeliği EK-13’te örneği buluna) “Gider Makbuzu” veya “Banka Dekontu” gibi belgeler harcama belgesi olarak kullanılır.</p>
+<p style="font-weight: normal;">Dernek tarafından kişi, kurum veya kuruluşlara yapılacak bedelsiz mal ve hizmet teslimleri (Dernekler Yönetmeliği EK-14’te örneği bulunan) “Ayni Yardım Teslim Belgesi” ile yapılır. Kişi, kurum veya kuruluşlar tarafından derneğe yapılacak bedelsiz mal ve hizmet teslimleri ise (Dernekler Yönetmeliği EK-15’te örneği bulunan) “Ayni Bağış Alındı Belgesi” ile kabul edilir.</p>
+<p style="font-weight: normal;">Bu belgeler; Ek-13, Ek-14 ve Ek-15’te gösterilen biçim ve ebatta, müteselsil seri ve sıra numarası taşıyan, kendinden karbonlu elli asıl ve elli koçan yaprağından meydana gelen ciltler veya elektronik sistemler ve yazı makineleri aracılığıyla yazdırılacak form veya sürekli form şeklinde bastırılır. Form veya sürekli form şeklinde bastırılacak belgelerin, belirtilen nitelikte olması zorunludur.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Alındı Belgeleri</span></p>
+<p style="font-weight: normal;">Dernek gelirlerinin tahsilinde kullanılacak “Alındı Belgeleri” (Dernekler Yönetmeliği EK- 17’de gösterilen biçim ve ebatta) yönetim kurulu kararıyla, matbaaya bastırılır.</p>
+<p style="font-weight: normal;">Alındı belgelerinin bastırılması ve kontrolü, matbaadan teslim alınması, deftere kaydedilmesi, eski ve yeni saymanlar arasında devir teslimi ve alındı belgesi ile dernek adına gelir tahsil edecek kişi veya kişiler tarafından bu alındı belgelerinin kullanımına ve toplanılan gelirlerin teslimine ilişkin hususlarda Dernekler Yönetmeliğinin ilgili hükümlerine göre hareket edilir.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Yetki Belgesi</span></p>
+<p style="font-weight: normal;">Yönetim kurulu asıl üyeleri hariç, dernek adına gelir tahsil edecek kişi veya kişiler, yetki süresi de belirtilmek suretiyle, yönetim kurulu kararı ile tespit edilir. Gelir tahsil edecek kişilerin açık kimliği, imzası ve fotoğraflarını ihtiva eden (Dernekler Yönetmeliği Ek-19’da yer alan) “Yetki Belgesi” dernek tarafından iki nüsha olarak düzenlenerek, dernek yönetim kurulu başkanınca onaylanır. Yönetim kurulu asıl üyeleri yetki belgesi olmadan gelir tahsil edebilir.</p>
+<p style="font-weight: normal;">Yetki belgelerinin süresi yönetim kurulu tarafından en çok bir yıl olarak belirlenir. Süresi biten yetki belgeleri birinci fıkraya göre yenilenir. Yetki belgesinin süresinin bitmesi veya adına yetki belgesi düzenlenen kişinin görevinden ayrılması, ölümü, işine veya görevine son verilmesi gibi hallerde, verilmiş olan yetki belgelerinin dernek yönetim kuruluna bir hafta içinde teslimi zorunludur. Ayrıca, gelir toplama yetkisi yönetim kurulu kararı ile her zaman iptal edilebilir.”</p>
+<p style="font-weight: normal;">Gelir ve Gider Belgelerinin Saklama Süresi;</p>
+<p style="font-weight: normal;">Defterler hariç olmak üzere, dernek tarafından kullanılan alındı belgeleri, harcama belgeleri ve diğer belgeler özel kanunlarda belirtilen süreler saklı kalmak üzere, kaydedildikleri defterlerdeki sayı ve tarih düzenine uygun olarak 5 yıl süreyle saklanır.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Beyanname Verilmesi</span></p>
+<p style="font-weight: normal;">Madde 15-, Derneğin, bir önceki yıla ait faaliyetleri ile gelir ve gider işlemlerinin yıl sonu itibarıyla sonuçlarına ilişkin (Dernekler Yönetmeliği EK-21’de sunulan) “Dernek Beyannamesi” dernek yönetim kurulu tarafından onaylandıktan sonra, her takvim yılının ilk dört ayı içinde dernek başkanı tarafından ilgili mülki idare amirliğine verilir.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Bildirim Yükümlülüğü</span></p>
+<p style="font-weight: normal;">Madde 16-Mülki amirliğe yapılacak bildirimler;</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Genel Kurul Sonuç Bildirimi</span></p>
+<p style="font-weight: normal;">Olağan veya olağanüstü genel kurul toplantılarını izleyen otuz gün içinde, yönetim ve denetim kurulları ile diğer organlara seçilen asıl ve yedek üyeleri içeren (Dernekler Yönetmeliği Ek-3’te yer alan) Genel Kurul Sonuç Bildirimi mülki idare amirliğine verilir. Genel kurul toplantısında tüzük değişikliği yapılması halinde; genel kurul toplantı tutanağı, tüzüğün değişen maddelerinin eski ve yeni şekli, her sayfası yönetim kurulu üyelerinin salt çoğunluğunca imzalanmış dernek tüzüğünün son şekli, bu fıkrada belirtilen süre içinde ve bir yazı ekinde mülki idare amirliğine verilir.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Taşınmazların Bildirilmesi</span></p>
+<p style="font-weight: normal;">Derneğin edindiği taşınmazlar tapuya tescilinden itibaren otuz gün içinde (Dernekler Yönetmeliği EK-26’da sunulan) “Taşınmaz Mal Bildirimi”ni doldurmak suretiyle mülki idare amirliğine bildirilir.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Yurtdışından Yardım Alma Bildirimi</span></p>
+<p style="font-weight: normal;">Dernek tarafından, yurtdışından yardım alınacak olması durumunda yardım alınmadan önce (Dernekler Yönetmeliği EK-4’te belirtilen) “Yurtdışından Yardım Alma Bildirimi” doldurup mülki idare amirliğine bildirimde bulunulur.</p>
+<p style="font-weight: normal;">Nakdi yardımların bankalar aracılığıyla alınması ve kullanılmadan önce bildirim şartının yerine getirilmesi zorunludur.</p>
+<p style=""><span style="font-weight: bold;">Değişikliklerin Bildirilmesi</span></p>
+<p style="font-weight: normal;">Derneğin yerleşim yerinde meydana gelen değişiklik (Dernekler Yönetmeliği EK-24’te belirtilen) “Yerleşim Yeri Değişiklik Bildirimi”; genel kurul toplantısı dışında dernek organlarında meydana gelen değişiklikler (Dernekler Yönetmeliği EK-25’te belirtilen) “Dernek Organlarındaki Değişiklik Bildirimi” doldurulmak suretiyle, değişikliği izleyen otuz gün içinde mülki idare amirliğine bildirilir.</p>
+<p style="font-weight: normal;">Dernek tüzüğünde yapılan değişiklikler de tüzük değişikliğinin yapıldığı genel kurul toplantısını izleyen otuz gün içinde, genel kurul sonuç bildirimi ekinde mülki idare amirliğine bildirilir.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Derneğin İç Denetimi</span></p>
+<p style="font-weight: normal;">Madde 17-Dernekte genel kurul, yönetim kurulu veya denetim kurulu tarafından iç denetim yapılabileceği gibi, bağımsız denetim kuruluşlarına da denetim yaptırılabilir. Genel kurul, yönetim kurulu veya bağımsız denetim kuruluşlarınca denetim yapılmış olması, denetim kurulunun yükümlülüğünü ortadan kaldırmaz.</p>
+<p style="font-weight: normal;">Denetim kurulu tarafından en geç yılda bir defa derneğin denetimi gerçekleştirilir. Genel kurul veya yönetim kurulu, gerek görülen hallerde denetim yapabilir veya bağımsız denetim kuruluşlarına denetim yaptırabilir.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Derneğin Borçlanma Usulleri   </span></p>
+<p style="font-weight: normal;">Madde 18-Dernek amacını gerçekleştirmek ve faaliyetlerini yürütebilmek için ihtiyaç duyulması halinde yönetim kurulu kararı ile borçlanma yapabilir. Bu borçlanma kredili mal ve hizmet alımı konularında olabileceği gibi nakit olarak ta yapılabilir. Ancak bu borçlanma, derneğin gelir kaynakları ile karşılanamayacak miktarlarda ve derneği ödeme güçlüğüne düşürecek nitelikte yapılamaz.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Derneğin Şubelerinin Kuruluşu</span></p>
+<p style="font-weight: normal;">Madde 19-Dernek, gerekli görülen yerlerde genel kurul kararıyla şube açabilir. Bu amaçla dernek yönetim kurulunca yetki verilen en az üç kişilik kurucular kurulu, Dernekler Yönetmeliği’nde belirtilen şube kuruluş bildirimini ve gerekli belgeleri, şube açılacak yerin en büyük mülki amirliğine verir.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Şubelerin Görev ve Yetkileri</span></p>
+<p style="font-weight: normal;">Madde 20-Şubeler, tüzel kişiliği olamayan, dernek amaç ve hizmet konuları doğrultusunda özerk faaliyetlerde bulunmakla görev ve yetkili, tüm işlemlerinden doğan alacak ve borçlarından ötürü kendisinin sorumlu olduğu dernek iç örgütüdür.</p>
+<p style="font-weight: normal;"><span style="font-weight: bold;">Şubelerin Organları ve Şubelere Uygulanacak Hükümler</span></p>
+<p style="font-weight: normal;">Madde 21- Şubenin organları, genel kurul, yönetim kurulu ve denetim kurulu’dur.</p>
+<p style="font-weight: normal;">Genel kurul, şubenin kayıtlı üyelerinden oluşur. Yönetim kurulu, beş asıl ve beş yedek, denetim kurulu ise üç asıl ve üç yedek üye olarak şube genel kurulunca seçilir.</p>
+<p style="font-weight: normal;">Bu organların görev ve yetkileri ile bu tüzükte yer alan dernekle ilgili diğer hükümler, mevzuatın öngördüğü çerçevede şube’de de uygulanır.</p>
+<p style="font-weight: normal;">Şubelerin Genel Kurullarının Toplanma Zamanı ve Genel Merkez Genel Kurulunda Nasıl Temsil Edileceği</p>
+<p style="font-weight: normal;">Madde 22-Şubeler, genel kurul olağan toplantılarını genel merkez genel kurulu toplantısından en az iki ay önce bitirmek zorundadırlar.</p>
+<p style="font-weight: normal;">Şubelerin olağan genel kurulu, 3 yılda bir, Kasım ayı içeresinde, şube yönetim kurulunca belirlenecek gün yer ve saatte toplanır.</p>
+<p style="font-weight: normal;">Şubeler, genel kurul sonuç bildiriminin bir örneğini toplantının yapıldığı tarihi izleyen otuz gün içinde mülki idare amirliğine ve dernek genel merkezine bildirmek zorundadırlar.</p>
+<p style="font-weight: normal;">Şubeler, şube sayısı üçe kadar genel merkez genel kurulunda tüm üyelerin doğrudan katılımı ile şube sayısı üçten fazla olması durumunda ise, şubede kayıtlı her yirmi (20) üye için bir (1), arta kalan üye sayısı 10’dan fazla ise bu üyeler içinde bir olmak üzere şube genel kurulunda seçilecek delegeler aracılığı ile genel merkez genel kuruluna katılma hakkına sahiptir.</p>
+<p style="font-weight: normal;">Genel merkez genel kuruluna en son şube genel kurulunda seçilen delegeler katılır. Genel merkez yönetim ve denetim kurulu üyeleri genel merkez genel kuruluna katılır, ancak şube adına delege seçilmedikleri sürece oy kullanamazlar.</p>
+<p style="font-weight: normal;">Şubelerin yönetim veya denetim kurulunda görevli olanlar genel merkez yönetim veya denetim kuruluna seçildiklerinde şubedeki görevinden ayrılırlar.</p>
+<p style=""><span style="font-weight: bold;">Temsilcilik Açma</span></p>
+<p style="font-weight: normal;">Madde 23-Dernek, gerekli gördüğü yerlerde dernek faaliyetlerini yürütmek amacıyla yönetim kurulu kararıyla temsilcilik açabilir. Temsilciliğin adresi, yönetim kurulu kararıyla temsilci olarak görevlendirilen kişi veya kişiler tarafından o yerin mülkî idare amirliğine yazılı olarak bildirilir. Temsilcilik, dernek genel kurulunda temsil edilmez. Şubeler temsilcilik açamazlar.</p>
+<p style=""><span style="font-weight: bold;">Tüzüğün Ne Şekilde Değiştirileceği</span></p>
+<p style="font-weight: normal;">Madde 24-Tüzük değişikliği genel kurul kararı ile yapılabilir.</p>
+<p style="font-weight: normal;">Genel kurulda tüzük değişikliği yapılabilmesi için genel kurula katılma ve oy kullanma hakkı bulunan üyelerin 2/3 çoğunluğu aranır. Çoğunluğun sağlanamaması sebebiyle toplantının ertelenmesi durumunda ikinci toplantıda çoğunluk aranmaz. Ancak, bu toplantıya katılan üye sayısı, yönetim ve denetim kurulları üye tam sayısının iki katından az olamaz.</p>
+<p style="font-weight: normal;">Tüzük değişikliği için gerekli olan karar çoğunluğu toplantıya katılan ve oy kullanma hakkı bulunan üyelerin oylarının 2/3’ü’dür. Genel kurulda tüzük değişikliği oylaması açık olarak yapılır.</p>
+<p style=""><span style="font-weight: bold;">Derneğin Feshi ve Mal Varlığının Tasfiye Şekli</span></p>
+<p style="font-weight: normal;">Madde 25-Genel kurul, her zaman derneğin feshine karar verebilir.</p>
+<p style="font-weight: normal;">Genel kurulda fesih konusunun görüşülebilmesi için genel kurula katılma ve oy kullanma hakkı bulunan üyelerin 2/3 çoğunluğu aranır. Çoğunluğun sağlanamaması sebebiyle toplantının ertelenmesi durumunda ikinci toplantıda çoğunluk aranmaz. Ancak, bu toplantıya katılan üye sayısı, yönetim ve denetim kurulları üye tam sayısının iki katından az olamaz.</p>
+<p style="font-weight: normal;">Fesih kararının alınabilmesi için gerekli olan karar çoğunluğu toplantıya katılan ve oy kullanma hakkı bulunan üyelerin oylarının 2/3’ü’dür. Genel kurulda fesih kararı oylaması açık olarak yapılır.</p>
+<p style=""><span style="font-weight: bold;">Tasfiye İşlemleri</span></p>
+<p style="font-weight: normal;">Genel kurulca fesih kararı verildiğinde, derneğin para, mal ve haklarının tasfiyesi son yönetim kurulu üyelerinden oluşan tasfiye kurulunca yapılır. Bu işlemlere, feshe ilişkin genel kurul kararının alındığı veya kendiliğinden sona erme halinin kesinleştiği tarihten itibaren başlanır. Tasfiye süresi içinde bütün işlemlerde dernek adında “Tasfiye Halinde İdareci ve Bürokratlar Birliği Derneği” ibaresi kullanılır.</p>
+<p style="font-weight: normal;">Tasfiye kurulu, mevzuata uygun olarak derneğin para, mal ve haklarının tasfiyesi işlemlerini baştan sonuna kadar tamamlamakla görevli ve yetkilidir. Bu kurul, önce derneğin hesaplarını inceler. İnceleme esnasında derneğe ait defterler, alındı belgeleri, harcama belgeleri, tapu ve banka kayıtları ile diğer belgelerinin tespiti yapılarak varlık ve yükümlülükleri bir tutanağa bağlanır. Tasfiye işlemeleri sırasında derneğin alacaklılarına çağrıda bulunulur ve varsa malları paraya çevrilerek alacaklılara ödenir. Derneğin alacaklı olması durumunda alacaklar tahsil edilir. Alacakların tahsil edilmesi ve borçların ödenmesinden sonra kalan tüm para,  mal ve hakları, genel kurulda belirlenen yere devredilir. Genel kurulda, devredilecek yer belirlenmemişse derneğin bulunduğu ildeki amacına en yakın ve fesih edildiği tarihte en fazla üyeye sahip derneğe devredilir.</p>
+<p style="font-weight: normal;">Tasfiyeye ilişkin tüm işlemler tasfiye tutanağında gösterilir ve tasfiye işlemleri, mülki idare amirliklerince haklı bir nedene dayanılarak verilen ek süreler hariç üç ay içinde tamamlanır.</p>
+<p style="font-weight: normal;">Derneğin para, mal ve haklarının tasfiye ve intikal işlemlerinin tamamlanmasını müteakip tasfiye kurulu tarafından durumun yedi gün içinde bir yazı ile dernek merkezinin bulunduğu yerin mülki idare amirliğine bildirilmesi ve bu yazıya tasfiye tutanağının da eklenmesi zorunludur.</p>
+<p style="font-weight: normal;">Derneğin defter ve belgelerini tasfiye kurulu sıfatıyla son yönetim kurulu üyeleri saklamakla görevlidir. Bu görev, bir yönetim kurulu üyesine de verilebilir. Bu defter ve belgelerin saklanma süresi beş yıldır.</p>
+<p style=""><span style="font-weight: bold;">Hüküm Eksikliği</span></p>
+<p style="font-weight: normal;">Madde 26-Bu tüzükte belirtilmemiş hususlarda Dernekler Kanunu, Türk Medeni Kanunu ve bu kanunlara atfen çıkartılmış olan Dernekler Yönetmeliği ve ilgili diğer mevzuatın dernekler hakkındaki hükümleri uygulanır.</p>
+<p style=""><span style="font-weight: bold;">Yönetim Kurulu Üyelerinin;</span></p>
+<p style="font-weight: normal;">Adı ve Soyadı: Görev Unvanı              : _______</p></div>
+</div>
+</div> <!-- .panel .panel-primary -->
+</div> <!-- .main --> </div>
+</div>
+</div>
+</div>
+<footer>
+<div class="footer-top">
+<div class="container">
+<div class="row">
+<div class="col-md-2 hidden-xs hidden-sm">
+<img alt="" class="img-responsive" src="data/6397857-logo.png"/>
+</div>
+<div class="col-md-7">
+<div class="row">
+<div class="col-md-4">
+<ul>
+<li>GÜNCEL</li>
+<li><a href="anasayfa.html">Haberler</a></li>
+<li><a href="#">Etkinlikler</a></li>
+</ul>
+</div>
+<div class="col-md-4">
+<ul>
+<li>MULTİMEDYA</li>
+<li><a href="#">Fotoğraf Galerisi</a></li>
+<li><a href="#">Video Galerisi</a></li>
+</ul>
+</div>
+<div class="col-md-4">
+<ul>
+<li>İLETİŞİM</li>
+<li><a href="iletisim.html">İletişim Bilgileri</a></li>
+<li><a href="iletisim.html">İletişim Formu</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<ul>
+<li>E-BÜLTEN</li>
+<li>
+<form action="#" class="form-inline" method="post">
+<div class="row">
+<div class="form-group col-md-8">
+<div class="input-group">
+<label class="sr-only" for="txtemail"></label>
+<input class="form-control" id="txtemail" name="eposta" placeholder="E-Mail Adresi..." type="text"/>
+<input name="ebulten" type="hidden" value="1"/>
+</div>
+</div>
+<button class="btn btn-primary" type="submit">Kayıt Ol</button>
+</div>
+</form>
+</li>
+<li>
+<div class="pull-left">
+<a href="#" title="Facebook Sayfamız"><img src="themes/burokratlar/tema/images/icon-facebook.png"/></a>
+</div>
+<div class="pull-left sosyal">
+<a href="#" title="Twitter Sayfamız"><img src="themes/burokratlar/tema/images/icon-twitter.png"/></a>
+</div>
+<div class="pull-left sosyal">
+<a href="#" title="Google+ Sayfamız"><img src="themes/burokratlar/tema/images/icon-gplus.png"/></a>
+</div>
+<div class="clearfix"></div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div> <!-- .footer-top -->
+<div class="footer-bottom">
+<div class="container">
+<div class="copyright pull-left">
+<p>© 2015 İdareci ve Bürokratlar Birliği Derneği Derneği Tüm Hakları Saklıdır.</p>
+</div>
+<div class="pull-right">
+								Biz Birlikte Güçlüyüz
+</div>
+</div>
+</div>
+</footer>
+<div class="clearfix"></div>
+</body>
+</html>

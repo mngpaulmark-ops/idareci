@@ -1,0 +1,51 @@
+Traceback (most recent call last):
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\turga\OneDrive\Desktop\b�rokratlar birli�i site yede�i\burokratlarbirligi.org\app.py", line 377, in decorated_function
+    return f(*args, **kwargs)
+  File "C:\Users\turga\OneDrive\Desktop\b�rokratlar birli�i site yede�i\burokratlarbirligi.org\app.py", line 2655, in admin_temsilcilik_delete
+    regenerate_temsilcilik_html()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\turga\OneDrive\Desktop\b�rokratlar birli�i site yede�i\burokratlarbirligi.org\app.py", line 775, in regenerate_temsilcilik_html
+    reps = Temsilcilik.query.order_by(Temsilcilik.city_name).all()
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\sqlalchemy\orm\query.py", line 2711, in all
+    return self._iter().all()  # type: ignore
+           ~~~~~~~~~~^^
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\sqlalchemy\orm\query.py", line 2864, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+        params,
+        ^^^^^^^
+        execution_options={"_sa_orm_load_options": self.load_options},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\sqlalchemy\orm\session.py", line 2373, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\sqlalchemy\orm\session.py", line 2259, in _execute_internal
+    bind = self.get_bind(**bind_arguments)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask_sqlalchemy\session.py", line 53, in get_bind
+    engines = self._db.engines
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask_sqlalchemy\extension.py", line 690, in engines
+    raise RuntimeError(
+    ...<3 lines>...
+    )
+RuntimeError: The current Flask app is not registered with this 'SQLAlchemy' instance. Did you forget to call 'init_app', or did you create multiple 'SQLAlchemy' instances?

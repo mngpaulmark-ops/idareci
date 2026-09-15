@@ -1,0 +1,596 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="tr" xml:lang="tr" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#"><head>
+<base href="/"/>
+<title> Hakkımızda İdareci ve Bürokratlar Birliği Derneği</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content=" -İdareci ve Bürokratlar Birliği Derneği 2009" name="description"/>
+<meta content="İdareci ve Bürokratlar Birliği Derneği" name="keywords"/>
+<meta content="İdareci ve Bürokratlar Birliği Derneği" name="Author"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content=" Hakkımızda / İdareci ve Bürokratlar Birliği Derneği" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="data/logo.jpg" property="og:image"/>
+<meta content="" property="og:url"/>
+<meta content="https://burokratlarbirligi.org" property="og:site_name"/>
+<meta content=" - İdareci ve Bürokratlar Birliği Derneği 2009" property="og:description"/>
+<meta content="facebook.com/yucel.can.796" property="fb:admins"/>
+<meta content="210306796005157" property="fb:app_id"/>
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="tema/js/pngfix.js"></script>
+<![endif]-->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Oswald&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@500&amp;family=Barlow:wght@200;500;700&amp;family=Cabin:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;300;500&amp;display=swap" rel="stylesheet"/>
+<!-- <link rel="stylesheet" href="themes/burokratlar/tema/css/all.min.css">
+<![endif]-->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<script src="themes/burokratlar/tema/js/jquery.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/jquery-migrate.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/jquery.bgswitcher.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/jquery.cycle.all.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.slideshoww').cycle({
+		fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+	});
+});
+</script>
+<style type="text/css">
+.slideshoww { max-width:100%; left:0px;  margin:0 auto; top:-1px; background-color:#FFF; }
+.slideshoww img {position: absolute; top: 0px; left: 0px; z-index:-999; max-width:100%; background-color: #eee; }
+</style>
+<script src="panel/tema/js/datepicker/js/jquery-ui-1.8.17.custom.min.js"></script>
+<script src="themes/burokratlar/tema/js/jq_maskedinput.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function($) {
+$("#phone").mask("0(999) 999-9999");
+$(".saat").mask("99:99");
+$("#securitycode").mask("9999");
+})
+</script>
+<link charset="utf-8" href="themes/burokratlar/tema/js/validator/validationEngine.jquery.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="themes/burokratlar/tema/js/validator/jquery.validationEngine-tr.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/validator/jquery.validationEngine.js" type="text/javascript"></script>
+<script type="text/javascript"> 
+    $(document).ready(function() {
+        $("#Form").validationEngine()
+    })
+</script>
+<script src="themes/burokratlar/tema/js/jcarousellite.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    jQuery("#kayan_alan").jCarouselLite({
+        vertical: true, //dikey yapmak için
+        hoverPause:true, //üzerine gelince durasý için
+        visible: 5, //3 adet gösterilmesi için
+        auto:1500, //bekleme süresi
+        speed:1000, //hareket hýzý
+        btnPrev: "#onceki", //onceki yazi
+        btnNext: "#sonraki", //sonraki yazi
+		mouseWheel: true
+    });
+});
+</script>
+<script src="themes/burokratlar/tema/js/jqcycle_all.js" type="text/javascript"></script>
+<script type="text/javascript"> 
+    $(document).ready(function() {
+        $('.solalanreresim').cycle({
+            fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+            timeout:'3000'
+        });
+        
+        $('.ustalanreresim').cycle({
+            fx: 'zoom', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+            timeout:'3000'
+        });
+        
+        $('.yakinetkinlikler .slide').cycle({
+            fx: 'scrollUp', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+            timeout:'5000',
+            resizeContainer: false,
+            cleartype: false,
+            slideResize: false
+        });
+    });
+    $(window).load(function() {
+        var slideshow = $(".slideshow").cycle({
+            fx: "fade",
+            timeout: 12000,
+            prev: ".slider-prev",
+            next: ".slider-next",
+            pager:  ".slider-pager",
+            fit:  2,
+            
+            pagerAnchorBuilder: function(idx, slide) {
+                return '<li><a href="#">'+(idx+1)+'</a></li>';
+            },
+
+        });
+    });
+</script>
+<script src="themes/burokratlar/tema/js/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/fancybox/jquery.fancybox.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/fancybox/helpers/jquery.fancybox-media.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/fancybox/fancybox/jquery.mousewheel-3.0.2.pack.js" type="text/javascript"></script>
+<link href="themes/burokratlar/tema/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" rel="stylesheet"/>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancybox").fancybox({
+		autoSize	: true,
+		openEffect	: 'none',
+		closeEffect	: 'none',
+		minHeight : 500
+		});
+	});
+</script>
+<script src="themes/burokratlar/tema/js/lightbox/jq_colorbox_lightbox.js" type="text/javascript"></script>
+<link href="themes/burokratlar/tema/js/lightbox/colorbox.css" media="screen" rel="stylesheet"/>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+	  $('a[rel*=colorbox]').colorbox();
+	  $('a[rel*=fotogaleri]').colorbox();
+	  $(".renkpaleti a").colorbox();
+	});
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.nav li').hover(
+            function () {
+                //alt menüleri göster
+
+                $('ul', this).stop(true,true,true).slideDown(200);
+
+            },
+            function () {
+                //alt menüleri gizle
+                $('ul', this).stop(true,true,true).slideUp(200);
+            }
+        );
+        
+        //alt kısım opacity efekti içindir
+        $('.nav li ul li').hover(
+            function () {
+                //üzerine gelince opacity
+                $(this).stop(true,true,true).animate({
+                    opacity: 1
+                  }, 300 );
+
+            },
+            function () {
+                //üzerinden gidince opacity
+                $(this).stop(true,true,true).animate({
+                    opacity: 0.9
+                  }, 300 );
+            }
+        );
+    });
+    function initMenu() {
+        $('#left-menu ul').hide();
+        $('#left-menu li a').click(
+        function() {
+            var checkElement = $(this).next();
+            if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+                checkElement.slideUp('normal');
+                return false;
+            }
+            if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+                if ( $(this).attr('class') != 'altmenu' ) {
+                    //$('#left-menu ul:visible').slideUp('normal');
+                }
+                checkElement.slideDown('normal');
+                return false;
+            }
+          }
+        );
+      }
+    $(document).ready(function() { initMenu(); });
+</script>
+<script src="themes/burokratlar/tema/js/tasarim/etkinlik_takvimi/js/jquery.eventCalendar.js"></script>
+<link href="themes/burokratlar/tema/js/tasarim/etkinlik_takvimi/css/eventCalendar.css" rel="stylesheet"/>
+<link href="themes/burokratlar/tema/js/tasarim/etkinlik_takvimi/css/eventCalendar_theme_responsive.css" rel="stylesheet"/>
+<script type="text/javascript">
+    $(document).ready(function() {     
+		
+		var eventsInline = [
+		{ "date": "1457179200000", "saat": "14:00", "type": "meeting", "title": "28 ŞUBAT YAŞAYAN BİRİ", "description": "GENİŞ BİR BAKIŞ AÇISIYLA 28 ŞUBAT BU HAFTAKİ KONFERANS KONUMUZ VE KONUĞUMUZ 54. HÜKÜMETİN DEVLET BAKANI VE AK PARTİ ETİK KURULU BAŞKANI SAYIN AHMET CEMİL TUNÇ", "url": "#" },
+		{ "date": "1457775936000", "saat": "14:00", "type": "meeting", "title": "MİLLET ANAYASASINA", "description": "Dost meclisinin bu haftaki konuğu Cumhurbaşkanı Başdanışmanı Sayın Av. Şeref Malkoç Katılacaktır.", "url": "#" },
+		{ "date": "1460228400000", "saat": "", "type": "meeting", "title": "SULTAN II ABDÜLHAMİD'DEN RECEP TAYYİP ERDOĞAN'A", "description": "BU KONFERANS ÇOK KONUŞULACAK.  Sultan Abdülhamit'e ait bilinmeyenler,", "url": "" },
+		{ "date": "1459364400000", "saat": "", "type": "meeting", "title": "Terör,  Göç ve Dokunulmazlık", "description": "ŞİMDİDEN BU TARİHİ VE SAATİ NOT EDIN...Terörün gerçek yüzü nedir, hedefi kimdir?Terör örgütleri ve hamileri kimlerdir?Terör örgütünün iç ve dış bağlantıları...Neden terör daha çok belli bir coğrafyadadır?Terõrün zararaları, tehlikeleri, etkileri, bilinmeyenleri....Teröre dair daha neler neler...Göç...Göç ve terörün bağlantıları...Göç sosyolojidi ve psikolojisi...İç ve dış göç...Dokunulmazlıklar...Dokunulmazlıkların ölçüsü, sınırı, bağlantıları...Terör, göç ve dokunulmazlıkların bağlantı ve ilişkileri..&nbsp;Batı ve Dünyanın bakışı, samimiyeti, etkisi......Ve daha neler neler...", "url": "#" },
+		{ "date": "1463097600000", "saat": "", "type": "meeting", "title": " PKK Medyası ve PKK İle Mücadelenin psikolojik Boyutu", "description": "Bu tarihi lüten not ediniz...Pkk...Sistematik dezanformasyon ve Pkk...Pkknın kara propagandası...Pkknın medyayı kullanma araçları...Pkkya destek veren Avrupa Ülkeleri...Daha neler neler...", "url": "" },
+		{ "date": "1464307200000", "saat": "", "type": "meeting", "title": "Küresel Meydan Okumalar ve Tükiye'nin Dış Politikası", "description": "Dost Meclisimizin Bu haftaki Konuğu STAR Gazetesi Ankara Temsilcisi olan Sayın Mustafa KARTOĞLU bey ile &ldquo;Küresel Meydan Okumalar ve Tükiye'nin Dış Politikası&quot; İsimli Konferansı siz değerli konuklarımız ile buluşturmaktadır. ", "url": "" },
+		{ "date": "1533682800000", "saat": "", "type": "meeting", "title": "Olağanüstü Kongre Kararı", "description": "YK. Kurulumuz Toplanarak almış olduğu Olağanüstü Kongre kararı doğrulturunsa 08.08.2018&nbsp;tarihinde&nbsp;toplanmasına, 06.08.2018 tarihinde ÇOĞUNLUK ARANMAKSINIZ 16.08.2018 Perşembe Saat 19.00'da İDARECİ ve BÜROKRATLAR BİRLİĞİ DERNEĞİNDE OLAĞAN ÜSTÜ KONGRE yapılacaktır.&nbsp;", "url": "" },
+		{ "date": "1534377600000", "saat": "", "type": "meeting", "title": "Olağanüstü Kongre Kararı", "description": "Olağanüstü Kongremiz 16.08.2018 Perşembe günü saat 19.00'da NEFF CAFE-NEFFGİLE Toplantı Salonunda yapılacaktır.( Atatürk Caddesi. Keçiören Girişi FTZ Arkası No:17 Keçiören-ANKARA) Teşriflerinizi bekler,Kongremizin; Derneğimize, Vatanımıza, İslam Alemine ve İnsanlığa hayırlı olmasını temenni ederiz.Yücel CAN", "url": "" },
+		{ "date": "1747094400000", "saat": "", "type": "meeting", "title": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Birlikte Güçlüyüz Ruhu İle Kahramanlık Eserleri Programı", "description": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Birlikte Güçlüyüz Ruhu İle Kahramanlık Eserleri Programına  Teşriflerinizden Mutluluk Duyarız", "url": "" },
+		{ "date": "1747162800000", "saat": "", "type": "meeting", "title": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Birlikte Güçlüyüz Ruhu İle Kahramanlık Eserleri Programı", "description": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Birlikte Güçlüyüz Ruhu İle Kahramanlık Eserleri Programına Teşriflerinizden Mutluluk Duyarız", "url": "" },
+		];
+            $("#eventCalendarLocale").eventCalendar({
+				jsonData: eventsInline,
+                cacheJson: false,
+                showDescription: true,
+				eventsLimit: 2,
+                monthNames: [ "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
+                    "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık" ],
+                dayNames: [ 'Pazar','Pazartesi','Salı','Çarşamba',
+                    'Perşembe','Cuma','Cumartesi' ],
+                dayNamesShort: [ 'Paz','Pzt','Sal','Çar', 'Per','Cum','Cmt' ],
+                txt_noEvents: "Periyotta etkinlik bulunamadı",
+                txt_SpecificEvents_prev: "",
+                txt_SpecificEvents_after: " Etkinlikleri:",
+                txt_next: "Sonraki",
+                txt_prev: "Önceki",
+                txt_NextEvents: "Yaklaşan Etkinlikler:",
+                txt_GoToEventUrl: "Detaylı Görüntüle"
+            });
+        });
+</script>
+<script src="themes/burokratlar/tema/js/tasarim/jcarousel/jquery.jcarousel.min.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/tasarim/jcarousel/jcarousel.responsive.js" type="text/javascript"></script>
+<link href="themes/burokratlar/tema/js/tasarim/jcarousel/jcarousel.responsive.css" rel="stylesheet"/>
+<script src="themes/burokratlar/tema/js/tasarim/kayan_duyuru/jquery.ticker.js" type="text/javascript"></script>
+<link href="themes/burokratlar/tema/js/tasarim/kayan_duyuru/ticker-style.css" rel="stylesheet"/>
+<script>
+    $(document).ready(function() {
+        $("#duyurular").ticker({
+            speed: 0.10,           // The speed of the reveal
+            debugMode: false,       // Show some helpful errors in the console or as alerts
+            controls: false,        // Whether or not to show the jQuery News Ticker controls
+            titleText: '',   // To remove the title set this to an empty String
+            displayType: 'reveal', // Animation type - current options are 'reveal' or 'fade'
+            direction: 'ltr',       // Ticker direction - current options are 'ltr' or 'rtl'
+            pauseOnItems: 2000,    // The pause on a news item before being replaced
+            fadeInSpeed: 600,      // Speed of fade in animation
+            fadeOutSpeed: 300      // Speed of fade out animation
+        });
+    });
+</script>
+<script src="themes/burokratlar/tema/js/tasarim/bootstrap.min.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/tasarim/custom.js" type="text/javascript"></script>
+<link href="themes/burokratlar/tema/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesnt work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="tema/js/tasarim/html5shiv.js"></script>
+<script src="tema/js/tasarim/respond.min.js"></script>
+<![endif]-->
+<link href="themes/burokratlar/tema/css/tasarim.css" rel="stylesheet" type="text/css"/>
+<link href="themes/burokratlar/tema/css/style.css?v=10" media="screen" rel="stylesheet" type="text/css"/>
+<link href="themes/burokratlar/tema/css/mesaj_kutulari/css.css" rel="stylesheet" type="text/css"/>
+<meta content="#dogrulama" name="google-site-verification"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet"/><link href="kurumsal.css" rel="stylesheet"/></head>
+<body>
+<header id="header">
+<div class="event">
+<div class="container">
+<div class="row">
+<div class="col-md-6 col-sm-6 col-xs-12">
+<div class="pull-left">
+<div class="ustlogoalt"></div>
+</div>
+</div>
+<div class="col-md-3 col-sm-3 col-xs-12">
+<div class="pull-right">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="header-banner">
+<div id="bs-demo"></div>
+<div class="row">
+<div class="col-md-12 col-xs-12">
+<a href="#" title="İdareci ve Bürokratlar Birliği Derneği"> <img alt="İdareci ve Bürokratlar Birliği Derneği" class="logo img-responsive" src="data/9595428-logo.png" style="margin-top:15px;"/> </a>
+<div style="left:0; background-color: rgb(255, 255, 255); width: 100%; position: absolute; top: 20px; z-index: -100; height: 155px;">
+</div>
+<div class="top-banner-img" style="position:absolute; right: 0px; top: 0px; height: 155px; z-index: -90; max-width: 70%; overflow: hidden;">
+<img alt="Biz Birlikte Gclyz" src="themes/burokratlar/tema/images/top_banner.png" style="height: 100%; width: 100%; object-fit: contain; object-position: right;"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="container">
+<nav class="navbar navbar-default" id="navbar" role="navigation">
+<div class="icon">
+<i class="glyphicon glyphicon glyphicon glyphicon-align-left"></i>
+</div>
+<div class="navbar-header">
+<button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div> <!-- .navbar-header -->
+<nav class="collapse navbar-collapse bs-navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav">
+<li class="home"><a href="anasayfa.html"><img alt="Ana Sayfa" src="themes/burokratlar/tema/images/ico-home.png"/></a></li>
+<li><a href="anasayfa.html" target="_self">Ana Sayfa</a></li>
+<li class="dropdown"><a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" target="_self">Derneğimiz</a>
+<ul class="dropdown-menu" role="menu">
+<li><a href="hakkimizda.html" target="_self">Hakkımızda</a></li>
+<li><a href="tuzugumuz.html" target="_self">Tüzüğümüz</a></li>
+<li><a href="yonetimkurulu.html" target="_self">Yönetim Kurulu</a></li>
+<li><a href="baskanlik-ve-birimler.html" target="_self">Başkanlık ve Birimler</a></li>
+<li><a href="yuksek-istisare-onur-kurulu-uyesi.html" target="_self">Yüksek İstişare ve Onur Kurulu</a></li>
+<li><a href="diger-kurullar.html" target="_self">Diğer Kurullar</a></li>
+<li><a href="temsilcilik.html" target="_self">Temsilcilik</a></li>
+</ul></li>
+<li><a href="haber-listesi.html" target="_self">Haberler</a></li>
+<li><a href="etkinlik.html" target="_self">Etkinlikler</a></li>
+<li><a href="resimler.html" target="_self">Fotoğraf Galerisi</a></li>
+<li><a href="iletisim.html" target="_self">İletişim</a></li>
+</ul>
+</nav>
+</nav>
+</div> <!-- .container -->
+<div class="page-index container">
+<div class="whitebg">
+<!--		<div class="icon">
+			<i class="glyphicon glyphicon-resize-full"></i> 
+		</div>-->
+<div class="row">
+<div class="col-md-3" id="left">
+<div class="left-menu">
+<div class="panel panel-primary">
+<div class="panel-heading">
+<img alt="Menu" src="themes/burokratlar/tema/images/icon-menu.png"/> Derneğimiz
+						</div>
+<div class="panel-body">
+<!--div style="position:absolute; width:65px; height:65px; background:url(data/7831298-baskan.png) no-repeat; right:25px; top:10px;"></div-->
+<ul id="left-menu">
+<li><a href="hakkimizda.html" target="_self">»  Hakkımızda</a></li>
+<li><a href="yonetimkurulu.html" target="_self">»  Yönetim Kurulu</a></li>
+<li><a href="baskanlik-ve-birimler.html" target="_self">»  Başkanlık ve Birimler</a></li>
+<li><a href="yuksek-istisare-onur-kurulu-uyesi.html" target="_self">»  Yüksek İstişare ve Onur Kurulu</a></li>
+<li><a href="diger-kurullar.html" target="_self">»  Diğer Kurullar</a></li>
+<li><a href="temsilcilik.html" target="_self">»  Temsilcilikler</a></li>
+<li><a href="haber-listesi.html" target="_self">»  Haberler</a></li>
+<li><a href="etkinlik.html" target="_self">»  Etkinlikler</a></li>
+</ul>
+</div>
+</div> <!-- .panel .panel-primary -->
+<!-- .panel .panel-darkprimary -->
+<!-- .panel .panel-lightred -->
+<!-- .panel .panel-red -->
+<!--div class="reklam">
+						<p><img style="display: block; margin-left: auto; margin-right: auto;" src="themes/burokratlar/tema/images/banner.png" alt="" width="250" height="250" /></p>
+					</div-->
+<div class="panel panel-primary hadis-i-serif" style="margin-top: 0px; border-color: #800000; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+<div class="panel-heading" style="background-color: #800000; border-color: #800000; color: white; font-weight: bold; font-size: 15px; padding: 12px 15px;">
+<i aria-hidden="true" class="fa fa-book" style="margin-right:8px;"></i> Günün Hadis-i Şerifi
+    </div>
+<div class="panel-body" style="background-color: #fdfaf6; padding: 25px 20px;">
+<div style="text-align: center; color: #800000; font-size: 20px; margin-bottom: 12px; opacity: 0.6;">
+<i aria-hidden="true" class="fa fa-quote-left"></i>
+</div>
+<div id="daily-hadith" style="font-size: 16px; font-style: italic; font-weight: 600; color: #444; line-height: 1.7; text-align: center; font-family: 'Georgia', 'Times New Roman', serif;">
+</div>
+<div style="text-align: center; color: #800000; font-size: 20px; margin-top: 12px; opacity: 0.6;">
+<i aria-hidden="true" class="fa fa-quote-right"></i>
+</div>
+</div>
+</div>
+<script>
+const hadiths = [
+    "Ameller niyetlere göredir.", 
+    "Sizin en hayırlınız Kur'an'ı öğrenen ve öğretendir.", 
+    "İman yetmiş küsur şubedir.", 
+    "Müslüman, elinden ve dilinden diğer Müslümanların güvende olduğu kimsedir.", 
+    "Kim Allah'a ve ahiret gününe inanıyorsa komşusuna iyilik etsin.", 
+    "Kolaylaştırın, zorlaştırmayın; müjdeleyin, nefret ettirmeyin.", 
+    "Din nasihattir.", 
+    "Söz taşıyanlar cennete giremez.", 
+    "Merhamet etmeyene merhamet edilmez.", 
+    "İşçiye ücretini teri kurumadan veriniz."
+]; 
+const day = Math.floor((new Date() - new Date(new Date().getFullYear(),0,0)) / 1000 / 60 / 60 / 24); 
+document.getElementById("daily-hadith").innerText = hadiths[day % hadiths.length];
+</script>
+<div class="panel panel-kurumsal mb-4 side-dijital" style="display: none !important;"><div class="panel-heading text-center font-bold" style="background:#0f2b48; color:white; padding: 10px;">Dijital İşlemler Portalı</div><div class="panel-body text-center p-4"><a class="btn btn-primary w-full mb-2" href="uyelik.html" style="background:#800000; border:none; display:block; padding:8px; color:white; border-radius:4px; text-decoration:none;">Üyelik Başvurusu</a><a class="btn btn-primary w-full mb-2" href="#" style="background:#e2e8f0; border:none; display:block; padding:8px; color:#0f2b48; border-radius:4px; text-decoration:none;">Aidat Sorgulama</a></div></div><div class="panel panel-kurumsal mb-4 side-gundem" style=""><div class="panel-heading text-center font-bold" style="background:#0f2b48; color:white; padding: 10px;">Gündem &amp; Buluşmalar</div><div class="panel-body p-4"><ul class="list-none p-0 m-0 text-sm"><li class="border-b py-2 mb-2"><span style="background:#800000; color:white; padding:2px 6px; border-radius:4px; font-size:12px;">Yakında</span> <a href="#" style="color:#0f2b48; font-weight:bold; text-decoration:none;">Politika Notu Yayını</a></li><li class="border-b py-2 mb-2"><span style="background:#800000; color:white; padding:2px 6px; border-radius:4px; font-size:12px;">14 Mayıs</span> <a href="#" style="color:#0f2b48; font-weight:bold; text-decoration:none;">Dost Meclisi Buluşması</a></li></ul></div></div><div class="panel panel-kurumsal mb-4 side-ebulten" style="display: none !important;"><div class="panel-heading text-center font-bold" style="background:#0f2b48; color:white; padding: 10px;">E-Bülten &amp; Politika Notlarına Abone Olun</div><div class="panel-body text-center p-4"><input class="form-control mb-2 p-2 border rounded w-full" placeholder="E-Posta Adresiniz" style="width:100%; box-sizing:border-box;" type="email"/><button class="btn btn-primary w-full mt-2" style="background:#800000; border:none; padding:8px; color:white; border-radius:4px; width:100%;">Abone Ol</button></div></div><div class="panel panel-cyan links side-faydali" style=""><div class="panel-heading"><img alt="Link" src="themes/burokratlar/tema/images/icon-link.png"/>Faydalı Bağlantılar</div><div class="panel-body"><ul><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.tccb.gov.tr/" target="_blank">Cumhurbaşkanlığı</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.tbmm.gov.tr/" target="_blank">Türkiye Büyük Millet Meclisi</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.turkiye.gov.tr/" target="_blank">E-devlet</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.icisleri.gov.tr/" target="_blank">T.C. İçişleri Bakanlığı</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.resmigazete.gov.tr/" target="_blank">Resmin Gazete</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.cimer.gov.tr/" target="_blank">Cumhurbaşkanlığı İ.M. (CİMER)</a></li></ul></div></div><div class="side-banner" id="yanaplat-banner" style="margin-top: 20px; margin-bottom: 0px; text-align: center;">
+<img alt="Milli İrade Platformu" src="data/yanaplat.gif" style="width: 100%; height: 220px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: 1px solid #ccc;"/>
+</div>
+</div> <!-- .left-menu -->
+</div> <!-- #left -->
+
+<div class="col-md-9" id="main">
+<div class="main">
+<div class="panel panel-primary">
+<div class="panel-heading">Görüş &amp; Politika Notları / Tokyo 2020 Branşların Analizi</div>
+<div class="panel-body">
+<div class="col-md-12">
+<div style="float: left; margin-right: 15px; margin-bottom: 15px; text-align: center;">
+<a href="kose-yazar-10.html">
+<img src="data/haberkosegroup/10.jpg" style="max-width: 150px;"/>
+<br/><b>Dr. Ahmet Naci DİLEK</b>
+</a>
+</div>
+<h3>Tokyo 2020 Branşların Analizi</h3>
+<hr/>
+<div class="content-text">
+                                Tokyo 2020’de alınan sonuçlar üzerinden branşları değerlendirelim. 
+
+Öncelikle Okçuluk branşından başlamak isterim.  
+Çinli bir prensin, Çin imparatoruna yazdığı mektupta \"Türkleri yenmemiz mümkün değil. Çünkü bunlar kaçarken de savaşıyor\" dediği rivayet edilir. Tarihteki Türk atlı okçuları, dörtnala giderken eyer üstünde dönüp arkaya ok atarak hedefe tam isabet ettirme ustalıklarıyla tanınmışlardır. Uluslararası literatürde 'Part Vuruşu' olarak isimlendirilen at üzerinde geriye doğru yapılan ok atışının en başarılı ve en ünlü uygulayıcıları Türkler olmuşlardır.
+Vur-kaç, sahte geri çekilme ve düşmanın etrafını sarma Türk atlı okçularının kullandığı ve birçok zaferde kilit rol oynayan taktiklerdir.  Bir Osmanlı askeri, 3 saniyede bir ok atabiliyordu.
+Sözün özü okçu milletiz, tarihte bizden iyi ok atan ulus yok ama Olimpiyatlar’da altın madalya kazanmak için 2021 yılına kadar beklemek zorunda kalmamız ayrıca düşündürücü… Mete Gazoz’un olimpiyat altın madalyası işte bu açıdan bizim için daha önemli ve değerli.
+Şunu kabul edelim; Mete'nin başarısındaki en büyük etken ailesi. Milli okçu olan babası Metin Gazoz, olimpiyatlara katılamamanın burukluğunu yaşamış ama oğlunu olimpiyat şampiyonu yetiştirmiştir. 
+
+PROJE SPORCU
+Mete elbette antrenörlerinden ve Okçuluk Federasyonu’ndan büyük destek görmüştür ama onu şampiyon yapan küçük yaşta babasının uyguladığı bilimsel çalışmalar olmuştur. Mete aslında bir ailenin çocuğuna geleneksel okçuluk eğitiminden çok daha fazlasını vermesiyle ortaya çıkmış harika bir proje çocuk/sporcudur. 
+Okçuluk eğitiminin yanı sıra Mete, omuz gelişimi için sekiz yaşına kadar yüzme kursuna gitmiş, Koordinasyon katkısı için basketbol oynamış, Görme ve dikkat yeteneğini geliştirmek için bir sene resim kursuna gitmiş, Göz-el koordinasyonu için iki yıl piyano eğitimi almıştır. 
+
+Özetle olimpiyat şampiyonu olmak için sadece çok çalışmanın yeterli olmadığını:  Sporcuya artı değer kazandıracak dallardan da faydalanılması gerektiğini göstermiştir. Tüm spor branşlarına, antrenörlere, sporculara ve tüm yetkililere önemle duyurulur. Farklı psiko-motor özelliklerinin gelişmesi için Mete’ye küçük yaşlardan itibaren yaptırılan farklı sporların ve sanat çalışmalarının; sporcunun gelişiminde ne kadar önemli ve efektif olduğu görülmelidir ve bu noktada özel yeteneğe sahip olan sporcuların tespitinin ardından bu alana yatırım yapılmalıdır. Bu yatırım yapılırken sadece sporcunun antrenörüne ve hatta bazı durumlarda federasyonlara bırakılmayarak Gençlik ve Spor Bakanlığı destek ve kontrolleriyle, Üniversitelerden destek alınmak suretiyle bilimsel yöntemler kullanılarak sporcular ve eğitmenler desteklenmelidir. 
+
+Mete henüz 22 yaşında ve şu an belki de en değerli milli sporcularımızın başında geliyor. Tarihte üç olimpiyat altın madalyası olan tek Türk sporcu Naim Süleymanoğlu’nun  rekorunu kırmaya da en yakın aday Mete gibi gözüküyor. Mete'de öyle büyük bir potansiyel var ki, belki de tarihin en başarılı Türk sporcusu olabilir ve adını altın harflerle tarihimizin altın sayfalarına yazdırabilir. Elbette yaptığı sporda buna uygun,  bu durum Mete için büyük bir artı ve Okçuluğu yaşayan bir ailesinin olması, bir sporcu için istenilecek optimal şartların var olması anlamına geliyor.  Mete Gazoz’un serüveni özellikle incelemeye değerdir. Mete’nin kendine has ve sempatik ritüelleri onun başarıyı sağlaması ve başarı da devamlılığı yakalaması durumunda büyük bir marka haline dönüşmesi bir temenni değil gerçektir. 
+
+Okçuluk’ta alınan altın madalya tarihi öneme sahiptir. Bu anlamda Okçuluk federasyonunun çalışmaları takibe alınmalı ve doğru yapılan işlerin daha üst seviyeye getirilmesi için özellikle Bakanlık ve Üniversiteler aracılığı ile destekler sunulmalı, yer yer danışmanlık yapılmalı, diğer taraftan bütünsel anlamda eksiklikler var ise o eksikliklerin düzelmesi ve doğru adımların atılması için yönlendirmeler yapılmalıdır. 
+
+Kültürel köklerimizde önemli bir yere sahip olan Okçuluk branşının ve Geleneksel Okçuluk branşının yaygınlaşmasının ne kadar gerekli ve önemli olduğu alınan bu derece ile tekrar gün yüzüne çıkmıştır.  Ancak bu ilk adımdır ve hedef büyütülerek sadece bir sporcunun değil, oluşturulacak sistemle; olimpiyatlara aday sporcuların yetiştirilmesi hedeflenmelidir.  Ülkemiz kadınlar ve erkeklerde bu potansiyele sahiptir. Elde değerli cevherler mevcuttur ve bu cevherler uygun ustalar tarafından işlenmeyi beklemektedir. 
+
+Boks’ta alınan başarılar yılların özverili ve fedakar çalışmalarının bir ürünüdür.  Şampiyon olan Busenaz Sürmeneli her türlü takdiri hak etmiştir. Kendisini canı gönülden kutluyorum. Özellikle hocasına karşı her anlamda saygısını, hürmetini, vefasını göstermesi bir çok sporcuya ve onların antrenörüne örnek olmuştur. Bunun yanında dövüşkenliği, mücadeleci ruhu, maçtaki isteği, azmi ve samimiyeti çok önemlidir.  Zaten başarılı olmasının temel taşlarını bu özellikleri oluşturmuştur.  Öte yandan o isteğine kurban olma durumuyla karşılaşabilir, zira aşırı istekli olması bazı durumlarda yürüyerek rakibinin üzerine gitmesi ve kontrol dışı hareket etmesi mücadele sporlarının tümünde olduğu gibi özellikle Boks sporu için çok tehlikelidir. Bunu hem kendisi biliyordur ve hem de antrenörü, ama daha dikkatli olmaları için bizimkisi bir tavsiye, bir nasihattir.  Bu anlamda Ukrayna’lı sporcunun finalde Brezilya’lı sporcuya bariz üstünlük sağlamasına rağmen; düşünmeden kontrolsüz bir şekilde yürüyerek üzerine gitmesi ve kum torbası döver gibi aklını kullanmadan saldırması esnasında bir anda aldığı bir yumrukla nakavt olması ciddi bir örnektir. 
+Öte yandan Busenaz’ın bir sporcu olarak hele ki böyle bir organizasyonda dikkatini ve motivasyonunu dağıtabilecek konuların üzerine yoğunlaşması ve bu noktada basın üzerinden sürekli farklı mesajları vermesi çokta arzu edilen bir durum değildir.  Elbette bir vatandaş olarak son yaşanılanlar hepimizi derinden etkilemiştir ve fakat Olimpiyat gibi sporun zirve organizasyonunda anlık dikkat eksikliği, konsantrasyonun anlık dağılması, telafisi olmayan kayıplara neden olabilir. Bu noktada antrenörüne önemli sorumluluk düşmektedir.  Ayrıca özellikle TRT’ de yapılan röportajlar esnasında gözlemlediğim kadarıyla Busenaz fazlasıyla havaya girmiş görünmekte, Olimpiyat şampiyonluğunun da getirmiş olduğu, basının ve toplumun da gereğinden fazla ilgi göstermesi ve farkında olarak veya olmayarak onu şımartmaları, adeta kutsamaları onu iyice havaya sokabilir ve bu durum uzun vadeli sporun devam ettirilmesi, sürdürülebilir başarının oluşturulması noktasında ciddi sıkıntılar ortaya çıkaracaktır ve hatta bu kontrolsüz durum sporcunun sporu bırakması ile bile sonuçlanabilir. 
+
+Boks’ta gümüş madalya kazanan Buse Naz Çakıroğlu ise yine çok büyük bir başarıya imza atmıştır ve her türlü takdiri hak ediyor.  Onu da kalpten kutluyorum. 
+Ancak bizleri ve kendisini buruk bir sevincin içine gark etmiştir. Aslında perşembenin gelişi çarşambadan belli idi. Boks gibi bir sporda henüz tam anlamıyla oturtamadığı bir dans/steps sistemini gereğinden fazla uygulaması ve dövüşkenliği, mücadeleciliği geri plana atarak sadece taktiksel hamlelerle maç kazanması bir yere kadardır ve bu yüzden finalde yenilmiştir. Busenaz Sürmeneli ile temel ayrıştıkları nokta da burasıdır zaten. 
+Bu dans/steps sistemini efsane Boksör Muhammed Ali’den aldığı ve ayrıca Küba’lı boksörlerden etkilendiğini düşünmekteyim. Ama onlar bu sistemi çok çalışarak sıradan bir hareket haline getirmişler, rutin halini aldırmışlardır. Ancak bu noktada Buse Naz biraz daha gayret etmelidir. Oysaki daha dövüşken olup, daha çok isteyen, daha ısrarcı, daha azimli tavrı olan ve müsabakayı kazanmak için samimi bir taktik anlayışı ile mücadele etmiş olsa, gençliğinin vermiş olduğu o enerjikliği ve gücünü kullanmış olsa 35 yaşındaki Bulgar sporcuyu mağlup etmesi çok daha kolay olacaktı. Burada antrenörün önemli oranda bakış açısının ve taktiksel anlayışının olumsuz etki yaptığını düşünüyorum. Muhakkak iç aleminde bunun sorgusunu kendisi yapacaktır. Kendisi sonsuz övgüleri hak etmektedir, almış olduğu derece şapka çıkarılacak cinstendir, ancak her insanın anlık yanlış kararlarının olacağını da akıldan çıkarmamak gerekir.  
+
+Genel anlamda Boks branşında alınan bu iki madalya çok önemli ve sporcuların spora başlamalarından itibaren onları yetiştiren antrenörlerle mücadele etme kararlılıkları şapka çıkarılacak türdendir.
+Bununla birlikte hiç bir spor ve federasyon iki sporcu üzerine kurgulanamaz ve amaç sadece kadınlar kategorisinde başarılı olmak olamaz.  Sistemsel olarak çalışılmalı ve her kategoride başarılı olabilecek sporcular yetiştirmenin metodolojisi oluşturulmalıdır. Erkekler kategorisinde hiç bir varlık gösterememek ayrıca irdelenmelidir. Özellikle Küba ve Rus ekolleri incelenmeli ve üzerine düşülmeli, onların uyguladıkları ve dünyaya ekol olmalarını sağlayan Boks’un inceliklerini ve onların tarzlarını irdeleyerek, üzerinde kafa yorarak ve tartışarak, almamız gereken dersler alınmalı, stratejiler oluşturulmalı, gerekli yatırımlar yapılarak erkeklerde de başarılı olunmanın yolları aranmalıdır. 
+
+Karate branşını değerlendirdiğimizde: Olimpiyatlara ilk kez katılan branşın aldığı başarılar Karate adına çok sevindirici ve gurur verici olmakla birlikte ülkemizin genel sıralamasına ne kadar önemli katkılar sunduğu da ortadadır. 
+Ancak bunların yanında teknik ekibin bazı yönlendirmeleri ve oluşturulan algıyı yanlış oluşturduklarını ve dolayısı ile motivasyonu doğru yönetemediklerini düşünmekteyim.  Özellikle dikkat ettim tüm antrenör ve sporcular 8 kotadan 7’sini aldıklarını ve ev sahibi olarak tüm kotayı sadece Japonya’nın aldığını dillendiriyorlardı. Bu şu anlama geliyor, biz çok başarılıyız, en iyi ve başarılı ülkeyiz. Kontrolsüz bir öz güven algısı oluşturulmuştur. Bu durum öncelikle antrenörlerin ve sporcuların daha temkinli, ihtiyatlı, tedbirli olmalarının önüne bir engel olarak kendileri tarafından konulmuştur.  Bu kontrolsüz aşırı motivasyon, kontrolsüz aşırı öz güven sporcuların yeterince dikkatli olmalarının önüne geçmiştir.  Keza antrenörlerin de aynı duruma düşmelerini bizzat kendileri hazırlamıştır. Sonuçta yarıştıkları arenanın olimpiyat olduğunun ve her türlü sonuca açık olduğunun bilincinde olmaları gerekiyordu. İlk defa olimpiyatlara katılmalarının tecrübesizliği ve bilgisizliği diyebiliriz ama yinede çıkılan yolun olimpiyat yolu olduğu bilinciyle hareket edilmeliydi. Elemelerde birinci olarak gelmek, seribaşı olmak olimpiyat şampiyonu olunacak ya da olimpiyatlarda başarılı olunacak anlamına gelmez.  Hiç beklenmedik ülkelerden sporcular gelip sizi yenebilirler, sonuç itibari ile bunun da örneklerini gördük, olimpiyatlar bu örneklerle doludur. 
+Ülke olarak bir kaç altın madalya beklentimizin olduğu bir branştı ve muhakkak teknik ekibinde istediği gibi sonuçlar ortaya çıkmadı kanısındayım. Burada alınan başarı küçümseniyor anlamı kesinlikle çıkmamalı, sonuna kadar alkışlıyor, saygı duyuyor ve takdir ediyoruz ve fakat daha başarılı neticeler alınması gerektiğini vurgulamak istiyorum. Oluşturulan algının sporcu motivasyonlarını olumsuz etkilediğini ifade ediyorum.  Son tahlilde 1 gümüş ve 3 bronz madalyanın büyük ama eksik bir başarı olduğunu vurgulamak isterim. Doğru bir algı ve motivasyonla en az 1 altın ve bir kaç final almalıydı düşüncesindeyim. 
+
+Güreş branşımıza baktığımızda: Ata sporumuz olan  ve ülkemize olimpiyatlarda en fazla madalya kazandıran güreş branşı, Tokyo Olimpiyatlarında istenilen başarıyı sergileyememiştir.
+ Ne oldu da ata sporumuz bu hale düştü? 
+Elbette yönetimsel anlamda, teknik kurullar anlamında bunun detaylı sorgulaması güreş camiası içinde yapılacaktır, yapılmalıdır. Alınan 3 bronz madalya olimpiyatlarda madalya alma bağlamında başarı, ancak güreş branşı için kesinlikle yeterli değildir.  Güreş camiası; özellikle ata sporumuz olması, asırlara dayanan bir geleneğe sahip olmamız hasebiyle ve diğer taraftan dünya ile kıyaslandığında ve Türkiye’de ki diğer spor branşlarıyla kıyaslandığında; çok büyük ve geniş imkanlara sahip olan branşlarında; neden istikrarlı ve kürsünün en üst basamağında olmadıklarını sorgulamaları gerekmektedir.  Dünyanın farklı ülkeleri, sahip olduğumuz tesis, federasyon bütçesi, ödüller ve imtiyazlara sahip olmamalarına rağmen neleri yapıyorlarda başarılı oluyorlar sorusuna cevap aramalılar. Güreş’i bizden öğrenmelerine rağmen hangi eğitimsel, mental, teknik, taktik, ve organizasyonel anlamda adımları atıyorlarda başarılı oluyorlar? 
+Şahmuradov ve Sapunov dönemlerinde kurulan ve sporcu fabrikası, şampiyon fabrikası haline getirilen nasıl bir sisteme sahiptik ki, her siklette madalyaya oynayacak sporcularımız mevcuttu?  Keza nasıl bir yönetimsel yapıya sahiptik ki bu başarıları kazanabiliyorduk? 
+Özellikle teknik ekiplerin daha donanımlı bir yapıya sahip olmaları gerektiğini düşünüyorum. Dil becerilerinin ivedi bir şekilde geliştirilmesi gerekiyor.  Bilimsel metotlarla çalışılması gerektiğinin ve psikolojik çalışmaların düzenli olarak sporcularla yapılması gerektiğinin bilincinde olmalarının gerekliliğine inanıyorum. Kendilerini yenilemeleri ve sürekli eğitime açık olmaları ve değişen spor dünyasını takip ederek ve o dünyayla uyumlu bir şekilde çalışmaları gerektiğine inanıyorum. Bizlerden bu işi öğrenmelerine rağmen, eğitmeni yetiştirme noktasında daha bilinçli hareket eden dünya ülkeleri, bizleri güreş branşında geçmiştir ve bunun iç sorgulaması muhakkak yapılmalıdır. Bu özeleştiri yönetim ve camia nezdinde yapılmaz ise çok daha kötü sonuçlarla karşı karşıya kalacaktır güreş branşı.  Mutlaka yönetim ve organizasyon bağlamında, teknik ekiplerin eğitimi bağlamında, alt yapı ve gençlere yapılan ve yapılmayan yatırımlar bağlamında, psikolojik etmenlerin sporculara iletilmesi bağlamında bütünsel ve verimli özeleştiriler ve yeni bakış açılarının gerekliliğine inanıyorum, umarım Güreş camiası da bu saydıklarımın yapılması gerekliliğine inanıyordur.
+Özellikle elit sporcularımıza sunulan farklı imkanlar ve zenginlikler içinde, öte yandan altyapıdan yeterli imkan verilmediği için elit sporcuları zorlayacak sporcuların gelmemesi ya da geliyorsa önlerinin kesilmesi, sporcuyu zorlayan ama ilerlemesinin ve formda kalmasının anahtarı olan rekabetin olmaması, o sporcularımızın odaklanmaları gereken noktalara odaklanma sıkıntılarının yaşanıp yaşanmadığı ve kafalarının başka işlerle meşgul olup olmadığı ile ilgili samimi tenkitleri yapması önem arz etmektedir. 
+
+Taekwondo branşına baktığımızda; katıldığı her olimpiyatta altın, gümüş ve bronz madalyalar almayı başaran ve ülke sıralamasına önemli katkılar sunan, ülkemizdeki ve dünyadaki popüler sporlardan birisi olan taekwondo branşı; olması gereken yerde ve alması gereken başarıları almış bulunmakta mıdır? Maalesef hayır demek durumundayız.  
+Öncelikle 4 erkek kotasından sadece bir kotanın alınması erkekler kategorisinde, büyük bir eksiklik ve başarısızlık olduğuna işarettir. Zaten bu durum avrupa ve dünya şampiyonalarında da erkeklerin sürekli başarısızlığı ile gün gibi ortadadır, avrupa ve dünya şampiyonalarından gelen ve artık gelenek halini almış bu sürekli başarısızlık durumu aslında olimpiyatlarda da böyle bir seviyede olacağımızın işaret taşlarıydı, mesele sadece zaman meselesiydi ve daha önceki olimpiyatlarda da gerçekleşen kota alamama durumu tekrarlandı. Burada bir parantez açarak 2012 Londra Olimpiyatlarında birinci olan Servet Tazegül’ü istisna olarak ifade etmeliyim, zira Servet Almanya’da yetişmiş bir gurbetçi sporcudur. 
+Elbette neden başarılı olamadıkları ayrıca incelenmesi gereken bir konu başlığıdır. Yüzbinlerce erkek sporcunun büyük bir azimle, maddi ve manevi yatırım yaparak ve antrenörlerinin aynı istek ve fedakarlıkla yatırım yaptığı erkek kategorisinde yeterli derecede neden başarı yoktur?  Bu sorular cevaplanmayı beklemektedir. 
+Devam edelim Hakan Reçber’in almış olduğu bronz madalya öncelikle kendi özel gayreti, ailesi ve aynı zamanda antrenörleri olan anne ve babanın eseridir.  Yıllardır çocuklarına yaptıkları yatırımların bir sonucudur. Buna delil olarakta erkekler kategorisinde bir türlü alınamayan olimpiyat kotalarını, dünya ve avrupa şampiyonalarında neredeyse çekilen sıfırları gösterebiliriz yukarıda ifade ettiğim üzre. Bireysel anlamda özel çalışmaların ve yer yer insan sınırlarını zorlayan üstün çabaların, ayrıca Hakan’ın aşk derecesinde bağlı olduğu sporuna adanmışlıkla çalışmasının ve tüm bu sayılanların babası tarafından da ortaya konmasının bir sonucudur.  Hakan çok genç bir sporcu ve bu aşk ve adanmışlık devam ettiği müddetçe avrupa, dünya ve olimpiyat şampiyonalarında ülkemizi gururlandıracak başarılara imza atacağına yürekten inanıyorum ve hem kendisini, hem de antrenörleri olan anne babasını canı gönülden tebrik ediyorum. 
+Hatice Kübra İlgün’ün örneğinde ise aynı şekilde antrenörünün göstermiş olduğu ve her insanın kolay kolay gösteremeyeceği üstün performans ve fedakarlık yatmaktadır. Maddi ve manevi anlamda her türlü fedakarlığı yapıp Hatice’nin geldiği seviyeye gelmesi için hayatla bir risk oyunu oynamıştır ve sonuçta alınan bu bronz madalya ile biraz rahat nefes almıştır ve aldığı riskin karşılığını görmüştür. Bir çok şampiyonada yendiği sporcularla karşılaşırken onlardan birine yenilmesi sporun bir cilvesi olarak karşılanabilinir. Fakat diğer taraftan teknik ekibin yeterli analizleri yapmadığı anlamına da gelebilir.  Zira tüm sporcuların Hatice için özel olarak çalışacaklarını/hazırlanacaklarını göz önünde bulundurarak özellikle taktiksel anlamda kızımızı hazırlamaları gerekmiyor muydu? Spor işi son tahlilde taktik ve psikolojik adımlardır ve olimpiyat gibi her sporcunun fiziksel anlamda hazır olduğu bir arenada, ince detaylar olarak taktiksel manevraların ve psikolojik hazırlıkların ne denli mühim ve vazgeçilmez olduğu artık herkes tarafından bilinmektedir. Demek ki ‘’yalın’’ bilmek yeterli olmuyor, bu alana kayda değer yatırımlar yapılması gerekiyor. Ancak daha sistemli ve mental yatırımların yapılması sporcuların başarısını getirecek temel unsurdur.  Hatice genç bir sporcu,  özellikle kota sürecinde ve sonrasında mental anlamda zorluklarla mücadele ederek buralara kadar gelmesi ve madalya alması; onun ne kadar güçlü olduğunu göstermesi bakımından önemli. İstikrarlı ve özellikle kendisini yetiştiren hocasına karşı vefalı olup çalışmalarını sürdürdüğü takdirde gelecek şampiyonalarda hedeflediği başarılara ulaşacaktır.  Kendisini canı gönülden tebrik ediyorum.  Devam edelim: 
+Kota almış sporcuların ihtiyaç duyduğu tüm lojistik ekip ( masör, psikolog, fizyoterapist, partner…) olimpiyatlara götürülmüş müdür, yoksa farklı bağlantıları olup, hiç bir üretken iş ortaya koyamayan isimler mi götürülmüştür? 
+Öte yandan spora başlangıçlarından olimpiyat seviyesine gelene kadar bu sporcuları binbir zorlukla yetiştiren,  onları bütünsel anlamda en iyi tanıyan ve onlara en verimli olması beklenen antrenörleri; neden hiç bir biçimde sporcuların yanında değildir? Ülkemizde farklı branşlarda bu uygulamayı yapan sporların aldıkları başarılar ve dünyada bunun örnekleri göz önündeyken, bir kişinin üzerine ve onun iki dudağının arasına koskoca bir ülkenin ve onun bir sporunun camiası ve sporcuları nasıl emanet edilir?
+Diğer 3 kadın sporcunun varlık gösteremeden elenmeleri çok ciddi ve samimi sorgulamaların yapılmasının gerekliliğini işaret etmektedir. Olimpiyatlara sakat sakat sporcu götürülmüş müdür, eğer doğru ise ki öyle olduğu duyumu mevcuttur, buna nasıl cesaret edilebilir? Bunu sorgulamsı gereken ilgili kurumların bu konu hakkında bilgisi var mıdır ve varsa bu konunun üzerine gidilecek midir? Zira burası özel bir kulüp ya da kimsenin çiftliği değil, tüm millete ait bir spor federasyonudur.  Camia bu konuyu bilmektedir ve haklı bir duruşla bu konuyu sorgulama yürekliliğini gösterecektir.  Tatamiden sürünerek çıkmalar, umursamaz müsabaka tavırlarının arkasında yatan nedenler, üzerine gidilmesi gereken çok önemli ayrıntılardır. Camia bu noktalarda da sorumluluğa sahiptir ve her manada yetki elindedir. 
+
+Tüm bunların üstüne hem suçlu olup hem de güçlü olma babından altyapı antrenörlerini bilgisizlikle, yetersizlikle suçlayan sözüm ona bir kadın sporcunun çıkması taekwondo’nun DO ahlak prensipleriyle ne kadar uyumludur? Kültürümüze ahde vefaya ne kadar uymaktadır? Genç sporculara örnek gösterilcek sporcu tiplemesi bu mudur? Bu kadın sporcu bu demecini kendi insiyatifi ile mi vermiştir, yoksa akıl hocaları! mı onu bu demeç için yönlendirmiştir? 
+Yeni yetişmekte olan gençlere; sizi yetiştiren hocalarınızı, yarın büyüdüğünüzde bilgisiz ve yetersiz diye aşağılayacaksınız der gibi bir örnekle karşı karşıyayız.  Zira milyonların izlediği bir tv’de, Olimpiyatlardan başarısızlıkla dönen bir sporcunun içler acısı!!! bu serzenişi gençlere model değil de nedir? İşte modern sporcu! İşte modern taekwondocu! örneği!!!  İnsana sorarlar 30 yaşına gelmişsin ve eğitimli! bir sporcusun o kadar bilgiye sahipsen sen kendini doğru yönlendirseydin, ya da seni yönlendirenler o kadar donanıma sahip ise onlar gerekli adımları atsaydılarda başarılı olsaydın. Diğer taraftan senin bu seviyeye gelmeni ve farklı dereceler almanı sağlayan uzaylılar değildi sanırım; o hiç beğenmediğin altyapı antrenörleriydi.  Nankörlüğün ve pişkinliğin bu kadarına pes demekten başka ne denir ki!!! Klasik nankör insanın tavırlarına örnek gösterilecek davranışlar bunlar; iyi olan her şey kendisinden kaynaklı ve fakat kötü olan her şeyin sorumlusu bir başkası!!! Günümüz dünyasının yetiştirdiği en tehlikeli tiplerden bir tanesi de bu tipleme işte. 
+Yıllardır bir tane ülke şampiyonasına katılmayacaksın, hiç bir elemeye tabi tutulmayacaksın, direk avrupa, dünya şampiyonalarına ve olimpiyat elemelerine gideceksin bu yapılan adaletsizliklere vicdanın hiç cız etmeyecek ve tüm bunların yanında  öncelikle kendini ve seni yönlendirenleri sorgulamayacaksın, sonrada çıkıp masum sporcu edalarıyla altyapı antrenörleri nezdinde tüm camiayı suçlayacaksın...
+Yüzlerce genç dinamik kadın sporcu senin olduğun yerde olmayı bekleyip, canhıraş çalışırken ve onlarla ülke şampiyonalarında veya elemelerde karşılaşmazken, hiç mi dönüp kendine bu nasıl adalet teyze, ben neden bu kadar özelim, neden bu kadar ayrıcalığa sahibim diye sormadın? 
+Milli takımın değişmezlerinden olman için hangi güzel özelliklere! ve niteliklere! sahiptin ki, hep banko sporcuydun!!! Yoksa bu sorgulamayı yapmak için yeterli bilgiye ve genel yeterliliğe sahip değil miydin? Burası sözün bittiği, bu ve benzeri davranışlarda bulunan sporculara hak ettiği dersin verilmesi gereken yerdir.  Ancak unutulmamalıdır ki işin bu noktaya gelmesini camia, bugüne kadar olan benzeri davranışlara suskunluklarıyla zemin hazırlamışlardır ve bu duruma gerekli her mecrada ders vermesi gerekende yine camianın kendisidir. 
+Mutlaka bu sorgulamaları aynı ve benzeri durumda olan tüm sporcular yapmalıdır ve hatta onların antrenörleri de aynı samimiyetle vicdan muhasebesi yapmalıdırlar.  Zira, etme bulma dünyası, yarın aynı durumun onların başına gelmeyeceğinin hiç bir garantisi  yoktur. Antrenör emeğin ne demek olduğunu en iyi idrak eden ve içselleştiren eğitmendir ve dolayısı ile diğer antrenörleri en iyi anlayan bireyler olmalıdırlar. Önemli olan ‘’işim görülsün, gemim yürüsün’’ düşüncesiyse eğer o takdirde böyle zihniyet o camiayı çürütecektir ve bu adaletsizlik bizzat sporcuya, antrenörüne, teknik ekibe ve camiaya pahalıya patlayacaktır ve nitekim o şekilde de olmaktadır.  Devam edelim: 
+
+365 gün lüks otellerde yapılan kampların hiç bir anlam ifade etmediğinin anlaşılmasının zamanı çoktan gelmiş ve geçmektedir.  Lüks otellerde, şatafat içinde, lüks tüketimle, insanın şımarmasına ve azgınlaşmasına imkan sağlayan ortamlarda, tüyü bitmemiş yetimin hakkının yenilmesi, hangi başarının anahtarıdır? Devletin her türlü donanıma sahip tesisleri neden kullanılmamaktadır? Lüks ve gösteriş başarıyı mı getirmektedir? 5 yıldızlı astronomik fiyatları olan oteller başarının garantisi midir de biz bilmiyoruz!!! Yapılan işlerin tümünde şeffaflıktan uzak olmak başarıyı mı getirmektedir de biz bilmiyoruz!!!
+Taekwondo’da dünyada lider ülkelerden olduğumuz vurgulanmasına rağmen bir tane dahi hakemimizin olimpiyatlarda olmaması hangi lobi! çalışmalarını işaret etmektedir? Güreş’ten, Karate’den biraz örnek alınsaydı keşke. Vah ülkem vah. Esas amaç hakkıyla iş yapmak olmayınca, yaptığı işi samimiyetle kendine dert edinerek yapmayınca, sporcunun, velilerin, antrenörlerin emeği ve alınteri kimsenin umurunda olmayınca,  lay lay lomla iş yapılınca, devletin bütçesi sorgusuzca harcanınca, kendi evini ve ekonomisini titizlikle yöneten misali bir yönetim anlayışı olmayınca böyle oluyor demek ki. 
+Mütevazi şartlarda hazırlanıp en az 2-3-5 katımız daha başarılı olan ülkeleri ne ile açıklayacağız?
+Çok küçük nüfuslara sahip, ülkemizdeki sıradan bir anadolu kulübünün bütçesi kadar bütçesi olan hatta bazı durumlarda bir o kadar dahi bütçesi olmayan ülkelerin, ödüller bağlamında bizimle kıyaslandığında devede kulak misali ödüllerle muhatap olan, taekwondo kültürüyle neredeyse yeni tanışan ülkelerin mütevazi şartlarda çalışarak aldıkları altın, gümüş ve bronz madalyalar sorgulanmalı gerekirse ibret ve örnek alınmalı, diğer taraftan nerelerde hatalar yapıldığı ve hangi eksikliklerin olduğu camia tarafından hiç bir pazarlığa mahal vermeden vicdanlarının sesini dinleyerek, gerekli tavırları alarak, karakterlerini, kimliklerini ortaya koyarak, hakkı haykırarak, hakkın ve haklının yanıda durarak, omurgalı ve dik duruş sergileyerek, güç rüzgarı nereden esiyor ise o rüzgarın cazibesine kendini bırakmayarak, şahsiyetli, onurlu, kişilikli bir duruşla safını belli etmelidir. Karınca misali taşıdığı suyun amacının safının belli olması timsali üzerinden adımlar atmalarının zamanı çoktan gelmiştir. 
+Özellikle adaletin, ahlakın, vicdanın, sistemin, akılcı ama menfaati/çıkarı kutsamayan bir yönetim anlayışının olmadığı bir yönetim ve organizasyonda, tesadüfi ve bireysel olağanüstü çabalarla alınan başarılar ne kadar kayda değerdir bunu spor camiasının takdirine bırakıyorum. 
+
+Cimnastik/Jimnastik branşını değerlendirdiğimizde: Öncelikle tarihi bir başarının geldiğini vurgulamalıyız.  Ferhat Arıcan perdeyi açmıştır ve gelecek nesillere örnek olmuştur. Kendisi eğitimli ve ne yaptığının bilincinde bir genç sporcudur. Bu başarısını daha üst seviyelere çıkarmak için yeterince donanıma sahiptir, önemli olan istikrarlı çalışmaları sürdürüp sporuna yoğunlaşmaktır. Diğer sporcuları da aynı şekilde tebrik ediyorum. Hiç moral bozukluğu yaşamadan işlerine yoğunlaşmaları; onları bir sonraki uluslararası  yarışmalarda ve olimpiyatlarda kesinlikle başarıya ulaştıracaktır buna tüm kalbimle  inanıyorum. 
+Tabi bu başarı bir anda gelmiş bir başarı olmamakla birlikte, arkasında çok köklü bir yönetim ve organizasyon yetisinin yattığını ifade etmeliyiz. Suat Çelen başkanın sporculuktan gelen birikimini ve sonrasında yöneticilikten gelen tecrübelerini camiaya aktarması, doğru seçimleri yapması,  kontrol mekanizmasını oluşturması ve sistem kurup adaletli bir yönetim sağlaması sonucu bu tarihi başarı elde edilmiştir. Tabi ki olimpiyat madalyası bir anda gelmemiştir, hiç bir zaman hayal edemeyeceğimiz avrupa ve dünya şampiyonluklarının başarılması, olimpiyat madalyasının da ayak sesleri olarak değerlendirilmelidir.  Bu anlamda örnek bir federasyon olarak gösterilebilinir.  
+Tüm sporcularımız çok başarılı final serileri ortaya koymuştur ve  özellikle ilk kez olimpiyatta final yarışmanın verdiği baskıyla ufak hatalar madalyaların elden gitmesine, adeta kendi ellerimizle hediye etmemize sebep olmuştur. Sonuç itibari ile hakemlerin iki dudaklarına bakan bir puanlama sisteminden söz etmekteyiz. Temel sporlardan birisi olarak Cimnastik/Jimnastik doğru bir yoldadır ve bu aşamadan sonra kendi işini zorlaştırmıştır, zira seviye atlamıştır ve hem başkandan ve hem de camiadan beklentiler yükselmiştir ve gözler üzerlerindedir.  Ancak şu ana kadar atılan adımlar misali daha üst seviye adımlar atılarak bu bayrak çok daha yükseklere taşınacaktır. Federasyon olarak uluslararası arenada daha fazla kulis çalışmaları yapılmalı, mümkün olduğunca farklı alanlarda söz sahibi olunmalı ve her kademede etkinliğimizin artırılması için gerekli tüm adımlar atılmalı ve bu bağlamda bakanlık ilgili federasyona her türlü desteği vermelidir. 
+
+Atletizm branşına baktığımızda: Olimpiyatların en popüler sporlarından olan atletizm, önceki yıllar yapılan yatırımların karşılığını yavaş yavaş hissetmektedir. Arzu ettiğimiz başarılar alınamasa da final yarışan sporcularımız ümit vermiştir. Eda Tugsuz Ciritte, Ersu Şaşma Sırıkla yüksek atlamada, Necati Er Üç adım atlamada, Yasmani Copello Escobar 400 metre engelli,  Eşref Apak Çekiç atmada, Yasemin Can 5 bin ve 10 bin metre finalde yarışarak bu alanlarda da yapılan yatırımların karşılığı görülmüştür.  Bu 6 atlet dünyanın en iyi sporcuları ile yarışmanın onlara kattığı ufku hissetmişlerdir ve bir sonraki olimpiyatlar için daha büyük umut ve motivasyonla çalışacaklardır. Elbette finalde yarışmak yetmez, çıta daha da yükseğe konmalıdır ve bir gelenek olan atletizmin ülkemizde de olimpiyatlarda başarılı olabilecek geleneğe sahip olma yolunda önemli adımları attığını düşünüyorum. Bu adımların yeterli olup olmadığı noktasında atletizm camiası karar verecektir.  Burada bir parantez açarak gelenekten atletizm kültüründen bahsetmişken, atletizm yöneticileri şunu sorgulamalıdır. Ata sporumuz olan Güreş’i bizden öğrenmelerine rağmen güçlü bir güreş geçmişine, geleneğine ve kültürüne sahip olmayan ülkeler nasıl oldu da Türkiye’den daha başarılı olabiliyorlar? Neden biz atletizm camiası olarak, Amerika, Jamaika, Kenya… gibi ülkelerde güçlü olan o atletizm altyapısını, geleneğini, kültürünü alıp ülkemizde uygulayarak onlardan daha başarılı olmayalım? Nitekim güreş önlerinde duran bir örnektir. Önemli olan sorgulamak ve bu işi dert edinerek bütünsel yatırımlar yapmaktır.  Önemli olan bilimsel yöntemlerle çalışan, bencillikten uzak ve başarı odaklı yoğunlaşılarak çalışmaktır. Bu nitelikte antrenörlerin Atletizm camiasında var olduğunu biliyorum ve inanıyorum.  Her türlü sürprize açık bu sporda yeterki doğru olan tartışılsın ve gerekli adımlar atılsın, atletizmin her branşında madalya alma şansımızın olduğu unutulmamalıdır. 
+
+Atıcılık branşında madalyayı son anda kaybetmemiz hepimizi üzmüştür.  Ömer Akgün’ü tebrik ederim. İstikrarlı çalışmasını devam ettirdiği müddetçe bir sonraki olimpiyatlarda ve olimpiyatlara kadar olan süreçteki uluslararası yarışmalarda başarılı olacaktır.  Final barajını geçemeyen ama kota alıp olimpiyatlarda yarışam tüm sporcularımızı ayrıca kutlarım.  Daha azimli ve sistemli çalışmalarla onlarda daha üst seviye başarılar alacaklardır. Ancak bu kaçırılan madalya göstermiştir ki atıcılık branşında da madalya almamız imkansız değildir. Yeterki doğru yatırımlar doğru sporculara yapılsın. 
+
+Badminton, Uzak Doğu hegomanyalı bu sporda bir sporcumuz Neslihan Yiğit vardı ve elemelerden çıkamadı. Elemelerde gurubunda bulunan Olimpiyat şampiyonunu geçemedi, sporda nasip dediğimiz alanı da aklımızın bir kenarına yazmalıyız. Zira diğer gurupta olmuş olsa daha fazla şansa sahip olabilecekti Neslihan. Madalyalara Asya ülkelerinin ambargo koyduğu bu branşta Avrupa’dan sadece bir ülke Danimarka madalya alabilmiş durumda. Çin, Endonezya, Malezya, Hindistan, Japonya, Güney Kore ve diğer asya ülkelerinin bu spor branşına ne denli yatırımlar yaptıkları özellikle yetkililer tarafından incelenmelidir. Ama şu durumda unutulmamalıdır, her şey sadece maddi anlamda yatırımlarla ilgili de değildir, sonuç itibari ile spor bir kültür işidir.  Ülkemizde güreş branşında var olan kültürün çok daha güçlüsü bu uzak doğu asya ülkelerinde ileri derecede gelişmiş bir kültürdür.  Bu alanda ülkemizde bu kültürün gelişmesi için 2000’li yıllardan itibaren Özmekik başkanın gece gündüz nasıl çalıştığına ve badmintonun aşığı bir insan olarak bu spora neleri kattığını ve sporu hangi noktadan/seviyeden nerelere getirdiğini (Avrupa madalyası hayal iken Avrupa’da madalyalar alması ve Olimpiyat çok uzak bir rüya iken bu rüyayı defalarca gerçekleştirmesi) bilmekteyim ve açıkçası bu gerçeği sadece Badminton camiası değil tüm spor camiası yakından bilmektedir.
+Sadece alt yapı ve performans sporuna yatırımla kalmayıp, ulaşabildiği ve sosyal sorumluluk zihniyetiyle bu sporun bir kültür olarak gelişmesi için hayatın içinden dokunmadığı alanın olduğunu düşünmüyorum. Her türlü sosyal tabaka ile iletişim kurup farklı projeler yapan ve genelde sporun ve özelde Badminton’un yaygınlaşması ve bu kültürün oluşması için çalışan tam bir proje adamıdır kendisi. 
+Başarı almanın hayli zor olduğu bu branşta sporun ve Badminton’un aşığı Murat Özmekik başkanın gerekli yatırımları yaptığını yakinen bilmekteyim, her türlü arenada başarı alınması için canhıraş bir biçimde çalıştığını ve  başkanın olimpiyatlarda da başarı alınması için gerekli adımları atacağına ve attığına inanıyorum.  Üst düzeyde Badminton’a bağlı ve adanmışlık duygusu ile çalışan, ayrıca inanıyorum ki ülkemize olimpiyat madalyası hediye etmek istek ve tutkusuna sahip başkana: Başkanım neleriniz eksik, veya neler yapılmalı da olimpik sporcu sayımız artırılmalı ve hatta olimpiyatlarda Badminton’dan madalya ve madalyalar da gelmeli diye sorulmalı, belki soruluyordur, ben bunu bilmiyorum ama bu kadar samimiyetle ve bu işi kendisine dert edinmiş bir şekilde çalışan bir insan bu soruları hak ediyordur diye düşünüyorum.  Ya da tüm göstergeler lehinize iken(liyakatli bir başkan ve projeleri) olimpiyatlarda madalya alamamamızın sebebini siz bir başkan olarak nelerin eksikliğine bağlıyorsunuz diye mutlaka istişare edilmeli ve yılların verdiği tecrübelerden ve bilgi birikiminden faydalanılmalıdır. Bununla birlikte Özmekik başkanında varsa sorgulanması gereken yönetimsel, teknik ve stratejik detayları yapıp yapmadıklarıyla ilgili sorgulamaları kendi iç bünyelerinde yapacağına inanıyorum, bu özeleştiriler her zaman ilerlemenin motor gücüdür. 
+Eski bir antrenör ve eğitimci kimliğe sahip bir başkan olarak olimpik sporcuların bütünsel gelişimleri için ihtiyacı olan her imkan sunulmalıdır, zira iyi niyetinden hiç bir zaman şüphe duyulmayan başkana hak ettiği imkanlar sunulursa muhakkak daha fazla sporcuyla olimpiyatlarda ülkemizi temsil edecek ve mutlaka bir madalyayla başlangıç yapacaktır. Çünkü kendisi, sporcu, antrenör, eğitimci ve yöneticilik yapmış nitelikli bir insandır. Bu türden nitelikli insanların dinlenmesi ve onların bakış açılarının spora yansıtılması spora çok ama çok şey katacaktır. 
+
+Bisiklet, 528 kotaya sahip olan ve farklı disiplinlerde bir çok madalya alınması imkanı olan bu sporda da kota alan ve yarışan 2 sporcumuz vardı ancak elemeleri geçemediler.  İlgili federasyonun bu kadar kotanın ve farklı disiplinin madalya şansı sunduğu Bisiklet branşı için daha fazla özveri ile çalışarak başarılı olmak için gerekli adımları atarak bu branşta da uluslararası arenada sesimizi duyurmanın yollarını arayacağını, araması gerektiğini düşünmekteyim. Bilimsel altyapısı sağlam olan ve branş bilgisi üst düzeyde olan akademisyenlerden faydalanılmalı, ayrıca özellikle yerel yönetimlerle daha fazla iletişim ve karşılıklı iş birliği çerçevesinde ve kazan kazan esasına dayalı proje ve aktivitelerle Bisiklet sporunun tabana yayılması sağlanmalıdır. Bu nicelikten de nitelikli sporcular mutlaka çıkacaktır. 
+
+Modern Pentatlon’da İlke Özyüksel müthiş bir çıkış ile bir önceki Rio Olimpiyatlarında 34.sırada tamamlamışken Tokyo’da 5.sıraya gelmiş ve madalyaya çok yaklaşmıştır. Azminden ve mücadelesinden dolayı kendisini tebrik ederim. Demek ki madalya almayı hiç düşünmediğimiz branşlarda bile madalyaya çok yakın olabiliyoruz. Dolayısı ile her branşa uygun şartlarda yatırım yapılması gerekiyor, zamanla bu branşlarda da madalyalar gelecektir. 
+
+Halter. Naim Süleymanoğlu, Halil Mutlu gibi efsane spor tarihine sahip olan ülkemiz ve bu geleneğin yeterince güçlü olduğu Halter camiası bir an önce toparlanıp, kişisel çekişmeleri ve doping skandallarını bir kenara bırakarak sistemlerle hareket edip başarılı olmanın yollarını aramalıdır. Diğer türlü kişilerin çatışmaları camiayı bitirecektir ve tarih yazdığımız bu sporda adımız dahi dünya arenasında duyulmayacak ve silinip gidecektir. Federasyon için Tamer Taşpınar başkanın uzun yılların yöneticisi olarak Halter için bir şans olduğunu düşünüyorum. Önemli olan başta antrenör ve kulüplerin birliği sağlayıp kısır tartışmalardan, çekişmelerden ve insan harcamaktan uzaklaşmaları ve birlik olarak hedefe yoğunlaşmaları gerekmektedir.  Ayrıca Halter sporu için gerekli tüm bilimsel altyapılar oluşturulmalı, yine antrenörlerimizin bilimsel bilgilerle daha güçlü hale getirilmesi sağlanmalı ve son olarak antrenörlerin birliği sağlanıp Halter için güç birliği oluşturulmalıdır. 
+
+Judo, 6 sporcunun kota aldığı ve 2 sporcumuzun madalya maçında yenildiği Judo branşını daha başarılı olimpiyatlar bekliyor diye düşünüyorum.  Burada özellikle sporcularımızın kura çekimlerinde Japon sporcularla eşleşmeleri başarısızlığa önemli ölçüde etki etmiştir düşüncesindeyim. Sporun cilvesi diyebiliriz ama Olimpiyat Şampiyonu olan bir camiadan bahsedilince işler değişiyor. Diğer taraftan yeterli imkanlara sahip bir camianın neden derece çıkarılmadığını da yeterince irdelemesi gerekmektedir düşüncesindeyim. Yönetim, teknik kurullar, kulüpler velhasıl camia bu sorgulama içerisine girmelidir. 
+
+Yüzme, 11 sporcu ve takım disiplinlerinde olimpiyat kotası almış ve ülkemizi temsil etmiş Yüzme branşının önünün açık olduğunu,  daha önce çok uzak olduğumuz finallerin yakın olduğunu ve bu final sürecin de zaman içinde madalya getireceğini düşünüyorum. Bu kadar sporcu ile kota alınması bile başlı başına bir başarıdır ve fakat bir iki olimpiyat sonrasında da başarıların geleceğini düşünüyorum. Tunus’lu sporcunun yaptığı sürprizi ülke olarak  dünyaya bizlerde yüzücülerimizle yapmalıyız. Farklı projelerle yüzmenin tüm çocuklarımıza öğretilmesi ve buradan gelecek yetenekli sporcuların belirlenip uygun yatırımların yapılması ile nitelikli sporcuların yetişerek olimpiyatlarda da Cimnastik/Jimnastik benzeri bir çıkış yakalayacağına dair ümit varım.
+
+Yelken, Kürek, Eskrim sporları da ciddi ve gözle görünür kıpırdanmaların olduğu sporlar olarak göze çarpmakta.  Bu sporlarda da öncelikle yetenekli sporcular belirlenip, sistemli, bilimsel ve çok çalışılarak özlenen olimpiyat madalyaları süreç içinde gelecektir. 
+
+Genç nüfusa sahip bir ülke olarak yukarıdaki sporlar gibi diğer farklı sporlara da öncelikle bütünsel anlamda liyakatli adalet, ahlak ve sistem sahibi yöneticilerle, liyakat sahibi adaletli, ahlaklı, sistemsel ve bilimsel çalışan teknik kadroyla, branşa uygun kullanılabilir tesislerle, yapılan ve yapılacak yatırımlarla dünya arenasında söz sahibi olmamamız için hiçbir sebep bulunmamaktadır. 
+Önemli olan inançla, akılla, bilgiyle, bilimle, samimi adanmışlıkla, adalet gözetilerek çok çalışmaktır. 
+
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<footer>
+<div class="footer-top">
+<div class="container">
+<div class="row">
+<div class="col-md-2 hidden-xs hidden-sm">
+<img alt="" class="img-responsive" src="data/6397857-logo.png"/>
+</div>
+<div class="col-md-7">
+<div class="row">
+<div class="col-md-4">
+<ul>
+<li>GÜNCEL</li>
+<li><a href="anasayfa.html">Haberler</a></li>
+<li><a href="#">Etkinlikler</a></li>
+</ul>
+</div>
+<div class="col-md-4">
+<ul>
+<li>MULTİMEDYA</li>
+<li><a href="#">Fotoğraf Galerisi</a></li>
+<li><a href="#">Video Galerisi</a></li>
+</ul>
+</div>
+<div class="col-md-4">
+<ul>
+<li>İLETİŞİM</li>
+<li><a href="iletisim.html">İletişim Bilgileri</a></li>
+<li><a href="iletisim.html">İletişim Formu</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<ul>
+<li>E-BÜLTEN</li>
+<li>
+<form action="#" class="form-inline" method="post">
+<div class="row">
+<div class="form-group col-md-8">
+<div class="input-group">
+<label class="sr-only" for="txtemail"></label>
+<input class="form-control" id="txtemail" name="eposta" placeholder="E-Mail Adresi..." type="text"/>
+<input name="ebulten" type="hidden" value="1"/>
+</div>
+</div>
+<button class="btn btn-primary" type="submit">Kayıt Ol</button>
+</div>
+</form>
+</li>
+<li>
+<div class="pull-left">
+<a href="#" title="Facebook Sayfamız"><img src="themes/burokratlar/tema/images/icon-facebook.png"/></a>
+</div>
+<div class="pull-left sosyal">
+<a href="#" title="Twitter Sayfamız"><img src="themes/burokratlar/tema/images/icon-twitter.png"/></a>
+</div>
+<div class="pull-left sosyal">
+<a href="#" title="Google+ Sayfamız"><img src="themes/burokratlar/tema/images/icon-gplus.png"/></a>
+</div>
+<div class="clearfix"></div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div> <!-- .footer-top -->
+<div class="footer-bottom">
+<div class="container">
+<div class="copyright pull-left">
+<p>© 2015 İdareci ve Bürokratlar Birliği Derneği Derneği Tüm Hakları Saklıdır.</p>
+</div>
+<div class="pull-right">
+								 Biz Birlikte Güçlüyüz
+</div>
+</div>
+</div>
+</footer>
+<div class="clearfix"></div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿@font-face {
+  font-family: 'Saira Condensed';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(s/sairacondensed/v12/EJRMQgErUN8XuHNEtX81i9TmEkrnwetA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Saira Condensed';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(s/sairacondensed/v12/EJRLQgErUN8XuHNEtX81i9TmEkrnCclg8A.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Saira Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(s/sairacondensed/v12/EJRLQgErUN8XuHNEtX81i9TmEkrnUchg8A.ttf) format('truetype');
+}

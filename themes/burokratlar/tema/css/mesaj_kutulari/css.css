@@ -1,0 +1,35 @@
+.hata_kutusu, .uyari_kutusu, .tamam_kutusu, .bilgi_kutusu {
+    margin-top:7px;
+	margin-bottom: 1.5em;
+    padding: 1em 1.5em 1em 5.5em;
+    border-bottom: 2px solid #fff;
+    border-top: 2px solid #fff;
+    color: #444;
+	font-weight:bold;
+}
+
+.hata_kutusu    {background: #fbe3e4 url(hata.png) 2.2em center no-repeat; border-color: #e0011b}
+.hata_kutusu a  {color: #d12f19}
+
+.uyari_kutusu    {background: #fff6bf url(ikaz.png) 2.2em center no-repeat; border-color: #ffd324}
+.uyari_kutusu a  {color: #817134}
+
+.tamam_kutusu   {background: #e9ffdd url(tamam.png) 2.2em center no-repeat; border-color: #72c868}
+.tamam_kutusu a {color: #529214}
+
+.bilgi_kutusu   {background: #e2ecee url(bilgi.png) 2.2em center no-repeat; border-color: #9ddae6}
+.bilgi_kutusu a {color: #2d7ba2}
+
+
+/* listeler */
+.hata_kutusu ul, .uyari_kutusu ul, .tamam_kutusu ul, .bilgi_kutusu ul {
+    list-style: none;
+    margin: 1.3em 1.5em
+}
+.hata_kutusu ul li, .uyari_kutusu ul li, .tamam_kutusu ul li, .bilgi_kutusu ul li {
+    padding-left: 1.3em
+}
+.hata_kutusu ul li  { background: url(hata-bullet.png)  0 0.55em no-repeat }
+.uyari_kutusu ul li  { background: url(ikaz-bullet.png)  0 0.55em no-repeat }
+.tamam_kutusu ul li { background: url(tamam-bullet.png) 0 0.55em no-repeat }
+.bilgi_kutusu ul li { background: url(bilgi-bullet.png) 0 0.55em no-repeat }

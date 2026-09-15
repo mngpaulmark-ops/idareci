@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Galeri: {{ galeri.title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5 mb-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>{{ galeri.title }} - Resimler</h2>
+        <a href="{{ url_for('admin_galeri') }}" class="btn btn-secondary">Galerilere Dön</a>
+    </div>
+    <hr>
+    
+    <div class="card mb-4">
+        <div class="card-body">
+            <form method="POST" enctype="multipart/form-data" class="d-flex">
+                <input type="file" name="images" class="form-control me-2" multiple required accept="image/*">
+                <button class="btn btn-success" style="white-space: nowrap;">Toplu Resim Yükle</button>
+            </form>
+            <small class="text-muted">Aynı anda birden fazla resim seçip yükleyebilirsiniz.</small>
+        </div>
+    </div>
+    
+    <div class="row">
+        {% for r in galeri.resimler %}
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <img src="/{{ r.image_path }}" class="card-img-top" style="height:150px; object-fit:cover;">
+                <div class="card-footer text-center">
+                    <form method="POST" action="{{ url_for('admin_galeri_resimsil', id=r.id) }}" onsubmit="return confirm('Silmek istediğinize emin misiniz?');">
+                        <button class="btn btn-danger btn-sm">Sil</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="col-12"><div class="alert alert-warning">Bu galeride henüz resim yok.</div></div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>

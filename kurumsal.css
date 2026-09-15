@@ -1,0 +1,18 @@
+
+body { font-family: 'Roboto', sans-serif; background-color: #f8fafc; }
+h1, h2, h3, h4, h5, h6, .panel-heading { font-family: 'Inter', sans-serif; }
+.panel-primary > .panel-heading { background-color: #0f2b48; border-color: #0f2b48; }
+.panel-kurumsal { border: 1px solid #e2e8f0; border-radius: 0.5rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); overflow: hidden; margin-bottom: 1.5rem; background: white;}
+.btn-primary { background-color: #0f2b48; border-color: #0f2b48; border-radius: 0.25rem; transition: all 0.3s;}
+.btn-primary:hover { background-color: #800000; border-color: #800000; }
+.links a, #left-menu a { color: #0f2b48; text-decoration: none; }
+.links a:hover, #left-menu a:hover { color: #800000; }
+.main .box img { border-radius: 0.5rem; max-width: 100%; height: auto; }
+
+/* Fix for slider images */
+.slider .slideshow a { display: block; height: 100%; width: 100%; }
+.slider .slideshow .images { min-height: 350px; width: 100%; }
+
+/* Gallery Hover Effect */
+.gallery-hover { transition: transform 0.3s ease, box-shadow 0.3s ease !important; cursor: pointer; position: relative; z-index: 1; }
+.gallery-hover:hover { transform: scale(1.15) !important; box-shadow: 0 10px 25px rgba(0,0,0,0.5) !important; z-index: 10; }

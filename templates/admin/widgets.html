@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Akademik Paneller ve Widget Yönetimi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Ana Sayfa Widget Yönetimi</h2>
+        <a href="{{ url_for('admin_index') }}" class="btn btn-secondary">Admin Panele Dön</a>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Akademik Paneller & Seminerler</h5>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="p-3 border rounded bg-light h-100">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4 class="text-primary mb-0"><i class="bi bi-mortarboard"></i> Kamu Etiği ve Yönetim İlkeleri</h4>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" name="kamu_active" id="kamu_active" {% if kamu.is_active %}checked{% endif %} style="transform: scale(1.3);">
+                                    <label class="form-check-label fw-bold ms-1" for="kamu_active">Aktif</label>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Başlık (Opsiyonel)</label>
+                                <input type="text" class="form-control" name="kamu_title" value="{{ kamu.title }}">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Kısa Açıklama / Makale Özeti</label>
+                                <textarea class="form-control" name="kamu_desc" rows="4" required>{{ kamu.description }}</textarea>
+                                <small class="text-muted">Ana sayfada kutu içerisinde görünecek olan ön yazıdır.</small>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Yönlendirilecek Sayfa Linki (URL)</label>
+                                <input type="text" class="form-control" name="kamu_link" value="{{ kamu.link }}" required>
+                                <small class="text-muted">Örn: <code>/haberler/kamu-etigi-makalesi.html</code> veya doğrudan <code>https://...</code></small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-4">
+                        <div class="p-3 border rounded bg-light h-100">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4 class="text-danger mb-0"><i class="bi bi-person-workspace"></i> Yönetim ve Liderlik Seminerleri</h4>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" name="lider_active" id="lider_active" {% if lider.is_active %}checked{% endif %} style="transform: scale(1.3);">
+                                    <label class="form-check-label fw-bold ms-1" for="lider_active">Aktif</label>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Başlık (Opsiyonel)</label>
+                                <input type="text" class="form-control" name="lider_title" value="{{ lider.title }}">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Kısa Açıklama / Makale Özeti</label>
+                                <textarea class="form-control" name="lider_desc" rows="4" required>{{ lider.description }}</textarea>
+                                <small class="text-muted">Ana sayfada kutu içerisinde görünecek olan ön yazıdır.</small>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Yönlendirilecek Sayfa Linki (URL)</label>
+                                <input type="text" class="form-control" name="lider_link" value="{{ lider.link }}" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="d-grid mt-3">
+                    <button type="submit" class="btn btn-success btn-lg">Tüm Değişiklikleri Kaydet ve Siteye Yansıt</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

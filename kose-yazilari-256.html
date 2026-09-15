@@ -1,0 +1,618 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="tr" xml:lang="tr" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#"><head>
+<base href="/"/>
+<title> Hakkımızda İdareci ve Bürokratlar Birliği Derneği</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content=" -İdareci ve Bürokratlar Birliği Derneği 2009" name="description"/>
+<meta content="İdareci ve Bürokratlar Birliği Derneği" name="keywords"/>
+<meta content="İdareci ve Bürokratlar Birliği Derneği" name="Author"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content=" Hakkımızda / İdareci ve Bürokratlar Birliği Derneği" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="data/logo.jpg" property="og:image"/>
+<meta content="" property="og:url"/>
+<meta content="https://burokratlarbirligi.org" property="og:site_name"/>
+<meta content=" - İdareci ve Bürokratlar Birliği Derneği 2009" property="og:description"/>
+<meta content="facebook.com/yucel.can.796" property="fb:admins"/>
+<meta content="210306796005157" property="fb:app_id"/>
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="tema/js/pngfix.js"></script>
+<![endif]-->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Oswald&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@500&amp;family=Barlow:wght@200;500;700&amp;family=Cabin:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;300;500&amp;display=swap" rel="stylesheet"/>
+<!-- <link rel="stylesheet" href="themes/burokratlar/tema/css/all.min.css">
+<![endif]-->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<script src="themes/burokratlar/tema/js/jquery.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/jquery-migrate.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/jquery.bgswitcher.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/jquery.cycle.all.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.slideshoww').cycle({
+		fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+	});
+});
+</script>
+<style type="text/css">
+.slideshoww { max-width:100%; left:0px;  margin:0 auto; top:-1px; background-color:#FFF; }
+.slideshoww img {position: absolute; top: 0px; left: 0px; z-index:-999; max-width:100%; background-color: #eee; }
+</style>
+<script src="panel/tema/js/datepicker/js/jquery-ui-1.8.17.custom.min.js"></script>
+<script src="themes/burokratlar/tema/js/jq_maskedinput.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function($) {
+$("#phone").mask("0(999) 999-9999");
+$(".saat").mask("99:99");
+$("#securitycode").mask("9999");
+})
+</script>
+<link charset="utf-8" href="themes/burokratlar/tema/js/validator/validationEngine.jquery.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="themes/burokratlar/tema/js/validator/jquery.validationEngine-tr.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/validator/jquery.validationEngine.js" type="text/javascript"></script>
+<script type="text/javascript"> 
+    $(document).ready(function() {
+        $("#Form").validationEngine()
+    })
+</script>
+<script src="themes/burokratlar/tema/js/jcarousellite.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    jQuery("#kayan_alan").jCarouselLite({
+        vertical: true, //dikey yapmak için
+        hoverPause:true, //üzerine gelince durasý için
+        visible: 5, //3 adet gösterilmesi için
+        auto:1500, //bekleme süresi
+        speed:1000, //hareket hýzý
+        btnPrev: "#onceki", //onceki yazi
+        btnNext: "#sonraki", //sonraki yazi
+		mouseWheel: true
+    });
+});
+</script>
+<script src="themes/burokratlar/tema/js/jqcycle_all.js" type="text/javascript"></script>
+<script type="text/javascript"> 
+    $(document).ready(function() {
+        $('.solalanreresim').cycle({
+            fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+            timeout:'3000'
+        });
+        
+        $('.ustalanreresim').cycle({
+            fx: 'zoom', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+            timeout:'3000'
+        });
+        
+        $('.yakinetkinlikler .slide').cycle({
+            fx: 'scrollUp', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+            timeout:'5000',
+            resizeContainer: false,
+            cleartype: false,
+            slideResize: false
+        });
+    });
+    $(window).load(function() {
+        var slideshow = $(".slideshow").cycle({
+            fx: "fade",
+            timeout: 12000,
+            prev: ".slider-prev",
+            next: ".slider-next",
+            pager:  ".slider-pager",
+            fit:  2,
+            
+            pagerAnchorBuilder: function(idx, slide) {
+                return '<li><a href="#">'+(idx+1)+'</a></li>';
+            },
+
+        });
+    });
+</script>
+<script src="themes/burokratlar/tema/js/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/fancybox/jquery.fancybox.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/fancybox/helpers/jquery.fancybox-media.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/fancybox/fancybox/jquery.mousewheel-3.0.2.pack.js" type="text/javascript"></script>
+<link href="themes/burokratlar/tema/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" rel="stylesheet"/>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancybox").fancybox({
+		autoSize	: true,
+		openEffect	: 'none',
+		closeEffect	: 'none',
+		minHeight : 500
+		});
+	});
+</script>
+<script src="themes/burokratlar/tema/js/lightbox/jq_colorbox_lightbox.js" type="text/javascript"></script>
+<link href="themes/burokratlar/tema/js/lightbox/colorbox.css" media="screen" rel="stylesheet"/>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+	  $('a[rel*=colorbox]').colorbox();
+	  $('a[rel*=fotogaleri]').colorbox();
+	  $(".renkpaleti a").colorbox();
+	});
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.nav li').hover(
+            function () {
+                //alt menüleri göster
+
+                $('ul', this).stop(true,true,true).slideDown(200);
+
+            },
+            function () {
+                //alt menüleri gizle
+                $('ul', this).stop(true,true,true).slideUp(200);
+            }
+        );
+        
+        //alt kısım opacity efekti içindir
+        $('.nav li ul li').hover(
+            function () {
+                //üzerine gelince opacity
+                $(this).stop(true,true,true).animate({
+                    opacity: 1
+                  }, 300 );
+
+            },
+            function () {
+                //üzerinden gidince opacity
+                $(this).stop(true,true,true).animate({
+                    opacity: 0.9
+                  }, 300 );
+            }
+        );
+    });
+    function initMenu() {
+        $('#left-menu ul').hide();
+        $('#left-menu li a').click(
+        function() {
+            var checkElement = $(this).next();
+            if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+                checkElement.slideUp('normal');
+                return false;
+            }
+            if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+                if ( $(this).attr('class') != 'altmenu' ) {
+                    //$('#left-menu ul:visible').slideUp('normal');
+                }
+                checkElement.slideDown('normal');
+                return false;
+            }
+          }
+        );
+      }
+    $(document).ready(function() { initMenu(); });
+</script>
+<script src="themes/burokratlar/tema/js/tasarim/etkinlik_takvimi/js/jquery.eventCalendar.js"></script>
+<link href="themes/burokratlar/tema/js/tasarim/etkinlik_takvimi/css/eventCalendar.css" rel="stylesheet"/>
+<link href="themes/burokratlar/tema/js/tasarim/etkinlik_takvimi/css/eventCalendar_theme_responsive.css" rel="stylesheet"/>
+<script type="text/javascript">
+    $(document).ready(function() {     
+		
+		var eventsInline = [
+		{ "date": "1457179200000", "saat": "14:00", "type": "meeting", "title": "28 ŞUBAT YAŞAYAN BİRİ", "description": "GENİŞ BİR BAKIŞ AÇISIYLA 28 ŞUBAT BU HAFTAKİ KONFERANS KONUMUZ VE KONUĞUMUZ 54. HÜKÜMETİN DEVLET BAKANI VE AK PARTİ ETİK KURULU BAŞKANI SAYIN AHMET CEMİL TUNÇ", "url": "#" },
+		{ "date": "1457775936000", "saat": "14:00", "type": "meeting", "title": "MİLLET ANAYASASINA", "description": "Dost meclisinin bu haftaki konuğu Cumhurbaşkanı Başdanışmanı Sayın Av. Şeref Malkoç Katılacaktır.", "url": "#" },
+		{ "date": "1460228400000", "saat": "", "type": "meeting", "title": "SULTAN II ABDÜLHAMİD'DEN RECEP TAYYİP ERDOĞAN'A", "description": "BU KONFERANS ÇOK KONUŞULACAK.  Sultan Abdülhamit'e ait bilinmeyenler,", "url": "" },
+		{ "date": "1459364400000", "saat": "", "type": "meeting", "title": "Terör,  Göç ve Dokunulmazlık", "description": "ŞİMDİDEN BU TARİHİ VE SAATİ NOT EDIN...Terörün gerçek yüzü nedir, hedefi kimdir?Terör örgütleri ve hamileri kimlerdir?Terör örgütünün iç ve dış bağlantıları...Neden terör daha çok belli bir coğrafyadadır?Terõrün zararaları, tehlikeleri, etkileri, bilinmeyenleri....Teröre dair daha neler neler...Göç...Göç ve terörün bağlantıları...Göç sosyolojidi ve psikolojisi...İç ve dış göç...Dokunulmazlıklar...Dokunulmazlıkların ölçüsü, sınırı, bağlantıları...Terör, göç ve dokunulmazlıkların bağlantı ve ilişkileri..&nbsp;Batı ve Dünyanın bakışı, samimiyeti, etkisi......Ve daha neler neler...", "url": "#" },
+		{ "date": "1463097600000", "saat": "", "type": "meeting", "title": " PKK Medyası ve PKK İle Mücadelenin psikolojik Boyutu", "description": "Bu tarihi lüten not ediniz...Pkk...Sistematik dezanformasyon ve Pkk...Pkknın kara propagandası...Pkknın medyayı kullanma araçları...Pkkya destek veren Avrupa Ülkeleri...Daha neler neler...", "url": "" },
+		{ "date": "1464307200000", "saat": "", "type": "meeting", "title": "Küresel Meydan Okumalar ve Tükiye'nin Dış Politikası", "description": "Dost Meclisimizin Bu haftaki Konuğu STAR Gazetesi Ankara Temsilcisi olan Sayın Mustafa KARTOĞLU bey ile &ldquo;Küresel Meydan Okumalar ve Tükiye'nin Dış Politikası&quot; İsimli Konferansı siz değerli konuklarımız ile buluşturmaktadır. ", "url": "" },
+		{ "date": "1533682800000", "saat": "", "type": "meeting", "title": "Olağanüstü Kongre Kararı", "description": "YK. Kurulumuz Toplanarak almış olduğu Olağanüstü Kongre kararı doğrulturunsa 08.08.2018&nbsp;tarihinde&nbsp;toplanmasına, 06.08.2018 tarihinde ÇOĞUNLUK ARANMAKSINIZ 16.08.2018 Perşembe Saat 19.00'da İDARECİ ve BÜROKRATLAR BİRLİĞİ DERNEĞİNDE OLAĞAN ÜSTÜ KONGRE yapılacaktır.&nbsp;", "url": "" },
+		{ "date": "1534377600000", "saat": "", "type": "meeting", "title": "Olağanüstü Kongre Kararı", "description": "Olağanüstü Kongremiz 16.08.2018 Perşembe günü saat 19.00'da NEFF CAFE-NEFFGİLE Toplantı Salonunda yapılacaktır.( Atatürk Caddesi. Keçiören Girişi FTZ Arkası No:17 Keçiören-ANKARA) Teşriflerinizi bekler,Kongremizin; Derneğimize, Vatanımıza, İslam Alemine ve İnsanlığa hayırlı olmasını temenni ederiz.Yücel CAN", "url": "" },
+		{ "date": "1747094400000", "saat": "", "type": "meeting", "title": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Birlikte Güçlüyüz Ruhu İle Kahramanlık Eserleri Programı", "description": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Birlikte Güçlüyüz Ruhu İle Kahramanlık Eserleri Programına  Teşriflerinizden Mutluluk Duyarız", "url": "" },
+		{ "date": "1747162800000", "saat": "", "type": "meeting", "title": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Birlikte Güçlüyüz Ruhu İle Kahramanlık Eserleri Programı", "description": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Birlikte Güçlüyüz Ruhu İle Kahramanlık Eserleri Programına Teşriflerinizden Mutluluk Duyarız", "url": "" },
+		];
+            $("#eventCalendarLocale").eventCalendar({
+				jsonData: eventsInline,
+                cacheJson: false,
+                showDescription: true,
+				eventsLimit: 2,
+                monthNames: [ "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
+                    "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık" ],
+                dayNames: [ 'Pazar','Pazartesi','Salı','Çarşamba',
+                    'Perşembe','Cuma','Cumartesi' ],
+                dayNamesShort: [ 'Paz','Pzt','Sal','Çar', 'Per','Cum','Cmt' ],
+                txt_noEvents: "Periyotta etkinlik bulunamadı",
+                txt_SpecificEvents_prev: "",
+                txt_SpecificEvents_after: " Etkinlikleri:",
+                txt_next: "Sonraki",
+                txt_prev: "Önceki",
+                txt_NextEvents: "Yaklaşan Etkinlikler:",
+                txt_GoToEventUrl: "Detaylı Görüntüle"
+            });
+        });
+</script>
+<script src="themes/burokratlar/tema/js/tasarim/jcarousel/jquery.jcarousel.min.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/tasarim/jcarousel/jcarousel.responsive.js" type="text/javascript"></script>
+<link href="themes/burokratlar/tema/js/tasarim/jcarousel/jcarousel.responsive.css" rel="stylesheet"/>
+<script src="themes/burokratlar/tema/js/tasarim/kayan_duyuru/jquery.ticker.js" type="text/javascript"></script>
+<link href="themes/burokratlar/tema/js/tasarim/kayan_duyuru/ticker-style.css" rel="stylesheet"/>
+<script>
+    $(document).ready(function() {
+        $("#duyurular").ticker({
+            speed: 0.10,           // The speed of the reveal
+            debugMode: false,       // Show some helpful errors in the console or as alerts
+            controls: false,        // Whether or not to show the jQuery News Ticker controls
+            titleText: '',   // To remove the title set this to an empty String
+            displayType: 'reveal', // Animation type - current options are 'reveal' or 'fade'
+            direction: 'ltr',       // Ticker direction - current options are 'ltr' or 'rtl'
+            pauseOnItems: 2000,    // The pause on a news item before being replaced
+            fadeInSpeed: 600,      // Speed of fade in animation
+            fadeOutSpeed: 300      // Speed of fade out animation
+        });
+    });
+</script>
+<script src="themes/burokratlar/tema/js/tasarim/bootstrap.min.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/tasarim/custom.js" type="text/javascript"></script>
+<link href="themes/burokratlar/tema/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesnt work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="tema/js/tasarim/html5shiv.js"></script>
+<script src="tema/js/tasarim/respond.min.js"></script>
+<![endif]-->
+<link href="themes/burokratlar/tema/css/tasarim.css" rel="stylesheet" type="text/css"/>
+<link href="themes/burokratlar/tema/css/style.css?v=10" media="screen" rel="stylesheet" type="text/css"/>
+<link href="themes/burokratlar/tema/css/mesaj_kutulari/css.css" rel="stylesheet" type="text/css"/>
+<meta content="#dogrulama" name="google-site-verification"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet"/><link href="kurumsal.css" rel="stylesheet"/></head>
+<body>
+<header id="header">
+<div class="event">
+<div class="container">
+<div class="row">
+<div class="col-md-6 col-sm-6 col-xs-12">
+<div class="pull-left">
+<div class="ustlogoalt"></div>
+</div>
+</div>
+<div class="col-md-3 col-sm-3 col-xs-12">
+<div class="pull-right">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="header-banner">
+<div id="bs-demo"></div>
+<div class="row">
+<div class="col-md-12 col-xs-12">
+<a href="#" title="İdareci ve Bürokratlar Birliği Derneği"> <img alt="İdareci ve Bürokratlar Birliği Derneği" class="logo img-responsive" src="data/9595428-logo.png" style="margin-top:15px;"/> </a>
+<div style="left:0; background-color: rgb(255, 255, 255); width: 100%; position: absolute; top: 20px; z-index: -100; height: 155px;">
+</div>
+<div class="top-banner-img" style="position:absolute; right: 0px; top: 0px; height: 155px; z-index: -90; max-width: 70%; overflow: hidden;">
+<img alt="Biz Birlikte Gclyz" src="themes/burokratlar/tema/images/top_banner.png" style="height: 100%; width: 100%; object-fit: contain; object-position: right;"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="container">
+<nav class="navbar navbar-default" id="navbar" role="navigation">
+<div class="icon">
+<i class="glyphicon glyphicon glyphicon glyphicon-align-left"></i>
+</div>
+<div class="navbar-header">
+<button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div> <!-- .navbar-header -->
+<nav class="collapse navbar-collapse bs-navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav">
+<li class="home"><a href="anasayfa.html"><img alt="Ana Sayfa" src="themes/burokratlar/tema/images/ico-home.png"/></a></li>
+<li><a href="anasayfa.html" target="_self">Ana Sayfa</a></li>
+<li class="dropdown"><a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" target="_self">Derneğimiz</a>
+<ul class="dropdown-menu" role="menu">
+<li><a href="hakkimizda.html" target="_self">Hakkımızda</a></li>
+<li><a href="tuzugumuz.html" target="_self">Tüzüğümüz</a></li>
+<li><a href="yonetimkurulu.html" target="_self">Yönetim Kurulu</a></li>
+<li><a href="baskanlik-ve-birimler.html" target="_self">Başkanlık ve Birimler</a></li>
+<li><a href="yuksek-istisare-onur-kurulu-uyesi.html" target="_self">Yüksek İstişare ve Onur Kurulu</a></li>
+<li><a href="diger-kurullar.html" target="_self">Diğer Kurullar</a></li>
+<li><a href="temsilcilik.html" target="_self">Temsilcilik</a></li>
+</ul></li>
+<li><a href="haber-listesi.html" target="_self">Haberler</a></li>
+<li><a href="etkinlik.html" target="_self">Etkinlikler</a></li>
+<li><a href="resimler.html" target="_self">Fotoğraf Galerisi</a></li>
+<li><a href="iletisim.html" target="_self">İletişim</a></li>
+</ul>
+</nav>
+</nav>
+</div> <!-- .container -->
+<div class="page-index container">
+<div class="whitebg">
+<!--		<div class="icon">
+			<i class="glyphicon glyphicon-resize-full"></i> 
+		</div>-->
+<div class="row">
+<div class="col-md-3" id="left">
+<div class="left-menu">
+<div class="panel panel-primary">
+<div class="panel-heading">
+<img alt="Menu" src="themes/burokratlar/tema/images/icon-menu.png"/> Derneğimiz
+						</div>
+<div class="panel-body">
+<!--div style="position:absolute; width:65px; height:65px; background:url(data/7831298-baskan.png) no-repeat; right:25px; top:10px;"></div-->
+<ul id="left-menu">
+<li><a href="hakkimizda.html" target="_self">»  Hakkımızda</a></li>
+<li><a href="yonetimkurulu.html" target="_self">»  Yönetim Kurulu</a></li>
+<li><a href="baskanlik-ve-birimler.html" target="_self">»  Başkanlık ve Birimler</a></li>
+<li><a href="yuksek-istisare-onur-kurulu-uyesi.html" target="_self">»  Yüksek İstişare ve Onur Kurulu</a></li>
+<li><a href="diger-kurullar.html" target="_self">»  Diğer Kurullar</a></li>
+<li><a href="temsilcilik.html" target="_self">»  Temsilcilikler</a></li>
+<li><a href="haber-listesi.html" target="_self">»  Haberler</a></li>
+<li><a href="etkinlik.html" target="_self">»  Etkinlikler</a></li>
+</ul>
+</div>
+</div> <!-- .panel .panel-primary -->
+<!-- .panel .panel-darkprimary -->
+<!-- .panel .panel-lightred -->
+<!-- .panel .panel-red -->
+<!--div class="reklam">
+						<p><img style="display: block; margin-left: auto; margin-right: auto;" src="themes/burokratlar/tema/images/banner.png" alt="" width="250" height="250" /></p>
+					</div-->
+<div class="panel panel-primary hadis-i-serif" style="margin-top: 0px; border-color: #800000; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+<div class="panel-heading" style="background-color: #800000; border-color: #800000; color: white; font-weight: bold; font-size: 15px; padding: 12px 15px;">
+<i aria-hidden="true" class="fa fa-book" style="margin-right:8px;"></i> Günün Hadis-i Şerifi
+    </div>
+<div class="panel-body" style="background-color: #fdfaf6; padding: 25px 20px;">
+<div style="text-align: center; color: #800000; font-size: 20px; margin-bottom: 12px; opacity: 0.6;">
+<i aria-hidden="true" class="fa fa-quote-left"></i>
+</div>
+<div id="daily-hadith" style="font-size: 16px; font-style: italic; font-weight: 600; color: #444; line-height: 1.7; text-align: center; font-family: 'Georgia', 'Times New Roman', serif;">
+</div>
+<div style="text-align: center; color: #800000; font-size: 20px; margin-top: 12px; opacity: 0.6;">
+<i aria-hidden="true" class="fa fa-quote-right"></i>
+</div>
+</div>
+</div>
+<script>
+const hadiths = [
+    "Ameller niyetlere göredir.", 
+    "Sizin en hayırlınız Kur'an'ı öğrenen ve öğretendir.", 
+    "İman yetmiş küsur şubedir.", 
+    "Müslüman, elinden ve dilinden diğer Müslümanların güvende olduğu kimsedir.", 
+    "Kim Allah'a ve ahiret gününe inanıyorsa komşusuna iyilik etsin.", 
+    "Kolaylaştırın, zorlaştırmayın; müjdeleyin, nefret ettirmeyin.", 
+    "Din nasihattir.", 
+    "Söz taşıyanlar cennete giremez.", 
+    "Merhamet etmeyene merhamet edilmez.", 
+    "İşçiye ücretini teri kurumadan veriniz."
+]; 
+const day = Math.floor((new Date() - new Date(new Date().getFullYear(),0,0)) / 1000 / 60 / 60 / 24); 
+document.getElementById("daily-hadith").innerText = hadiths[day % hadiths.length];
+</script>
+<div class="panel panel-kurumsal mb-4 side-dijital" style="display: none !important;"><div class="panel-heading text-center font-bold" style="background:#0f2b48; color:white; padding: 10px;">Dijital İşlemler Portalı</div><div class="panel-body text-center p-4"><a class="btn btn-primary w-full mb-2" href="uyelik.html" style="background:#800000; border:none; display:block; padding:8px; color:white; border-radius:4px; text-decoration:none;">Üyelik Başvurusu</a><a class="btn btn-primary w-full mb-2" href="#" style="background:#e2e8f0; border:none; display:block; padding:8px; color:#0f2b48; border-radius:4px; text-decoration:none;">Aidat Sorgulama</a></div></div><div class="panel panel-kurumsal mb-4 side-gundem" style=""><div class="panel-heading text-center font-bold" style="background:#0f2b48; color:white; padding: 10px;">Gündem &amp; Buluşmalar</div><div class="panel-body p-4"><ul class="list-none p-0 m-0 text-sm"><li class="border-b py-2 mb-2"><span style="background:#800000; color:white; padding:2px 6px; border-radius:4px; font-size:12px;">Yakında</span> <a href="#" style="color:#0f2b48; font-weight:bold; text-decoration:none;">Politika Notu Yayını</a></li><li class="border-b py-2 mb-2"><span style="background:#800000; color:white; padding:2px 6px; border-radius:4px; font-size:12px;">14 Mayıs</span> <a href="#" style="color:#0f2b48; font-weight:bold; text-decoration:none;">Dost Meclisi Buluşması</a></li></ul></div></div><div class="panel panel-kurumsal mb-4 side-ebulten" style="display: none !important;"><div class="panel-heading text-center font-bold" style="background:#0f2b48; color:white; padding: 10px;">E-Bülten &amp; Politika Notlarına Abone Olun</div><div class="panel-body text-center p-4"><input class="form-control mb-2 p-2 border rounded w-full" placeholder="E-Posta Adresiniz" style="width:100%; box-sizing:border-box;" type="email"/><button class="btn btn-primary w-full mt-2" style="background:#800000; border:none; padding:8px; color:white; border-radius:4px; width:100%;">Abone Ol</button></div></div><div class="panel panel-cyan links side-faydali" style=""><div class="panel-heading"><img alt="Link" src="themes/burokratlar/tema/images/icon-link.png"/>Faydalı Bağlantılar</div><div class="panel-body"><ul><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.tccb.gov.tr/" target="_blank">Cumhurbaşkanlığı</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.tbmm.gov.tr/" target="_blank">Türkiye Büyük Millet Meclisi</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.turkiye.gov.tr/" target="_blank">E-devlet</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.icisleri.gov.tr/" target="_blank">T.C. İçişleri Bakanlığı</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.resmigazete.gov.tr/" target="_blank">Resmin Gazete</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.cimer.gov.tr/" target="_blank">Cumhurbaşkanlığı İ.M. (CİMER)</a></li></ul></div></div><div class="side-banner" id="yanaplat-banner" style="margin-top: 20px; margin-bottom: 0px; text-align: center;">
+<img alt="Milli İrade Platformu" src="data/yanaplat.gif" style="width: 100%; height: 220px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: 1px solid #ccc;"/>
+</div>
+</div> <!-- .left-menu -->
+</div> <!-- #left -->
+
+<div class="col-md-9" id="main">
+<div class="main">
+<div class="panel panel-primary">
+<div class="panel-heading">Görüş &amp; Politika Notları / SAMUEL P.HUNTİNGTON</div>
+<div class="panel-body">
+<div class="col-md-12">
+<div style="float: left; margin-right: 15px; margin-bottom: 15px; text-align: center;">
+<a href="kose-yazar-6.html">
+<img src="data/haberkosegroup/6.jpg" style="max-width: 150px;"/>
+<br/><b>Metin AYAZ</b>
+</a>
+</div>
+<h3>SAMUEL P.HUNTİNGTON</h3>
+<hr/>
+<div class="content-text">
+                                Sovyetler Birliği’nin çöküşü ve soğuk savaş döneminin sona ermesiyle birlikte, yeni küresel düzenin ne olacağı hakkında farklı görüşler ortaya atılmıştır. Bu görüşlerin belli başlıları, Yeni Dünya Düzeni, Tarihin Sonu, Yeni Orta Çağ, Devletlerin Amipleşmesi ve Kaos görüşleridir (Halliday, 1997). Bunlar arasında Samuel P. Huntington’un savunduğu Medeniyetler Çatışması Tezi, en iddialı görüş olarak dünya çapında büyük yankı uyandırmıştır. Medeniyetler Çatışması kitabı uluslararası ilişkiler uzmanlarının ilgisini çektiği kadar, iktisat, sosyoloji, tarih ve siyaset bilimcileri tarafından da büyük ilgi görmüştür. Kitap hakkında uluslararası bilimsel dergilerde çıkan değerlendirme yazılarının sayısı da gösterilen bu ilgi düzeyinin bir kanıtıdır. Medeniyetler Çatışması görüşü ilk ortaya atılmasından ve kitap olarak ortaya çıkmasının ardından gördüğü ilgi azalmaya başlamıştı ama 11 Eylül saldırılarının ardından ABD’nin dünyayı yeniden şekillendirme politikaları çerçevesinde gündemde önemli yer işgal etmeye devam etmiştir. 
+
+Harvard Üniversitesi’nde görev yapan siyasal bilimler profesörü Samuel Huntington, 1993 yılında Foreign Affairs dergisinde yayınlanan 'medeniyetlerin çatışması' konulu makalesinin gördüğü yoğun ilgi üzerine bu çalışmasını genişleterek 1996 yılında 'Medeniyetlerin Çatışması ve Dünya Düzeninin Yeniden Yapılması' adıyla kitaplaştırdı. 11 Eylül (2001) saldırılarının ardından tekrar ilgi odağı olan kitap, pek çok sosyal bilimci tarafından yeniden ve daha dikkatlice okunmaya başlandı. Medeniyetler Çatışması Tezi ilk olarak Foreign Affairs dergisinin 1993 yaz sayısında yayınlanmış ve Batı liberalizminin sosyalizme karşı nihai bir zafer kazandığını ve bunun küresel ilişkilerin yapısını de belirleyeceğini savunan Francis Fukuyama’nın Tarihin Sonu Tezi’ne bir cevap olarak ortaya çıkmıştır (Pipes 1997). Huntington’un Medeniyetler Çatışması kitabı medeniyetler ve kültürler, kültürün güç ilişkileri ve güç dengelerinin değişmesi üzerindeki etkileri, Batı evrenselciliği, Müslüman radikalizmi, Çin’in iddialı biçimde ortaya çıkışı ve kırılma hatlarındaki mücadelelerin alevlendirdiği uluslararası çatışmalar hakkında analizler içermektedir.   
+
+Medeniyetler Çatışması’nın ana tezi oldukça nettir: “Daha genel anlamda medeniyet kimlikleri ile bağlantılı olarak kültür ve kültürel kimlikler Soğuk Savaş sonrasında dünyadaki uzlaşma, ayrışma ve çatışma kalıplarını biçimlendirmektedir” (s.20) ve medeniyetler arasındaki uzlaşmacı ilişkiler olmaktan daha çok çatışmacı bir karakter taşımaktadır. Kitaptaki bölümlerin her biri şu görüşler üzerine temellendirilmiştir: (1) Modernleşme batılılaşmadan farklıdır ve modernleşme batılılaşmayı otomatik sağlamaz; (2) Batı Medeniyeti gerilemeye başlamış ve diğer taraftan Asya (Uzakdoğu) ve İslam Medeniyetleri yükselişe geçmiştir; (3) Medeniyetler çerçevesinde benzer devletlerin yeniden işbirliğine girdiği ve faklı devletlerin ise kutuplaşmasına yol açan yeni bir dünya düzeni ortaya çıkmaktadır; (4) Batı’nın evrensellik iddiası diğer medeniyetlerle – özellikle İslam ve Çini medeniyetiyle – çatışmasına yol açmaktadır, (5) Batı’nın ayakta kalması, merkez devleti olarak Amerika Birleşik Devleti’ne bağlıdır ve onun kimliği evrensel olmaktan daha çok kendine hastır. Küresel siyasetin çoğulcu karakterini kabul ederek küresel barışın garanti altına alınabileceği biçiminde özetlenebilir. 
+
+Huntington, medeniyeti dil, tarih, din, gelenekler ve kurumlar gibi ortak objektif unsurlarla ve insanların kendilerini sübjektif olarak tanımlama biçimleriyle açıklamıştır. Din medeniyetlerin temel özelliğini tanımlamaktadır. Yazar, dünya üzerinde yedi veya sekiz medeniyet tespit etmiştir: Batı (Yahudi-Hıristiyan), İslam, Çin, Hint, Ortodoks, Budist, Japon, Latin Amerika medeniyetleri (Afrika ise medeniyet olmaya adaydır). Medeniyet bloğundaki devletler genellikle merkez devletleri etrafında yoğunlaşan daireler oluştururlar ve buradaki yoğunluk derecesi bloğa entegrasyon düzeyini yansıtır.
+
+Bazı temel evrensel ahlaki değerler dışında, Huntington everensel kültür ya da medeniyet diye bir şeyin var olduğunu düşünmemektedir. Ayrıca, Batı kültürünün de evrensel olabileceğine inanmamaktadır. Batı kültürünün evrenselliğine karşı  çıkarken, Huntington İngilizce’nin resmi dil olarak kullanımının azaldığını örnek göstermektedir ama aynı zamanda onun ikinci dil olarak oldukça yaygın kullanımını ve diğer dillere geçen İngilizce kelimelerin ağırlığını da göz ardı etmektedir.   
+Medeniyetler Çatışması Tezi’nde uluslararası politikadaki genel konular hakkında bir çok ufuk açıcı analiz de bulunmaktadır. Ancak onun en önemli eksikliği, ülkeler arasındaki ekonomik ilişkilerin doğasını ve kapitalizmin evrensellik eğilimini hesaba katmamasıdır.
+
+Diğer yandan da ulus devletlerin çıkarları, ilişkileri ve çatışmaları giderek kültür ve medeniyet faktörleri tarafından biçimlendirilmekte olduğu belirtmektedir. Ancak bu teziyle yazar, Ortodoks Yunanistan’ın Avrupa Birliği’ne üyeliğini, Ortodoks Gürcistan’ın neden Rusya ile değil de Türkiye’yle yakınlaşma içinde olduğunu, mücadeleleri oldukça eskilere giden Türkiye ve Rusya arasındaki ekonomik ve siyasal yakınlaşmayı, Azeri-Ermeni çatışmasında Müslüman ve Şii İran’ın neden Müslüman Şii ağırlıklı Müslüman Azerbaycan’ı değil de Ortodoks Ermenileri desteklediğini açıklamakta zorlanacaktır.
+
+Huntington Doğu Asya’daki ekonomik gelişmeyi onların kültürlerine ve İslami fundamentalizmi İslam kültürün doğasına bağlamaktadır.
+Huntington Batı’nın tarihsel olarak fikirlerinin veya değerlerinin üstünlüğü ile değil de, organize şiddet veya güç kullanarak dünyayı kontrol altına aldığını itiraf etmiştir. 
+
+Huntington’a göre, günüzde insan hakları ve demokrasi, silahlanma yarışı ve göç konuları Batı elitlerini endişelendiren medeniyetler arası konuların başında gelmektedir.   
+
+Yazar Batı medeniyetinin çöküşte olduğuna ve çöküşün yavaş ve düz bir çizgide devam etmeyen bir süreç olduğuna inanmaktadır. Bu çöküşü toprak, nüfus, ekonomik üretim ve askeri kapasite gibi görece somut faktörler açısından ele almaktadır ve bu göreceli çöküşün Doğu Asya’daki hızlı ekonomik büyümeden kaynaklandığını düşünmektedir.
+
+11 Eylül sonrası gelişmeler ve yeni Bush Doktrininin, Medeniyetler Çatışması Tezi’ne yönelik ilginç imaları vardır. Dindar milliyetçi anlayışa sahip yenimuhafazakarların (neo-conservative) ağırlıkta olduğu Bush Yönetimi, bir yandan Üsame Bin Ladin ismiyle özdeşleştirilen radikal İslam ile mücadelesinde ABD’nin medeniyet ekseninde hareket ettiğine işaret edebilir. Ayrıca, Bush doktrinin özünü oluşturan engelleyici savaş ve tek yanlı (başkalarıyla diyalog ihtiyacı duymayan) bir politika, Huntington’un önerdiği bir şeydir ve Irak Savaşı’nda ABD yönetimi tarafından uygulanmıştır. 
+
+Huntington’a göre ülkeler arasındaki ortak özellikler yardımlaşma ve dayanışmayı kolaylaştırmakta ve kültürel faklılıklar ise çatışma ve sürtüşme üretmektedir (s.128). Bu durum ancak tarafların süregelen ekonomik ve siyasal çıkarları ile paralel olduğu zaman gerçekleşebilir.   
+
+Medeniyetler Çatışması Tezi’nin önemli bir katkısı da, bölünmüş ülke analizidir. Bölünmüş bir ülkede, içindeki baskın kültür başka bir medeniyete ait iken, onun yönetici elitleri başka bir medeniyete katılmasını istemektedir. Örneğin, Türkiye ve Rusya kendi medeniyetleri için potansiyel merkezi devlet olabilecek durumunda iken yönetici elitleri hangi yönde devam edecekleri konusunda fikir ayrılığına sahiptir. 
+
+Yazarın kırılma hattı  kavramı, farklı medeniyetlerin mensubu komşu ülkeler arasında çatışma çıkmasını açıklayan ve tahmin eden ufuk açıcı bir analizdir. Bu çatışma Pakistan ile Hindistan, Türkiye ile Yunanistan, Ermenistan ile Azerbaycan, Filistin ile İsrail arasındaki çatışmaları analizde yardımcı olabilir.
+Medeniyetler Çatışması Tezi, Bosna Savaşı’nda Avrupa’nın (özellikle Almanya’nın) Katolik Hırvatistan’a, Yunanistan ve Rusya’nın Ortodoks Sırplara ve Müslümanların Bosna’ya yardım etmesini açıklayabilir ama Hıristiyan Sırplara karşı Bosna’ya Amerikan desteğini açıklayamaz. Ayrıca, yazar İslam’ı diğer medeniyetlerle Bosna, Kosova, Nogorno-Karabağ ve Çeçenistan gibi kanlı s ınırlara sahip olmakla ve saldırgan bir medeniyet olmakla suçlamaktadır ama bu savaşların çıkış nedenleri hakkında yine sessiz kalmaktadır. Özellikle Batı’nın Orta Doğu’daki ekonomik çıkarları (yani, petrol, doğal gaz, zengin maden yatakları) konusuna  önem vermemektedir ve bir anlamda da kurbanı suçlamaktadır. Ancak yazar İslam ülkelerinin kendi aralarında ve diğer medeniyetten ülkelerle olan çatışmalarını açıklayan önemli bir faktöre dikkat çekmektedir: Askeri ve ekonomik gücüyle çatışmayı önleyecek Müslüman merkez devletin bulunmayışı (s. 264).   
+
+Medeniyetler Çatışması Çin ve ABD arasında çıkması muhtemel ciddi çatışmalara dikkat çekerken ABD’nin Çin’i Vietnam veya Endonezya ile dengelemesi gerektiğini iddia etmektedir. 
+
+Yazarın çoklu medeniyet konusundaki kişisel tutumu oldukça ilginçtir. Bir yandan dünya düzenin çoklu medeniyetlerden oluştuğunu savunurken, diğer yandan kendi ülkesi ABD’de çoklu medeniyet anlayışını benimsemediği anlaşılıyor. Kitabın en temel politika önerisi ise, ABD’nin diğer medeniyetler arasındaki çatışmalara karışmama gerektiğidir. Bunlar arasında Sırpların saldırılarına karşı Bosna’ya, Irak işgaline karşı Kuveyt’e yardımın yapılmaması gerektiğini ima etmiştir ve Sırp katliamına karşı Kosovalılara ABD yardımını tasvip etmemektedir. Ayrıca Üçüncü Dünya Savaşı’nın çıkışını önlemek için çatışan medeniyetler arasında arabuluculuk yapılabileceğini ve medeniyetler arasındaki ortak yönlerin vurgulanması gerektiğini de önermektedir. Medeniyetler arasında arabuluculuk ve yardımlaşma sayesinde, medeniyetler çatışması önlenebilecek bir durumdur. Genel olarak Medeniyetler Çatışması Tezi dünya düzeninin doğasını anlamada yararlı ve ufuk açıcıdır. 
+
+Huntington, 'medeniyetler çatışması' kavramı ile, önümüzdeki dönemde uluslararası ittifakların kurulmasında medeniyetlerin belirleyici olacağı ve dolayısıyla olası çatışmaların farklı medeniyetler arasında gerçekleşeceğini ifade ediyor. Huntington'ın kitabının ilk bölümünde yer verdiği üç haritanın kitapta ifade edilen düşüncelerin bir ilüstrasyonuna karşılık geldiğini söylemek ve 21. yüzyılda uluslararası politik alanda neden kimlik ve medeniyet unsurlarının öne çıkacağı argümanını bu haritalar arasındaki geçişlerle izah etmek mümkün. 
+
+1920'li yıllara ait olan ilk harita, Batı tarafından kolonileştirilen dünyayı resmediyor. Dünyayı 'Batı tarafından yönetilenler' ve 'Batıdan bağımsız olanlar' şeklinde ikiye ayıran bu harita, 20’lerde Batının dünyaya ne denli hakim olduğunu gösterdiği kadar, dönemin global politik ekonomisini şekillendiren öğenin kolonileşme olduğunu da açıkça ortaya koyuyor.
+
+Huntington'ın yer verdiği ikinci harita ise 1960'lı yıllara ait. Soğuk Savaş döneminde ABD ile Sovyetler Birliği etrafında kümelenen ülkelerin oluşturduğu iki kutuplu dünyayı resmeden ikinci harita, tamamen politik ve ekonomik ideoloji bazında bir gruplaşmaya dayanan ve bu nedenle de birinciden çok daha farklı olan bir yapılanmayı gözler önüne seriyor. 
+
+Komünist blokun 1989 yılında çözülmesiyle birlikte Soğuk Savaş döneminin sona ermiş olması, Samuel Huntington'ın 1990'ları resmeden üçüncü haritasını sonuç veriyor ki, bu noktada zaten söz konusu haritanın ortaya çıkardığı tablonun aynı zamanda Huntington'ın makale ve kitabının yazılma nedenine karşılık geliyor. Zira Huntington, 1990'lı yıllardan itibaren uluslararası ittifak ya da ihtilaflarda belirleyici olan unsurun politik ya da ekonomik ideolojiler değil, medeniyetler olmaya başladığını ve 21. yüzyılda da bu trendin devam edeceğini ifade ediyor.
+
+Huntington'ın tezini en iyi şekilde açıklayan örneğin, Sovyetler Birliği'nin dağılmasının ardından çözülen Yugoslavya olduğu söylenebilir. Zira Yugoslavya'da yeni sınırların farklı inançlara mensup olan Sırp, Hırvat ve Boşnaklar arasındaki savaşlardan sonra çizilmiş olması, söz konusu savaşlar esnasında Batı'nın Bosna'ya yardım etme konusunda isteksiz davranması ya da Sırp vahşetini kınarken Hırvat vahşeti konusunda aynı tavrı sergilememesi gibi gelişmeler Huntington'ı doğruluyor.
+
+Huntington'ın tek örneği elbette Yugoslavya değil.Bağdat'ın (1990'da) ABD tarafından bombalanmasına tüm Batılılar sessiz kalarak destek verirken müslüman ülkelerin neredeyse tamamının harekatı lanetlemesi gibi çok sayıda örnek yer alıyor Huntington'ın çalışmasında. Huntington, Türki cumhuriyetler ile Türkiye arasındaki ilişkilere ve oraya yatırım yapan işadamlarının dil, din, tarih ve hatta mutfak birliğine vurgu yapmasına da yer veriyor.
+
+Huntington'ın dikkate aldığı başlıca dünya medeniyetleri olan Batı, Latin Amerika, Afrika, İslam, Çin, Hindu, Ortodoks ve Japon medeniyetlerine kimlerin mensup olduğunu incelemek, yeni ittifakları algılama adına yeterli değildi. Çünkü dünyanın gittiği yönü daha iyi anlayabilmek için, her ülkenin mensup olduğu medeniyetle ilişkisini ve o medeniyet içerisindeki nüfuzunu da dikkate almak gerekiyordu. Bunu gerçekleştirebilme adına, Huntington beş ayrı yapı tanımladı: Üye ülke, yalnız ülke, merkez ülke, bölünmüş ülke, kararsız ülke. 
+
+Huntington'ın, herhangi bir medeniyet ile tamamen ilişkilendirilebilen ülkeler için ortaya attığı üye ülke kavramı, Mısır'ın İslam, İtalya'nın da Batı medeniyetine 'üye' bir ülke olması gibi basit bir anlam ifade ediyor. Yalnız ülke kavramı ile de, Haiti ya da Etiyopya gibi, herhangi bir başka ülke ile kültürel bir bağı bulunmayan, medeniyeti itibariyle dünyadan soyutlanmış olan ülkeler kast ediliyor. Merkez ülke kavramı ise, ait olduğu medeniyete beşiklik eden, o medeniyetin kültürünün kaynağı olarak kabul edilen ülke ya da ülkeleri tanımlıyor.
+
+Bölünmüş ülke ile, içerisinde farklı medeniyetlere mensup olan çok sayıda insan bulunan ülkeler kast ediliyor. Ciddi oranlarda etnik azınlığa sahip olan Sudan, Hindistan, Çin, Malezya, Filipinler, Endonezya gibi ülkeleri (farklı seviyelerde de olsa) bu başlık altında incelemek mümkün. Huntington, bütün bu kavramlar arasında en çok kararsız ülke üzerinde duruyor.
+
+Samuel Huntington, hal-i hazırda kendilerine ait bir medeniyetleri olan, ancak liderleri (halka rağmen) bu medeniyeti terk etmeyi ve başka bir medeniyete geçmeyi amaçlayan ülkeleri kararsız ülke olarak tanımlıyor. Huntington, yeni bir kimliğe geçişin (identity redefinition) gerek sosyal, gerek politik, gerek kurumsal, gerekse kültürel açıdan son derece uzun, kesintili ve acılı bir süreç olduğunu ifade ediyor ve bugüne kadar bu tür girişimlerin hep başarısız olduğunu belirtiyor. Huntington'ın kararsız ülkelere verdiği örnekler ise, Rusya, Türkiye, Meksika ve Avustralya.
+
+Kemalizm ve Türkiye bağlamında degerlendirmesi:
+
+Samuel Huntington, kitabında Türkiye ve Kemalizme sıklıkla değiniyor. Dahası, Türkiye dışındaki pek çok yerde gerçekleştirilen ve bizim daha çok 'halk için halka rağmen' olarak adlandırdığımız medeniyet ithali ve dayatması eylemlerine de 'Kemalizm' olarak referansta bulunuyor. 
+Huntington'ın ifadesiyle 1920 ve 1930'larda Türkiye'yi Osmanlı ve müslüman geçmişinden uzaklaştırma adına faaliyet gösteren Kemalizm, medeniyet ithaliyle Türkiye'yi Avrupalı yapmaya kalkan bir projeydi. Huntington tıpkı benzeri diğer projeler gibi sonuç itibariyle Kemalizmin de başarısız olduğunu söyledikten sonra, bu başarısızlığın neden kaçınılmaz olduğunu şu cümlelerle açıklıyor: 
+
+Eğer Batılı olmayan toplumlar modernleşmek istiyorlarsa, bunu Batılılar gibi değil, tıpkı Japonya gibi, kendi yöntemleriyle, kendi gelenek, kurum ve değerlerini kullanarak ve geliştirerek başarmak zorundalar.
+
+Batılılaşma konusunda Türkiye bugün itibariyle (tıpkı Rusya gibi) ikiye bölünmüş durumda. Çünkü Türkiye artık Kemalizm öncesindeki gibi olmadığı (ve olamayacağı) gibi, Batılı da değil. Zira Türkiye  ne Orta Doğulu ne de Batılı olmayan, iki arada bir derede, kafası karışık ve bütün bunlardan ötürü tanımsız ve kimliksiz bir ülke haline gelmiş durumda. 'Kararsız' olmasının nedeni de yine bu kafa karışıklığı.
+
+Huntington, Batılı olmayan toplumların 'modernleşme' ve 'Batılılaşma' kavramlarına üç farklı tepki verdiklerini söylüyor: 
+1- Hem modernleşmeyi, hem de Batılılaşmayı reddetmek, 
+2- Her ikisini de benimsemek, 
+3- Modernleşmeyi benimseyip, Batılılaşmayı reddetmek. 
+
+Hem modernleşmeyi hem de Batılılaşmayı benimseyen ikinci tip tepkinin Kemalizme karşılık geldiğini söyleyen Huntington, Türkiye'de Mustafa Kemal tarafından hayata geçirilen bu modelin yapısını (Türk kültür mirasının özelliklerini de dikkate alarak) inceliyor.
+Huntington, Huntington, Batılı olmayan toplumların 'modernleşme' ve 'Batılılaşma' kavramlarına üç farklı tepki verdiklerini söylüyor: 
+1- Hem modernleşmeyi, hem de Batılılaşmayı reddetmek, 
+2- Her ikisini de benimsemek, 
+3- Modernleşmeyi benimseyip, Batılılaşmayı reddetmek. 
+Huntington, Kemalizmin yüzyıllardır var olan bir kültürü yok etmek ve yerine başka bir medeniyetten ithal edilmiş olan tamamen yeni bir kültür koymak gibi zor ve travmatik bir göreve sahip olduğu sonucuna varıyor.
+
+İslami Diriliş 
+Samuel Huntington, dünya nüfusunun en azından beşte birini doğrudan ilgilendirmesi ve tarihin (halen devam eden) bir dönemine damgasını vurmuş olması nedeniyle İslami Diriliş (Islamic Resurgence) ifadesini (tıpkı 'Fransız İhtilali' ya da 'Rus Devrimi' ifadelerinde olduğu gibi) büyük başharflerle yazmayı doğru bulduğunu söylüyor. Mensuplarının İslamiyeti sadece bir din değil, aynı zamanda bir hayat tarzı olarak algıladıklarını belirten Huntington, İslam'ın günümüzde yaşanan problemlere bir 'çözüm' olarak algılandığını da ifade ediyor. Endüstriyelleşmeyi kabul edip Batılılaşmayı reddeden müslüman toplumların, İslamiyeti sadece bir kimlik değil, aynı zamanda bir güç, kalkınma ve umut kaynağı olarak görmeleri sonucunda 'İslam çözümdür' (Islam is the solution) ifadesinin sloganlaşmış olması da bu bakış açısının bir sonucu.4 
+
+İslami Diriliş dendiğinde Huntington (olması gerektiği gibi) kuşatıcı bir analiz yapıyor ve İslami toplumların, 'değerlerine yeniden sahip çıkma' süreçlerini sadece politik alana indirgemiyor. İslami Diriliş'in entelektüel, kültürel, sosyal ve politik yönleri olan dünya çapında bir hareket olduğunu belirten Huntington, söz konusu Diriliş'in İslami fundamentalizme indirgenemeyeceğini de ifade ediyor. Zira Huntington'a göre, Diriliş, İslami düşünce adına çok geniş boyutta bir uygulama ve retorik uyanışı anlamına gelirken, fundamentalizm ise, bir bütün olarak ele alınması gereken bu uyanışın politik alandaki bileşenlerinden biri sadece.
+İslami Diriliş ve Türkiye 
+
+Huntington, Hıristiyan, Müslüman, Musevi, Hindu, Budist ve Ortodoks toplumlarda inançlara yönelik adanmışlığın arttığını, bunun dünyanın hemen her ülkesinde gözlendiğini belirtiyor.
+
+MERKEZSİZ İSLAM MEDENİYETİ 
+'Dünyanın medeniyetler ekseninde yeniden şekillenmesi' ve 'İslami Diriliş' gibi iki önemli gelişmenin aynı anda yaşanıyor olması, İslam medeniyetinin merkez ülke ya da ülkelere sahip olmaması konusunu gündeme getiriyor. Osmanlı Devleti'nin sona ermesinin ardından merkez ülkesiz kalan İslam dünyasının bugünkü durumunu Samuel Huntington son derece zekice bir tabirle 'Birliksiz Bilinçlilik' (consciousness without cohesion) olarak nitelendiriyor. Zira dünya müslümanlarının çok önemli bir kısmının İslami Diriliş öncesinde dahi kendilerini herşeyden önce müslüman olarak tanımlayacak derecede bilinçli olmalarına rağmen, Osmanlı'dan bu yana herhangi bir uzun ömürlü birlik tesis etmeleri mümkün olmadı. 
+
+Huntington, İslam medeniyetinin merkez ülke ya da ülkelere sahip olmaması nedeniyle dahili ve harici ihtilaflarla birlikte anıldığını ve bu durumun İslam dünyası için bir zayıflık, başka medeniyetler için de bir tehdit kaynağı olduğunu belirtiyor.
+
+Huntington'ın 'merkez ülke' tanımına göre, İslam medeniyetinin bir merkez ülkeye sahip olmaması aslında şu anlama geliyor: İslam ülkeleri arasında, büyük bir ekonomiye ve güçlü silahlara sahip olan, dünyadaki müslümanlara dini ve politik alanlarda liderlik etmeye kendini adamış, İslami kültüre kaynaklık edebilecek çapta bir tek ülke bile yok. Bu durum, İslam dünyasının mevcut dünya dengeleri üzerinde herhangi bir ağırlığı olmadığı anlamına da geliyor.
+İslam dünyasının liderliği söz konusu olduğunda zaman zaman 6 ülkenin adının geçtiğini belirten Huntington, hiçbir ülkenin gerekli şartların tamamına sahip olmadığını belirttikten sonra, bu ülkelerin herbirini kısaca değerlendiriyor. Huntington'ın değerlendirmeleri şöyle özetlenebilir:Endonezya,Mısır,İran,Pakistan,Suudi Arabistan ve Türkiye.
+
+Türkiye: İslam'ın merkez ülkesi olmak için gerekli olan tarihe, nüfusa, birliğe, orta dereceli ekonomik kalkınmaya, askeri geleneğe ve diğer ayırt edici özelliklere sahip. Ancak Atatürk, Türkiye'yi çok sıkı bir şekilde (explicitly) laik bir ülke olarak tanımlayarak Osmanlı Devleti'nin bu rolünü Türkiye'nin devam ettirmesini engelledi. Türkiye bu nedenle İslami Konferans Örgütü'nün imtiyazlı bir üyesi bile olamıyor! Türkiye kendini laik bir ülke olarak tanımlamaya devam ettiği sürece de İslam dünyasının lideri olamaz. Ancak Türkiye bir noktada Batıdan üyelik dilenmek gibi hayal kırıklığına uğratıcı ve aşağılayıcı rolü bırakıp, İslam'ın sözcülüğü gibi çok daha etkileyici ve seviyeli olan tarihi rolüne devam etmeyi düşünebilir. Fakat bunu yapabilmek için Türkiye'nin Atatürk'ün mirasını, Rusya'nın Lenin'inkini reddettiğinden dahi daha kapsamlı bir şekilde reddetmesi gerekir.
+
+Soru 1: Samuel Huntington'ın ekonomi alanındaki tespit ve öngörüleri nasıl? 
+Huntington, Çin'in 21. yüzyılın başlarında dünyanın en büyük ekonomisi olacağını, 2020 yılında dünyanın en büyük beş ekonomisinden dördünün, en büyük on ekonomisinden de yedisinin Asya'da olacağını söylüyor.   
+
+Soru 2: Batının gücü ne düzeyde? 
+Huntington, Batı devletlerinin dünyayı yönetme adına sahip oldukları araçlardan da söz ediyor. Aşağıdaki liste, günümüzde dünyaya sahip olmak için nelere hükmetmenin gerektiği konusunda bir fikir verebilir. 
+Huntington, Batının, 
+• uluslararası bankacılık sistemine sahip olduğunu ve bu sistemi idare ettiğini,  
+*bütün para birimlerini kontrol ettiğini,  
+• dünyada üretilen malların en büyük müşterisi olduğunu,  
+• nihai ürünlerin çoğunluğunu ürettiğini,  
+• uluslararası sermaye piyasalarına hükmettiğini,  
+• ciddi boyutta askeri müdahalede bulunabilme gücüne sahip olduğunu,  
+• uzaya erişim konusunda hakimiyeti elinde bulundurduğunu,  
+• uluslararası iletişime hakim olduğunu ve  
+• yüksek teknolojili savunma endüstrisine sahip olduğunu ifade ediyor. 
+Soru 3: Peki Batının gerçek gücü yukarıdakilerle mi sınırlı? 
+Herkesin başını döndüren bu liste, Batının gücünün sebebi değil, sonucudur. Batının gerçek gücü, düşmanlarını dahi tesiri altına alabilmiş olmasında gizli olabilir.    
+
+ SONUÇ
+Huntington'ın fikirleri ülkemizde (maalesef) gerçekte olduğundan epey farklı bir şekilde algılanıyor. Huntington'ın çalışmalarını okuma zahmetine girmek yerine, kendisinin şahsını 'planlanan küresel çatışmaların fikir babası' ilan eden güruha katılmak elbette çok daha kolay. 'Medeniyetler çatışması' ifadesinin insanları ürküttüğü elbette gerçek. Bu konsepti, 'farklı din ve kültürlerin birbirini yemekte olduğu ve şiddetin daha çok ABD tarafından körüklendiği' bir 21. yüzyıl tablosu' olarak özetlemek mümkün. Huntington'ın tezinin temel noktası, sadece ve sadece, Soğuk Savaş'tan sonra günümüz politikalarının şekillenmesinde belirleyici olan unsurun politik ideoloji değil, kimlik olacağı. Yani Huntington bir savaştan söz etmiyor. Dünya tarihi boyunca zaten var olmuş olan kamplaşmaların, bundan böyle politik ideoloji değil, kimlikler doğrultusunda gerçekleşeceğini belirtiyor o kadar.
+
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<footer>
+<div class="footer-top">
+<div class="container">
+<div class="row">
+<div class="col-md-2 hidden-xs hidden-sm">
+<img alt="" class="img-responsive" src="data/6397857-logo.png"/>
+</div>
+<div class="col-md-7">
+<div class="row">
+<div class="col-md-4">
+<ul>
+<li>GÜNCEL</li>
+<li><a href="anasayfa.html">Haberler</a></li>
+<li><a href="#">Etkinlikler</a></li>
+</ul>
+</div>
+<div class="col-md-4">
+<ul>
+<li>MULTİMEDYA</li>
+<li><a href="#">Fotoğraf Galerisi</a></li>
+<li><a href="#">Video Galerisi</a></li>
+</ul>
+</div>
+<div class="col-md-4">
+<ul>
+<li>İLETİŞİM</li>
+<li><a href="iletisim.html">İletişim Bilgileri</a></li>
+<li><a href="iletisim.html">İletişim Formu</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<ul>
+<li>E-BÜLTEN</li>
+<li>
+<form action="#" class="form-inline" method="post">
+<div class="row">
+<div class="form-group col-md-8">
+<div class="input-group">
+<label class="sr-only" for="txtemail"></label>
+<input class="form-control" id="txtemail" name="eposta" placeholder="E-Mail Adresi..." type="text"/>
+<input name="ebulten" type="hidden" value="1"/>
+</div>
+</div>
+<button class="btn btn-primary" type="submit">Kayıt Ol</button>
+</div>
+</form>
+</li>
+<li>
+<div class="pull-left">
+<a href="#" title="Facebook Sayfamız"><img src="themes/burokratlar/tema/images/icon-facebook.png"/></a>
+</div>
+<div class="pull-left sosyal">
+<a href="#" title="Twitter Sayfamız"><img src="themes/burokratlar/tema/images/icon-twitter.png"/></a>
+</div>
+<div class="pull-left sosyal">
+<a href="#" title="Google+ Sayfamız"><img src="themes/burokratlar/tema/images/icon-gplus.png"/></a>
+</div>
+<div class="clearfix"></div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div> <!-- .footer-top -->
+<div class="footer-bottom">
+<div class="container">
+<div class="copyright pull-left">
+<p>© 2015 İdareci ve Bürokratlar Birliği Derneği Derneği Tüm Hakları Saklıdır.</p>
+</div>
+<div class="pull-right">
+								 Biz Birlikte Güçlüyüz
+</div>
+</div>
+</div>
+</footer>
+<div class="clearfix"></div>
+</body>
+</html>

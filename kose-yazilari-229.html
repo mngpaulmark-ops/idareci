@@ -1,0 +1,607 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="tr" xml:lang="tr" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#"><head>
+<base href="/"/>
+<title> Hakkımızda İdareci ve Bürokratlar Birliği Derneği</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content=" -İdareci ve Bürokratlar Birliği Derneği 2009" name="description"/>
+<meta content="İdareci ve Bürokratlar Birliği Derneği" name="keywords"/>
+<meta content="İdareci ve Bürokratlar Birliği Derneği" name="Author"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content=" Hakkımızda / İdareci ve Bürokratlar Birliği Derneği" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="data/logo.jpg" property="og:image"/>
+<meta content="" property="og:url"/>
+<meta content="https://burokratlarbirligi.org" property="og:site_name"/>
+<meta content=" - İdareci ve Bürokratlar Birliği Derneği 2009" property="og:description"/>
+<meta content="facebook.com/yucel.can.796" property="fb:admins"/>
+<meta content="210306796005157" property="fb:app_id"/>
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="tema/js/pngfix.js"></script>
+<![endif]-->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Oswald&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@500&amp;family=Barlow:wght@200;500;700&amp;family=Cabin:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;300;500&amp;display=swap" rel="stylesheet"/>
+<!-- <link rel="stylesheet" href="themes/burokratlar/tema/css/all.min.css">
+<![endif]-->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<script src="themes/burokratlar/tema/js/jquery.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/jquery-migrate.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/jquery.bgswitcher.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/jquery.cycle.all.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.slideshoww').cycle({
+		fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+	});
+});
+</script>
+<style type="text/css">
+.slideshoww { max-width:100%; left:0px;  margin:0 auto; top:-1px; background-color:#FFF; }
+.slideshoww img {position: absolute; top: 0px; left: 0px; z-index:-999; max-width:100%; background-color: #eee; }
+</style>
+<script src="panel/tema/js/datepicker/js/jquery-ui-1.8.17.custom.min.js"></script>
+<script src="themes/burokratlar/tema/js/jq_maskedinput.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function($) {
+$("#phone").mask("0(999) 999-9999");
+$(".saat").mask("99:99");
+$("#securitycode").mask("9999");
+})
+</script>
+<link charset="utf-8" href="themes/burokratlar/tema/js/validator/validationEngine.jquery.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="themes/burokratlar/tema/js/validator/jquery.validationEngine-tr.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/validator/jquery.validationEngine.js" type="text/javascript"></script>
+<script type="text/javascript"> 
+    $(document).ready(function() {
+        $("#Form").validationEngine()
+    })
+</script>
+<script src="themes/burokratlar/tema/js/jcarousellite.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    jQuery("#kayan_alan").jCarouselLite({
+        vertical: true, //dikey yapmak için
+        hoverPause:true, //üzerine gelince durasý için
+        visible: 5, //3 adet gösterilmesi için
+        auto:1500, //bekleme süresi
+        speed:1000, //hareket hýzý
+        btnPrev: "#onceki", //onceki yazi
+        btnNext: "#sonraki", //sonraki yazi
+		mouseWheel: true
+    });
+});
+</script>
+<script src="themes/burokratlar/tema/js/jqcycle_all.js" type="text/javascript"></script>
+<script type="text/javascript"> 
+    $(document).ready(function() {
+        $('.solalanreresim').cycle({
+            fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+            timeout:'3000'
+        });
+        
+        $('.ustalanreresim').cycle({
+            fx: 'zoom', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+            timeout:'3000'
+        });
+        
+        $('.yakinetkinlikler .slide').cycle({
+            fx: 'scrollUp', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+            timeout:'5000',
+            resizeContainer: false,
+            cleartype: false,
+            slideResize: false
+        });
+    });
+    $(window).load(function() {
+        var slideshow = $(".slideshow").cycle({
+            fx: "fade",
+            timeout: 12000,
+            prev: ".slider-prev",
+            next: ".slider-next",
+            pager:  ".slider-pager",
+            fit:  2,
+            
+            pagerAnchorBuilder: function(idx, slide) {
+                return '<li><a href="#">'+(idx+1)+'</a></li>';
+            },
+
+        });
+    });
+</script>
+<script src="themes/burokratlar/tema/js/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/fancybox/jquery.fancybox.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/fancybox/helpers/jquery.fancybox-media.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/fancybox/fancybox/jquery.mousewheel-3.0.2.pack.js" type="text/javascript"></script>
+<link href="themes/burokratlar/tema/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" rel="stylesheet"/>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancybox").fancybox({
+		autoSize	: true,
+		openEffect	: 'none',
+		closeEffect	: 'none',
+		minHeight : 500
+		});
+	});
+</script>
+<script src="themes/burokratlar/tema/js/lightbox/jq_colorbox_lightbox.js" type="text/javascript"></script>
+<link href="themes/burokratlar/tema/js/lightbox/colorbox.css" media="screen" rel="stylesheet"/>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+	  $('a[rel*=colorbox]').colorbox();
+	  $('a[rel*=fotogaleri]').colorbox();
+	  $(".renkpaleti a").colorbox();
+	});
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.nav li').hover(
+            function () {
+                //alt menüleri göster
+
+                $('ul', this).stop(true,true,true).slideDown(200);
+
+            },
+            function () {
+                //alt menüleri gizle
+                $('ul', this).stop(true,true,true).slideUp(200);
+            }
+        );
+        
+        //alt kısım opacity efekti içindir
+        $('.nav li ul li').hover(
+            function () {
+                //üzerine gelince opacity
+                $(this).stop(true,true,true).animate({
+                    opacity: 1
+                  }, 300 );
+
+            },
+            function () {
+                //üzerinden gidince opacity
+                $(this).stop(true,true,true).animate({
+                    opacity: 0.9
+                  }, 300 );
+            }
+        );
+    });
+    function initMenu() {
+        $('#left-menu ul').hide();
+        $('#left-menu li a').click(
+        function() {
+            var checkElement = $(this).next();
+            if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+                checkElement.slideUp('normal');
+                return false;
+            }
+            if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+                if ( $(this).attr('class') != 'altmenu' ) {
+                    //$('#left-menu ul:visible').slideUp('normal');
+                }
+                checkElement.slideDown('normal');
+                return false;
+            }
+          }
+        );
+      }
+    $(document).ready(function() { initMenu(); });
+</script>
+<script src="themes/burokratlar/tema/js/tasarim/etkinlik_takvimi/js/jquery.eventCalendar.js"></script>
+<link href="themes/burokratlar/tema/js/tasarim/etkinlik_takvimi/css/eventCalendar.css" rel="stylesheet"/>
+<link href="themes/burokratlar/tema/js/tasarim/etkinlik_takvimi/css/eventCalendar_theme_responsive.css" rel="stylesheet"/>
+<script type="text/javascript">
+    $(document).ready(function() {     
+		
+		var eventsInline = [
+		{ "date": "1457179200000", "saat": "14:00", "type": "meeting", "title": "28 ŞUBAT YAŞAYAN BİRİ", "description": "GENİŞ BİR BAKIŞ AÇISIYLA 28 ŞUBAT BU HAFTAKİ KONFERANS KONUMUZ VE KONUĞUMUZ 54. HÜKÜMETİN DEVLET BAKANI VE AK PARTİ ETİK KURULU BAŞKANI SAYIN AHMET CEMİL TUNÇ", "url": "#" },
+		{ "date": "1457775936000", "saat": "14:00", "type": "meeting", "title": "MİLLET ANAYASASINA", "description": "Dost meclisinin bu haftaki konuğu Cumhurbaşkanı Başdanışmanı Sayın Av. Şeref Malkoç Katılacaktır.", "url": "#" },
+		{ "date": "1460228400000", "saat": "", "type": "meeting", "title": "SULTAN II ABDÜLHAMİD'DEN RECEP TAYYİP ERDOĞAN'A", "description": "BU KONFERANS ÇOK KONUŞULACAK.  Sultan Abdülhamit'e ait bilinmeyenler,", "url": "" },
+		{ "date": "1459364400000", "saat": "", "type": "meeting", "title": "Terör,  Göç ve Dokunulmazlık", "description": "ŞİMDİDEN BU TARİHİ VE SAATİ NOT EDIN...Terörün gerçek yüzü nedir, hedefi kimdir?Terör örgütleri ve hamileri kimlerdir?Terör örgütünün iç ve dış bağlantıları...Neden terör daha çok belli bir coğrafyadadır?Terõrün zararaları, tehlikeleri, etkileri, bilinmeyenleri....Teröre dair daha neler neler...Göç...Göç ve terörün bağlantıları...Göç sosyolojidi ve psikolojisi...İç ve dış göç...Dokunulmazlıklar...Dokunulmazlıkların ölçüsü, sınırı, bağlantıları...Terör, göç ve dokunulmazlıkların bağlantı ve ilişkileri..&nbsp;Batı ve Dünyanın bakışı, samimiyeti, etkisi......Ve daha neler neler...", "url": "#" },
+		{ "date": "1463097600000", "saat": "", "type": "meeting", "title": " PKK Medyası ve PKK İle Mücadelenin psikolojik Boyutu", "description": "Bu tarihi lüten not ediniz...Pkk...Sistematik dezanformasyon ve Pkk...Pkknın kara propagandası...Pkknın medyayı kullanma araçları...Pkkya destek veren Avrupa Ülkeleri...Daha neler neler...", "url": "" },
+		{ "date": "1464307200000", "saat": "", "type": "meeting", "title": "Küresel Meydan Okumalar ve Tükiye'nin Dış Politikası", "description": "Dost Meclisimizin Bu haftaki Konuğu STAR Gazetesi Ankara Temsilcisi olan Sayın Mustafa KARTOĞLU bey ile &ldquo;Küresel Meydan Okumalar ve Tükiye'nin Dış Politikası&quot; İsimli Konferansı siz değerli konuklarımız ile buluşturmaktadır. ", "url": "" },
+		{ "date": "1533682800000", "saat": "", "type": "meeting", "title": "Olağanüstü Kongre Kararı", "description": "YK. Kurulumuz Toplanarak almış olduğu Olağanüstü Kongre kararı doğrulturunsa 08.08.2018&nbsp;tarihinde&nbsp;toplanmasına, 06.08.2018 tarihinde ÇOĞUNLUK ARANMAKSINIZ 16.08.2018 Perşembe Saat 19.00'da İDARECİ ve BÜROKRATLAR BİRLİĞİ DERNEĞİNDE OLAĞAN ÜSTÜ KONGRE yapılacaktır.&nbsp;", "url": "" },
+		{ "date": "1534377600000", "saat": "", "type": "meeting", "title": "Olağanüstü Kongre Kararı", "description": "Olağanüstü Kongremiz 16.08.2018 Perşembe günü saat 19.00'da NEFF CAFE-NEFFGİLE Toplantı Salonunda yapılacaktır.( Atatürk Caddesi. Keçiören Girişi FTZ Arkası No:17 Keçiören-ANKARA) Teşriflerinizi bekler,Kongremizin; Derneğimize, Vatanımıza, İslam Alemine ve İnsanlığa hayırlı olmasını temenni ederiz.Yücel CAN", "url": "" },
+		{ "date": "1747094400000", "saat": "", "type": "meeting", "title": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Birlikte Güçlüyüz Ruhu İle Kahramanlık Eserleri Programı", "description": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Birlikte Güçlüyüz Ruhu İle Kahramanlık Eserleri Programına  Teşriflerinizden Mutluluk Duyarız", "url": "" },
+		{ "date": "1747162800000", "saat": "", "type": "meeting", "title": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Birlikte Güçlüyüz Ruhu İle Kahramanlık Eserleri Programı", "description": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Birlikte Güçlüyüz Ruhu İle Kahramanlık Eserleri Programına Teşriflerinizden Mutluluk Duyarız", "url": "" },
+		];
+            $("#eventCalendarLocale").eventCalendar({
+				jsonData: eventsInline,
+                cacheJson: false,
+                showDescription: true,
+				eventsLimit: 2,
+                monthNames: [ "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
+                    "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık" ],
+                dayNames: [ 'Pazar','Pazartesi','Salı','Çarşamba',
+                    'Perşembe','Cuma','Cumartesi' ],
+                dayNamesShort: [ 'Paz','Pzt','Sal','Çar', 'Per','Cum','Cmt' ],
+                txt_noEvents: "Periyotta etkinlik bulunamadı",
+                txt_SpecificEvents_prev: "",
+                txt_SpecificEvents_after: " Etkinlikleri:",
+                txt_next: "Sonraki",
+                txt_prev: "Önceki",
+                txt_NextEvents: "Yaklaşan Etkinlikler:",
+                txt_GoToEventUrl: "Detaylı Görüntüle"
+            });
+        });
+</script>
+<script src="themes/burokratlar/tema/js/tasarim/jcarousel/jquery.jcarousel.min.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/tasarim/jcarousel/jcarousel.responsive.js" type="text/javascript"></script>
+<link href="themes/burokratlar/tema/js/tasarim/jcarousel/jcarousel.responsive.css" rel="stylesheet"/>
+<script src="themes/burokratlar/tema/js/tasarim/kayan_duyuru/jquery.ticker.js" type="text/javascript"></script>
+<link href="themes/burokratlar/tema/js/tasarim/kayan_duyuru/ticker-style.css" rel="stylesheet"/>
+<script>
+    $(document).ready(function() {
+        $("#duyurular").ticker({
+            speed: 0.10,           // The speed of the reveal
+            debugMode: false,       // Show some helpful errors in the console or as alerts
+            controls: false,        // Whether or not to show the jQuery News Ticker controls
+            titleText: '',   // To remove the title set this to an empty String
+            displayType: 'reveal', // Animation type - current options are 'reveal' or 'fade'
+            direction: 'ltr',       // Ticker direction - current options are 'ltr' or 'rtl'
+            pauseOnItems: 2000,    // The pause on a news item before being replaced
+            fadeInSpeed: 600,      // Speed of fade in animation
+            fadeOutSpeed: 300      // Speed of fade out animation
+        });
+    });
+</script>
+<script src="themes/burokratlar/tema/js/tasarim/bootstrap.min.js" type="text/javascript"></script>
+<script src="themes/burokratlar/tema/js/tasarim/custom.js" type="text/javascript"></script>
+<link href="themes/burokratlar/tema/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesnt work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="tema/js/tasarim/html5shiv.js"></script>
+<script src="tema/js/tasarim/respond.min.js"></script>
+<![endif]-->
+<link href="themes/burokratlar/tema/css/tasarim.css" rel="stylesheet" type="text/css"/>
+<link href="themes/burokratlar/tema/css/style.css?v=10" media="screen" rel="stylesheet" type="text/css"/>
+<link href="themes/burokratlar/tema/css/mesaj_kutulari/css.css" rel="stylesheet" type="text/css"/>
+<meta content="#dogrulama" name="google-site-verification"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet"/><link href="kurumsal.css" rel="stylesheet"/></head>
+<body>
+<header id="header">
+<div class="event">
+<div class="container">
+<div class="row">
+<div class="col-md-6 col-sm-6 col-xs-12">
+<div class="pull-left">
+<div class="ustlogoalt"></div>
+</div>
+</div>
+<div class="col-md-3 col-sm-3 col-xs-12">
+<div class="pull-right">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="header-banner">
+<div id="bs-demo"></div>
+<div class="row">
+<div class="col-md-12 col-xs-12">
+<a href="#" title="İdareci ve Bürokratlar Birliği Derneği"> <img alt="İdareci ve Bürokratlar Birliği Derneği" class="logo img-responsive" src="data/9595428-logo.png" style="margin-top:15px;"/> </a>
+<div style="left:0; background-color: rgb(255, 255, 255); width: 100%; position: absolute; top: 20px; z-index: -100; height: 155px;">
+</div>
+<div class="top-banner-img" style="position:absolute; right: 0px; top: 0px; height: 155px; z-index: -90; max-width: 70%; overflow: hidden;">
+<img alt="Biz Birlikte Gclyz" src="themes/burokratlar/tema/images/top_banner.png" style="height: 100%; width: 100%; object-fit: contain; object-position: right;"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="container">
+<nav class="navbar navbar-default" id="navbar" role="navigation">
+<div class="icon">
+<i class="glyphicon glyphicon glyphicon glyphicon-align-left"></i>
+</div>
+<div class="navbar-header">
+<button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div> <!-- .navbar-header -->
+<nav class="collapse navbar-collapse bs-navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav">
+<li class="home"><a href="anasayfa.html"><img alt="Ana Sayfa" src="themes/burokratlar/tema/images/ico-home.png"/></a></li>
+<li><a href="anasayfa.html" target="_self">Ana Sayfa</a></li>
+<li class="dropdown"><a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" target="_self">Derneğimiz</a>
+<ul class="dropdown-menu" role="menu">
+<li><a href="hakkimizda.html" target="_self">Hakkımızda</a></li>
+<li><a href="tuzugumuz.html" target="_self">Tüzüğümüz</a></li>
+<li><a href="yonetimkurulu.html" target="_self">Yönetim Kurulu</a></li>
+<li><a href="baskanlik-ve-birimler.html" target="_self">Başkanlık ve Birimler</a></li>
+<li><a href="yuksek-istisare-onur-kurulu-uyesi.html" target="_self">Yüksek İstişare ve Onur Kurulu</a></li>
+<li><a href="diger-kurullar.html" target="_self">Diğer Kurullar</a></li>
+<li><a href="temsilcilik.html" target="_self">Temsilcilik</a></li>
+</ul></li>
+<li><a href="haber-listesi.html" target="_self">Haberler</a></li>
+<li><a href="etkinlik.html" target="_self">Etkinlikler</a></li>
+<li><a href="resimler.html" target="_self">Fotoğraf Galerisi</a></li>
+<li><a href="iletisim.html" target="_self">İletişim</a></li>
+</ul>
+</nav>
+</nav>
+</div> <!-- .container -->
+<div class="page-index container">
+<div class="whitebg">
+<!--		<div class="icon">
+			<i class="glyphicon glyphicon-resize-full"></i> 
+		</div>-->
+<div class="row">
+<div class="col-md-3" id="left">
+<div class="left-menu">
+<div class="panel panel-primary">
+<div class="panel-heading">
+<img alt="Menu" src="themes/burokratlar/tema/images/icon-menu.png"/> Derneğimiz
+						</div>
+<div class="panel-body">
+<!--div style="position:absolute; width:65px; height:65px; background:url(data/7831298-baskan.png) no-repeat; right:25px; top:10px;"></div-->
+<ul id="left-menu">
+<li><a href="hakkimizda.html" target="_self">»  Hakkımızda</a></li>
+<li><a href="yonetimkurulu.html" target="_self">»  Yönetim Kurulu</a></li>
+<li><a href="baskanlik-ve-birimler.html" target="_self">»  Başkanlık ve Birimler</a></li>
+<li><a href="yuksek-istisare-onur-kurulu-uyesi.html" target="_self">»  Yüksek İstişare ve Onur Kurulu</a></li>
+<li><a href="diger-kurullar.html" target="_self">»  Diğer Kurullar</a></li>
+<li><a href="temsilcilik.html" target="_self">»  Temsilcilikler</a></li>
+<li><a href="haber-listesi.html" target="_self">»  Haberler</a></li>
+<li><a href="etkinlik.html" target="_self">»  Etkinlikler</a></li>
+</ul>
+</div>
+</div> <!-- .panel .panel-primary -->
+<!-- .panel .panel-darkprimary -->
+<!-- .panel .panel-lightred -->
+<!-- .panel .panel-red -->
+<!--div class="reklam">
+						<p><img style="display: block; margin-left: auto; margin-right: auto;" src="themes/burokratlar/tema/images/banner.png" alt="" width="250" height="250" /></p>
+					</div-->
+<div class="panel panel-primary hadis-i-serif" style="margin-top: 0px; border-color: #800000; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+<div class="panel-heading" style="background-color: #800000; border-color: #800000; color: white; font-weight: bold; font-size: 15px; padding: 12px 15px;">
+<i aria-hidden="true" class="fa fa-book" style="margin-right:8px;"></i> Günün Hadis-i Şerifi
+    </div>
+<div class="panel-body" style="background-color: #fdfaf6; padding: 25px 20px;">
+<div style="text-align: center; color: #800000; font-size: 20px; margin-bottom: 12px; opacity: 0.6;">
+<i aria-hidden="true" class="fa fa-quote-left"></i>
+</div>
+<div id="daily-hadith" style="font-size: 16px; font-style: italic; font-weight: 600; color: #444; line-height: 1.7; text-align: center; font-family: 'Georgia', 'Times New Roman', serif;">
+</div>
+<div style="text-align: center; color: #800000; font-size: 20px; margin-top: 12px; opacity: 0.6;">
+<i aria-hidden="true" class="fa fa-quote-right"></i>
+</div>
+</div>
+</div>
+<script>
+const hadiths = [
+    "Ameller niyetlere göredir.", 
+    "Sizin en hayırlınız Kur'an'ı öğrenen ve öğretendir.", 
+    "İman yetmiş küsur şubedir.", 
+    "Müslüman, elinden ve dilinden diğer Müslümanların güvende olduğu kimsedir.", 
+    "Kim Allah'a ve ahiret gününe inanıyorsa komşusuna iyilik etsin.", 
+    "Kolaylaştırın, zorlaştırmayın; müjdeleyin, nefret ettirmeyin.", 
+    "Din nasihattir.", 
+    "Söz taşıyanlar cennete giremez.", 
+    "Merhamet etmeyene merhamet edilmez.", 
+    "İşçiye ücretini teri kurumadan veriniz."
+]; 
+const day = Math.floor((new Date() - new Date(new Date().getFullYear(),0,0)) / 1000 / 60 / 60 / 24); 
+document.getElementById("daily-hadith").innerText = hadiths[day % hadiths.length];
+</script>
+<div class="panel panel-kurumsal mb-4 side-dijital" style="display: none !important;"><div class="panel-heading text-center font-bold" style="background:#0f2b48; color:white; padding: 10px;">Dijital İşlemler Portalı</div><div class="panel-body text-center p-4"><a class="btn btn-primary w-full mb-2" href="uyelik.html" style="background:#800000; border:none; display:block; padding:8px; color:white; border-radius:4px; text-decoration:none;">Üyelik Başvurusu</a><a class="btn btn-primary w-full mb-2" href="#" style="background:#e2e8f0; border:none; display:block; padding:8px; color:#0f2b48; border-radius:4px; text-decoration:none;">Aidat Sorgulama</a></div></div><div class="panel panel-kurumsal mb-4 side-gundem" style=""><div class="panel-heading text-center font-bold" style="background:#0f2b48; color:white; padding: 10px;">Gündem &amp; Buluşmalar</div><div class="panel-body p-4"><ul class="list-none p-0 m-0 text-sm"><li class="border-b py-2 mb-2"><span style="background:#800000; color:white; padding:2px 6px; border-radius:4px; font-size:12px;">Yakında</span> <a href="#" style="color:#0f2b48; font-weight:bold; text-decoration:none;">Politika Notu Yayını</a></li><li class="border-b py-2 mb-2"><span style="background:#800000; color:white; padding:2px 6px; border-radius:4px; font-size:12px;">14 Mayıs</span> <a href="#" style="color:#0f2b48; font-weight:bold; text-decoration:none;">Dost Meclisi Buluşması</a></li></ul></div></div><div class="panel panel-kurumsal mb-4 side-ebulten" style="display: none !important;"><div class="panel-heading text-center font-bold" style="background:#0f2b48; color:white; padding: 10px;">E-Bülten &amp; Politika Notlarına Abone Olun</div><div class="panel-body text-center p-4"><input class="form-control mb-2 p-2 border rounded w-full" placeholder="E-Posta Adresiniz" style="width:100%; box-sizing:border-box;" type="email"/><button class="btn btn-primary w-full mt-2" style="background:#800000; border:none; padding:8px; color:white; border-radius:4px; width:100%;">Abone Ol</button></div></div><div class="panel panel-cyan links side-faydali" style=""><div class="panel-heading"><img alt="Link" src="themes/burokratlar/tema/images/icon-link.png"/>Faydalı Bağlantılar</div><div class="panel-body"><ul><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.tccb.gov.tr/" target="_blank">Cumhurbaşkanlığı</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.tbmm.gov.tr/" target="_blank">Türkiye Büyük Millet Meclisi</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.turkiye.gov.tr/" target="_blank">E-devlet</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.icisleri.gov.tr/" target="_blank">T.C. İçişleri Bakanlığı</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.resmigazete.gov.tr/" target="_blank">Resmin Gazete</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.cimer.gov.tr/" target="_blank">Cumhurbaşkanlığı İ.M. (CİMER)</a></li></ul></div></div><div class="side-banner" id="yanaplat-banner" style="margin-top: 20px; margin-bottom: 0px; text-align: center;">
+<img alt="Milli İrade Platformu" src="data/yanaplat.gif" style="width: 100%; height: 220px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: 1px solid #ccc;"/>
+</div>
+</div> <!-- .left-menu -->
+</div> <!-- #left -->
+
+<div class="col-md-9" id="main">
+<div class="main">
+<div class="panel panel-primary">
+<div class="panel-heading">Görüş &amp; Politika Notları / THE CYPRUS PROBLEM BETWEEN TURKEY AND GREECE</div>
+<div class="panel-body">
+<div class="col-md-12">
+<div style="float: left; margin-right: 15px; margin-bottom: 15px; text-align: center;">
+<a href="kose-yazar-6.html">
+<img src="data/haberkosegroup/6.jpg" style="max-width: 150px;"/>
+<br/><b>Metin AYAZ</b>
+</a>
+</div>
+<h3>THE CYPRUS PROBLEM BETWEEN TURKEY AND GREECE</h3>
+<hr/>
+<div class="content-text">
+<p><strong>CONTENTS</strong></p>
+<ul>
+<li>Summary</li>
+<li>Introduction</li>
+<li>The  history of the Cyprus problem until 1960</li>
+<li>Cyprus’  ancient history</li>
+<li>Cyprus  under the rule of the Ottoman Empire</li>
+<li>Cyprus  under the control of the England</li>
+<li>1959-1960  Cyprus treaties and the legal status these treaties created</li>
+<li>Zurich  and London treaties</li>
+<li>Content  and legal nature of the agreements</li>
+<li>The  Cyprus problem since 1960</li>
+<li>Turkey’s  1974 intervention</li>
+<li>The  establishment of the Turkish Republic of Northern Cyprus</li>
+<li>The  Cyprus issue after 1990</li>
+<li>The  Annan Plan on  the Cyprus problem</li>
+<li>The  recent developments in the Cyprus   problem</li>
+<li>Conclusion</li>
+<li>References</li>
+<li>Contact</li></ul><p><strong></strong><strong>1.Summary</strong><br/>
+  The  Cyprus issue is the main problem in Turkey and Greece relations. Cyprus is  important because the island of Cyprus is close to Middle East oil and is an  important geopolitical location between Europe, Asia and Africa continents. Greece’s expansionist policy on Cyprus stem  from the idea of Enosis. Greece gave support to E.O.K.A. terrorist organization  to realise the idea of Enosis. The embrace the idea of Enosis and by Greak  leaders and the support they give to E.O.K.A. has  shaped the relationship between Turkey and  Greece. Greece has to forgo Helen policy on Cyprus for the improved of  relations between Turkey and Greece.<br/>
+<strong>2.Introduction</strong><br/>
+  The Cyprus problem has historically been an  international conflict that has not lose its topically ever since. The strategic  importance of the island; the island of Cyprus is dominated by the Middle East  oil’s transport routes, the island of Cyprus is dominated by Anatolia-Middle  East- Suez Canal line, it can be used as a store of weapons in a war in the  Middle East. Because of these reasons the island of Cyprus has led to international  disputes.<br/>
+  An important reason for failing of solution to the  Cyprus problem that has a lot of side. The island of Cyprus’ problem is between  Turkish and Greek Cypriots living on the island, Turkey, Greece, Britian, the  USA and Israel. The purpose of this report examines the island’s ancient  history: Cyprus administration in the Ottoman period and the British  domination; 1959-1960 Cyprus treaties and the legal status these treaties created;  the Cyprus problem since 1960; Turkey’s 1974 intervention; the establishment of  the Turkish Republic of Northern Cyprus; the Cyprus issue after 1990; the Annan  Plan on the  Cyprus problem;and the  recent developments in the Cyprus problem.<br/>
+<strong>3.The  History of the Cyprus Problem until 1960</strong><br/>
+  The island of Cyprus is the third largest island in  the Mediterranean Sea. <strong>“</strong>The  importance of the island of Cyprus is due to the geographical location in the  Mediterranean. It is a strategic objective. This situation is explained by  reasons such as the island of Cyprus is dominated by the Middle East oil’s  transport routes, the island of Cyprus is dominated by Anatolia- Middle East –  Suez Canal line, it can be used as a store of weapons in a war in the Middle  East and the prestigious in the Middle East derived by the government from the  control of the island<strong>.”  ( Vatansever,2012:1488)</strong></p>
+<div align='\"center\"'>
+<hr align='\"center\"' size='\"0\"' width='\"98%\"'/>
+</div>
+<p> *METİN AYAZ Muğla Sıtkı Koçman Üniversitesi  SİBUL  </p>
+<p><strong>4.Cyprus’ Ancient History</strong><br/>
+  The  management of the island of Cyprus has changed several times. <strong>“</strong>States that dominated the island of  Cyprus respectively; Egyptians, Hittites, Dorians, Greeks having some colonies,  the Phaenicions, Assyrions, Persions, Alexander the Great, Romans, Hrobs,  Byzanties, British, Genoese, Mamelukes, Venice and Ottoman Empire.<strong>”(Vatansever,2012:1489)</strong><br/>
+  The  island of Cyprus was not under the domination of the political unity  established in Greece. Some people living in Cyprus count Greeks themselves.  This is due to language and religious unity.</p>
+<p><strong>5.Cyprus Under the Rule of Ottoman  Empire</strong><br/>
+  The  Ottoman Empire conguered the island of Cyprus in 1571.Turkish sovereignty on  the island is established by law. Turkish sovereignty over the island lasted  307 years without interruption. Many Turkish families settled to Cyprus.<br/>
+  The  first uprising against the Turkish government in the Cyprus has been provoked  by the Greek. The Archbisshop was the leader of the rebellion.Britain played a very  important role in the rebellion that shook the Ottoman rule in Cyprus..<br/>
+  After  the war between Ottoman Empire and Tsarist Russia, Ottoman Empire had become  quite powerless. Because of these reasons the manegement of the island has been  temporarily transferred from Ottoman Empire to Britain( Cyprus Treaty).</p>
+<p><strong>6.Cyprus Under the Control of The  England</strong><br/>
+  England  wanted to dominate the Cyprus to achieve trade and economic superiority in the  Mediterranean. Cyprus is a connection between Britain’s colonies. Britain  annexed Cyprus,at the end of the First World War. This annexation was approved  by the 1923 Treaty of Lausanne with Turkey.<br/>
+<strong>“</strong>On<strong> </strong>10 March 1925 King George, British  crown colony turned the status of Cyprus. Thus, the high commissioner was  abolished on the island. Cyprus was ruled as a British colony between  1925-1959.<strong>”(Vatansever,2012:1496)</strong><br/>
+  The  Greeks founded the dream of Enosis on the island.Enosis refers to the  attachment of Cyprus to Greece.On 28 February 1947, Greece’s parliament took  the decision to annex Cyprus.On 21 November 1949 the Greeks applied to the United  Nation for Enosis.<br/>
+<strong>“</strong>Turkish Cypriots  held two large rallies to protest developments in Cyprus. By the way, Makarios  was elected as Archbishop in Cyprus.<strong>”(Vatansever,2012:1497)</strong><br/>
+  After  meetings at the United Nations General Assembly, the Assembely rejected that  Greece demend for  self-determination.  After this development, EOKA terrorist organization was founded in Cyprus. The  purpose of the EOKA was realised the idea of Enosis.<br/>
+  Correspoing  to the Enosis thesis of the Greeks in Cyprus,Cypriot Turks defended the  seperation (Taksim)thesis.</p>
+<p><strong>Enosis:</strong>.<strong></strong><em>Enosis</em>  a  movement for securing the political union of Greece and Cyprus <br/>
+<strong>E.O.K.A. :</strong> A Greek-<a cypriot\"="" href='\"http://www.oxforddictionaries.com/definition/english/Cypriot#Cypriot__2\"' of="" title='\"Meaning'>Cypriot</a>  movement active in <a cyprus\"="" href='\"http://www.oxforddictionaries.com/definition/english/Cyprus#Cyprus__2\"' of="" title='\"Meaning'>Cyprus</a> in the 1950s and in the early 1970s, which <a fought\"="" href='\"http://www.oxforddictionaries.com/definition/english/fight#fight__3\"' of="" title='\"Meaning'>fought</a> for the <a href='\"http://www.oxforddictionaries.com/definition/english/independence#independence__2\"' independence\"="" of="" title='\"Meaning'>independence</a> of <a cyprus\"="" href='\"http://www.oxforddictionaries.com/definition/english/Cyprus#Cyprus__2\"' of="" title='\"Meaning'>Cyprus</a> from Britain and for its <a eventual\"="" href='\"http://www.oxforddictionaries.com/definition/english/eventual#eventual__2\"' of="" title='\"Meaning'>eventual</a> union with <a greece\"="" href='\"http://www.oxforddictionaries.com/definition/english/Greece#Greece__2\"' of="" title='\"Meaning'>Greece</a> <br/>
+<strong>Taksim Thesis: </strong>The  purpose of Taksim thesis; the entire island of Cyprus is connected to Turkey.</p>
+<p><strong>“</strong>England after  the second World War, prepared in 1947, Lord Winster Plan; in 1955, I. Mac  Millan Plan; in 1955, I. and II. Harding Plan; in 1956, Radeliff Plan; in 1958,  II. Mac Millian Plan; and in 1958 Spook Plan. The purpose of these plans was to  constituted an  autonomous administration  in Cyprus. These plans were rejected by Greek Cypriots. In 1955, the first  conference was held between Britain, Turkey and Greece in London. Turkey was  separately defending self-determination for the two communities in Cyprus. But  Greece advocated a  self-determination  for a United Cyprus<strong>.”(Vatansever,2012:1498)</strong></p>
+<p><strong>7.1959-1960 Cyprus  Treaties and   the Legal Status  These Treaties  Created</strong><br/>
+  The  idea of independence of Cyprus emerged against Enosis and Taksim ideas. On 11  February 1959, Zurich Treaty and 19 February 1959, London Treaty were signed  between the parties. Thus Cyprus was born as a   bicommunal Republic.</p>
+<p><strong>8.Zurich and London Treaties</strong><br/>
+  On  5 February 1959 in Turkey and Greece’s Prime Ministers( Menderes and Karamanlis)  and Foreign Ministers (Zorlu and Averoff) signed Zurich Treaty  on 11 February 1956.Zurich Treaty; consist  “Agreements with the Basic Structure of the Constitution of the Republic of  Cyprus ” ; “The Treaty of Alliance”; “Warranty Treaty”. Britain has not signed  this treaty. Britain are required to sign the treaty for have the status of  Cyprus’ independence. Upon this that London Treaty was signed on February 19,  1959<strong>.(Toluner, 1977: 73)</strong><br/>
+  London  Treaty known as the Nicosia Treaties since on August 16, 1960<strong>.(Toluner, 1977: 73) </strong>Cyprus government  is founded on the existence and equality of two communities. <strong>(Vatansever,2012:1501)</strong></p>
+<p><strong>9.Content and Legal Nature of the  Treties</strong><br/>
+  Cyprus  government is founded on the existence and equality of two communities. The two  communities on the island are equal and partner status. Several articles of the  Treaty: Cyprus government is a Republic, will be managed by a Presidential  Regime. President will be a Greek Cypriot ,Vice President will be a Turkish.  Council of Ministers consist of seven Greek and three Turkish members. <br/>
+  Cypriot  government will cooperate fully with this treaty with England. In addition, all  parties of treaty will defend Cyprus jointly. <br/>
+  Executive  authority will be the president and  vice-president. Ministry of Foreign Affairs,  the Minister of Defense and Finance Ministries will be given at least one to  Turkish competent. <strong>(Toluner,1977:76-79)</strong></p>
+<p><strong>10.The  Cyprus Problem since 1960</strong></p>
+<ul>
+<li><strong>To Eliminate the Republic of Cyprus</strong></li>
+</ul>
+<p>Greek leader Makarios has made some activites to  eliminate the 1960 Treaties.On 30 November 1963, Makarios submitted a proposal  to amend article 13 of the Constitution of Cyprus. This proposal would reduced  the Turkish Cypriot minority status and was rejected by Turkey and Turkish  Cypriot. Whereupon, Akritas Plan has been adopted by the Greeks and began  ‘bloody Nobel’ genocide operations on December 21, 1963. In addition,  partnership Republic scattered. Nicosia is divided by what is known as  “green line” border. The purpose of this  border is provide a security. Green line control was carried out by the Britain.  The Green line was a prelude to the establishment of two seperate manegement in  Cyprus. <strong>(Toluner,1977:106-107)</strong><br/>
+  In 1964, Turkish government appealed to the United  Nations Security Council against too many Greek attacks. On 4 March 1964,  Security Council took the decision to establish “ United Nations Peacekeeping”  and sent to the island. (Resolution 186) <strong>(Toluner,1977:240-242)</strong><br/>
+  “On 15 November 1967 Greek army under the leadership  of Grivas attacted the Gecitkale and Bogazici villiages. Upon this, Turkish  warplanes and fleets have been moved to Cyprus.Grand National Assembly of  Turkey took decided to fight,if the attacks continued. Greek and Greek Cypriot  were removed from the place they occupied over this response. On 27 December 1967,  “Temporary Turkish Government” was declared in Cyprus. After a while, Turkish  Management to emerged  a federal  government was established.<br/>
+  Dr.Fazıl Kucuk became the first head of the  menagement. After the elections in 1973, Rauf Denktas replaced him’’<strong>(Vatansever,2012:1514)</strong><br/>
+<strong> 11.Turkey’s 1974 Intervention</strong><br/>
+  In  1974,  coup was made  against President Makarios to unite the island  with Greece.On  15 July 1974, Nikos  Sampson was brought to power. In 1974, Turkey intervened on the basis of the  agreement establishing the Republic of Cyprus. On July 22, Turkish troops  seized Kyrenia. But the same evening, the Nicosia- Kyrenia line are combined on  The United Nations Security Council’s ceasefire resolution. Following this  intervention, Greek junta and <br/>
+  Sampson’s  task was terminated. Klerides was brought to power.<br/>
+  Turkey’s  Minister of Foreign Affairs, England’s Minister of Foreign Affairs and Greece’s  Minister of Foreign Affairs joined 1.Geneva Conference conducted between 25-30  July. Turkey’s intervention was deemed to be justified. Also in Geneva protocol  has been recognized  the existence of two  different wills including Turkey and Greek in Cyprus. <strong>(Toluner,1977:285-292)</strong><br/>
+  On  August 8-12; 1974, parties could not get a result from 2.Geneva conference.  Upon this, Turkey intervened in Cyprus for the second time on Agust 14, 1974.  The Turkish Republic of Nothern Cyprus’ boundaries were drawn. Following this  intervention, US applied arms embargo  to  Turkey in 1975. <strong>( Vatansever,2012: 1516)</strong></p>
+<p><strong>12.The Establishment of the Turkish  Republic of Northern Cyprus</strong><br/>
+  Temporary  Turkish Cypriot administration founded the Turkish Federated State of Cyprus on  February 13, 1975. Later through the United Nations in Cyprus that is made  population exchanged to placed.Does the Turkish Cypriot population of the  island gathered within definded borderies for the first time in history and  preserve their existence. <strong>(Toluner,1977:  352-361)</strong><br/>
+  On  15 November 1983, the Turkish side ,using, the right of self-determination,has  established a free and independent Turkish state and this event was announced  to the whole world by Turkish side. Thus, the Turkish Republic of Northern  Cyprus was established.The first state to recognized the Turkish Republic of  Northern Cyprus was Turkey. Britain immediately brought  this issue to the UN Security Council. On 18 November  1983 by the decision No.541 of the Security Council wanted to disavowel to  Turkish Republic of Northern Cyprus from all states. Since the establishment of  the Turkish Republic of Northern Cyprus has   faced international sanctions. <strong>(  Vatansever,2012:1518-1519)</strong></p>
+<p><strong>13.After the 1990 the Cyprus Issue</strong><br/>
+  In  1990, Greek Cypriot administration  applied for full membership of the European  Union for representing the entire island. This situation  made the problem of Cyprus more complicated  since . On 1 May 2004, Greek side as been a member of the European Union with  the title of the Republic of Cyprus.<br/>
+  Turkey  signed Custom Union Treaty in 1995.Subsequently,Turkey would have to deal with  a country that it did not recognize.</p>
+<p><strong>14.The Annan Plan on  the Cyprus Problem</strong><br/>
+  Secratary General of the United Nations Annan  has called for talks with leaders of the two  side. This negatiations were negotive. In 2001, Rauf Denktas wrote a letter to  the Greek leader Clerides for overtunes. The meetings started on January 2002  and the comprehensive settlement plan drafted by Annan was approved. <strong>(Denktas, 2001: Vatansever,2012:1521) </strong>Sovereignty  which is indispensable for Turkish Cypriots was not included in the Annan Plan.<br/>
+  An  important point in the plan; failure to clarify the status of the Turkish  Cypriot. The Annan Plan has been amended five times and provided on both sides  of the island to seperate referenda. 64.9% of the Turkish Cypriot yes, 75.8% of  the Greek Cypriot no votes were used and the plan has not been implemented.</p>
+<p><strong>15.The Recent Developments in the  Cyprus Problem </strong><br/>
+  European  Union countries prepared a text under the title “ common position document” to  begin negotiations with Turkey in 2005. According to this document, Turkey will  eliminate the strategic asset. But the Turkish government has not signed this  document. Upon this European Union membership negotiations with Turkey were  halted in progress. <strong>(Toluner,1977:400)</strong><br/>
+  In  2008, After negotiations between Talat and Christofias, the two leaders  confirmed bicommunal federation commitment.  The two leaders  had the same idea to  have a federal government one international identity<strong>.( Vatansever,2012: 1523-1524)</strong><br/>
+  Greek  section signed “exclusive economic zone delimination agreement” with  Egypt, Lebanon and Israel. With this  agreements, the Greeks began to share the Eastern Mediterranean. <br/>
+  The  Greek side has initiated the Eastern Mediterranean oil and natural gas. Upon  this “Continental Shelf Delimination Agreement” signed between Turkey and TRNC. <strong>(Vatansever,2012: 1525)</strong></p>
+<p><strong>16.Conclusion </strong><br/>
+  The  island of Cyprus from 1571 until 1878 remained under the Ottoman rule. But with  the entry of Cyprus to the British protectore that Cyprus problem began in the  international arena. The Cyprus issue is the main problem in Turkey and Greece  relations. Cyprus is important because the island of Cyprus is close to Middle  East oil and is an important geopolitical location between Europe, Asia and  Africa continents. Greece’ expansionist policy on Cyprus stem from the idea of  Enosis. Greece gave support to E.O.K.A terrorist organization to  realize the idea of Enosis. Corresponding to  the Enosis thesis of the Greaks in Cyprus, Cypriots Turks defended the  seperation (Taksism)thesis.The embrace the idea of Enosis and by Greak leaders  and the support they give to E.O.K.A.<br/>
+  The  Republic of Cyprus was established by the Zurich and London treaties signed in  1960. In 1974, organized by the Cyprus peace operation by Turkey and the  Turkish Republic of Northern Cyprus(TRNC) has been  drown border. The TRNC was established in  1983. But Turkey only recognized the TRNC. Upon this many solutions have been  offered by United Nations, but they had failed.<br/>
+  In  2005, the Greek government was a full member of the European Union. After these  events, the European Union  asked Turkey  to withdrow from Cyprus to enter Turkey in the European Union. This has been a  prerequisite. <br/>
+  In  conclusion, we would say that the real issue in Cyprus is to create environment  where the two communities live together in harmony.</p>
+<p><strong>17.References</strong></p>
+<ul>
+<li>Toluner, Sevin.<strong>Kıbrıs Uyuşmazlığı ve Milletlerarası Hukuk( Cyprus Dispute and  International Law.)</strong>(1977). İstanbul Üniversitesi Hukuk Fakültesi<strong>.(Istanbul University Fakulty of Law).</strong></li>
+</ul>
+<ul>
+<li>Vatansever, Müge. (2012).<strong>Kıbrıs Sorunun Tarihsel Gelişimi(Cyprus  Problem’s Historical Development). </strong>Dokuz Eylül Üniversitesi Hukuk Fakültesi<strong>(Dokuz Eylül University Fakulty of Law  Magazine). </strong>Volume Number:2. Pages:1487-1530. <a href='\"http://webb.deu.edu.tr/hukuk/dergiler/dergimiz-12-ozel/3-kamu/9-mugevatansever.pdf\"'>http://webb.deu.edu.tr/hukuk/dergiler/dergimiz-12-ozel/3-kamu/9-mugevatansever.pdf</a>.  (15.11.2015)</li>
+</ul>
+<p> <strong>18.Contact </strong></p>
+<p><strong>Metin  AYAZ </strong><br/>
+  Muğla Sıtkı Koçman Üniversitesi Siyaset Bilimi ve  Uluslararası İlişkiler Bölümü<br/>
+  Political Science and International Relations at  Muğla University<br/>
+<strong>Gsm:<span class='\"skype_c2c_print_container' notranslate\"="">0553-606-13-48</span><span class='\"skype_c2c_container' data-isfreecall='\"false\"' data-ismobile='\"false\"' data-isrtl='\"false\"' data-numbertocall='\"+905536061348\"' data-numbertype='\"paid\"' dir='\"ltr\"' event)\"="" id='\"skype_c2c_container\"' notranslate\"="" onclick='\"SkypeClick2Call.MenuInjectionHandler.makeCall(this,' onmouseout='\"SkypeClick2Call.MenuInjectionHandler.hideMenu(this,' onmouseover='\"SkypeClick2Call.MenuInjectionHandler.showMenu(this,' tabindex='\"-1\"'><span class='\"skype_c2c_highlighting_inactive_common\"' dir='\"ltr\"' skypeaction='\"skype_dropdown\"'><span class='\"skype_c2c_textarea_span\"' id='\"non_free_num_ui\"'><img class='\"skype_c2c_logo_img\"' height='\"0\"' src='\"resource://82AF8DCA-6DE9-405D-BD5E-43525BDAD38A/data/call_skype_logo.png\"' width='\"0\"'/><span class='\"skype_c2c_text_span\"'>0553-606-13-48</span><span class='\"skype_c2c_free_text_span\"'></span></span></span></span></strong></p>
+<div class='\"skype_c2c_menu_container' data-fp='\"{AD0D5B77-00DE-4C82-AC26-3610CEB0BF15}\"' data-murl='\"https://pipe.skype.com/Client/2.0/\"' data-p2murl='\"https://c2c-p2m-secure.skype.com/p2m/v1/push\"' data-uiid='\"1\"' data-uilang='\"en\"' event)\"="" id='\"skype_c2c_menu_container\"' none;\"="" notranslate\"="" onmouseout='\"SkypeClick2Call.MenuInjectionHandler.hideMenu(this,' onmouseover='\"SkypeClick2Call.MenuInjectionHandler.showMenu(this,' style='\"display:'><div class='\"skype_c2c_menu_click2call\"'><a class='\"skype_c2c_menu_click2call_action\"' id='\"skype_c2c_menu_click2call_action\"' target='\"_self\"'>Call</a></div><div class='\"skype_c2c_menu_click2sms\"'><a class='\"skype_c2c_menu_click2sms_action\"' id='\"skype_c2c_menu_click2sms_action\"' target='\"_self\"'>Send SMS</a></div><div class='\"skype_c2c_menu_push_to_mobile\"'><a class='\"skype_c2c_menu_push_to_mobile_action\"' id='\"skype_c2c_menu_push_to_mobile_action\"' target='\"_blank\"'>Call from mobile</a></div><div class='\"skype_c2c_menu_add2skype\"'><a class='\"skype_c2c_menu_add2skype_text\"' id='\"skype_c2c_menu_add2skype_text\"' target='\"_self\"'>Add to Skype</a></div><div class='\"skype_c2c_menu_toll_info\"'><span class='\"skype_c2c_menu_toll_callcredit\"'>You'll need Skype Credit</span><span class='\"skype_c2c_menu_toll_free\"'>Free via Skype</span></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<footer>
+<div class="footer-top">
+<div class="container">
+<div class="row">
+<div class="col-md-2 hidden-xs hidden-sm">
+<img alt="" class="img-responsive" src="data/6397857-logo.png"/>
+</div>
+<div class="col-md-7">
+<div class="row">
+<div class="col-md-4">
+<ul>
+<li>GÜNCEL</li>
+<li><a href="anasayfa.html">Haberler</a></li>
+<li><a href="#">Etkinlikler</a></li>
+</ul>
+</div>
+<div class="col-md-4">
+<ul>
+<li>MULTİMEDYA</li>
+<li><a href="#">Fotoğraf Galerisi</a></li>
+<li><a href="#">Video Galerisi</a></li>
+</ul>
+</div>
+<div class="col-md-4">
+<ul>
+<li>İLETİŞİM</li>
+<li><a href="iletisim.html">İletişim Bilgileri</a></li>
+<li><a href="iletisim.html">İletişim Formu</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<ul>
+<li>E-BÜLTEN</li>
+<li>
+<form action="#" class="form-inline" method="post">
+<div class="row">
+<div class="form-group col-md-8">
+<div class="input-group">
+<label class="sr-only" for="txtemail"></label>
+<input class="form-control" id="txtemail" name="eposta" placeholder="E-Mail Adresi..." type="text"/>
+<input name="ebulten" type="hidden" value="1"/>
+</div>
+</div>
+<button class="btn btn-primary" type="submit">Kayıt Ol</button>
+</div>
+</form>
+</li>
+<li>
+<div class="pull-left">
+<a href="#" title="Facebook Sayfamız"><img src="themes/burokratlar/tema/images/icon-facebook.png"/></a>
+</div>
+<div class="pull-left sosyal">
+<a href="#" title="Twitter Sayfamız"><img src="themes/burokratlar/tema/images/icon-twitter.png"/></a>
+</div>
+<div class="pull-left sosyal">
+<a href="#" title="Google+ Sayfamız"><img src="themes/burokratlar/tema/images/icon-gplus.png"/></a>
+</div>
+<div class="clearfix"></div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div> <!-- .footer-top -->
+<div class="footer-bottom">
+<div class="container">
+<div class="copyright pull-left">
+<p>© 2015 İdareci ve Bürokratlar Birliği Derneği Derneği Tüm Hakları Saklıdır.</p>
+</div>
+<div class="pull-right">
+								 Biz Birlikte Güçlüyüz
+</div>
+</div>
+</div>
+</footer>
+<div class="clearfix"></div>
+</body>
+</html>

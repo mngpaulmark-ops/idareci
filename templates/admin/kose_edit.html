@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Köşe Yazısı Düzenle</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.8.2/tinymce.min.js"></script>
+    <script>tinymce.init({selector:'textarea'});</script>
+</head>
+<body>
+<div class="container mt-5 mb-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Köşe Yazısı Düzenle</h2>
+        <a href="{{ url_for('admin_kose') }}" class="btn btn-secondary">Geri Dön</a>
+    </div>
+
+    <div class="card shadow">
+        <div class="card-body">
+            <form method="POST">
+                <div class="mb-3">
+                    <label class="form-label">Yazar</label>
+                    <select name="yazar_id" class="form-select" required>
+                        {% for yazar in yazarlar %}
+                        <option value="{{ yazar.id }}" {% if yazar.id == yazi.yazar_id %}selected{% endif %}>{{ yazar.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Başlık</label>
+                    <input type="text" name="title" class="form-control" value="{{ yazi.title }}" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Tarih</label>
+                    <input type="date" name="date_added" class="form-control" value="{{ yazi.date_added.strftime('%Y-%m-%d') if yazi.date_added else '' }}" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">İçerik</label>
+                    <textarea name="content" class="form-control" rows="15" required>{{ yazi.content }}</textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

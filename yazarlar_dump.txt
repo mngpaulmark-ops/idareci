@@ -1,0 +1,10 @@
+<div class="basin">
+ <div class="title">
+  <!--							<i class="fa fa-newspaper-o" aria-hidden="true"></i> <a href="#">BASINDA YER ALAN HABERLER</a> /-->
+  <i aria-hidden="true" class="fa fa-pencil">
+  </i>
+  <a href="kose-yazarlari.html">
+   YAZARLAR
+  </a>
+ </div>
+</div>

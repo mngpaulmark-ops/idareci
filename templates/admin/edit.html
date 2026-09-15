@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% if page %}Sayfa Düzenle{% else %}Yeni Sayfa Ekle{% endif %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.8.3/tinymce.min.js"></script>
+    <script>
+      tinymce.init({
+        selector: '#content_html',
+        plugins: 'image link media lists table',
+        toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media | table',
+        height: 500,
+        promotion: false
+      });
+    </script>
+</head>
+<body>
+<div class="container mt-5">
+    <h2>{% if page %}Sayfayı Düzenle: {{ page.title }}{% else %}Yeni Sayfa Ekle{% endif %}</h2>
+    <form method="POST">
+        <div class="mb-3">
+            <label>Başlık</label>
+            <input type="text" name="title" class="form-control" value="{{ page.title if page else '' }}" required>
+        </div>
+        <div class="mb-3">
+            <label>Link (URL kısaltması - boşluksuz ve İngilizce karakter)</label>
+            <input type="text" name="slug" class="form-control" value="{{ page.slug if page else '' }}" required>
+        </div>
+        <div class="mb-3">
+            <label>Menü Sırası (Rakam)</label>
+            <input type="number" name="menu_order" class="form-control" value="{{ page.menu_order if page else 0 }}" required>
+        </div>
+        <div class="mb-3">
+            <label>İçerik (Resim, Video, Yazı)</label>
+            <textarea id="content_html" name="content_html">{{ page.content_html if page else '' }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Kaydet</button>
+        <a href="{{ url_for('admin_index') }}" class="btn btn-secondary">İptal</a>
+    </form>
+</div>
+</body>
+</html>

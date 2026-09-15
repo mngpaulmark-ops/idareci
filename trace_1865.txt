@@ -1,0 +1,234 @@
+Traceback (most recent call last):
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\turga\OneDrive\Desktop\b�rokratlar birli�i site yede�i\burokratlarbirligi.org\app.py", line 377, in decorated_function
+    return f(*args, **kwargs)
+  File "C:\Users\turga\OneDrive\Desktop\b�rokratlar birli�i site yede�i\burokratlarbirligi.org\app.py", line 453, in admin_index
+    return render_template('admin/index.html', pages=pages)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\turga\OneDrive\Desktop\b�rokratlar birli�i site yede�i\burokratlarbirligi.org\templates\admin\index.html", line 31, in top-level template code
+    <a href="{{ url_for('admin_haber') }}" class="btn btn-success m-1">Haber Y�netimi</a>
+    ^^^^^
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+        endpoint,
+    ...<3 lines>...
+        force_external=_external,
+    )
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\werkzeug\routing\map.py", line 901, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'admin_haber'. Did you mean 'admin_haber_add' instead?
+127.0.0.1 - - [14/Sep/2026 22:49:56] "GET /admin HTTP/1.1" 500
+Traceback (most recent call last):
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\turga\OneDrive\Desktop\b�rokratlar birli�i site yede�i\burokratlarbirligi.org\app.py", line 377, in decorated_function
+    return f(*args, **kwargs)
+  File "C:\Users\turga\OneDrive\Desktop\b�rokratlar birli�i site yede�i\burokratlarbirligi.org\app.py", line 453, in admin_index
+    return render_template('admin/index.html', pages=pages)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\turga\OneDrive\Desktop\b�rokratlar birli�i site yede�i\burokratlarbirligi.org\templates\admin\index.html", line 31, in top-level template code
+    <a href="{{ url_for('admin_haber') }}" class="btn btn-success m-1">Haber Y�netimi</a>
+    ^^^^^
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+        endpoint,
+    ...<3 lines>...
+        force_external=_external,
+    )
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\werkzeug\routing\map.py", line 901, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'admin_haber'. Did you mean 'admin_haber_add' instead?
+127.0.0.1 - - [14/Sep/2026 22:49:57] "GET /admin HTTP/1.1" 500
+Traceback (most recent call last):
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\turga\OneDrive\Desktop\b�rokratlar birli�i site yede�i\burokratlarbirligi.org\app.py", line 377, in decorated_function
+    return f(*args, **kwargs)
+  File "C:\Users\turga\OneDrive\Desktop\b�rokratlar birli�i site yede�i\burokratlarbirligi.org\app.py", line 453, in admin_index
+    return render_template('admin/index.html', pages=pages)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\turga\OneDrive\Desktop\b�rokratlar birli�i site yede�i\burokratlarbirligi.org\templates\admin\index.html", line 31, in top-level template code
+    <a href="{{ url_for('admin_haber') }}" class="btn btn-success m-1">Haber Y�netimi</a>
+    ^^^^^
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+        endpoint,
+    ...<3 lines>...
+        force_external=_external,
+    )
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\werkzeug\routing\map.py", line 901, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'admin_haber'. Did you mean 'admin_haber_add' instead?
+127.0.0.1 - - [14/Sep/2026 22:49:58] "GET /admin HTTP/1.1" 500
+Traceback (most recent call last):
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\turga\OneDrive\Desktop\b�rokratlar birli�i site yede�i\burokratlarbirligi.org\app.py", line 377, in decorated_function
+    return f(*args, **kwargs)
+  File "C:\Users\turga\OneDrive\Desktop\b�rokratlar birli�i site yede�i\burokratlarbirligi.org\app.py", line 453, in admin_index
+    return render_template('admin/index.html', pages=pages)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\turga\OneDrive\Desktop\b�rokratlar birli�i site yede�i\burokratlarbirligi.org\templates\admin\index.html", line 31, in top-level template code
+    <a href="{{ url_for('admin_haber') }}" class="btn btn-success m-1">Haber Y�netimi</a>
+    ^^^^^
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+        endpoint,
+    ...<3 lines>...
+        force_external=_external,
+    )
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\werkzeug\routing\map.py", line 901, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'admin_haber'. Did you mean 'admin_haber_add' instead?
+127.0.0.1 - - [14/Sep/2026 22:49:58] "GET /admin HTTP/1.1" 500
+Traceback (most recent call last):
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\turga\OneDrive\Desktop\b�rokratlar birli�i site yede�i\burokratlarbirligi.org\app.py", line 377, in decorated_function
+    return f(*args, **kwargs)
+  File "C:\Users\turga\OneDrive\Desktop\b�rokratlar birli�i site yede�i\burokratlarbirligi.org\app.py", line 453, in admin_index
+    return render_template('admin/index.html', pages=pages)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\turga\OneDrive\Desktop\b�rokratlar birli�i site yede�i\burokratlarbirligi.org\templates\admin\index.html", line 31, in top-level template code
+    <a href="{{ url_for('admin_haber') }}" class="btn btn-success m-1">Haber Y�netimi</a>
+    ^^^^^
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+        endpoint,
+    ...<3 lines>...
+        force_external=_external,
+    )
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\werkzeug\routing\map.py", line 901, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'admin_haber'. Did you mean 'admin_haber_add' instead?
+127.0.0.1 - - [14/Sep/2026 22:49:58] "GET /admin HTTP/1.1" 500
+Traceback (most recent call last):
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\turga\OneDrive\Desktop\b�rokratlar birli�i site yede�i\burokratlarbirligi.org\app.py", line 377, in decorated_function
+    return f(*args, **kwargs)
+  File "C:\Users\turga\OneDrive\Desktop\b�rokratlar birli�i site yede�i\burokratlarbirligi.org\app.py", line 453, in admin_index
+    return render_template('admin/index.html', pages=pages)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\turga\OneDrive\Desktop\b�rokratlar birli�i site yede�i\burokratlarbirligi.org\templates\admin\index.html", line 31, in top-level template code
+    <a href="{{ url_for('admin_haber') }}" class="btn btn-success m-1">Haber Y�netimi</a>
+    ^^^^^
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+        endpoint,
+    ...<3 lines>...
+        force_external=_external,
+    )
+  File "C:\Users\turga\AppData\Roaming\Python\Python314\site-packages\werkzeug\routing\map.py", line 901, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'admin_haber'. Did you mean 'admin_haber_add' instead?
+127.0.0.1 - - [14/Sep/2026 22:49:59] "GET /admin HTTP/1.1" 500

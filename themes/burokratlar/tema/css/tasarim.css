@@ -1,0 +1,167 @@
+﻿/* YKD */
+
+#facebox
+{	
+	z-index:9999999;
+}
+
+#colobox
+{
+	z-index:102;
+}
+
+.haber_liste
+{
+    border-bottom: 1px dotted #bababa;
+    padding: 5px 5px 5px 5px;
+}
+
+.haber_liste a
+{
+    color:#006699;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+.haber_liste a:hover
+{
+    color:#0066FF;
+	text-decoration:underline;
+}
+
+.listele
+{
+	text-align:center;
+}
+
+.listele table
+{
+	width:97%;
+	/*border:1px double #E0E0E0;
+	border-spacing:1px;*/
+	padding:1px;
+}
+
+.listele table tr
+{
+	height: 35px;
+	/*background:#fff;*/
+}
+
+.listele table tr:hover
+{
+	/*background:#dbe9ff;*/
+}
+
+.listele table tr td
+{
+	border-bottom:1px double #E0E0E0;
+}
+
+.listele input, password
+{
+	width:200px;
+	border:1px solid #000;
+}
+
+.listele input[type=submit], input[type=reset], input[type=button]
+{
+/*	width:100px;
+	height:20px;
+	border:1px solid #000; */
+}
+
+.listele textarea
+{
+	width:98%;
+	height:120px;
+	border:1px solid #000;
+}
+
+#fotogaleri
+{
+	display:block;
+}
+
+#fotogaleri img
+{
+	border:3px solid #bababa;
+	margin:5px 0px 5px 0px;
+}
+
+#fotogaleri img:hover
+{
+	border:3px solid #e2dcdc;
+}
+
+#fotogaleri a
+{
+	color:#006699;
+	text-decoration:none;
+	font-weight:bold;
+	text-align:center;
+	
+}
+
+#fotogaleri a:hover
+{
+	color:#0066FF;
+}
+
+/* Sayfalama */
+ul.sayfing
+{
+	list-style-type:none;
+	margin:15px 0 0 0;
+	padding:3px 3px 3px 3px;
+}
+	
+ul.sayfing li
+{
+	display:inline;
+	margin:2px 2px 2px 2px;
+}
+
+ul.sayfing li a {
+	font-weight:bold;
+	text-decoration: none;
+	padding: 10px 10px 10px 10px;
+	color: #000;
+	background-color: #fff;
+	border:1px solid #81a9d1;
+}
+ul.sayfing li a:hover
+{
+	color:#000;
+	background-color:#d9ecff;
+}
+
+.ust_panel_menu
+{
+	background:#ddedfc;
+	margin:10px 10px 10px 10px;
+	padding:10px 10px 10px 10px;
+	border:1px solid #bababa;
+	height:50px;
+	text-align:center;
+}
+
+.ust_panel_menu div
+{
+	float:right;
+	padding:0px 10px 0px 10px;
+	display:inline;
+	border-left:1px dotted #bababa;
+}
+
+.ust_panel_menu div a
+{
+	font-weight:bold;
+	text-decoration:none;
+	color:#306cce;
+}
+
+.ust_panel_menu div a:hover
+{
+	color:#1c4079;
+}

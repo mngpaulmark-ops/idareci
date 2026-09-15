@@ -1,0 +1,90 @@
+<div class="main">
+ <div class="panel panel-primary">
+  <div class="panel-heading">
+   İdareci ve Bürokratlar Birliği Derneği / Diğer Kurullar
+  </div>
+  <div class="panel-body">
+   <div class="box">
+    <div class="col-md-12">
+     <p style="text-align:center">
+      <img alt="İdareci ve Bürokratlar birliği" src="data/page/4/19022022024231.jpg" style="height:150px; width:300px"/>
+     </p>
+     <p style="text-align:center">
+      <strong>
+       İdareci Bürokratlar Birliği Akademisi (İBA)
+      </strong>
+     </p>
+     <p style="text-align:center">
+      <img alt="Milli İrade Platformu" src="data/page/4/19022022024254.jpg" style="height:150px; width:300px"/>
+      <br/>
+      <strong>
+       Milli İrade Platformu Üyesi
+      </strong>
+     </p>
+     <hr/>
+     <p style="text-align:center">
+      <img alt="Kudüs Şurası" src="data/page/4/19022022035252.jpg" style="height:150px; width:300px"/>
+      <br/>
+      <strong>
+       Kudüs Şurası
+      </strong>
+     </p>
+     <hr/>
+     <p style="text-align:center">
+      <img alt="Ankara Sivil Toplum Kuruluşları Platformu" src="data/page/4/19022022031744.jpg" style="height:150px; width:300px"/>
+      <br/>
+      <strong>
+       Ankara Sivil Toplum Kuruluşları Platformu Üyesi
+      </strong>
+     </p>
+     <hr/>
+     <p style="text-align:center">
+      <img alt="15 Temmuz" src="data/page/4/19022022024226.jpg" style="float:center; height:150px; width:300px"/>
+      <br/>
+      <strong>
+       15 Temmuz Sivil Toplum Kuruluşları Platformu Üyesi
+      </strong>
+     </p>
+     <p style="text-align:center">
+     </p>
+     <hr/>
+     <p style="text-align:center">
+     </p>
+     <p style="text-align:center">
+      <img alt="Elazığ Sivil Toplum Kuruluşları Platformu" src="data/page/4/0.jpg" style="height:150px; width:300px"/>
+      <br/>
+      <strong>
+       Elazığ Sivil Toplum Kuruşları Platformu Üyesi
+      </strong>
+     </p>
+     <hr/>
+     <p style="text-align:center">
+      <img alt="Ankara Kent Konseyi" src="data/page/4/19022022032418.jpg" style="height:150px; width:300px"/>
+      <br/>
+      <strong>
+       Ankara Kent Konseyi Üyesi
+      </strong>
+     </p>
+     <hr/>
+     <p style="text-align:center">
+      <strong>
+       Manisa Kent Konseyi Üyesi
+      </strong>
+     </p>
+     <hr/>
+     <p style="text-align:center">
+     </p>
+     <p style="text-align:center">
+      <img alt="Türkiye Anayasa Platformu" src="data/page/4/19022022031442.jpg" style="height:150px; width:300px"/>
+     </p>
+     <p style="text-align:center">
+      <strong>
+       Türkiye Anayasa Platformu Üyesi
+      </strong>
+     </p>
+    </div>
+   </div>
+  </div>
+ </div>
+ <!-- .panel .panel-primary -->
+</div>

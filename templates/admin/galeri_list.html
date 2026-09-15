@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Galeri Yönetimi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5 mb-5">
+    <h2>Galeri Yönetimi</h2>
+    <hr>
+    
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-header bg-primary text-white">Yeni Galeri Oluştur</div>
+                <div class="card-body">
+                    <form method="POST" action="{{ url_for('admin_galeri_ekle') }}">
+                        <div class="mb-3">
+                            <label>Galeri Adı (Başlık)</label>
+                            <input type="text" name="title" class="form-control" required>
+                        </div>
+                        <button class="btn btn-primary w-100">Oluştur</button>
+                    </form>
+                </div>
+            </div>
+            
+            <a href="{{ url_for('admin_index') }}" class="btn btn-secondary w-100">Geri Dön</a>
+        </div>
+        
+        <div class="col-md-8">
+            <h4>Mevcut Galeriler</h4>
+            <div class="list-group">
+                {% for g in galeriler %}
+                <a href="{{ url_for('admin_galeri_detay', id=g.id) }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    {{ g.title }}
+                    <span class="badge bg-secondary rounded-pill">{{ g.resimler|length }} Resim</span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

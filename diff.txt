@@ -1,0 +1,186 @@
+<div class="slideshoww" style="position:absolute; z-index: 1; right:-80px;">
+<li><a href="uyelik.html" target="_self">» Üyelerimiz</a></li>
+<li><a href="haber-listesi.html" target="_self">» Haberler</a></li>
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        var leftPanel = document.querySelector('.news .col-md-6:first-child .panel.panel-primary');
+        var trtWidget = document.getElementById('trt-widget');
+        var trtPanel = document.querySelector('.news .col-md-6:nth-child(2) .panel.panel-primary');
+        if (leftPanel && trtWidget && trtPanel) {
+            // Match the height of the entire panel
+            trtPanel.style.height = leftPanel.offsetHeight + 'px';
+            // Adjust the inner widget height based on the header height
+            var headerHeight = trtPanel.querySelector('.panel-heading').offsetHeight;
+            // padding is usually 15px top + 15px bottom for panel-body
+            trtWidget.style.height = (leftPanel.offsetHeight - headerHeight - 35) + 'px';
+        }
+    }, 500); // Wait for images to load
+<!-- .panel .panel-primary -->
+<div class="panel panel-primary" style="margin-top: 20px; border-color: #800000; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
+<div class="panel-heading" style="background-color: #800000; border-color: #800000; color: white; font-weight: bold; font-size: 15px; padding: 12px 15px;">
+<i aria-hidden="true" class="fa fa-book" style="margin-right:8px;"></i> Günün Hadis-i Şerifi
+<div class="panel-body" style="background-color: #fdfaf6; padding: 25px 20px;">
+<div style="text-align: center; color: #800000; font-size: 20px; margin-bottom: 12px; opacity: 0.6;">
+<i aria-hidden="true" class="fa fa-quote-left"></i>
+<div id="daily-hadith" style="font-size: 16px; font-style: italic; font-weight: 600; color: #444; line-height: 1.7; text-align: center; font-family: 'Georgia', 'Times New Roman', serif;">
+<div style="text-align: center; color: #800000; font-size: 20px; margin-top: 12px; opacity: 0.6;">
+<i aria-hidden="true" class="fa fa-quote-right"></i>
+<div class="panel panel-kurumsal mb-4 side-dijital" style=""><div class="panel-heading text-center font-bold" style="background:#0f2b48; color:white; padding: 10px;">Dijital İşlemler Portalı</div><div class="panel-body text-center p-4"><a class="btn btn-primary w-full mb-2" href="uyelik.html" style="background:#800000; border:none; display:block; padding:8px; color:white; border-radius:4px; text-decoration:none;">Üyelik Başvurusu</a><a class="btn btn-primary w-full mb-2" href="#" style="background:#e2e8f0; border:none; display:block; padding:8px; color:#0f2b48; border-radius:4px; text-decoration:none;">Aidat Sorgulama</a></div></div><div class="panel panel-kurumsal mb-4 side-gundem" style=""><div class="panel-heading text-center font-bold" style="background:#0f2b48; color:white; padding: 10px;">Gündem &amp; Buluşmalar</div><div class="panel-body p-4"><ul class="list-none p-0 m-0 text-sm"><li class="border-b py-2 mb-2"><span style="background:#800000; color:white; padding:2px 6px; border-radius:4px; font-size:12px;">Yakında</span> <a href="#" style="color:#0f2b48; font-weight:bold; text-decoration:none;">Politika Notu Yayını</a></li><li class="border-b py-2 mb-2"><span style="background:#800000; color:white; padding:2px 6px; border-radius:4px; font-size:12px;">14 Mayıs</span> <a href="#" style="color:#0f2b48; font-weight:bold; text-decoration:none;">Dost Meclisi Buluşması</a></li></ul></div></div><div class="panel panel-kurumsal mb-4 side-ebulten" style=""><div class="panel-heading text-center font-bold" style="background:#0f2b48; color:white; padding: 10px;">E-Bülten &amp; Politika Notlarına Abone Olun</div><div class="panel-body text-center p-4"><input class="form-control mb-2 p-2 border rounded w-full" placeholder="E-Posta Adresiniz" style="width:100%; box-sizing:border-box;" type="email"/><button class="btn btn-primary w-full mt-2" style="background:#800000; border:none; padding:8px; color:white; border-radius:4px; width:100%;">Abone Ol</button></div></div><div class="panel panel-cyan links side-faydali" style=""><div class="panel-heading"><img alt="Link" src="themes/burokratlar/tema/images/icon-link.png"/>Faydalı Bağlantılar</div><div class="panel-body"><ul><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.tccb.gov.tr/" target="_blank">Cumhurbaşkanlığı</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.tbmm.gov.tr/" target="_blank">Türkiye Büyük Millet Meclisi</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.turkiye.gov.tr/" target="_blank">E-devlet</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.icisleri.gov.tr/" target="_blank">T.C. İçişleri Bakanlığı</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.resmigazete.gov.tr/" target="_blank">Resmin Gazete</a></li><li><i aria-hidden="true" class="fa fa-link"></i> <a href="https://www.cimer.gov.tr/" target="_blank">Cumhurbaşkanlığı İ.M. (CİMER)</a></li></ul></div></div><div id="yanaplat-banner" style="margin-top: 20px; margin-bottom: 20px; text-align: center;">
+<img alt="Milli İrade Platformu" src="data/yanaplat.gif" style="width: 100%; height: 220px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: 1px solid #ccc;"/>
+</div> <!-- .left-menu -->
+<div class="news" style="display: flex; flex-wrap: wrap; align-items: stretch;">
+<div class="panel-body col-md-6" style="display: flex; flex-direction: column;">
+<div class="panel-body col-md-6" style="display: flex; flex-direction: column;">
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+        var leftPanel = document.querySelector('.news .col-md-6:first-child .panel.panel-primary');
+        var trtWidget = document.getElementById('trt-widget');
+        var trtPanel = document.querySelector('.news .col-md-6:nth-child(2) .panel.panel-primary');
+        if (leftPanel && trtWidget && trtPanel) {
+            // Match the height of the entire panel
+            trtPanel.style.height = leftPanel.offsetHeight + 'px';
+            // Adjust the inner widget height based on the header height
+            var headerHeight = trtPanel.querySelector('.panel-heading').offsetHeight;
+            // padding is usually 15px top + 15px bottom for panel-body
+            trtWidget.style.height = (leftPanel.offsetHeight - headerHeight - 35) + 'px';
+        }
+    }, 500); // Wait for images to load
+<img alt="2016 YÄ±lÄ± Geleneksel Ä°ftar ProgramÄ±" class="img-rounded" src="data/gallerygroup/1.jpg"/>
+<h5>2016 YÄ±lÄ± Geleneksel Ä°ftar ProgramÄ±</h5>
+<img alt="KardeÅŸlik, Birlik ve Beraberlik YardÄ±m KampanyasÄ±" class="img-rounded" src="data/gallerygroup/2.jpg"/>
+<h5>KardeÅŸlik, Birlik ve Beraberlik YardÄ±m KampanyasÄ±</h5>
+<img alt="Yetim TÃ¼rkmen Ã‡ocuklarÄ±na YardÄ±m KampanyasÄ±" class="img-rounded" src="data/gallerygroup/6.jpg"/>
+<h5>Yetim TÃ¼rkmen Ã‡ocuklarÄ±na YardÄ±m KampanyasÄ±</h5>
+<img alt="KardeÅŸlik SÄ±nÄ±r TanÄ±maz Projesi / Hakkari / AÄŸustos 2017" class="img-rounded" src="data/gallerygroup/5.jpg"/>
+<h5>KardeÅŸlik SÄ±nÄ±r TanÄ±maz Projesi / Hakkari / AÄŸustos 2017</h5>
+<img alt="KardeÅŸlik SÄ±nÄ±r TanÄ±maz Projesi / Ankara / KasÄ±m 2017" class="img-rounded" src="data/gallerygroup/7.jpg"/>
+<h5>KardeÅŸlik SÄ±nÄ±r TanÄ±maz Projesi / Ankara / KasÄ±m 2017</h5>
+<img alt="Anadolu MeydanÄ± KUDÃœS Mitingi / Ankara / AralÄ±k 2017" class="img-rounded" src="data/gallerygroup/8.jpg"/>
+<h5>Anadolu MeydanÄ± KUDÃœS Mitingi / Ankara / AralÄ±k 2017</h5>
+<img alt="KardeÅŸlik SÄ±nÄ±r TanÄ±maz Projesi / Ankara / Haziran 2018" class="img-rounded" src="data/gallerygroup/9.jpg"/>
+<h5>KardeÅŸlik SÄ±nÄ±r TanÄ±maz Projesi / Ankara / Haziran 2018</h5>
+<img alt="Sivil Toplum KuruluÅŸlarÄ± Genel MÃ¼dÃ¼rlÃ¼ÄŸÃ¼nÃ¼n rehberlik Ã§alÄ±ÅŸmalar" class="img-rounded" src="data/haber/thumb_481.jpg"/>
+<h5>5. OlaÄŸan Kongresi gerÃ§ekleÅŸtirildi</h5>
+<img alt="Ä°dareci ve BÃ¼rokratlar BirliÄŸi DerneÄŸinden Balkanlar'da Akademik ve KÃ¼" class="img-rounded" src="data/haber/thumb_445.jpg"/>
+<h5>Ä°dareci ve BÃ¼rokratlar BirliÄŸi Dern</h5>
+<img alt="Ä°dareci ve BÃ¼rokratlar BirliÄŸi DerneÄŸiâ€™nden oturma eylemi yapan ailel" class="img-rounded" src="data/haber/thumb_444.jpg"/>
+<h5>Ä°dareci ve BÃ¼rokratlar BirliÄŸi Dern</h5>
+<img alt="Ä°Ã§iÅŸleri BakanlÄ±ÄŸÄ± Ã¶ncÃ¼lÃ¼ÄŸÃ¼nde, Ä°dareci ve BÃ¼rokratlar DerneÄŸ" class="img-rounded" src="data/haber/thumb_393.jpg"/>
+<h5>Ä°Ã§iÅŸleri BakanlÄ±ÄŸÄ± Ã¶ncÃ¼lÃ¼ÄŸÃ¼</h5>
+<img alt="DiyarbakÄ±r'da KardeÅŸlik SÄ±nÄ±r TanÄ±maz Projesi iÃ§in program dÃ¼zenlend" class="img-rounded" src="data/haber/thumb_388.jpg"/>
+<h5>KARDEÅLÄ°K SINIR TANIMAZ PROJESÄ° DÄ°</h5>
+<img alt="Geleneksel Ã‡ocuk OyunlarÄ± TÃ¼m illeri" class="img-rounded" src="data/haber/thumb_282.jpg"/>
+<h5>Geleneksel Ã‡ocuk OyunlarÄ± TÃ¼m iller</h5>
+<div class="row" style=" display: flex; flex-wrap: wrap;">
+<div class="panel panel-sto panel-primary" id="panel-kamu-etigi" style="height: 100%; display: flex; flex-direction: column; display: none !important;">
+<div class="panel-heading" style="background-color: #2980b9;">
+<i class="glyphicon glyphicon-education" style="font-size: 16px; margin-right: 8px;"></i> Kamu Etiği ve Yönetim İlkeleri
+<div class="panel-body" style="padding: 15px; flex-grow: 1; display: flex; flex-direction: column;">
+<div style="background-color: #f9f9f9; padding: 12px; margin-bottom: 5px; border-radius: 4px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+<p style="font-size: 14px; color: #555; margin-bottom: 12px;">Kamuda etik değerler ve şeffaf yönetim anlayışı üzerine düzenlenen güncel seminer programlarımız.</p>
+<a class="btn btn-primary btn-sm" href="#" style="background-color: #2980b9; border:none; width: 100%;">Detayları İncele <i class="glyphicon glyphicon-chevron-right"></i></a>
+<!-- .panel .panel-stop .panel-light-red -->
+<div class="panel panel-sto panel-danger" id="panel-yonetim-liderlik" style="height: 100%; display: flex; flex-direction: column; display: none !important;">
+<div class="panel-heading" style="background-color: #e74c3c; color: white;">
+<i class="glyphicon glyphicon-blackboard" style="font-size: 16px; margin-right: 8px;"></i> Yönetim ve Liderlik Seminerleri
+<div class="panel-body" style="padding: 15px; flex-grow: 1; display: flex; flex-direction: column;">
+<div style="background-color: #f9f9f9; padding: 12px; border-radius: 4px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+<p style="font-size: 14px; color: #555; margin-bottom: 12px;">Geleceğin yöneticilerini yetiştiren vizyoner liderlik eğitimleri ve akademik panel serileri.</p>
+<a class="btn btn-danger btn-sm" href="#" style="background-color: #e74c3c; border:none; width: 100%;">Seminerlere Git <i class="glyphicon glyphicon-chevron-right"></i></a>
+<!-- .panel .panel-cyan -->
+        var eventsInline = [
+    {
+        "date": "1747162800000",
+        "saat": "",
+        "type": "meeting",
+        "title": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Birlikte Güçlüyüz Ruhu İle Kahramanlık Eserleri Programı",
+        "description": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Birlikte Güçlüyüz Ruhu İle Kahramanlık Eserleri Programına Teşriflerinizden Mutluluk Duyarız",
+        "url": ""
+    },
+    {
+        "date": "1747094400000",
+        "saat": "",
+        "type": "meeting",
+        "title": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Birlikte Güçlüyüz Ruhu İle Kahramanlık Eserleri Programı",
+        "description": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Birlikte Güçlüyüz Ruhu İle Kahramanlık Eserleri Programına  Teşriflerinizden Mutluluk Duyarız",
+        "url": ""
+    },
+    {
+        "date": "1534377600000",
+        "saat": "",
+        "type": "meeting",
+        "title": "Olağanüstü Kongre Kararı",
+        "description": "Olağanüstü Kongremiz 16.08.2018 Perşembe günü saat 19.00'da NEFF CAFE-NEFFGİLE Toplantı Salonunda yapılacaktır.( Atatürk Caddesi. Keçiören Girişi FTZ Arkası No:17 Keçiören-ANKARA) Teşriflerinizi bekler,Kongremizin; Derneğimize, Vatanımıza, İslam Alemine ve İnsanlığa hayırlı olmasını temenni ederiz.Yücel CAN",
+        "url": ""
+    },
+    {
+        "date": "1533682800000",
+        "saat": "",
+        "type": "meeting",
+        "title": "Olağanüstü Kongre Kararı",
+        "description": "YK. Kurulumuz Toplanarak almış olduğu Olağanüstü Kongre kararı doğrulturunsa 08.08.2018&nbsp;tarihinde&nbsp;toplanmasına, 06.08.2018 tarihinde ÇOĞUNLUK ARANMAKSINIZ 16.08.2018 Perşembe Saat 19.00'da İDARECİ ve BÜROKRATLAR BİRLİĞİ DERNEĞİNDE OLAĞAN ÜSTÜ KONGRE yapılacaktır.&nbsp;",
+        "url": ""
+    },
+    {
+        "date": "1464307200000",
+        "saat": "",
+        "type": "meeting",
+        "title": "Küresel Meydan Okumalar ve Tükiye'nin Dış Politikası",
+        "description": "Dost Meclisimizin Bu haftaki Konuğu STAR Gazetesi Ankara Temsilcisi olan Sayın Mustafa KARTOĞLU bey ile &ldquo;Küresel Meydan Okumalar ve Tükiye'nin Dış Politikası&quot; İsimli Konferansı siz değerli konuklarımız ile buluşturmaktadır. ",
+        "url": ""
+    },
+    {
+        "date": "1463097600000",
+        "saat": "",
+        "type": "meeting",
+        "title": " PKK Medyası ve PKK İle Mücadelenin psikolojik Boyutu",
+        "description": "Bu tarihi lüten not ediniz...Pkk...Sistematik dezanformasyon ve Pkk...Pkknın kara propagandası...Pkknın medyayı kullanma araçları...Pkkya destek veren Avrupa Ülkeleri...Daha neler neler...",
+        "url": ""
+    },
+    {
+        "date": "1459364400000",
+        "saat": "",
+        "type": "meeting",
+        "title": "Terör,  Göç ve Dokunulmazlık",
+        "description": "ŞİMDİDEN BU TARİHİ VE SAATİ NOT EDIN...Terörün gerçek yüzü nedir, hedefi kimdir?Terör örgütleri ve hamileri kimlerdir?Terör örgütünün iç ve dış bağlantıları...Neden terör daha çok belli bir coğrafyadadır?Terõrün zararaları, tehlikeleri, etkileri, bilinmeyenleri....Teröre dair daha neler neler...Göç...Göç ve terörün bağlantıları...Göç sosyolojidi ve psikolojisi...İç ve dış göç...Dokunulmazlıklar...Dokunulmazlıkların ölçüsü, sınırı, bağlantıları...Terör, göç ve dokunulmazlıkların bağlantı ve ilişkileri..&nbsp;Batı ve Dünyanın bakışı, samimiyeti, etkisi......Ve daha neler neler...",
+        "url": "#"
+    },
+    {
+        "date": "1460228400000",
+        "saat": "",
+        "type": "meeting",
+        "title": "SULTAN II ABDÜLHAMİD'DEN RECEP TAYYİP ERDOĞAN'A",
+        "description": "BU KONFERANS ÇOK KONUŞULACAK.  Sultan Abdülhamit'e ait bilinmeyenler,",
+        "url": ""
+    },
+    {
+        "date": "1457775936000",
+        "saat": "14:00",
+        "type": "meeting",
+        "title": "MİLLET ANAYASASINA",
+        "description": "Dost meclisinin bu haftaki konuğu Cumhurbaşkanı Başdanışmanı Sayın Av. Şeref Malkoç Katılacaktır.",
+        "url": "#"
+    },
+    {
+        "date": "1457179200000",
+        "saat": "14:00",
+        "type": "meeting",
+        "title": "28 ŞUBAT YAŞAYAN BİRİ",
+        "description": "GENİŞ BİR BAKIŞ AÇISIYLA 28 ŞUBAT BU HAFTAKİ KONFERANS KONUMUZ VE KONUĞUMUZ 54. HÜKÜMETİN DEVLET BAKANI VE AK PARTİ ETİK KURULU BAŞKANI SAYIN AHMET CEMİL TUNÇ",
+        "url": "#"
+]; // This will be populated by etkinlik_helper.py
+        $("#eventCalendarLocale").eventCalendar({
+            jsonData: eventsInline,
+            cacheJson: false,
+            showDescription: true,
+            eventsLimit: 5,
+            monthNames: [ "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık" ],
+            dayNames: [ 'Pazar','Pazartesi','Salı','Çarşamba', 'Perşembe','Cuma','Cumartesi' ],
+            dayNamesShort: [ 'Paz','Pzt','Sal','Çar', 'Per','Cum','Cmt' ],
+            txt_noEvents: "Kayıtlı etkinlik bulunamadı.",
+            txt_SpecificEvents_prev: "",
+            txt_SpecificEvents_after: " Etkinlikleri:",
+            txt_next: "Sonraki",
+            txt_prev: "Önceki",
+            txt_NextEvents: "Son Etkinlikler:",
+            txt_GoToEventUrl: "Detaylı Görüntüle"
