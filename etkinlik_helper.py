@@ -4,9 +4,18 @@ import re
 import os
 import bs4
 
+def parse_date(date_str):
+    if not date_str:
+        return (0, 0, 0)
+    nums = re.findall(r'\d+', date_str)
+    if len(nums) >= 3:
+        return (int(nums[2]), int(nums[1]), int(nums[0]))
+    return (0, 0, 0)
+
 def regenerate_anasayfa_etkinlikler():
     with app.app_context():
-        etkinlikler = Etkinlik.query.order_by(Etkinlik.id.desc()).all()
+        etkinlikler_db = Etkinlik.query.all()
+        etkinlikler = sorted(etkinlikler_db, key=lambda x: parse_date(x.edate), reverse=True)
         
         events_list = []
         for e in etkinlikler:
@@ -14,24 +23,36 @@ def regenerate_anasayfa_etkinlikler():
                 "date": getattr(e, 'edate', "") or "",
                 "saat": getattr(e, 'saat', "") or "",
                 "type": e.type or "meeting",
-                "title": e.title or "",
-                "description": e.description or "",
+                "title": (e.title or "").replace('\\r', '').replace('\\n', ' '),
+                "description": (e.description or "").replace('\\r', '').replace('\\n', ' '),
                 "url": e.link or ""
             })
         
+        # We also sanitize actual newline characters just to be safe
+        for e in events_list:
+            e["description"] = e["description"].replace('\r', '').replace('\n', ' ')
+            e["title"] = e["title"].replace('\r', '').replace('\n', ' ')
+            
         events_json = json.dumps(events_list, ensure_ascii=False, indent=4)
         
-        try:
-            if os.path.exists('anasayfa.html'):
-                with open('anasayfa.html', 'r', encoding='utf-8', errors='ignore') as f:
-                    text = f.read()
-                pattern = r'var eventsInline = \[.*?\];'
-                replacement = 'var eventsInline = ' + events_json + ';'
-                new_text = re.sub(pattern, replacement, text, flags=re.DOTALL)
-                with open('anasayfa.html', 'w', encoding='utf-8') as f:
-                    f.write(new_text)
-        except Exception as e:
-            print("Error updating anasayfa.html events:", e)
+        for file in ['anasayfa.html', 'index.html']:
+            try:
+                if os.path.exists(file):
+                    with open(file, 'r', encoding='utf-8', errors='ignore') as f:
+                        text = f.read()
+                    pattern = r'var eventsInline = \[.*?\];'
+                    
+                    # Fix JS crash by passing a lambda instead of a string, so re.sub doesn't process escape sequences like \n
+                    new_text = re.sub(pattern, lambda m: 'var eventsInline = ' + events_json + ';', text, flags=re.DOTALL)
+                    
+                    if new_text == text:
+                        pattern2 = r'var eventsInline = .*?;'
+                        new_text = re.sub(pattern2, lambda m: 'var eventsInline = ' + events_json + ';', text, flags=re.DOTALL)
+                        
+                    with open(file, 'w', encoding='utf-8') as f:
+                        f.write(new_text)
+            except Exception as e:
+                print(f"Error updating {file} events:", e)
 
         html_blocks = []
         for e in etkinlikler:
@@ -46,7 +67,7 @@ def regenerate_anasayfa_etkinlikler():
     </a>
 </h4>
 <span>
-    Aciklama :
+    Açıklama :
     <span>
         {e.description}
     </span>
@@ -90,4 +111,4 @@ def regenerate_anasayfa_etkinlikler():
 
 if __name__ == '__main__':
     regenerate_anasayfa_etkinlikler()
-    print("Regenerated anasayfa.html etkinlikler JSON and etkinlik.html HTML.")
+    print("Regenerated anasayfa.html and index.html etkinlikler JSON, and etkinlik.html HTML.")
