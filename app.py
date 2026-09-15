@@ -822,11 +822,11 @@ def regenerate_temsilcilik_html():
                     "projection": "mercator",
                     "backgroundAlpha": 1,
                     "backgroundColor": "rgba(255,255,255,1)",
-                    "zoomControl": {
+                    "zoomControl": {{
                         "zoomControlEnabled": true,
                         "panControlEnabled": false,
                         "homeButtonEnabled": true
-                    },
+                    }},
                     "maintainAspectRatio": true,
                     "balloon": {{
                         "horizontalPadding": 15,
@@ -866,9 +866,7 @@ def regenerate_temsilcilik_html():
             turkeyChart.dataProvider = {{
                 "map": "turkeyLow",
                 "getAreasFromMap": true,
-                "zoomLevel": 0.9,
-                "zoomLongitude": 35.5,
-                "zoomLatitude": 39.0,
+                
                 "areas": {turkey_json}
             }};
             
@@ -881,6 +879,10 @@ def regenerate_temsilcilik_html():
     </script>
     <style>
         .amcharts-balloon-div {{ z-index: 9999 !important; padding:10px !important; }}
+        .ammap-container {{ width: 100%; height: 500px; }}
+        @media (max-width: 768px) {{
+            .ammap-container {{ height: 300px !important; margin: 0 auto !important; }}
+        }}
     </style>
     <div class="main">
     <div class="panel panel-primary" style="margin-top:20px; border:none;">
@@ -888,12 +890,12 @@ def regenerate_temsilcilik_html():
     <center>
     <h3 style="color:#800000; font-weight:bold; margin-bottom:20px;">Türkiye Temsilcilikleri</h3>
     </center>
-    <div id="map" style="width: 100%; height:500px; background:#f9f9f9; border:1px solid #eee; border-radius:10px; margin-bottom: 40px;"></div>
+    <div id="map" class="ammap-container" style="background:#f9f9f9; border:1px solid #eee; border-radius:10px; margin-bottom: 40px;"></div>
     
     <center>
     <h3 style="color:#800000; font-weight:bold; margin-bottom:20px;">Dünya Temsilcilikleri</h3>
     </center>
-    <div id="mapWorld" style="width: 100%; height:500px; background:#f9f9f9; border:1px solid #eee; border-radius:10px;"></div>
+    <div id="mapWorld" class="ammap-container" style="background:#f9f9f9; border:1px solid #eee; border-radius:10px;"></div>
     
     <div class="row" style="margin-top:40px;">
         {list_html}
