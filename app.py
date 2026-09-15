@@ -245,6 +245,7 @@ class Etkinlik(db.Model):
     edate = db.Column(db.String(50), nullable=True)
 
     saat = db.Column(db.String(50), nullable=True)
+    location = db.Column(db.String(255), nullable=True)
 
     type = db.Column(db.String(50), default='meeting')
 
@@ -1669,7 +1670,8 @@ def admin_etkinlik_ekle():
 
         
 
-        yeni = Etkinlik(title=title, description=description, edate=edate, saat=saat)
+        location = request.form.get('location')
+        yeni = Etkinlik(title=title, description=description, edate=edate, saat=saat, location=location)
 
         db.session.add(yeni)
 
@@ -1702,7 +1704,7 @@ def admin_etkinlik_edit(id):
         etkinlik.edate = request.form.get('edate')
 
         etkinlik.saat = request.form.get('saat')
-
+        etkinlik.location = request.form.get('location')
         db.session.commit()
 
         import etkinlik_helper
