@@ -1079,15 +1079,13 @@ font-size:15pt; font-family:"Asap Condensed",sans-serif; font-weight:400;}
     display:none !important;
 }
 .icon {
-    display: block;
-    bottom:7px;
-    left:-5px;
+    display: none !important;
 }
 .left-menu {
-    z-index: 1000;
-    position: absolute;
-    background-color: #ffffff;
-    margin-left: -400px;
+    display: none !important;
+}
+#left {
+    display: none !important;
 }
 }
 
@@ -1265,3 +1263,5 @@ height:97px;
     object-fit: cover !important;
     border-radius: 4px;
 }
+@ m e d i a   ( m a x - w i d t h :   7 6 8 p x )   {   . n e w s   {   d i s p l a y :   b l o c k   ! i m p o r t a n t ;   }   }  
+ 
