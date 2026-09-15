@@ -1,16 +1,33 @@
 import os
 import bs4
-from app import app, db, Haber
+from app import app, db, Haber, Duyuru
 
 def update_anasayfa():
     with app.app_context():
         # Get latest 10 news
         latest = Haber.query.order_by(Haber.date.desc(), Haber.id.desc()).limit(10).all()
         
-        # 1. Update anasayfa.html
-        if os.path.exists('anasayfa.html'):
-            with open('anasayfa.html', 'r', encoding='utf-8', errors='ignore') as f:
-                soup = bs4.BeautifulSoup(f.read(), 'lxml')
+        # DUYURULAR GÜNCELLEME
+        duyurular_db = Duyuru.query.order_by(Duyuru.date_added.desc(), Duyuru.id.desc()).limit(10).all()
+        
+        duyuru_html = ""
+        for d in duyurular_db:
+            link = d.link if d.link else "#"
+            duyuru_html += f'<li class="news-item"><a href="{link}">{d.title}</a></li>\n'
+            
+        if not duyuru_html:
+            duyuru_html = '<li class="news-item"><a href="#">İdareci ve Bürokratlar Birliği Derneği Web Sitesine Hoşgeldiniz...</a></li>'
+
+        for file in ['anasayfa.html', 'index.html']:
+            if os.path.exists(file):
+                with open(file, 'r', encoding='utf-8', errors='ignore') as f:
+                    soup = bs4.BeautifulSoup(f.read(), 'lxml')
+                    
+                # Update duyurular
+                duyuru_ul = soup.find('ul', id='duyurular')
+                if duyuru_ul:
+                    duyuru_ul.clear()
+                    duyuru_ul.append(bs4.BeautifulSoup(duyuru_html, 'html.parser'))
                 
             # Update slider: <ul class="slideshow">
             slider = soup.find('ul', class_='slideshow')
@@ -56,10 +73,10 @@ def update_anasayfa():
                         '''
                         list_group.append(bs4.BeautifulSoup(item_html, 'html.parser'))
             
-            with open('anasayfa.html', 'w', encoding='utf-8') as f:
+            with open(file, 'w', encoding='utf-8') as f:
                 f.write(str(soup))
         
-        print("Updated anasayfa.html")
+        print("Updated anasayfa.html and index.html")
 
 if __name__ == '__main__':
     update_anasayfa()
