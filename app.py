@@ -17,63 +17,34 @@ app = Flask(__name__)
 
 
 CITIES = {
-
-    'TR-01': 'Adana', 'TR-02': 'AdÄ±yaman', 'TR-03': 'Afyonkarahisar', 'TR-04': 'AÄŸrÄ±', 'TR-05': 'Amasya',
-
-    'TR-06': 'Ankara', 'TR-07': 'Antalya', 'TR-08': 'Artvin', 'TR-09': 'AydÄ±n', 'TR-10': 'BalÄ±kesir',
-
-    'TR-11': 'Bilecik', 'TR-12': 'BingÃ¶l', 'TR-13': 'Bitlis', 'TR-14': 'Bolu', 'TR-15': 'Burdur',
-
-    'TR-16': 'Bursa', 'TR-17': 'Ã‡anakkale', 'TR-18': 'Ã‡ankÄ±rÄ±', 'TR-19': 'Ã‡orum', 'TR-20': 'Denizli',
-
-    'TR-21': 'DiyarbakÄ±r', 'TR-22': 'Edirne', 'TR-23': 'ElazÄ±ÄŸ', 'TR-24': 'Erzincan', 'TR-25': 'Erzurum',
-
-    'TR-26': 'EskiÅŸehir', 'TR-27': 'Gaziantep', 'TR-28': 'Giresun', 'TR-29': 'GÃ¼mÃ¼ÅŸhane', 'TR-30': 'Hakkari',
-
-    'TR-31': 'Hatay', 'TR-32': 'Isparta', 'TR-33': 'Mersin', 'TR-34': 'Ä°stanbul', 'TR-35': 'Ä°zmir',
-
-    'TR-36': 'Kars', 'TR-37': 'Kastamonu', 'TR-38': 'Kayseri', 'TR-39': 'KÄ±rklareli', 'TR-40': 'KÄ±rÅŸehir',
-
-    'TR-41': 'Kocaeli', 'TR-42': 'Konya', 'TR-43': 'KÃ¼tahya', 'TR-44': 'Malatya', 'TR-45': 'Manisa',
-
-    'TR-46': 'KahramanmaraÅŸ', 'TR-47': 'Mardin', 'TR-48': 'MuÄŸla', 'TR-49': 'MuÅŸ', 'TR-50': 'NevÅŸehir',
-
-    'TR-51': 'NiÄŸde', 'TR-52': 'Ordu', 'TR-53': 'Rize', 'TR-54': 'Sakarya', 'TR-55': 'Samsun',
-
-    'TR-56': 'Siirt', 'TR-57': 'Sinop', 'TR-58': 'Sivas', 'TR-59': 'TekirdaÄŸ', 'TR-60': 'Tokat',
-
-    'TR-61': 'Trabzon', 'TR-62': 'Tunceli', 'TR-63': 'ÅanlÄ±urfa', 'TR-64': 'UÅŸak', 'TR-65': 'Van',
-
+    'TR-01': 'Adana', 'TR-02': 'Adıyaman', 'TR-03': 'Afyonkarahisar', 'TR-04': 'Ağrı', 'TR-05': 'Amasya',
+    'TR-06': 'Ankara', 'TR-07': 'Antalya', 'TR-08': 'Artvin', 'TR-09': 'Aydın', 'TR-10': 'Balıkesir',
+    'TR-11': 'Bilecik', 'TR-12': 'Bingöl', 'TR-13': 'Bitlis', 'TR-14': 'Bolu', 'TR-15': 'Burdur',
+    'TR-16': 'Bursa', 'TR-17': 'Çanakkale', 'TR-18': 'Çankırı', 'TR-19': 'Çorum', 'TR-20': 'Denizli',
+    'TR-21': 'Diyarbakır', 'TR-22': 'Edirne', 'TR-23': 'Elazığ', 'TR-24': 'Erzincan', 'TR-25': 'Erzurum',
+    'TR-26': 'Eskişehir', 'TR-27': 'Gaziantep', 'TR-28': 'Giresun', 'TR-29': 'Gümüşhane', 'TR-30': 'Hakkari',
+    'TR-31': 'Hatay', 'TR-32': 'Isparta', 'TR-33': 'Mersin', 'TR-34': 'İstanbul', 'TR-35': 'İzmir',
+    'TR-36': 'Kars', 'TR-37': 'Kastamonu', 'TR-38': 'Kayseri', 'TR-39': 'Kırklareli', 'TR-40': 'Kırşehir',
+    'TR-41': 'Kocaeli', 'TR-42': 'Konya', 'TR-43': 'Kütahya', 'TR-44': 'Malatya', 'TR-45': 'Manisa',
+    'TR-46': 'Kahramanmaraş', 'TR-47': 'Mardin', 'TR-48': 'Muğla', 'TR-49': 'Muş', 'TR-50': 'Nevşehir',
+    'TR-51': 'Niğde', 'TR-52': 'Ordu', 'TR-53': 'Rize', 'TR-54': 'Sakarya', 'TR-55': 'Samsun',
+    'TR-56': 'Siirt', 'TR-57': 'Sinop', 'TR-58': 'Sivas', 'TR-59': 'Tekirdağ', 'TR-60': 'Tokat',
+    'TR-61': 'Trabzon', 'TR-62': 'Tunceli', 'TR-63': 'Şanlıurfa', 'TR-64': 'Uşak', 'TR-65': 'Van',
     'TR-66': 'Yozgat', 'TR-67': 'Zonguldak', 'TR-68': 'Aksaray', 'TR-69': 'Bayburt', 'TR-70': 'Karaman',
-
-    'TR-71': 'KÄ±rÄ±kkale', 'TR-72': 'Batman', 'TR-73': 'ÅÄ±rnak', 'TR-74': 'BartÄ±n', 'TR-75': 'Ardahan',
-
-    'TR-76': 'IÄŸdÄ±r', 'TR-77': 'Yalova', 'TR-78': 'KarabÃ¼k', 'TR-79': 'Kilis', 'TR-80': 'Osmaniye',
-
-    'TR-81': 'DÃ¼zce',
-
-    'AZ': 'Azerbaycan', 'DE': 'Almanya', 'US': 'Amerika BirleÅŸik Devletleri',
-
-    'FR': 'Fransa', 'GB': 'Ä°ngiltere', 'NL': 'Hollanda', 'BE': 'BelÃ§ika',
-
-    'AT': 'Avusturya', 'CH': 'Ä°sviÃ§re', 'IT': 'Ä°talya', 'RU': 'Rusya',
-
-    'KZ': 'Kazakistan', 'UZ': 'Ã–zbekistan', 'TM': 'TÃ¼rkmenistan', 'KG': 'KÄ±rgÄ±zistan',
-
-    'CY': 'Kuzey KÄ±brÄ±s (KKTC)', 'BA': 'Bosna Hersek', 'MK': 'Makedonya',
-
+    'TR-71': 'Kırıkkale', 'TR-72': 'Batman', 'TR-73': 'Şırnak', 'TR-74': 'Bartın', 'TR-75': 'Ardahan',
+    'TR-76': 'Iğdır', 'TR-77': 'Yalova', 'TR-78': 'Karabük', 'TR-79': 'Kilis', 'TR-80': 'Osmaniye',
+    'TR-81': 'Düzce',
+    'AZ': 'Azerbaycan', 'DE': 'Almanya', 'US': 'Amerika Birleşik Devletleri',
+    'FR': 'Fransa', 'GB': 'İngiltere', 'NL': 'Hollanda', 'BE': 'Belçika',
+    'AT': 'Avusturya', 'CH': 'İsviçre', 'IT': 'İtalya', 'RU': 'Rusya',
+    'KZ': 'Kazakistan', 'UZ': 'Özbekistan', 'TM': 'Türkmenistan', 'KG': 'Kırgızistan',
+    'CY': 'Kuzey Kıbrıs (KKTC)', 'BA': 'Bosna Hersek', 'MK': 'Makedonya',
     'AL': 'Arnavutluk', 'XK': 'Kosova', 'BG': 'Bulgaristan', 'GR': 'Yunanistan',
-
-    'IQ': 'Irak', 'SY': 'Suriye', 'IR': 'Ä°ran', 'SA': 'Suudi Arabistan',
-
-    'QA': 'Katar', 'AE': 'BirleÅŸik Arap Emirlikleri', 'EG': 'MÄ±sÄ±r', 'PK': 'Pakistan',
-
-    'AF': 'Afganistan', 'IN': 'Hindistan', 'CN': 'Ã‡in', 'JP': 'Japonya',
-
-    'KR': 'GÃ¼ney Kore', 'AU': 'Avustralya', 'CA': 'Kanada', 'BR': 'Brezilya',
-
-    'ZA': 'GÃ¼ney Afrika'
-
+    'IQ': 'Irak', 'SY': 'Suriye', 'IR': 'İran', 'SA': 'Suudi Arabistan',
+    'QA': 'Katar', 'AE': 'Birleşik Arap Emirlikleri', 'EG': 'Mısır', 'PK': 'Pakistan',
+    'AF': 'Afganistan', 'IN': 'Hindistan', 'CN': 'Çin', 'JP': 'Japonya',
+    'KR': 'Güney Kore', 'AU': 'Avustralya', 'CA': 'Kanada', 'BR': 'Brezilya',
+    'ZA': 'Güney Afrika'
 }
 
 
@@ -805,11 +776,23 @@ def admin_upload():
 
 def regenerate_temsilcilik_html():
     import json, bs4, os
-    from app import Temsilcilik, Page, db
     reps = Temsilcilik.query.order_by(Temsilcilik.city_name).all()
     
     turkey_areas = []
-    world_areas = []
+    world_areas_dict = {}
+    
+    import json
+    try:
+        with open('countries_tr.json', 'r', encoding='utf-8') as f:
+            all_countries = json.load(f)
+            for code, name in all_countries.items():
+                world_areas_dict[code] = {
+                    "id": code,
+                    "title": name
+                }
+    except Exception:
+        pass
+        
     list_html = ""
     
     for rep in reps:
@@ -817,17 +800,24 @@ def regenerate_temsilcilik_html():
         
         custom_data = f"<div style='text-align:center;'><img src='{img_url}' style='width:60px; height:60px; border-radius:50%; object-fit:cover; margin-bottom:5px;'><br><b>{rep.name}</b><br>{rep.phone or ''}</div>"
         
-        area_obj = {
-            "id": rep.city_code,
-            "title": rep.city_name,
-            "color": "rgba(0,201,181,0.8)",
-            "customData": custom_data
-        }
-        
         if rep.city_code.startswith('TR-'):
-            turkey_areas.append(area_obj)
+            turkey_areas.append({
+                "id": rep.city_code,
+                "title": rep.city_name,
+                "color": "rgba(0,201,181,0.8)",
+                "customData": custom_data
+            })
         else:
-            world_areas.append(area_obj)
+            if rep.city_code in world_areas_dict:
+                world_areas_dict[rep.city_code]["color"] = "rgba(0,201,181,0.8)"
+                world_areas_dict[rep.city_code]["customData"] = custom_data
+            else:
+                world_areas_dict[rep.city_code] = {
+                    "id": rep.city_code,
+                    "title": rep.city_name,
+                    "color": "rgba(0,201,181,0.8)",
+                    "customData": custom_data
+                }
         
         list_html += f'''
         <div class="col-12 col-md-6 col-lg-4" style="margin-bottom:20px; display:flex;">
@@ -841,6 +831,8 @@ def regenerate_temsilcilik_html():
             </div>
         </div>
         '''
+        
+    world_areas = list(world_areas_dict.values())
 
     turkey_json = json.dumps(turkey_areas, ensure_ascii=False)
     world_json = json.dumps(world_areas, ensure_ascii=False)
