@@ -796,7 +796,7 @@ def regenerate_temsilcilik_html():
     list_html = ""
     
     for rep in reps:
-        img_url = f"{rep.image_path}" if rep.image_path else "images/default-avatar.png"
+        img_url = f"/{rep.image_path}" if rep.image_path else "/images/default-avatar.png"
         
         custom_data = f"<div style='text-align:center;'><img src='{img_url}' style='width:60px; height:60px; border-radius:50%; object-fit:cover; margin-bottom:5px;'><br><b>{rep.name}</b><br>{rep.phone or ''}</div>"
         
@@ -822,7 +822,7 @@ def regenerate_temsilcilik_html():
         list_html += f'''
         <div class="col-12 col-md-6 col-lg-4" style="margin-bottom:20px; display:flex;">
             <div class="card border-0 shadow-sm" style="background:#fff; border-radius:10px; padding:15px; display:flex; flex-direction:row; align-items:center; width:100%; border: 1px solid #f1f1f1;">
-                <img src="{img_url}" style="width:70px; height:70px; border-radius:50%; object-fit:cover; margin-right:15px; border:2px solid #eaeaea;" onerror="this.src='images/default-avatar.png'; this.onerror=null;">
+                <img src="{img_url}" style="width:70px; height:70px; border-radius:50%; object-fit:cover; margin-right:15px; border:2px solid #eaeaea;" onerror="this.src='/images/default-avatar.png'; this.onerror=null;">
                 <div>
                     <h5 style="color:#800000; font-size:16px; font-weight:700; margin-bottom:5px;">{rep.name}</h5>
                     <div style="font-size:13px; color:#555; font-weight:500;">{rep.city_name} Temsilcisi</div>
