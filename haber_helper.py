@@ -18,7 +18,7 @@ def regenerate_haber_listesi():
         habers = Haber.query.order_by(Haber.date.desc(), Haber.id.desc()).all()
         
         with open('haber-listesi.html', 'r', encoding='utf-8', errors='ignore') as f:
-            soup = bs4.BeautifulSoup(f.read(), 'lxml')
+            soup = bs4.BeautifulSoup(f.read(), 'html.parser')
             
         main_div = soup.find('div', class_='col-md-9', id='main')
         if not main_div: return
@@ -55,7 +55,7 @@ def regenerate_haber_html(h):
             return
             
         with open(existing_habers[0], 'r', encoding='utf-8', errors='ignore') as f:
-            soup = bs4.BeautifulSoup(f.read(), 'lxml')
+            soup = bs4.BeautifulSoup(f.read(), 'html.parser')
             
         main_div = soup.find('div', class_='col-md-9', id='main')
         if not main_div: return

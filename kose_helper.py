@@ -10,7 +10,7 @@ def regenerate_single_yazar(yazar_id):
     with open('hakkimizda.html', 'r', encoding='utf-8', errors='ignore') as f:
         base_html = f.read()
         
-    soup = bs4.BeautifulSoup(base_html, 'lxml')
+    soup = bs4.BeautifulSoup(base_html, 'html.parser')
     main_div = soup.find('div', class_='col-md-9')
     if not main_div: return
     
@@ -56,7 +56,7 @@ def regenerate_single_kose(k_id):
     with open('hakkimizda.html', 'r', encoding='utf-8', errors='ignore') as f:
         base_html = f.read()
         
-    soup = bs4.BeautifulSoup(base_html, 'lxml')
+    soup = bs4.BeautifulSoup(base_html, 'html.parser')
     main_div = soup.find('div', class_='col-md-9')
     if not main_div: return
     

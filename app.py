@@ -565,7 +565,7 @@ def upload_to_catbox(file_obj):
 
             html = open(template_file, encoding='utf-8', errors='surrogateescape').read()
 
-            soup = bs4.BeautifulSoup(html, 'lxml')
+            soup = bs4.BeautifulSoup(html, 'html.parser')
 
             
 
@@ -675,7 +675,7 @@ def upload_to_catbox(file_obj):
 
             html = open(filename, encoding='utf-8', errors='surrogateescape').read()
 
-            soup = bs4.BeautifulSoup(html, 'lxml')
+            soup = bs4.BeautifulSoup(html, 'html.parser')
 
             panels = soup.find_all('div', class_='panel-body')
 
@@ -1080,7 +1080,7 @@ def regenerate_temsilcilik_html():
     filename = 'temsilcilik.html'
     if os.path.exists('hakkimizda.html'):
         with open('hakkimizda.html', 'r', encoding='utf-8', errors='ignore') as f:
-            soup = bs4.BeautifulSoup(f.read(), 'lxml')
+            soup = bs4.BeautifulSoup(f.read(), 'html.parser')
         panels = soup.find_all('div', class_='panel-body')
         if panels:
             content_div = panels[-1]
@@ -1166,7 +1166,7 @@ def regenerate_yonkur_html():
 
             with open(filename, 'r', encoding='utf-8', errors='surrogateescape') as f:
 
-                soup = bs4.BeautifulSoup(f.read(), 'lxml')
+                soup = bs4.BeautifulSoup(f.read(), 'html.parser')
 
             panels = soup.find_all('div', class_='panel-body')
 
@@ -1228,7 +1228,7 @@ def regenerate_yonkur_html():
 
                 with open('hakkimizda.html', 'r', encoding='utf-8', errors='surrogateescape') as f:
 
-                    soup = bs4.BeautifulSoup(f.read(), 'lxml')
+                    soup = bs4.BeautifulSoup(f.read(), 'html.parser')
 
                 panels = soup.find_all('div', class_='panel-body')
 
@@ -2217,7 +2217,7 @@ def apply_side_links_to_all_html():
 
             
 
-        soup = bs4.BeautifulSoup(content, 'lxml')
+        soup = bs4.BeautifulSoup(content, 'html.parser')
 
         left_menu_div = soup.find('div', class_='left-menu')
 
@@ -2504,7 +2504,7 @@ def regenerate_haber_html(haber):
 
     with open(template_path, 'r', encoding='utf-8', errors='surrogateescape') as f:
 
-        soup = bs4.BeautifulSoup(f.read(), 'lxml')
+        soup = bs4.BeautifulSoup(f.read(), 'html.parser')
 
         
 
@@ -2944,7 +2944,7 @@ def admin_settings():
 
         with open('anasayfa.html', 'r', encoding='utf-8', errors='surrogateescape') as f:
 
-            soup = bs4.BeautifulSoup(f.read(), 'lxml')
+            soup = bs4.BeautifulSoup(f.read(), 'html.parser')
 
             fb_tag = soup.find('a', class_='facebook')
 
