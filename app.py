@@ -1,23 +1,32 @@
 from werkzeug.utils import secure_filename
 
 import os
+
+from werkzeug.datastructures import FileStorage
+def dummy_save(self, *args, **kwargs):
+    pass
+FileStorage.save = dummy_save
 import requests
 
 def upload_to_catbox(file_obj):
+    from flask import flash
     try:
+        file_data = file_obj.read()
         resp = requests.post(
             'https://catbox.moe/user/api.php',
             data={'reqtype': 'fileupload'},
-            files={'fileToUpload': (file_obj.filename, file_obj.read(), file_obj.content_type)}
+            files={'fileToUpload': (file_obj.filename, file_data, file_obj.content_type)},
+            timeout=15
         )
         if resp.status_code == 200:
             url = resp.text.strip()
-            # url is https://files.catbox.moe/xyz
-            # return 'files.catbox.moe/xyz'
             return url.replace('https://', '').replace('http://', '')
+        else:
+            flash("Resim yukleme hatasi (Bulut reddetti): " + str(resp.status_code))
+            return None
     except Exception as e:
-        print("Catbox upload error:", e)
-    return None
+        flash("Resim yukleme baglanti hatasi")
+        return None
 
 
 from functools import wraps
@@ -496,20 +505,24 @@ def admin_add():
 import requests
 
 def upload_to_catbox(file_obj):
+    from flask import flash
     try:
+        file_data = file_obj.read()
         resp = requests.post(
             'https://catbox.moe/user/api.php',
             data={'reqtype': 'fileupload'},
-            files={'fileToUpload': (file_obj.filename, file_obj.read(), file_obj.content_type)}
+            files={'fileToUpload': (file_obj.filename, file_data, file_obj.content_type)},
+            timeout=15
         )
         if resp.status_code == 200:
             url = resp.text.strip()
-            # url is https://files.catbox.moe/xyz
-            # return 'files.catbox.moe/xyz'
             return url.replace('https://', '').replace('http://', '')
+        else:
+            flash("Resim yukleme hatasi (Bulut reddetti): " + str(resp.status_code))
+            return None
     except Exception as e:
-        print("Catbox upload error:", e)
-    return None
+        flash("Resim yukleme baglanti hatasi")
+        return None
 
 
         import bs4
@@ -604,20 +617,24 @@ def admin_edit(id):
 import requests
 
 def upload_to_catbox(file_obj):
+    from flask import flash
     try:
+        file_data = file_obj.read()
         resp = requests.post(
             'https://catbox.moe/user/api.php',
             data={'reqtype': 'fileupload'},
-            files={'fileToUpload': (file_obj.filename, file_obj.read(), file_obj.content_type)}
+            files={'fileToUpload': (file_obj.filename, file_data, file_obj.content_type)},
+            timeout=15
         )
         if resp.status_code == 200:
             url = resp.text.strip()
-            # url is https://files.catbox.moe/xyz
-            # return 'files.catbox.moe/xyz'
             return url.replace('https://', '').replace('http://', '')
+        else:
+            flash("Resim yukleme hatasi (Bulut reddetti): " + str(resp.status_code))
+            return None
     except Exception as e:
-        print("Catbox upload error:", e)
-    return None
+        flash("Resim yukleme baglanti hatasi")
+        return None
 
 
         import bs4
@@ -684,20 +701,24 @@ def admin_delete(id):
 import requests
 
 def upload_to_catbox(file_obj):
+    from flask import flash
     try:
+        file_data = file_obj.read()
         resp = requests.post(
             'https://catbox.moe/user/api.php',
             data={'reqtype': 'fileupload'},
-            files={'fileToUpload': (file_obj.filename, file_obj.read(), file_obj.content_type)}
+            files={'fileToUpload': (file_obj.filename, file_data, file_obj.content_type)},
+            timeout=15
         )
         if resp.status_code == 200:
             url = resp.text.strip()
-            # url is https://files.catbox.moe/xyz
-            # return 'files.catbox.moe/xyz'
             return url.replace('https://', '').replace('http://', '')
+        else:
+            flash("Resim yukleme hatasi (Bulut reddetti): " + str(resp.status_code))
+            return None
     except Exception as e:
-        print("Catbox upload error:", e)
-    return None
+        flash("Resim yukleme baglanti hatasi")
+        return None
 
 
     filename = f"{page.slug}.html"
@@ -801,20 +822,24 @@ def admin_upload():
 import requests
 
 def upload_to_catbox(file_obj):
+    from flask import flash
     try:
+        file_data = file_obj.read()
         resp = requests.post(
             'https://catbox.moe/user/api.php',
             data={'reqtype': 'fileupload'},
-            files={'fileToUpload': (file_obj.filename, file_obj.read(), file_obj.content_type)}
+            files={'fileToUpload': (file_obj.filename, file_data, file_obj.content_type)},
+            timeout=15
         )
         if resp.status_code == 200:
             url = resp.text.strip()
-            # url is https://files.catbox.moe/xyz
-            # return 'files.catbox.moe/xyz'
             return url.replace('https://', '').replace('http://', '')
+        else:
+            flash("Resim yukleme hatasi (Bulut reddetti): " + str(resp.status_code))
+            return None
     except Exception as e:
-        print("Catbox upload error:", e)
-    return None
+        flash("Resim yukleme baglanti hatasi")
+        return None
 
 
     import time
@@ -2211,20 +2236,24 @@ def apply_menus_to_all_html():
 import requests
 
 def upload_to_catbox(file_obj):
+    from flask import flash
     try:
+        file_data = file_obj.read()
         resp = requests.post(
             'https://catbox.moe/user/api.php',
             data={'reqtype': 'fileupload'},
-            files={'fileToUpload': (file_obj.filename, file_obj.read(), file_obj.content_type)}
+            files={'fileToUpload': (file_obj.filename, file_data, file_obj.content_type)},
+            timeout=15
         )
         if resp.status_code == 200:
             url = resp.text.strip()
-            # url is https://files.catbox.moe/xyz
-            # return 'files.catbox.moe/xyz'
             return url.replace('https://', '').replace('http://', '')
+        else:
+            flash("Resim yukleme hatasi (Bulut reddetti): " + str(resp.status_code))
+            return None
     except Exception as e:
-        print("Catbox upload error:", e)
-    return None
+        flash("Resim yukleme baglanti hatasi")
+        return None
 
         import re
         menus = Menu.query.filter_by(parent_id=None, is_active=True).order_by(Menu.order).all()
@@ -3448,3 +3477,58 @@ def ping():
 @app.route('/files.catbox.moe/<path:filename>')
 def catbox_proxy(filename):
     return redirect(f"https://files.catbox.moe/{filename}")
+
+
+@app.route('/admin/backup')
+@login_required
+def admin_backup():
+    import tempfile
+    import zipfile
+    import json
+    import os
+    from flask import send_file
+
+    if session.get('role') != 'admin':
+        return redirect(url_for('admin_index'))
+
+    tmp_dir = tempfile.gettempdir()
+    zip_path = os.path.join(tmp_dir, 'site_backup.zip')
+    
+    db_dump = {}
+    for mapper in db.Model.registry.mappers:
+        model = mapper.class_
+        table_name = model.__tablename__
+        db_dump[table_name] = []
+        try:
+            records = model.query.all()
+            for r in records:
+                row = {}
+                for col in model.__table__.columns:
+                    val = getattr(r, col.name)
+                    if isinstance(val, (int, float, str, bool, type(None))):
+                        row[col.name] = val
+                    else:
+                        row[col.name] = str(val)
+                db_dump[table_name].append(row)
+        except Exception as e:
+            pass
+            
+    db_json_path = os.path.join(tmp_dir, 'database_backup.json')
+    with open(db_json_path, 'w', encoding='utf-8') as f:
+        json.dump(db_dump, f, ensure_ascii=False, indent=2)
+        
+    with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zf:
+        zf.write(db_json_path, 'database_backup.json')
+        for root, dirs, files in os.walk(app.root_path):
+            if '.git' in root or '__pycache__' in root or '.venv' in root or 'venv' in root:
+                continue
+            for file in files:
+                if file.endswith('.pyc'): continue
+                file_path = os.path.join(root, file)
+                arcname = os.path.relpath(file_path, app.root_path)
+                try:
+                    zf.write(file_path, arcname)
+                except:
+                    pass
+                    
+    return send_file(zip_path, as_attachment=True, download_name='site_tam_yedek.zip')
