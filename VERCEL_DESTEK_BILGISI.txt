@@ -1,0 +1,22 @@
+===============================================
+VERCEL VE GITHUB BAÐLANTI RAPORU (ÖNEMLÝ!)
+===============================================
+
+1. ASIL KOD DEPOSU (GITHUB):
+Projemizin en güncel kodlarý her zaman þu adreste tutulmaktadýr:
+https://github.com/mngpaulmark-ops/idareci
+
+2. YAYINDAKÝ SÝTE (VERCEL):
+Kullandýðýnýz aktif site:
+https://idareciburokrat.vercel.app
+
+3. BAÐLANTI DURUMU VE NASIL GÜNCELLENÝR:
+Vercel üzerindeki proje, geçmiþte farklý bir GitHub hesabýna (turgaydolu/idareciburokrat) kilitlenmiþ olduðu için, GitHub'a gönderdiðimiz güncellemeleri otomatik olarak ALMAMAKTADIR. 
+
+Bu sorunu kalýcý olarak aþmak için bilgisayarýnýzdaki bu klasörü doðrudan Vercel hesabýnýza baðladým (Vercel CLI aracý ile).
+
+Bundan sonra sistemde bir deðiþiklik yapýlacaðýnda, kodlarý GitHub'a göndermenin yaný sýra bilgisayarýnýzdan doðrudan Vercel'e göndereceðiz.
+(Sistemin hafýzasýna kazýndý: Terminalde 'vercel --prod' komutu çalýþtýrýldýðýnda kodlar otomatik olarak idareciburokrat.vercel.app adresine güncellenecektir.)
+
+4. VERÝTABANI:
+Veritabaný (Neon Tech PostgreSQL) güvenli baðlantý (SSL) gerektirmektedir. Kodlarda psycopg2 kullanýlarak '?sslmode=require' parametresi ile kalýcý ve hatasýz baðlantý kurulmuþtur.
