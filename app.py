@@ -105,9 +105,11 @@ CITIES = {
 
 app.config['SECRET_KEY'] = 'supersecretkey123'
 
-db_url = os.environ.get('DATABASE_URL', 'postgresql+pg8000://neondb_owner:npg_PHdtr61ILkWz@ep-restless-feather-b25l03vt-pooler.c-6.eu-central-1.aws.neon.tech/neondb')
-if '?' in db_url:
-    db_url = db_url.split('?')[0]
+db_url = os.environ.get('DATABASE_URL', 'postgresql://neondb_owner:npg_PHdtr61ILkWz@ep-restless-feather-b25l03vt-pooler.c-6.eu-central-1.aws.neon.tech/neondb?sslmode=require')
+if db_url.startswith('postgres://'):
+    db_url = db_url.replace('postgres://', 'postgresql://', 1)
+if '?' not in db_url:
+    db_url += '?sslmode=require'
 app.config['SQLALCHEMY_DATABASE_URI'] = db_url
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
