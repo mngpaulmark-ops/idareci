@@ -3580,3 +3580,9 @@ def admin_galeri_sil(id):
     db.session.delete(g)
     db.session.commit()
     return redirect(url_for('admin_galeri'))
+
+
+import traceback
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return '<pre>' + traceback.format_exc() + '</pre>', 500
