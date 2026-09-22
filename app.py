@@ -358,9 +358,8 @@ def login():
 
     if request.method == 'POST':
 
-        username = request.form.get('username')
-
-        password = request.form.get('password')
+        username = request.form.get('username', '').strip()
+        password = request.form.get('password', '').strip()
 
         
 
@@ -368,9 +367,9 @@ def login():
 
         s_pass = Setting.query.get('admin_pass')
 
-        admin_u = s_user.value if s_user and s_user.value else 'admin'
+        admin_u = s_user.value.strip() if s_user and s_user.value else 'admin'
 
-        admin_p = s_pass.value if s_pass and s_pass.value else '123456'
+        admin_p = s_pass.value.strip() if s_pass and s_pass.value else '123456'
 
         
 
@@ -3328,3 +3327,6 @@ def update_video_html():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5006)
+@app.route('/ping')
+def ping():
+    return 'pong_neon_5'
