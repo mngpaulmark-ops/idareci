@@ -1,6 +1,24 @@
 from werkzeug.utils import secure_filename
 
 import os
+import requests
+
+def upload_to_catbox(file_obj):
+    try:
+        resp = requests.post(
+            'https://catbox.moe/user/api.php',
+            data={'reqtype': 'fileupload'},
+            files={'fileToUpload': (file_obj.filename, file_obj.read(), file_obj.content_type)}
+        )
+        if resp.status_code == 200:
+            url = resp.text.strip()
+            # url is https://files.catbox.moe/xyz
+            # return 'files.catbox.moe/xyz'
+            return url.replace('https://', '').replace('http://', '')
+    except Exception as e:
+        print("Catbox upload error:", e)
+    return None
+
 
 from functools import wraps
 
@@ -475,6 +493,24 @@ def admin_add():
         # Yeni eklenen sayfa iin fiziksel .html dosyasini "hakkimizda.html"i baz alarak olustur
 
         import os
+import requests
+
+def upload_to_catbox(file_obj):
+    try:
+        resp = requests.post(
+            'https://catbox.moe/user/api.php',
+            data={'reqtype': 'fileupload'},
+            files={'fileToUpload': (file_obj.filename, file_obj.read(), file_obj.content_type)}
+        )
+        if resp.status_code == 200:
+            url = resp.text.strip()
+            # url is https://files.catbox.moe/xyz
+            # return 'files.catbox.moe/xyz'
+            return url.replace('https://', '').replace('http://', '')
+    except Exception as e:
+        print("Catbox upload error:", e)
+    return None
+
 
         import bs4
 
@@ -565,6 +601,24 @@ def admin_edit(id):
         # Sitenin statik yapisi korunsun diye fiziksel HTML dosyasina da yaz!
 
         import os
+import requests
+
+def upload_to_catbox(file_obj):
+    try:
+        resp = requests.post(
+            'https://catbox.moe/user/api.php',
+            data={'reqtype': 'fileupload'},
+            files={'fileToUpload': (file_obj.filename, file_obj.read(), file_obj.content_type)}
+        )
+        if resp.status_code == 200:
+            url = resp.text.strip()
+            # url is https://files.catbox.moe/xyz
+            # return 'files.catbox.moe/xyz'
+            return url.replace('https://', '').replace('http://', '')
+    except Exception as e:
+        print("Catbox upload error:", e)
+    return None
+
 
         import bs4
 
@@ -627,6 +681,24 @@ def admin_delete(id):
     
 
     import os
+import requests
+
+def upload_to_catbox(file_obj):
+    try:
+        resp = requests.post(
+            'https://catbox.moe/user/api.php',
+            data={'reqtype': 'fileupload'},
+            files={'fileToUpload': (file_obj.filename, file_obj.read(), file_obj.content_type)}
+        )
+        if resp.status_code == 200:
+            url = resp.text.strip()
+            # url is https://files.catbox.moe/xyz
+            # return 'files.catbox.moe/xyz'
+            return url.replace('https://', '').replace('http://', '')
+    except Exception as e:
+        print("Catbox upload error:", e)
+    return None
+
 
     filename = f"{page.slug}.html"
 
@@ -726,6 +798,24 @@ def admin_upload():
     from flask import request, jsonify
 
     import os
+import requests
+
+def upload_to_catbox(file_obj):
+    try:
+        resp = requests.post(
+            'https://catbox.moe/user/api.php',
+            data={'reqtype': 'fileupload'},
+            files={'fileToUpload': (file_obj.filename, file_obj.read(), file_obj.content_type)}
+        )
+        if resp.status_code == 200:
+            url = resp.text.strip()
+            # url is https://files.catbox.moe/xyz
+            # return 'files.catbox.moe/xyz'
+            return url.replace('https://', '').replace('http://', '')
+    except Exception as e:
+        print("Catbox upload error:", e)
+    return None
+
 
     import time
 
@@ -1789,9 +1879,12 @@ def admin_galeri_detay(id):
 
                 path = os.path.join(save_dir, filename)
 
-                file.save(path)
-
-                db.session.add(GaleriResim(galeri_id=id, image_path='data/page/'+filename))
+                catbox_path = upload_to_catbox(file)
+                if catbox_path:
+                    db.session.add(GaleriResim(galeri_id=id, image_path=catbox_path))
+                else:
+                    file.save(path)
+                    db.session.add(GaleriResim(galeri_id=id, image_path='data/page/'+filename))
 
         db.session.commit()
 
@@ -2115,6 +2208,24 @@ def apply_side_links_to_all_html():
 def apply_menus_to_all_html():
     with app.app_context():
         import os
+import requests
+
+def upload_to_catbox(file_obj):
+    try:
+        resp = requests.post(
+            'https://catbox.moe/user/api.php',
+            data={'reqtype': 'fileupload'},
+            files={'fileToUpload': (file_obj.filename, file_obj.read(), file_obj.content_type)}
+        )
+        if resp.status_code == 200:
+            url = resp.text.strip()
+            # url is https://files.catbox.moe/xyz
+            # return 'files.catbox.moe/xyz'
+            return url.replace('https://', '').replace('http://', '')
+    except Exception as e:
+        print("Catbox upload error:", e)
+    return None
+
         import re
         menus = Menu.query.filter_by(parent_id=None, is_active=True).order_by(Menu.order).all()
         html = '<ul class="nav navbar-nav">\n'
@@ -2186,9 +2297,12 @@ def admin_haber_add():
 
             filename = secure_filename(file.filename)
 
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-
-            image_path = 'data/uploads/' + filename
+            catbox_path = upload_to_catbox(file)
+            if catbox_path:
+                image_path = catbox_path
+            else:
+                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                image_path = 'data/uploads/' + filename
 
             
 
@@ -3330,3 +3444,7 @@ if __name__ == '__main__':
 @app.route('/ping')
 def ping():
     return 'pong_neon_5'
+
+@app.route('/files.catbox.moe/<path:filename>')
+def catbox_proxy(filename):
+    return redirect(f"https://files.catbox.moe/{filename}")
