@@ -2097,7 +2097,9 @@ def admin_galeri_ekle():
 
     title = request.form.get('title')
 
-    db.session.add(Galeri(title=title))
+    g = Galeri(title=title)
+
+    db.session.add(g)
 
     db.session.commit()
     import threading
@@ -2107,8 +2109,9 @@ def admin_galeri_ekle():
     except:
         pass
 
+    flash(f"'{title}' galerisi oluşturuldu. Şimdi resimleri ekleyebilirsiniz.", "success")
 
-    return redirect(url_for('admin_galeri'))
+    return redirect(url_for('admin_galeri_edit', id=g.id))
 
 
 
@@ -2169,6 +2172,8 @@ def admin_galeri_resimsil(id):
 
         db.session.commit()
 
+    if request.referrer and 'edit' in request.referrer:
+        return redirect(url_for('admin_galeri_edit', id=gid))
     return redirect(url_for('admin_galeri_detay', id=gid))
 
 
@@ -3772,8 +3777,30 @@ def admin_galeri_edit(id):
     if request.method == 'POST':
         g.title = request.form.get('title')
         g.date = request.form.get('date')
+        
+        from werkzeug.utils import secure_filename
+        files = request.files.getlist('images')
+        uploaded_count = 0
+        for file in files:
+            if file and file.filename:
+                catbox_path = upload_to_catbox(file)
+                if catbox_path:
+                    db.session.add(GaleriResim(galeri_id=id, image_path=catbox_path))
+                    uploaded_count += 1
+                else:
+                    filename = secure_filename(file.filename)
+                    save_dir = os.path.join(app.root_path, 'data', 'gallery')
+                    os.makedirs(save_dir, exist_ok=True)
+                    path = os.path.join(save_dir, filename)
+                    file.save(path)
+                    db.session.add(GaleriResim(galeri_id=id, image_path='data/gallery/' + filename))
+                    uploaded_count += 1
         db.session.commit()
-        return redirect(url_for('admin_galeri'))
+        if uploaded_count > 0:
+            flash(f'{uploaded_count} adet resim başarıyla eklendi.', 'success')
+        else:
+            flash('Galeri bilgileri başarıyla güncellendi.', 'success')
+        return redirect(url_for('admin_galeri_edit', id=id))
     return render_template('admin/galeri_edit.html', galeri=g)
 
 @app.route('/admin/galeri/sil/<int:id>', methods=['POST'])
