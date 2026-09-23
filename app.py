@@ -825,9 +825,10 @@ def serve_idareci(filename=''):
         return send_from_directory(app.root_path, 'anasayfa.html')
     file_path = os.path.join(app.root_path, filename)
     if os.path.exists(file_path):
+        if file_path.endswith('.html'): return inject_dynamic_html(file_path)
         return send_from_directory(app.root_path, filename)
     elif os.path.exists(file_path + '.html'):
-        return send_from_directory(app.root_path, filename + '.html')
+        return inject_dynamic_html(file_path + '.html')
     elif os.path.exists(file_path + '.htm'):
         return send_from_directory(app.root_path, filename + '.htm')
     else:
@@ -835,12 +836,68 @@ def serve_idareci(filename=''):
         abort(404)
 
 @app.route('/<path:filename>')
+
+def inject_dynamic_html(file_path):
+    with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+        html = f.read()
+    try:
+        import bs4
+        soup = bs4.BeautifulSoup(html, 'html.parser')
+        
+        # Inject Top Menu
+        nav_ul = soup.find('ul', class_='nav navbar-nav')
+        if nav_ul:
+            menus = Menu.query.filter_by(parent_id=None, is_active=True).order_by(Menu.order).all()
+            top_html = '<ul class="nav navbar-nav">
+<li class="home"><a href="anasayfa.html"><img alt="Ana Sayfa" src="themes/burokratlar/tema/images/ico-home.png"/></a></li>
+'
+            for m in menus:
+                if m.children:
+                    top_html += f'<li class="dropdown"><a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="{m.url}" role="button" target="_self">{m.title}</a>
+<ul class="dropdown-menu" role="menu">
+'
+                    for child in [c for c in m.children if c.is_active]: top_html += f'<li><a href="{child.url}" target="_self">{child.title}</a></li>
+'
+                    top_html += '</ul></li>
+'
+                else:
+                    top_html += f'<li><a href="{m.url}" target="_self">{m.title}</a></li>
+'
+            top_html += '</ul>'
+            new_nav = bs4.BeautifulSoup(top_html, 'html.parser').ul
+            nav_ul.replace_with(new_nav)
+            
+        # Inject Left Menu
+        left_ul = soup.find('ul', id='left-menu')
+        if left_ul:
+            left_menus = LeftMenu.query.filter_by(is_active=True).order_by(LeftMenu.order).all()
+            left_html = '<ul id="left-menu">
+'
+            for lm in left_menus: left_html += f'<li><a href="{lm.url}" target="_self">» {lm.title}</a></li>
+'
+            left_html += '</ul>'
+            new_left = bs4.BeautifulSoup(left_html, 'html.parser').ul
+            left_ul.replace_with(new_left)
+            
+        # Add caching headers
+        from flask import make_response
+        resp = make_response(str(soup))
+        resp.headers['Cache-Control'] = 'public, s-maxage=60, stale-while-revalidate=120'
+        return resp
+    except Exception as e:
+        from flask import make_response
+        resp = make_response(html)
+        resp.headers['Cache-Control'] = 'public, s-maxage=60, stale-while-revalidate=120'
+        return resp
+
+@app.route('/<path:filename>')
 def serve_static(filename):
     file_path = os.path.join(app.root_path, filename)
     if os.path.exists(file_path):
+        if file_path.endswith('.html'): return inject_dynamic_html(file_path)
         return send_from_directory(app.root_path, filename)
     elif os.path.exists(file_path + '.html'):
-        return send_from_directory(app.root_path, filename + '.html')
+        return inject_dynamic_html(file_path + '.html')
     elif os.path.exists(file_path + '.htm'):
         return send_from_directory(app.root_path, filename + '.htm')
     else:
