@@ -40,6 +40,18 @@
                     <input type="checkbox" name="can_kose" class="form-check-input" id="ck">
                     <label class="form-check-label" for="ck">Köşe Yazısı Ekleme/Düzenleme Yetkisi</label>
                 </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" name="can_galeri" class="form-check-input" id="cg">
+                    <label class="form-check-label" for="cg">Galeri Yönetimi Yetkisi</label>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" name="can_video" class="form-check-input" id="cv">
+                    <label class="form-check-label" for="cv">Video Galeri Ayarları Yetkisi</label>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" name="can_mesaj" class="form-check-input" id="cm">
+                    <label class="form-check-label" for="cm">Gelen Mesajlar Yetkisi</label>
+                </div>
                 <button type="submit" class="btn btn-primary">Ekle</button>
             </form>
         </div>
@@ -62,8 +74,11 @@
                 <td>
                     {% if ed.can_haber %}<span class="badge bg-success">Haber</span>{% endif %}
                     {% if ed.can_etkinlik %}<span class="badge bg-info">Etkinlik</span>{% endif %}
-                    {% if ed.can_duyuru %}<span class="badge bg-warning">Duyuru</span>{% endif %}
+                    {% if ed.can_duyuru %}<span class="badge bg-warning text-dark">Duyuru</span>{% endif %}
                     {% if ed.can_kose %}<span class="badge bg-secondary">Köşe Yazısı</span>{% endif %}
+                    {% if ed.can_galeri %}<span class="badge bg-primary">Galeri</span>{% endif %}
+                    {% if ed.can_video %}<span class="badge bg-danger">Video Galeri</span>{% endif %}
+                    {% if ed.can_mesaj %}<span class="badge bg-dark">Gelen Mesajlar</span>{% endif %}
                 </td>
                 <td>
                     <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#editModal{{ ed.id }}">Düzenle</button>
@@ -108,6 +123,18 @@
                         <div class="mb-3 form-check">
                             <input type="checkbox" name="can_kose" class="form-check-input" {% if ed.can_kose %}checked{% endif %}>
                             <label class="form-check-label">Köşe Yazısı Yetkisi</label>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" name="can_galeri" class="form-check-input" {% if ed.can_galeri %}checked{% endif %}>
+                            <label class="form-check-label">Galeri Yönetimi Yetkisi</label>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" name="can_video" class="form-check-input" {% if ed.can_video %}checked{% endif %}>
+                            <label class="form-check-label">Video Galeri Ayarları Yetkisi</label>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" name="can_mesaj" class="form-check-input" {% if ed.can_mesaj %}checked{% endif %}>
+                            <label class="form-check-label">Gelen Mesajlar Yetkisi</label>
                         </div>
                     </div>
                     <div class="modal-footer">

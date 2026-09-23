@@ -3278,6 +3278,12 @@ class EditorUser(db.Model):
 
     can_kose = db.Column(db.Boolean, default=False)
 
+    can_galeri = db.Column(db.Boolean, default=False)
+
+    can_video = db.Column(db.Boolean, default=False)
+
+    can_mesaj = db.Column(db.Boolean, default=False)
+
 
 
 @app.route('/admin/editors', methods=['GET', 'POST'])
@@ -3304,6 +3310,12 @@ def admin_editors():
 
         ck = request.form.get('can_kose') == 'on'
 
+        cg = request.form.get('can_galeri') == 'on'
+
+        cv = request.form.get('can_video') == 'on'
+
+        cm = request.form.get('can_mesaj') == 'on'
+
         fn = request.form.get('full_name')
 
         ti = request.form.get('title')
@@ -3320,7 +3332,9 @@ def admin_editors():
 
                 full_name=fn, title=ti, role=ro,
 
-                can_haber=ch, can_etkinlik=ce, can_duyuru=cd, can_kose=ck))
+                can_haber=ch, can_etkinlik=ce, can_duyuru=cd, can_kose=ck,
+
+                can_galeri=cg, can_video=cv, can_mesaj=cm))
 
         elif action == 'edit':
 
@@ -3346,9 +3360,15 @@ def admin_editors():
 
             ed.can_kose = ck
 
+            ed.can_galeri = cg
+
+            ed.can_video = cv
+
+            ed.can_mesaj = cm
+
         db.session.commit()
 
-        flash('EditÃ¶r kaydedildi.', 'success')
+        flash('Yetkili editör kaydedildi.', 'success')
 
         return redirect(url_for('admin_editors'))
 
@@ -3839,19 +3859,28 @@ def iletisim_gonder():
         return "<script>alert('Mesajınız başarıyla gönderilmiştir. Teşekkür ederiz.'); window.location.href='/iletisim.html';</script>"
     return "<script>alert('Lütfen tüm zorunlu alanları doldurun.'); window.history.back();</script>"
 
+def can_access_mesajlar():
+    if session.get('role') == 'admin':
+        return True
+    if session.get('role') == 'editor':
+        ed = EditorUser.query.get(session.get('editor_id'))
+        if ed and ed.can_mesaj:
+            return True
+    return False
+
 @app.route('/admin/mesajlar')
 @login_required
 def admin_mesajlar():
-    if session.get('role') != 'admin':
-        return redirect(url_for('admin_index'))
+    if not can_access_mesajlar():
+        return redirect(url_for('editor_panel') if session.get('role') == 'editor' else url_for('admin_index'))
     mesajlar = Mesaj.query.order_by(Mesaj.date_added.desc()).all()
     return render_template('admin/mesajlar.html', mesajlar=mesajlar)
 
 @app.route('/admin/mesajlar/sil/<int:id>', methods=['POST'])
 @login_required
 def admin_mesaj_sil(id):
-    if session.get('role') != 'admin':
-        return redirect(url_for('admin_index'))
+    if not can_access_mesajlar():
+        return redirect(url_for('editor_panel') if session.get('role') == 'editor' else url_for('admin_index'))
     m = Mesaj.query.get_or_404(id)
     db.session.delete(m)
     db.session.commit()
@@ -3861,8 +3890,8 @@ def admin_mesaj_sil(id):
 @app.route('/admin/mesajlar/oku/<int:id>', methods=['POST'])
 @login_required
 def admin_mesaj_oku(id):
-    if session.get('role') != 'admin':
-        return redirect(url_for('admin_index'))
+    if not can_access_mesajlar():
+        return redirect(url_for('editor_panel') if session.get('role') == 'editor' else url_for('admin_index'))
     m = Mesaj.query.get_or_404(id)
     m.is_read = True
     db.session.commit()

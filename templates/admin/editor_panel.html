@@ -52,6 +52,33 @@
             </div>
         </div>
         {% endif %}
+        {% if editor.can_galeri %}
+        <div class="col-md-4">
+            <div class="card card-body bg-light mb-3">
+                <h4>Fotoğraf Galeri Yönetimi</h4>
+                <p>Galeri oluşturabilir, fotoğrafları yükleyip düzenleyebilirsiniz.</p>
+                <a href="{{ url_for('admin_galeri') }}" class="btn btn-primary">Galerilere Git</a>
+            </div>
+        </div>
+        {% endif %}
+        {% if editor.can_video %}
+        <div class="col-md-4">
+            <div class="card card-body bg-light mb-3">
+                <h4>Video Galeri Ayarları</h4>
+                <p>Video ekleyebilir, sıralayabilir ve silebilirsiniz.</p>
+                <a href="{{ url_for('admin_videos') }}" class="btn btn-danger">Videolara Git</a>
+            </div>
+        </div>
+        {% endif %}
+        {% if editor.can_mesaj %}
+        <div class="col-md-4">
+            <div class="card card-body bg-light mb-3">
+                <h4>Gelen Mesajlar</h4>
+                <p>İletişim formundan gönderilen mesajları okuyup yönetebilirsiniz.</p>
+                <a href="{{ url_for('admin_mesajlar') }}" class="btn btn-dark">Mesajlara Git</a>
+            </div>
+        </div>
+        {% endif %}
     </div>
 </div>
 </body>
