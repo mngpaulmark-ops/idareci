@@ -911,7 +911,36 @@ def serve_idareci(filename=''):
     else:
         return handle_dynamic_fallback(filename)
 
+import time
+from sqlalchemy import event
+from sqlalchemy.orm import selectinload
+
+_page_cache = {}
+_page_cache_time = {}
+CACHE_TTL_SECONDS = 300  # 5 minutes
+
+def clear_page_cache():
+    _page_cache.clear()
+    _page_cache_time.clear()
+
+try:
+    @event.listens_for(db.session, 'after_commit')
+    def auto_clear_cache_on_db_change(session):
+        clear_page_cache()
+except Exception:
+    pass
+
 def inject_dynamic_html(file_path, base_html=None):
+    from flask import make_response
+    cache_key = file_path if not base_html else None
+    if cache_key:
+        now = time.time()
+        if cache_key in _page_cache and (now - _page_cache_time.get(cache_key, 0)) < CACHE_TTL_SECONDS:
+            resp = make_response(_page_cache[cache_key])
+            resp.headers['Cache-Control'] = 'public, max-age=120, s-maxage=300, stale-while-revalidate=600'
+            resp.headers['X-Cache'] = 'HIT'
+            return resp
+
     if base_html:
         html = base_html
     else:
@@ -921,15 +950,22 @@ def inject_dynamic_html(file_path, base_html=None):
         import bs4
         soup = bs4.BeautifulSoup(html, 'html.parser')
         
-        # Inject Top Menu
+        # 1. Inject Top Menu (single query, mapped in memory)
         nav_ul = soup.find('ul', class_='nav navbar-nav')
         if nav_ul:
-            menus = Menu.query.filter_by(parent_id=None, is_active=True).order_by(Menu.order).all()
+            all_menus = Menu.query.filter_by(is_active=True).order_by(Menu.order).all()
+            parents = [m for m in all_menus if m.parent_id is None]
+            children_map = {}
+            for m in all_menus:
+                if m.parent_id:
+                    children_map.setdefault(m.parent_id, []).append(m)
             top_html = '<ul class="nav navbar-nav">\n<li class="home"><a href="anasayfa.html"><img alt="Ana Sayfa" src="themes/burokratlar/tema/images/ico-home.png"/></a></li>\n'
-            for m in menus:
-                if m.children:
+            for m in parents:
+                ch = children_map.get(m.id, [])
+                if ch:
                     top_html += f'<li class="dropdown"><a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="{m.url}" role="button" target="_self">{m.title}</a>\n<ul class="dropdown-menu" role="menu">\n'
-                    for child in [c for c in m.children if c.is_active]: top_html += f'<li><a href="{child.url}" target="_self">{child.title}</a></li>\n'
+                    for child in ch:
+                        top_html += f'<li><a href="{child.url}" target="_self">{child.title}</a></li>\n'
                     top_html += '</ul></li>\n'
                 else:
                     top_html += f'<li><a href="{m.url}" target="_self">{m.title}</a></li>\n'
@@ -937,7 +973,7 @@ def inject_dynamic_html(file_path, base_html=None):
             new_nav = bs4.BeautifulSoup(top_html, 'html.parser').ul
             if new_nav: nav_ul.replace_with(new_nav)
             
-        # Inject Left Menu
+        # 2. Inject Left Menu
         left_ul = soup.find('ul', id='left-menu')
         if left_ul:
             left_menus = LeftMenu.query.filter_by(is_active=True).order_by(LeftMenu.order).all()
@@ -947,24 +983,27 @@ def inject_dynamic_html(file_path, base_html=None):
             new_left = bs4.BeautifulSoup(left_html, 'html.parser').ul
             if new_left: left_ul.replace_with(new_left)
             
-        # If this is anasayfa.html, inject Haberler, Duyurular, and Kose Yazilari
+        # 3. If this is anasayfa.html, inject Haberler, Duyurular, and Kose Yazilari
         if 'anasayfa.html' in file_path or 'index.html' in file_path:
-            # Kose Yazilari
+            # Kose Yazilari (efficient query without N+1)
             kayan = soup.find('div', id='kayan_alan')
             if kayan:
                 kayan_ul = kayan.find('ul')
                 if kayan_ul:
+                    all_yazarlar = {y.id: y for y in Yazar.query.all()}
+                    recent_yazilar = KoseYazisi.query.order_by(KoseYazisi.date_added.desc(), KoseYazisi.id.desc()).limit(150).all()
+                    seen_authors = set()
                     yazilar = []
-                    for yazar_obj in Yazar.query.all():
-                        latest_yazi = KoseYazisi.query.filter_by(yazar_id=yazar_obj.id).order_by(KoseYazisi.date_added.desc(), KoseYazisi.id.desc()).first()
-                        if latest_yazi:
-                            yazilar.append(latest_yazi)
+                    for y in recent_yazilar:
+                        if y.yazar_id not in seen_authors:
+                            seen_authors.add(y.yazar_id)
+                            yazilar.append(y)
                     from datetime import datetime
                     yazilar.sort(key=lambda x: (x.date_added if (x.date_added and x.date_added.year > 2000) else datetime.min, x.id), reverse=True)
                     yazilar = yazilar[:15]
                     kose_html = ""
                     for y in yazilar:
-                        yazar = Yazar.query.get(y.yazar_id)
+                        yazar = all_yazarlar.get(y.yazar_id)
                         y_name = yazar.name if yazar else "Yazar"
                         y_pic = yazar.image_path if yazar and yazar.image_path else "themes/burokratlar/tema/images/no-image.png"
                         date_str = y.date_added.strftime("%d.%m.%Y") if (y.date_added and y.date_added.year > 2000) else ""
@@ -1022,7 +1061,9 @@ def inject_dynamic_html(file_path, base_html=None):
             if fotogaleri_div:
                 fg_ul = fotogaleri_div.find('ul')
                 if fg_ul:
-                    galeriler = Galeri.query.order_by(Galeri.id.desc()).limit(12).all()
+                    galeriler = Galeri.query.options(
+                        selectinload(Galeri.resimler).defer(GaleriResim.image_data)
+                    ).order_by(Galeri.id.desc()).limit(12).all()
                     if galeriler:
                         fg_html = ""
                         for g in galeriler:
@@ -1056,10 +1097,11 @@ def inject_dynamic_html(file_path, base_html=None):
             main_div = soup.find('div', id='main')
             if main_div:
                 panel_body = main_div.find('div', class_='panel-body')
-                if panel_body:
-                    row = panel_body.find('div', class_='row')
+                row = panel_body.find('div', class_='row') if panel_body else None
                 if row:
-                    galeriler = Galeri.query.order_by(Galeri.id.desc()).all()
+                    galeriler = Galeri.query.options(
+                        selectinload(Galeri.resimler).defer(GaleriResim.image_data)
+                    ).order_by(Galeri.id.desc()).all()
                     blocks = []
                     for g in galeriler:
                         cover_img = "themes/burokratlar/tema/images/no-image.png"
@@ -1119,15 +1161,19 @@ def inject_dynamic_html(file_path, base_html=None):
                         panel_body.clear()
                         panel_body.append(bs4.BeautifulSoup("\n".join(y_blocks), 'html.parser'))
 
-        from flask import make_response
-        resp = make_response(str(soup))
-        resp.headers['Cache-Control'] = 'public, s-maxage=60, stale-while-revalidate=120'
+        rendered_html = str(soup)
+        if cache_key:
+            _page_cache[cache_key] = rendered_html
+            _page_cache_time[cache_key] = time.time()
+        resp = make_response(rendered_html)
+        resp.headers['Cache-Control'] = 'public, max-age=120, s-maxage=300, stale-while-revalidate=600'
+        resp.headers['X-Cache'] = 'MISS'
         return resp
     except Exception as e:
         print(str(e))
         from flask import make_response
         resp = make_response(html)
-        resp.headers['Cache-Control'] = 'public, s-maxage=60, stale-while-revalidate=120'
+        resp.headers['Cache-Control'] = 'public, max-age=120, s-maxage=300, stale-while-revalidate=600'
         return resp
 
 @app.route('/media/resim/<int:id>')
