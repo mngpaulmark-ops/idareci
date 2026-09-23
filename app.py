@@ -1095,6 +1095,53 @@ def inject_dynamic_html(file_path, base_html=None):
                         fg_ul.clear()
                         fg_ul.append(bs4.BeautifulSoup(fg_html, 'html.parser'))
 
+        # Resimler.html (Fotoğraf Galerisi)
+        if 'resimler.html' in file_path:
+            main_div = soup.find('div', id='main')
+            if main_div:
+                panel_body = main_div.find('div', class_='panel-body')
+                if panel_body:
+                    row = panel_body.find('div', class_='row')
+                if row:
+                    galeriler = Galeri.query.order_by(Galeri.id.desc()).all()
+                    blocks = []
+                    for g in galeriler:
+                        cover_img = "themes/burokratlar/tema/images/no-image.png"
+                        if g.resimler and len(g.resimler) > 0:
+                            first_r = g.resimler[0]
+                            if first_r.image_data:
+                                cover_img = f"/media/resim/{first_r.id}"
+                            elif first_r.image_path and (first_r.image_path.startswith('http://') or first_r.image_path.startswith('https://')):
+                                cover_img = first_r.image_path
+                            elif first_r.image_path and first_r.image_path.startswith('files.catbox.moe'):
+                                cover_img = f"https://{first_r.image_path}"
+                            elif first_r.image_path:
+                                cover_img = f"/{first_r.image_path}"
+                        elif os.path.exists(f"data/gallerygroup/{g.id}.jpg"):
+                            cover_img = f"data/gallerygroup/{g.id}.jpg"
+                            
+                        date_str = g.date or ""
+                        loc_str = g.location or ""
+                        title_str = g.title or ""
+                        
+                        block = f'''<div class="col-md-4 mb-4" style="margin-bottom:20px; text-align:center;">
+                            <div class="card" style="border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; padding: 10px; background: #fff;">
+                                <a href="galeri-resimler-{g.id}.html" style="text-decoration:none;">
+                                    <img class="img-responsive rounded shadow" onerror="this.src='themes/burokratlar/tema/images/no-image.png'" src="{cover_img}" style="width:100%; height:200px !important; object-fit:cover !important; border-radius:8px;"/>
+                                </a>
+                                <div style="display: flex; justify-content: space-between; font-size: 12px; color: #888; margin-top: 10px; padding: 0 5px;">
+                                    <span><i class="fa fa-calendar" style="color: #c00;"></i> {date_str}</span>
+                                    <span><i class="fa fa-map-marker" style="color: #c00;"></i> {loc_str}</span>
+                                </div>
+                                <div style="text-align: center; margin-top: 10px; min-height: 45px;">
+                                    <a href="galeri-resimler-{g.id}.html" style="color: #1a7bb9; text-decoration: none; font-size: 14px;">{title_str}</a>
+                                </div>
+                            </div>
+                        </div>'''
+                        blocks.append(block)
+                    row.clear()
+                    row.append(bs4.BeautifulSoup("\n".join(blocks), 'html.parser'))
+
         from flask import make_response
         resp = make_response(str(soup))
         resp.headers['Cache-Control'] = 'public, s-maxage=60, stale-while-revalidate=120'
