@@ -1697,63 +1697,41 @@ def admin_yazar_ekle():
 
 
 @app.route('/admin/kose/ekle', methods=['POST'])
-
 @login_required
-
 def admin_kose_ekle():
-
     title = request.form.get('title')
-
     content = request.form.get('content')
-
     yazar_id = request.form.get('yazar_id')
-
     
-
-    db.session.add(KoseYazisi(title=title, content=content, yazar_id=yazar_id))
-
+    yeni_yazi = KoseYazisi(title=title, content=content, yazar_id=yazar_id)
+    db.session.add(yeni_yazi)
     db.session.commit()
-
-    # In a real scenario, we'd update HTML files here too
-
+    
+    import kose_helper
+    kose_helper.regenerate_single_kose(yeni_yazi.id)
+    kose_helper.regenerate_single_yazar(yeni_yazi.yazar_id)
+    
     return redirect(url_for('admin_kose'))
 
 
-
-
-
 @app.route('/admin/kose/edit/<int:id>', methods=['GET', 'POST'])
-
 @login_required
-
 def admin_kose_edit(id):
-
     yazi = KoseYazisi.query.get_or_404(id)
-
     if request.method == 'POST':
-
         yazi.title = request.form.get('title')
-
         yazi.content = request.form.get('content')
-
         yazi.yazar_id = request.form.get('yazar_id')
-
         date_str = request.form.get('date_added')
-
         if date_str:
-
             from datetime import datetime
-
             yazi.date_added = datetime.strptime(date_str, '%Y-%m-%d')
-
         db.session.commit()
-
+        
         import kose_helper
-
-        kose_helper.regenerate_single_kose(yazi)
-
-        kose_helper.regenerate_single_yazar(yazi.yazar)
-
+        kose_helper.regenerate_single_kose(yazi.id)
+        kose_helper.regenerate_single_yazar(yazi.yazar_id)
+        
         return redirect(url_for('admin_kose'))
 
     yazarlar = Yazar.query.all()
@@ -1763,19 +1741,23 @@ def admin_kose_edit(id):
 
 
 @app.route('/admin/kose/sil/<int:id>', methods=['POST'])
-
 @login_required
-
 def admin_kose_sil(id):
-
     y = KoseYazisi.query.get(id)
-
     if y:
-
+        yazar_id = y.yazar_id
         db.session.delete(y)
-
         db.session.commit()
-
+        
+        import os, kose_helper
+        filename = f"kose-yazilari-{id}.html"
+        if os.path.exists(filename):
+            try:
+                os.remove(filename)
+            except:
+                pass
+        kose_helper.regenerate_single_yazar(yazar_id)
+        
     return redirect(url_for('admin_kose'))
 
 
