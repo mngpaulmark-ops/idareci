@@ -917,11 +917,15 @@ from sqlalchemy.orm import selectinload
 
 _page_cache = {}
 _page_cache_time = {}
+_menu_cache = {'top': None, 'left': None, 'time': 0}
 CACHE_TTL_SECONDS = 300  # 5 minutes
 
 def clear_page_cache():
     _page_cache.clear()
     _page_cache_time.clear()
+    _menu_cache['top'] = None
+    _menu_cache['left'] = None
+    _menu_cache['time'] = 0
 
 try:
     @event.listens_for(db.session, 'after_commit')
@@ -950,9 +954,9 @@ def inject_dynamic_html(file_path, base_html=None):
         import bs4
         soup = bs4.BeautifulSoup(html, 'html.parser')
         
-        # 1. Inject Top Menu (single query, mapped in memory)
-        nav_ul = soup.find('ul', class_='nav navbar-nav')
-        if nav_ul:
+        # 1 & 2. Inject Top Menu and Left Menu with in-memory cache
+        now_time = time.time()
+        if not _menu_cache.get('top') or (now_time - _menu_cache.get('time', 0)) > 600:
             all_menus = Menu.query.filter_by(is_active=True).order_by(Menu.order).all()
             parents = [m for m in all_menus if m.parent_id is None]
             children_map = {}
@@ -970,33 +974,36 @@ def inject_dynamic_html(file_path, base_html=None):
                 else:
                     top_html += f'<li><a href="{m.url}" target="_self">{m.title}</a></li>\n'
             top_html += '</ul>'
-            new_nav = bs4.BeautifulSoup(top_html, 'html.parser').ul
-            if new_nav: nav_ul.replace_with(new_nav)
-            
-        # 2. Inject Left Menu
-        left_ul = soup.find('ul', id='left-menu')
-        if left_ul:
+            _menu_cache['top'] = top_html
+
             left_menus = LeftMenu.query.filter_by(is_active=True).order_by(LeftMenu.order).all()
             left_html = '<ul id="left-menu">\n'
             for lm in left_menus: left_html += f'<li><a href="{lm.url}" target="_self">» {lm.title}</a></li>\n'
             left_html += '</ul>'
-            new_left = bs4.BeautifulSoup(left_html, 'html.parser').ul
+            _menu_cache['left'] = left_html
+            _menu_cache['time'] = now_time
+
+        nav_ul = soup.find('ul', class_='nav navbar-nav')
+        if nav_ul and _menu_cache.get('top'):
+            new_nav = bs4.BeautifulSoup(_menu_cache['top'], 'html.parser').ul
+            if new_nav: nav_ul.replace_with(new_nav)
+
+        left_ul = soup.find('ul', id='left-menu')
+        if left_ul and _menu_cache.get('left'):
+            new_left = bs4.BeautifulSoup(_menu_cache['left'], 'html.parser').ul
             if new_left: left_ul.replace_with(new_left)
             
         # 3. If this is anasayfa.html, inject Haberler, Duyurular, and Kose Yazilari
         if 'anasayfa.html' in file_path or 'index.html' in file_path:
-            # Kose Yazilari (efficient query without N+1)
+            # Kose Yazilari (super-fast single DISTINCT ON query)
             kayan = soup.find('div', id='kayan_alan')
             if kayan:
                 kayan_ul = kayan.find('ul')
                 if kayan_ul:
-                    all_yazarlar = Yazar.query.all()
+                    all_y_map = {y.id: y for y in Yazar.query.all()}
+                    latest_arts = KoseYazisi.query.distinct(KoseYazisi.yazar_id).order_by(KoseYazisi.yazar_id, KoseYazisi.date_added.desc(), KoseYazisi.id.desc()).all()
                     from datetime import datetime
-                    yazilar = []
-                    for yazar in all_yazarlar:
-                        art = KoseYazisi.query.filter_by(yazar_id=yazar.id).order_by(KoseYazisi.date_added.desc(), KoseYazisi.id.desc()).first()
-                        if art:
-                            yazilar.append((yazar, art))
+                    yazilar = [(all_y_map[art.yazar_id], art) for art in latest_arts if art.yazar_id in all_y_map]
                     yazilar.sort(key=lambda item: (item[1].date_added if (item[1].date_added and item[1].date_added.year > 2000) else datetime.min, item[1].id), reverse=True)
                     kose_html = ""
                     for yazar, y in yazilar:
@@ -1156,6 +1163,22 @@ def inject_dynamic_html(file_path, base_html=None):
                     if y_blocks:
                         panel_body.clear()
                         panel_body.append(bs4.BeautifulSoup("\n".join(y_blocks), 'html.parser'))
+
+        # 4. Instant Hover Prefetcher for near 0ms page transitions
+        if soup.body and not soup.find('script', id='instant-prefetch'):
+            prefetch_js = '''<script id="instant-prefetch">
+(function(){
+    var p={};
+    function f(u){
+        if(!u||p[u]||u.indexOf('/admin')!==-1||u.indexOf('logout')!==-1)return;
+        p[u]=1;
+        var l=document.createElement('link');l.rel='prefetch';l.href=u;document.head.appendChild(l);
+    }
+    document.addEventListener('mouseover',function(e){var a=e.target.closest('a');if(a&&a.href&&a.origin===location.origin)f(a.href);},{passive:true});
+    document.addEventListener('touchstart',function(e){var a=e.target.closest('a');if(a&&a.href&&a.origin===location.origin)f(a.href);},{passive:true});
+})();
+</script>'''
+            soup.body.append(bs4.BeautifulSoup(prefetch_js, 'html.parser'))
 
         rendered_html = str(soup)
         if cache_key:
