@@ -811,35 +811,28 @@ def view_page(slug):
 @app.route('/idareci/<path:filename>')
 def serve_idareci(filename=''):
     if not filename or filename == '/':
-        return send_from_directory('.', 'anasayfa.html')
-    if os.path.exists(filename):
-        return send_from_directory('.', filename)
-    elif os.path.exists(filename + '.html'):
-        return send_from_directory('.', filename + '.html')
-    elif os.path.exists(filename + '.htm'):
-        return send_from_directory('.', filename + '.htm')
+        return send_from_directory(app.root_path, 'anasayfa.html')
+    file_path = os.path.join(app.root_path, filename)
+    if os.path.exists(file_path):
+        return send_from_directory(app.root_path, filename)
+    elif os.path.exists(file_path + '.html'):
+        return send_from_directory(app.root_path, filename + '.html')
+    elif os.path.exists(file_path + '.htm'):
+        return send_from_directory(app.root_path, filename + '.htm')
     else:
         from flask import abort
         abort(404)
 
 @app.route('/<path:filename>')
-
 def serve_static(filename):
-
-    if os.path.exists(filename):
-
-        return send_from_directory('.', filename)
-
-    elif os.path.exists(filename + '.html'):
-
-        return send_from_directory('.', filename + '.html')
-
-    elif os.path.exists(filename + '.htm'):
-
-        return send_from_directory('.', filename + '.htm')
-
+    file_path = os.path.join(app.root_path, filename)
+    if os.path.exists(file_path):
+        return send_from_directory(app.root_path, filename)
+    elif os.path.exists(file_path + '.html'):
+        return send_from_directory(app.root_path, filename + '.html')
+    elif os.path.exists(file_path + '.htm'):
+        return send_from_directory(app.root_path, filename + '.htm')
     else:
-
         return "Not Found", 404
 
 
