@@ -990,20 +990,16 @@ def inject_dynamic_html(file_path, base_html=None):
             if kayan:
                 kayan_ul = kayan.find('ul')
                 if kayan_ul:
-                    all_yazarlar = {y.id: y for y in Yazar.query.all()}
-                    recent_yazilar = KoseYazisi.query.order_by(KoseYazisi.date_added.desc(), KoseYazisi.id.desc()).limit(150).all()
-                    seen_authors = set()
-                    yazilar = []
-                    for y in recent_yazilar:
-                        if y.yazar_id not in seen_authors:
-                            seen_authors.add(y.yazar_id)
-                            yazilar.append(y)
+                    all_yazarlar = Yazar.query.all()
                     from datetime import datetime
-                    yazilar.sort(key=lambda x: (x.date_added if (x.date_added and x.date_added.year > 2000) else datetime.min, x.id), reverse=True)
-                    yazilar = yazilar[:15]
+                    yazilar = []
+                    for yazar in all_yazarlar:
+                        art = KoseYazisi.query.filter_by(yazar_id=yazar.id).order_by(KoseYazisi.date_added.desc(), KoseYazisi.id.desc()).first()
+                        if art:
+                            yazilar.append((yazar, art))
+                    yazilar.sort(key=lambda item: (item[1].date_added if (item[1].date_added and item[1].date_added.year > 2000) else datetime.min, item[1].id), reverse=True)
                     kose_html = ""
-                    for y in yazilar:
-                        yazar = all_yazarlar.get(y.yazar_id)
+                    for yazar, y in yazilar:
                         y_name = yazar.name if yazar else "Yazar"
                         y_pic = yazar.image_path if yazar and yazar.image_path else "themes/burokratlar/tema/images/no-image.png"
                         date_str = y.date_added.strftime("%d.%m.%Y") if (y.date_added and y.date_added.year > 2000) else ""

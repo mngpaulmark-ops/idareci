@@ -9,9 +9,9 @@ h1, h2, h3, h4, h5, h6, .panel-heading { font-family: 'Inter', sans-serif; }
 .links a:hover, #left-menu a:hover { color: #800000; }
 .main .box img { border-radius: 0.5rem; max-width: 100%; height: auto; }
 
-/* Fix for slider images */
-.slider .slideshow a { display: block; height: 100%; width: 100%; }
-.slider .slideshow .images { min-height: 350px; width: 100%; }
+/* Fix for slider display */
+.slider .slideshow { min-height: 350px; }
+.slider .slideshow img { width: 100%; height: auto; max-height: 350px; object-fit: cover; }
 
 /* Gallery Hover Effect */
 .gallery-hover { transition: transform 0.3s ease, box-shadow 0.3s ease !important; cursor: pointer; position: relative; z-index: 1; }

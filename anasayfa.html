@@ -73,36 +73,39 @@ $(document).ready(function(){
 <script type="text/javascript"> 
     $(document).ready(function() {
         $('.solalanreresim').cycle({
-            fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-            timeout:'3000'
+            fx: 'fade',
+            timeout: '3000'
         });
         
         $('.ustalanreresim').cycle({
-            fx: 'zoom', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-            timeout:'3000'
+            fx: 'zoom',
+            timeout: '3000'
         });
         
         $('.yakinetkinlikler .slide').cycle({
-            fx: 'scrollUp', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-            timeout:'5000',
+            fx: 'scrollUp',
+            timeout: '5000',
             resizeContainer: false,
             cleartype: false,
             slideResize: false
         });
-    $(document).ready(function() {
-        var slideshow = $(".slideshow").cycle({
-            fx: "fade",
-            timeout: 12000,
-            prev: ".slider-prev",
-            next: ".slider-next",
-            pager:  ".slider-pager",
-            fit:  2,
-            
-            pagerAnchorBuilder: function(idx, slide) {
-                return '<li><a href="#">'+(idx+1)+'</a></li>';
-            },
 
-        });
+        function initSlideshow() {
+            if ($(".slideshow").data('cycle.opts')) return;
+            $(".slideshow").cycle({
+                fx: "fade",
+                timeout: 12000,
+                prev: ".slider-prev",
+                next: ".slider-next",
+                pager:  ".slider-pager",
+                fit:  2,
+                pagerAnchorBuilder: function(idx, slide) {
+                    return '<li><a href="#">'+(idx+1)+'</a></li>';
+                }
+            });
+        }
+        $(window).load(initSlideshow);
+        setTimeout(initSlideshow, 100);
     });
 </script>
 <script src="themes/burokratlar/tema/js/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
@@ -916,8 +919,13 @@ if(hadithElem) hadithElem.innerText = hadiths[day % hadiths.length];
         "title": "28 ŞUBAT YAŞAYAN BİRİ",
         "description": "GENİŞ BİR BAKIŞ AÇISIYLA 28 ŞUBAT BU HAFTAKİ KONFERANS KONUMUZ VE KONUĞUMUZ 54. HÜKÜMETİN DEVLET BAKANI VE AK PARTİ ETİK KURULU BAŞKANI SAYIN AHMET CEMİL TUNÇ",
         "url": ""
-    }
-]; Derneğimize, Vatanımıza, İslam Alemine ve İnsanlığa hayırlı olmasını temenni ederiz.Yücel CAN",
+    },
+    {
+        "date": "16 08 2018",
+        "saat": "00:00",
+        "type": "meeting",
+        "title": "Olağanüstü Kongre Kararı",
+        "description": "Olağanüstü Kongremiz 16.08.2018 Perşembe günü saat 19.00'da NEFF CAFE-NEFFGİLE Toplantı Salonunda yapılacaktır.( Atatürk Caddesi. Keçiören Girişi FTZ Arkası No:17 Keçiören-ANKARA) Teşriflerinizi bekler,Kongremizin; Derneğimize, Vatanımıza, İslam Alemine ve İnsanlığa hayırlı olmasını temenni ederiz.Yücel CAN",
         "url": ""
     },
     {
