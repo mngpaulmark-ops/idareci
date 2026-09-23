@@ -73,6 +73,49 @@ def handle_dynamic_fallback(filename):
                     main_div.replace_with(bs4.BeautifulSoup(new_html, 'html.parser'))
                 return inject_dynamic_html(filename, base_html=str(soup))
                 
+    elif filename.startswith('galeri-resimler-') and filename.endswith('.html'):
+        match = re.search(r'galeri-resimler-(\d+)', filename)
+        if match:
+            g_id = match.group(1)
+            galeri = Galeri.query.get(g_id)
+            if galeri:
+                with open('hakkimizda.html', 'r', encoding='utf-8', errors='ignore') as f:
+                    base = f.read()
+                import bs4
+                soup = bs4.BeautifulSoup(base, 'html.parser')
+                main_div = soup.find('div', class_='col-md-9')
+                if main_div:
+                    photos_html = ""
+                    for r in galeri.resimler:
+                        if r.image_data:
+                            img_src = f"/media/resim/{r.id}"
+                        elif r.image_path and (r.image_path.startswith('http://') or r.image_path.startswith('https://')):
+                            img_src = r.image_path
+                        elif r.image_path and r.image_path.startswith('files.catbox.moe'):
+                            img_src = f"https://{r.image_path}"
+                        elif r.image_path:
+                            img_src = f"/{r.image_path}"
+                        else:
+                            continue
+                        photos_html += f'''
+                        <div class="col-md-4 col-sm-6 mb-4" style="margin-bottom:20px;">
+                            <div class="thumbnail" style="border: 1px solid #ddd; padding: 5px; border-radius: 6px; background:#fff;">
+                                <a href="{img_src}" target="_blank">
+                                    <img src="{img_src}" alt="{galeri.title}" style="width: 100%; height: 180px; object-fit: cover; border-radius: 4px;"/>
+                                </a>
+                            </div>
+                        </div>'''
+                    if not photos_html:
+                        photos_html = '<div class="col-12"><div class="alert alert-info">Bu galeride henüz resim bulunmuyor.</div></div>'
+                    new_html = f'''<div class="col-md-9" id="main"><div class="main"><div class="panel panel-primary">
+                    <div class="panel-heading">Fotoğraf Galerisi / {galeri.title}</div>
+                    <div class="panel-body">
+                    <h3>{galeri.title}</h3><hr/>
+                    <div class="row">{photos_html}</div>
+                    </div></div></div></div>'''
+                    main_div.replace_with(bs4.BeautifulSoup(new_html, 'html.parser'))
+                return inject_dynamic_html(filename, base_html=str(soup))
+                
     from flask import abort
     abort(404)
 from werkzeug.utils import secure_filename
@@ -267,9 +310,11 @@ class GaleriResim(db.Model):
 
     galeri_id = db.Column(db.Integer, db.ForeignKey('galeri.id'), nullable=False)
 
-    image_path = db.Column(db.String(255), nullable=False)
+    image_path = db.Column(db.String(255), nullable=True)
 
-    
+    image_data = db.Column(db.LargeBinary, nullable=True)
+
+    mimetype = db.Column(db.String(100), default='image/jpeg')
 
     galeri = db.relationship('Galeri', backref=db.backref('resimler', lazy=True))
 
@@ -911,9 +956,6 @@ def serve_idareci(filename=''):
     else:
         return handle_dynamic_fallback(filename)
 
-@app.route('/<path:filename>')
-
-
 def inject_dynamic_html(file_path, base_html=None):
     if base_html:
         html = base_html
@@ -1019,6 +1061,40 @@ def inject_dynamic_html(file_path, base_html=None):
                 duyuru_ul.clear()
                 duyuru_ul.append(bs4.BeautifulSoup(duyuru_html, 'html.parser'))
 
+            # Foto Galeri on anasayfa
+            fotogaleri_div = soup.find('div', class_='fotogaleri')
+            if fotogaleri_div:
+                fg_ul = fotogaleri_div.find('ul')
+                if fg_ul:
+                    galeriler = Galeri.query.order_by(Galeri.id.desc()).limit(12).all()
+                    if galeriler:
+                        fg_html = ""
+                        for g in galeriler:
+                            cover_src = "themes/burokratlar/tema/images/no-image.png"
+                            if g.resimler:
+                                first_r = g.resimler[0]
+                                if first_r.image_data:
+                                    cover_src = f"/media/resim/{first_r.id}"
+                                elif first_r.image_path and (first_r.image_path.startswith('http://') or first_r.image_path.startswith('https://')):
+                                    cover_src = first_r.image_path
+                                elif first_r.image_path and first_r.image_path.startswith('files.catbox.moe'):
+                                    cover_src = f"https://{first_r.image_path}"
+                                elif first_r.image_path:
+                                    cover_src = f"/{first_r.image_path}"
+                            elif os.path.exists(f"data/gallerygroup/{g.id}.jpg"):
+                                cover_src = f"data/gallerygroup/{g.id}.jpg"
+                            
+                            fg_html += f'''<li>
+                            <a class="center-image" href="galeri-resimler-{g.id}.html">
+                            <img alt="{g.title}" class="img-rounded" src="{cover_src}" style="width: 170px; height: 115px; object-fit: cover;"/>
+                            <div class="caption">
+                            <h5>{g.title}</h5>
+                            </div>
+                            </a>
+                            </li>\n'''
+                        fg_ul.clear()
+                        fg_ul.append(bs4.BeautifulSoup(fg_html, 'html.parser'))
+
         from flask import make_response
         resp = make_response(str(soup))
         resp.headers['Cache-Control'] = 'public, s-maxage=60, stale-while-revalidate=120'
@@ -1029,6 +1105,20 @@ def inject_dynamic_html(file_path, base_html=None):
         resp = make_response(html)
         resp.headers['Cache-Control'] = 'public, s-maxage=60, stale-while-revalidate=120'
         return resp
+
+@app.route('/media/resim/<int:id>')
+def serve_db_image(id):
+    r = GaleriResim.query.get_or_404(id)
+    if r.image_data:
+        from flask import Response
+        resp = Response(r.image_data, mimetype=r.mimetype or 'image/jpeg')
+        resp.headers['Cache-Control'] = 'public, max-age=31536000, immutable'
+        return resp
+    elif r.image_path:
+        return redirect('/' + r.image_path)
+    from flask import abort
+    abort(404)
+
 @app.route('/<path:filename>')
 def serve_static(filename):
     file_path = os.path.join(app.root_path, filename)
@@ -1040,7 +1130,7 @@ def serve_static(filename):
     elif os.path.exists(file_path + '.htm'):
         return send_from_directory(app.root_path, filename + '.htm')
     else:
-        return "Not Found", 404
+        return handle_dynamic_fallback(filename)
 
 
 
@@ -2128,24 +2218,18 @@ def admin_galeri_detay(id):
         files = request.files.getlist('images')
 
         for file in files:
-
             if file and file.filename:
-
-                filename = secure_filename(file.filename)
-
-                save_dir = os.path.join(app.root_path, 'data', 'page')
-
-                os.makedirs(save_dir, exist_ok=True)
-
-                path = os.path.join(save_dir, filename)
-
-                catbox_path = upload_to_catbox(file)
-                if catbox_path:
-                    db.session.add(GaleriResim(galeri_id=id, image_path=catbox_path))
-                else:
-                    file.save(path)
-                    db.session.add(GaleriResim(galeri_id=id, image_path='data/page/'+filename))
-
+                file_bytes = file.read()
+                if file_bytes:
+                    filename = secure_filename(file.filename)
+                    mime = file.content_type or 'image/jpeg'
+                    gr = GaleriResim(
+                        galeri_id=id,
+                        image_path=f"data/gallery/{filename}",
+                        image_data=file_bytes,
+                        mimetype=mime
+                    )
+                    db.session.add(gr)
         db.session.commit()
 
         return redirect(url_for('admin_galeri_detay', id=id))
@@ -3803,17 +3887,17 @@ def admin_galeri_edit(id):
         uploaded_count = 0
         for file in files:
             if file and file.filename:
-                catbox_path = upload_to_catbox(file)
-                if catbox_path:
-                    db.session.add(GaleriResim(galeri_id=id, image_path=catbox_path))
-                    uploaded_count += 1
-                else:
+                file_bytes = file.read()
+                if file_bytes:
                     filename = secure_filename(file.filename)
-                    save_dir = os.path.join(app.root_path, 'data', 'gallery')
-                    os.makedirs(save_dir, exist_ok=True)
-                    path = os.path.join(save_dir, filename)
-                    file.save(path)
-                    db.session.add(GaleriResim(galeri_id=id, image_path='data/gallery/' + filename))
+                    mime = file.content_type or 'image/jpeg'
+                    gr = GaleriResim(
+                        galeri_id=id,
+                        image_path=f"data/gallery/{filename}",
+                        image_data=file_bytes,
+                        mimetype=mime
+                    )
+                    db.session.add(gr)
                     uploaded_count += 1
         db.session.commit()
         if uploaded_count > 0:

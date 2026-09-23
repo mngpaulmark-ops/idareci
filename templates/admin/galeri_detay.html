@@ -28,7 +28,17 @@
         {% for r in galeri.resimler %}
         <div class="col-md-3 mb-4">
             <div class="card h-100">
-                <img src="/{{ r.image_path }}" class="card-img-top" style="height:150px; object-fit:cover;">
+                {% if r.image_data %}
+                    <img src="/media/resim/{{ r.id }}" class="card-img-top" style="height:150px; object-fit:cover;">
+                {% elif r.image_path and (r.image_path.startswith('http://') or r.image_path.startswith('https://')) %}
+                    <img src="{{ r.image_path }}" class="card-img-top" style="height:150px; object-fit:cover;">
+                {% elif r.image_path and r.image_path.startswith('files.catbox.moe') %}
+                    <img src="https://{{ r.image_path }}" class="card-img-top" style="height:150px; object-fit:cover;">
+                {% elif r.image_path %}
+                    <img src="/{{ r.image_path }}" class="card-img-top" style="height:150px; object-fit:cover;">
+                {% else %}
+                    <img src="/themes/burokratlar/tema/images/no-image.png" class="card-img-top" style="height:150px; object-fit:cover;">
+                {% endif %}
                 <div class="card-footer text-center">
                     <form method="POST" action="{{ url_for('admin_galeri_resimsil', id=r.id) }}" onsubmit="return confirm('Silmek istediğinize emin misiniz?');">
                         <button class="btn btn-danger btn-sm">Sil</button>

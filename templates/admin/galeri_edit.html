@@ -72,12 +72,16 @@
                         {% for r in galeri.resimler %}
                         <div class="col-6 col-sm-4 col-md-4">
                             <div class="card h-100 shadow-sm border">
-                                {% if r.image_path.startswith('http://') or r.image_path.startswith('https://') %}
+                                {% if r.image_data %}
+                                    <img src="/media/resim/{{ r.id }}" class="card-img-top" style="height: 120px; object-fit: cover;">
+                                {% elif r.image_path and (r.image_path.startswith('http://') or r.image_path.startswith('https://')) %}
                                     <img src="{{ r.image_path }}" class="card-img-top" style="height: 120px; object-fit: cover;">
-                                {% elif r.image_path.startswith('files.catbox.moe') %}
+                                {% elif r.image_path and r.image_path.startswith('files.catbox.moe') %}
                                     <img src="https://{{ r.image_path }}" class="card-img-top" style="height: 120px; object-fit: cover;">
-                                {% else %}
+                                {% elif r.image_path %}
                                     <img src="/{{ r.image_path }}" class="card-img-top" style="height: 120px; object-fit: cover;">
+                                {% else %}
+                                    <img src="/themes/burokratlar/tema/images/no-image.png" class="card-img-top" style="height: 120px; object-fit: cover;">
                                 {% endif %}
                                 <div class="card-body p-2 text-center">
                                     <form method="POST" action="{{ url_for('admin_galeri_resimsil', id=r.id) }}" onsubmit="return confirm('Bu resmi silmek istediğinize emin misiniz?');">
