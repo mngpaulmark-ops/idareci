@@ -1,3 +1,80 @@
+
+def handle_dynamic_fallback(filename):
+    import re
+    if filename.startswith('kose-yazilari-') and filename.endswith('.html'):
+        match = re.search(r'kose-yazilari-(\d+)\.html', filename)
+        if match:
+            k_id = match.group(1)
+            yazi = KoseYazisi.query.get(k_id)
+            if yazi:
+                with open('hakkimizda.html', 'r', encoding='utf-8', errors='ignore') as f:
+                    base = f.read()
+                yazar = Yazar.query.get(yazi.yazar_id)
+                y_name = yazar.name if yazar else "Bilinmeyen"
+                y_pic = yazar.image_path if yazar and yazar.image_path else 'themes/burokratlar/tema/images/no-image.png'
+                import bs4
+                soup = bs4.BeautifulSoup(base, 'html.parser')
+                main_div = soup.find('div', class_='col-md-9')
+                if main_div:
+                    new_html = f'''<div class="col-md-9" id="main"><div class="main"><div class="panel panel-primary">
+                    <div class="panel-heading">Görüş & Politika Notları / {yazi.title}</div>
+                    <div class="panel-body"><div class="col-md-12">
+                    <div style="float: left; margin-right: 15px; margin-bottom: 15px; text-align: center;">
+                    <a href="kose-yazar-{yazi.yazar_id}.html"><img src="{y_pic}" style="max-width: 150px;"/><br/><b>{y_name}</b></a>
+                    </div>
+                    <h3>{yazi.title}</h3><hr/><div class="content-text">{yazi.content}</div>
+                    </div></div></div></div></div>'''
+                    main_div.replace_with(bs4.BeautifulSoup(new_html, 'html.parser'))
+                return inject_dynamic_html(filename, base_html=str(soup))
+                
+    elif filename.startswith('kose-yazar-') and filename.endswith('.html'):
+        match = re.search(r'kose-yazar-(\d+)\.html', filename)
+        if match:
+            y_id = match.group(1)
+            yazar = Yazar.query.get(y_id)
+            if yazar:
+                with open('hakkimizda.html', 'r', encoding='utf-8', errors='ignore') as f:
+                    base = f.read()
+                yazilar = KoseYazisi.query.filter_by(yazar_id=y_id).order_by(KoseYazisi.date_added.desc(), KoseYazisi.id.desc()).all()
+                import bs4
+                soup = bs4.BeautifulSoup(base, 'html.parser')
+                main_div = soup.find('div', class_='col-md-9')
+                if main_div:
+                    y_pic = yazar.image_path if yazar.image_path else 'themes/burokratlar/tema/images/no-image.png'
+                    links = "".join([f'<li><a href="kose-yazilari-{y.id}.html">{y.title}</a></li>' for y in yazilar])
+                    new_html = f'''<div class="col-md-9" id="main"><div class="main"><div class="panel panel-primary">
+                    <div class="panel-heading">Görüş & Politika Notları / {yazar.name}</div>
+                    <div class="panel-body"><div class="col-md-4">
+                    <img src="{y_pic}" style="float: left; max-width: 100%; margin-bottom:10px; margin-right:10px;"/><br/><h4><b>{yazar.name}</b></h4>
+                    </div><div class="col-md-8"><br/><h4>Yazarın Yazıları:</h4><ul>{links}</ul></div>
+                    </div></div></div></div>'''
+                    main_div.replace_with(bs4.BeautifulSoup(new_html, 'html.parser'))
+                return inject_dynamic_html(filename, base_html=str(soup))
+                
+    elif filename.startswith('haber/') and filename.endswith('.html'):
+        match = re.search(r'haber/(\d+)-.*\.html', filename)
+        if match:
+            h_id = match.group(1)
+            haber = Haber.query.get(h_id)
+            if haber:
+                with open('hakkimizda.html', 'r', encoding='utf-8', errors='ignore') as f:
+                    base = f.read()
+                import bs4
+                soup = bs4.BeautifulSoup(base, 'html.parser')
+                main_div = soup.find('div', class_='col-md-9')
+                if main_div:
+                    img_html = f'<img src="{haber.image_path}" class="img-responsive" style="margin-bottom:15px;"/>' if haber.image_path else ''
+                    new_html = f'''<div class="col-md-9" id="main"><div class="main"><div class="panel panel-primary">
+                    <div class="panel-heading">Haberler / {haber.title}</div>
+                    <div class="panel-body"><div class="col-md-12">
+                    {img_html}
+                    <h3>{haber.title}</h3><hr/><div class="content-text">{haber.content}</div>
+                    </div></div></div></div></div>'''
+                    main_div.replace_with(bs4.BeautifulSoup(new_html, 'html.parser'))
+                return inject_dynamic_html(filename, base_html=str(soup))
+                
+    from flask import abort
+    abort(404)
 from werkzeug.utils import secure_filename
 
 import os
@@ -832,14 +909,17 @@ def serve_idareci(filename=''):
     elif os.path.exists(file_path + '.htm'):
         return send_from_directory(app.root_path, filename + '.htm')
     else:
-        from flask import abort
-        abort(404)
+        return handle_dynamic_fallback(filename)
 
 @app.route('/<path:filename>')
 
-def inject_dynamic_html(file_path):
-    with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
-        html = f.read()
+
+def inject_dynamic_html(file_path, base_html=None):
+    if base_html:
+        html = base_html
+    else:
+        with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+            html = f.read()
     try:
         import bs4
         soup = bs4.BeautifulSoup(html, 'html.parser')
@@ -848,38 +928,90 @@ def inject_dynamic_html(file_path):
         nav_ul = soup.find('ul', class_='nav navbar-nav')
         if nav_ul:
             menus = Menu.query.filter_by(parent_id=None, is_active=True).order_by(Menu.order).all()
-            top_html = '<ul class="nav navbar-nav">
-<li class="home"><a href="anasayfa.html"><img alt="Ana Sayfa" src="themes/burokratlar/tema/images/ico-home.png"/></a></li>
-'
+            top_html = '<ul class="nav navbar-nav">\n<li class="home"><a href="anasayfa.html"><img alt="Ana Sayfa" src="themes/burokratlar/tema/images/ico-home.png"/></a></li>\n'
             for m in menus:
                 if m.children:
-                    top_html += f'<li class="dropdown"><a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="{m.url}" role="button" target="_self">{m.title}</a>
-<ul class="dropdown-menu" role="menu">
-'
-                    for child in [c for c in m.children if c.is_active]: top_html += f'<li><a href="{child.url}" target="_self">{child.title}</a></li>
-'
-                    top_html += '</ul></li>
-'
+                    top_html += f'<li class="dropdown"><a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="{m.url}" role="button" target="_self">{m.title}</a>\n<ul class="dropdown-menu" role="menu">\n'
+                    for child in [c for c in m.children if c.is_active]: top_html += f'<li><a href="{child.url}" target="_self">{child.title}</a></li>\n'
+                    top_html += '</ul></li>\n'
                 else:
-                    top_html += f'<li><a href="{m.url}" target="_self">{m.title}</a></li>
-'
+                    top_html += f'<li><a href="{m.url}" target="_self">{m.title}</a></li>\n'
             top_html += '</ul>'
             new_nav = bs4.BeautifulSoup(top_html, 'html.parser').ul
-            nav_ul.replace_with(new_nav)
+            if new_nav: nav_ul.replace_with(new_nav)
             
         # Inject Left Menu
         left_ul = soup.find('ul', id='left-menu')
         if left_ul:
             left_menus = LeftMenu.query.filter_by(is_active=True).order_by(LeftMenu.order).all()
-            left_html = '<ul id="left-menu">
-'
-            for lm in left_menus: left_html += f'<li><a href="{lm.url}" target="_self">» {lm.title}</a></li>
-'
+            left_html = '<ul id="left-menu">\n'
+            for lm in left_menus: left_html += f'<li><a href="{lm.url}" target="_self">» {lm.title}</a></li>\n'
             left_html += '</ul>'
             new_left = bs4.BeautifulSoup(left_html, 'html.parser').ul
-            left_ul.replace_with(new_left)
+            if new_left: left_ul.replace_with(new_left)
             
-        # Add caching headers
+        # If this is anasayfa.html, inject Haberler, Duyurular, and Kose Yazilari
+        if 'anasayfa.html' in file_path or 'index.html' in file_path:
+            # Kose Yazilari
+            kayan = soup.find('div', id='kayan_alan')
+            if kayan:
+                kayan_ul = kayan.find('ul')
+                if kayan_ul:
+                    yazilar = KoseYazisi.query.order_by(KoseYazisi.date_added.desc(), KoseYazisi.id.desc()).limit(15).all()
+                    kose_html = ""
+                    for y in yazilar:
+                        yazar = Yazar.query.get(y.yazar_id)
+                        y_name = yazar.name if yazar else "Yazar"
+                        y_pic = yazar.image_path if yazar and yazar.image_path else "themes/burokratlar/tema/images/no-image.png"
+                        date_str = y.date_added.strftime("%d.%m.%Y") if y.date_added else ""
+                        kose_html += f'''<li class="kayan"><a href="kose-yazilari-{y.id}.html">
+                        <img alt="{y_name}" class="yazar" src="{y_pic}" style=" border-radius: 10px;"/>
+                        <p><b>{y_name}</b></p></a>
+                        <span>{date_str} - {y.title}</span>
+                        <div class="clearfix"></div></li>\n'''
+                    kayan_ul.clear()
+                    kayan_ul.append(bs4.BeautifulSoup(kose_html, 'html.parser'))
+            
+            # Haberler Slider
+            slider = soup.find('ul', class_='slideshow')
+            latest = Haber.query.order_by(Haber.date.desc(), Haber.id.desc()).limit(10).all()
+            if slider:
+                slider.clear()
+                for h in latest:
+                    img_src = h.image_path if h.image_path else 'data/haber/0.jpg'
+                    li_html = f'<li><div class="title"><a href="haber/{h.id}-{h.slug}.html">{h.title}</a></div><a href="haber/{h.id}-{h.slug}.html"><img src="{img_src}" alt="{h.title}" /></a></li>'
+                    slider.append(bs4.BeautifulSoup(li_html, 'html.parser'))
+                    
+            # Haberler List (news)
+            news_panel = soup.find('div', class_='news')
+            if news_panel:
+                list_group = news_panel.find('div', class_='list-group')
+                if list_group:
+                    list_group.clear()
+                    list_group['style'] = "height: 332px; overflow-y: auto; overflow-x: hidden; padding-right: 5px;"
+                    panel_body = news_panel.find('div', class_='col-md-6')
+                    if panel_body:
+                        extra_groups = panel_body.find_all('div', class_='list-group')
+                        for eg in extra_groups[1:]:
+                            eg.decompose()
+                    for h in latest[:5]:
+                        img_src = h.image_path if h.image_path else 'data/haber/0.jpg'
+                        item_html = f'<div class="col-md-3 list-group-left"><a href="haber/{h.id}-{h.slug}.html"><img src="{img_src}" class="img-responsive"/></a></div><div class="col-md-9 list-group-right"><a href="haber/{h.id}-{h.slug}.html">{h.title}</a></div><div class="clearfix"></div>'
+                        list_group.append(bs4.BeautifulSoup(item_html, 'html.parser'))
+                        
+            # Duyurular
+            duyuru_ul = soup.find('ul', id='duyurular')
+            if duyuru_ul:
+                duyurular_db = Duyuru.query.order_by(Duyuru.date_added.desc(), Duyuru.id.desc()).limit(10).all()
+                duyuru_html = ""
+                for d in duyurular_db:
+                    link = d.link if d.link else "#"
+                    duyuru_html += f'<li class="news-item"><a href="{link}">{d.title}</a></li>\n'
+                if not duyuru_html:
+                    duyuru_html = '<li class="news-item"><a href="#">İdareci ve Bürokratlar Birliği Derneği Web Sitesine Hoşgeldiniz...</a></li>'
+                duyuru_ul.clear()
+                duyuru_ul.append(bs4.BeautifulSoup(duyuru_html, 'html.parser'))
+
         from flask import make_response
         resp = make_response(str(soup))
         resp.headers['Cache-Control'] = 'public, s-maxage=60, stale-while-revalidate=120'
@@ -889,7 +1021,6 @@ def inject_dynamic_html(file_path):
         resp = make_response(html)
         resp.headers['Cache-Control'] = 'public, s-maxage=60, stale-while-revalidate=120'
         return resp
-
 @app.route('/<path:filename>')
 def serve_static(filename):
     file_path = os.path.join(app.root_path, filename)
