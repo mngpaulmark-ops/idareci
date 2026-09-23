@@ -20,11 +20,7 @@
 <![endif]-->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Oswald&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css"/>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@500&amp;family=Barlow:wght@200;500;700&amp;family=Cabin:wght@500&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;300;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;500;700&amp;family=Barlow+Condensed:wght@400;500;600&amp;family=Cabin:wght@500&amp;family=Oswald&amp;family=Saira+Condensed:wght@100;300;500&amp;display=swap" rel="stylesheet"/>
 <!-- <link rel="stylesheet" href="themes/burokratlar/tema/css/all.min.css">
 <![endif]-->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -63,56 +59,56 @@ $("#securitycode").mask("9999");
 <script type="text/javascript">
 $(document).ready(function(){
     jQuery("#kayan_alan").jCarouselLite({
-        vertical: true, //dikey yapmak için
-        hoverPause:true, //üzerine gelince durasý için
-        visible: 5, //3 adet gösterilmesi için
-        auto:1500, //bekleme süresi
-        speed:1000, //hareket hýzý
-        btnPrev: "#onceki", //onceki yazi
-        btnNext: "#sonraki", //sonraki yazi
-		mouseWheel: true
+        vertical: true,
+        hoverPause: true,
+        visible: 5,
+        auto: 4000,
+        speed: 700,
+        btnPrev: "#onceki",
+        btnNext: "#sonraki",
+        mouseWheel: false
     });
 });
 </script>
-<script src="themes/burokratlar/tema/js/jqcycle_all.js" type="text/javascript"></script>
 <script type="text/javascript"> 
     $(document).ready(function() {
         $('.solalanreresim').cycle({
-            fx: 'fade', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-            timeout:'3000'
+            fx: 'fade',
+            timeout: '3000'
         });
         
         $('.ustalanreresim').cycle({
-            fx: 'zoom', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-            timeout:'3000'
+            fx: 'zoom',
+            timeout: '3000'
         });
         
         $('.yakinetkinlikler .slide').cycle({
-            fx: 'scrollUp', // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-            timeout:'5000',
+            fx: 'scrollUp',
+            timeout: '5000',
             resizeContainer: false,
             cleartype: false,
             slideResize: false
         });
-    });
-    $(window).load(function() {
-        var slideshow = $(".slideshow").cycle({
-            fx: "fade",
-            timeout: 12000,
-            prev: ".slider-prev",
-            next: ".slider-next",
-            pager:  ".slider-pager",
-            fit:  2,
-            
-            pagerAnchorBuilder: function(idx, slide) {
-                return '<li><a href="#">'+(idx+1)+'</a></li>';
-            },
 
-        });
+        function initSlideshow() {
+            if ($(".slideshow").data('cycle.opts')) return;
+            $(".slideshow").cycle({
+                fx: "fade",
+                timeout: 12000,
+                prev: ".slider-prev",
+                next: ".slider-next",
+                pager:  ".slider-pager",
+                fit:  2,
+                pagerAnchorBuilder: function(idx, slide) {
+                    return '<li><a href="#">'+(idx+1)+'</a></li>';
+                }
+            });
+        }
+        $(window).load(initSlideshow);
+        setTimeout(initSlideshow, 100);
     });
 </script>
 <script src="themes/burokratlar/tema/js/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-<script src="themes/burokratlar/tema/js/fancybox/jquery.fancybox.js" type="text/javascript"></script>
 <script src="themes/burokratlar/tema/js/fancybox/helpers/jquery.fancybox-media.js" type="text/javascript"></script>
 <link href="themes/burokratlar/tema/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" rel="stylesheet"/>
 <script type="text/javascript">
@@ -136,34 +132,9 @@ $(document).ready(function(){
 </script>
 <script type="text/javascript">
     $(document).ready(function () {
-        $('.nav li').hover(
-            function () {
-                //alt menüleri göster
-
-                $('ul', this).stop(true,true,true).slideDown(200);
-
-            },
-            function () {
-                //alt menüleri gizle
-                $('ul', this).stop(true,true,true).slideUp(200);
-            }
-        );
-        
-        //alt kısım opacity efekti içindir
-        $('.nav li ul li').hover(
-            function () {
-                //üzerine gelince opacity
-                $(this).stop(true,true,true).animate({
-                    opacity: 1
-                  }, 300 );
-
-            },
-            function () {
-                //üzerinden gidince opacity
-                $(this).stop(true,true,true).animate({
-                    opacity: 0.9
-                  }, 300 );
-            }
+        $('.navbar-nav > li.dropdown').hover(
+            function () { $(this).addClass('open'); },
+            function () { $(this).removeClass('open'); }
         );
     });
     function initMenu() {
@@ -315,25 +286,6 @@ $(document).ready(function(){
 </ul>
 </div>
 </div>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(function() {
-        var leftPanel = document.querySelector('.news .col-md-6:first-child .panel.panel-primary');
-        var trtWidget = document.getElementById('trt-widget');
-        var trtPanel = document.querySelector('.news .col-md-6:nth-child(2) .panel.panel-primary');
-        
-        if (leftPanel && trtWidget && trtPanel) {
-            // Match the height of the entire panel
-            trtPanel.style.height = leftPanel.offsetHeight + 'px';
-            
-            // Adjust the inner widget height based on the header height
-            var headerHeight = trtPanel.querySelector('.panel-heading').offsetHeight;
-            // padding is usually 15px top + 15px bottom for panel-body
-            trtWidget.style.height = (leftPanel.offsetHeight - headerHeight - 35) + 'px';
-        }
-    }, 500); // Wait for images to load
-});
-</script>
 <!-- .panel .panel-primary -->
 <div class="panel panel-primary" style="margin-top: 20px; border-color: #800000; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
 <div class="panel-heading" style="background-color: #800000; border-color: #800000; color: white; font-weight: bold; font-size: 15px; padding: 12px 15px;">
@@ -629,48 +581,35 @@ if(hadithElem) hadithElem.innerText = hadiths[day % hadiths.length];
 <div style="text-align:center;"><img src="themes/burokratlar/tema/images/icon-trt.png" width="30"/> Yükleniyor...</div>
 </div>
 <script>
-fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.trthaber.com/manset_articles.rss')
-  .then(function(response) { return response.json(); })
-  .then(function(data) {
-    var container = document.getElementById('trt-widget');
-    container.innerHTML = '';
-    if (data.items) {
-        data.items.slice(0, 10).forEach(function(item) {
-            container.innerHTML += '<div style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">' +
-                '<a href="' + item.link + '" target="_blank" style="text-decoration: none; color: #333; font-weight: bold; font-size: 13px;">' +
-                item.title + '</a></div>';
-        });
-    } else {
-        container.innerHTML = 'Haberler yüklenemedi.';
-    }
-  }).catch(function(err) {
-      document.getElementById('trt-widget').innerHTML = 'Haberler yüklenemedi.';
-  });
+(function() {
+    var trtCtrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    var trtTimeout = trtCtrl ? setTimeout(function() { trtCtrl.abort(); }, 3500) : null;
+    fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.trthaber.com/manset_articles.rss', trtCtrl ? { signal: trtCtrl.signal } : {})
+      .then(function(response) { return response.json(); })
+      .then(function(data) {
+        if (trtTimeout) clearTimeout(trtTimeout);
+        var container = document.getElementById('trt-widget');
+        if (container && data && data.items && data.items.length > 0) {
+            container.innerHTML = '';
+            data.items.slice(0, 10).forEach(function(item) {
+                container.innerHTML += '<div style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">' +
+                    '<a href="' + item.link + '" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #333; font-weight: bold; font-size: 13px;">' +
+                    item.title + '</a></div>';
+            });
+        }
+      }).catch(function(err) {
+          var container = document.getElementById('trt-widget');
+          if (container && container.innerHTML.indexOf('Yükleniyor') !== -1) {
+              container.innerHTML = '<p style="padding:15px; color:#888; text-align:center; font-size:12px;">Güncel haberler için <a href="https://www.trthaber.com" target="_blank" rel="noopener">TRT Haber</a> ziyaret ediniz.</p>';
+          }
+      });
+})();
 </script>
 </div>
 </div>
 </div>
 <div class="clearfix"></div>
 </div>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(function() {
-        var leftPanel = document.querySelector('.news .col-md-6:first-child .panel.panel-primary');
-        var trtWidget = document.getElementById('trt-widget');
-        var trtPanel = document.querySelector('.news .col-md-6:nth-child(2) .panel.panel-primary');
-        
-        if (leftPanel && trtWidget && trtPanel) {
-            // Match the height of the entire panel
-            trtPanel.style.height = leftPanel.offsetHeight + 'px';
-            
-            // Adjust the inner widget height based on the header height
-            var headerHeight = trtPanel.querySelector('.panel-heading').offsetHeight;
-            // padding is usually 15px top + 15px bottom for panel-body
-            trtWidget.style.height = (leftPanel.offsetHeight - headerHeight - 35) + 'px';
-        }
-    }, 500); // Wait for images to load
-});
-</script>
 <!-- .panel .panel-primary 
 					
 					<div class="banner hidden-sm hidden-xs">

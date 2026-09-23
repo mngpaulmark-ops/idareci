@@ -9,6 +9,7 @@
     }
   ],
   "routes": [
+    { "src": "^/$", "dest": "/app.py" },
     { "src": "^/idareci/(data/.*)$", "dest": "/$1" },
     { "src": "^/idareci/(themes/.*)$", "dest": "/$1" },
     { "src": "^/idareci/(kurumsal\\.css)$", "dest": "/$1" },
