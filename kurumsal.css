@@ -16,3 +16,25 @@ h1, h2, h3, h4, h5, h6, .panel-heading { font-family: 'Inter', sans-serif; }
 /* Gallery Hover Effect */
 .gallery-hover { transition: transform 0.3s ease, box-shadow 0.3s ease !important; cursor: pointer; position: relative; z-index: 1; }
 .gallery-hover:hover { transform: scale(1.15) !important; box-shadow: 0 10px 25px rgba(0,0,0,0.5) !important; z-index: 10; }
+
+/* Smooth Dropdown CSS */
+@media (min-width: 768px) {
+    .navbar-nav > li.dropdown:hover > .dropdown-menu {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+}
+
+/* Scroll and render performance */
+html {
+    scroll-behavior: smooth;
+}
+
+#kayan_alan {
+    will-change: transform;
+}
+
+.news .panel-primary {
+    height: 100%;
+}

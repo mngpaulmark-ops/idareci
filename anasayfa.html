@@ -59,14 +59,14 @@ $("#securitycode").mask("9999");
 <script type="text/javascript">
 $(document).ready(function(){
     jQuery("#kayan_alan").jCarouselLite({
-        vertical: true, //dikey yapmak için
-        hoverPause:true, //üzerine gelince durasý için
-        visible: 5, //3 adet gösterilmesi için
-        auto:1500, //bekleme süresi
-        speed:1000, //hareket hýzý
-        btnPrev: "#onceki", //onceki yazi
-        btnNext: "#sonraki", //sonraki yazi
-		mouseWheel: true
+        vertical: true,
+        hoverPause: true,
+        visible: 5,
+        auto: 4000,
+        speed: 700,
+        btnPrev: "#onceki",
+        btnNext: "#sonraki",
+        mouseWheel: false
     });
 });
 </script>
@@ -89,8 +89,7 @@ $(document).ready(function(){
             cleartype: false,
             slideResize: false
         });
-    });
-    $(window).load(function() {
+    $(document).ready(function() {
         var slideshow = $(".slideshow").cycle({
             fx: "fade",
             timeout: 12000,
@@ -130,34 +129,9 @@ $(document).ready(function(){
 </script>
 <script type="text/javascript">
     $(document).ready(function () {
-        $('.nav li').hover(
-            function () {
-                //alt menüleri göster
-
-                $('ul', this).stop(true,true,true).slideDown(200);
-
-            },
-            function () {
-                //alt menüleri gizle
-                $('ul', this).stop(true,true,true).slideUp(200);
-            }
-        );
-        
-        //alt kısım opacity efekti içindir
-        $('.nav li ul li').hover(
-            function () {
-                //üzerine gelince opacity
-                $(this).stop(true,true,true).animate({
-                    opacity: 1
-                  }, 300 );
-
-            },
-            function () {
-                //üzerinden gidince opacity
-                $(this).stop(true,true,true).animate({
-                    opacity: 0.9
-                  }, 300 );
-            }
+        $('.navbar-nav > li.dropdown').hover(
+            function () { $(this).addClass('open'); },
+            function () { $(this).removeClass('open'); }
         );
     });
     function initMenu() {
@@ -309,25 +283,6 @@ $(document).ready(function(){
 </ul>
 </div>
 </div>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(function() {
-        var leftPanel = document.querySelector('.news .col-md-6:first-child .panel.panel-primary');
-        var trtWidget = document.getElementById('trt-widget');
-        var trtPanel = document.querySelector('.news .col-md-6:nth-child(2) .panel.panel-primary');
-        
-        if (leftPanel && trtWidget && trtPanel) {
-            // Match the height of the entire panel
-            trtPanel.style.height = leftPanel.offsetHeight + 'px';
-            
-            // Adjust the inner widget height based on the header height
-            var headerHeight = trtPanel.querySelector('.panel-heading').offsetHeight;
-            // padding is usually 15px top + 15px bottom for panel-body
-            trtWidget.style.height = (leftPanel.offsetHeight - headerHeight - 35) + 'px';
-        }
-    }, 500); // Wait for images to load
-});
-</script>
 <!-- .panel .panel-primary -->
 <div class="panel panel-primary" style="margin-top: 20px; border-color: #800000; box-shadow: 0 4px 8px rgba(0,0,0,0.05);">
 <div class="panel-heading" style="background-color: #800000; border-color: #800000; color: white; font-weight: bold; font-size: 15px; padding: 12px 15px;">
@@ -623,48 +578,35 @@ if(hadithElem) hadithElem.innerText = hadiths[day % hadiths.length];
 <div style="text-align:center;"><img src="themes/burokratlar/tema/images/icon-trt.png" width="30"/> Yükleniyor...</div>
 </div>
 <script>
-fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.trthaber.com/manset_articles.rss')
-  .then(function(response) { return response.json(); })
-  .then(function(data) {
-    var container = document.getElementById('trt-widget');
-    container.innerHTML = '';
-    if (data.items) {
-        data.items.slice(0, 10).forEach(function(item) {
-            container.innerHTML += '<div style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">' +
-                '<a href="' + item.link + '" target="_blank" style="text-decoration: none; color: #333; font-weight: bold; font-size: 13px;">' +
-                item.title + '</a></div>';
-        });
-    } else {
-        container.innerHTML = 'Haberler yüklenemedi.';
-    }
-  }).catch(function(err) {
-      document.getElementById('trt-widget').innerHTML = 'Haberler yüklenemedi.';
-  });
+(function() {
+    var trtCtrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    var trtTimeout = trtCtrl ? setTimeout(function() { trtCtrl.abort(); }, 3500) : null;
+    fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.trthaber.com/manset_articles.rss', trtCtrl ? { signal: trtCtrl.signal } : {})
+      .then(function(response) { return response.json(); })
+      .then(function(data) {
+        if (trtTimeout) clearTimeout(trtTimeout);
+        var container = document.getElementById('trt-widget');
+        if (container && data && data.items && data.items.length > 0) {
+            container.innerHTML = '';
+            data.items.slice(0, 10).forEach(function(item) {
+                container.innerHTML += '<div style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">' +
+                    '<a href="' + item.link + '" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #333; font-weight: bold; font-size: 13px;">' +
+                    item.title + '</a></div>';
+            });
+        }
+      }).catch(function(err) {
+          var container = document.getElementById('trt-widget');
+          if (container && container.innerHTML.indexOf('Yükleniyor') !== -1) {
+              container.innerHTML = '<p style="padding:15px; color:#888; text-align:center; font-size:12px;">Güncel haberler için <a href="https://www.trthaber.com" target="_blank" rel="noopener">TRT Haber</a> ziyaret ediniz.</p>';
+          }
+      });
+})();
 </script>
 </div>
 </div>
 </div>
 <div class="clearfix"></div>
 </div>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(function() {
-        var leftPanel = document.querySelector('.news .col-md-6:first-child .panel.panel-primary');
-        var trtWidget = document.getElementById('trt-widget');
-        var trtPanel = document.querySelector('.news .col-md-6:nth-child(2) .panel.panel-primary');
-        
-        if (leftPanel && trtWidget && trtPanel) {
-            // Match the height of the entire panel
-            trtPanel.style.height = leftPanel.offsetHeight + 'px';
-            
-            // Adjust the inner widget height based on the header height
-            var headerHeight = trtPanel.querySelector('.panel-heading').offsetHeight;
-            // padding is usually 15px top + 15px bottom for panel-body
-            trtWidget.style.height = (leftPanel.offsetHeight - headerHeight - 35) + 'px';
-        }
-    }, 500); // Wait for images to load
-});
-</script>
 <!-- .panel .panel-primary 
 					
 					<div class="banner hidden-sm hidden-xs">
@@ -899,7 +841,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "date": "13 05 2025",
         "saat": "00:00",
         "type": "meeting",
-        "title": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Birlikte Güçlüyüz Ruhu İle Kahramanlık Eserleri Programı",
+        "title": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Bir",
         "description": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Birlikte Güçlüyüz Ruhu İle Kahramanlık Eserleri Programına  Teşriflerinizden Mutluluk Duyarız",
         "url": ""
     },
@@ -907,7 +849,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "date": "13 05 2025",
         "saat": "19:00",
         "type": "meeting",
-        "title": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Birlikte Güçlüyüz Ruhu İle Kahramanlık Eserleri Programı",
+        "title": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Bir",
         "description": "13.5.2025 Dost Meclisi Buluşması Ankara Devlet Türk Halk Müziği  18 Mart Çanakkale Zaferi ve Biz Birlikte Güçlüyüz Ruhu İle Kahramanlık Eserleri Programına Teşriflerinizden Mutluluk Duyarız",
         "url": ""
     },
