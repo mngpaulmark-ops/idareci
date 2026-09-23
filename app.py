@@ -879,7 +879,7 @@ def api_menu():
 
 def index():
 
-    return send_from_directory('.', 'anasayfa.html')
+    return inject_dynamic_html('anasayfa.html')
 
 
 
@@ -899,7 +899,7 @@ def view_page(slug):
 @app.route('/idareci/<path:filename>')
 def serve_idareci(filename=''):
     if not filename or filename == '/':
-        return send_from_directory(app.root_path, 'anasayfa.html')
+        return inject_dynamic_html('anasayfa.html')
     file_path = os.path.join(app.root_path, filename)
     if os.path.exists(file_path):
         if file_path.endswith('.html'): return inject_dynamic_html(file_path)
@@ -1017,6 +1017,7 @@ def inject_dynamic_html(file_path, base_html=None):
         resp.headers['Cache-Control'] = 'public, s-maxage=60, stale-while-revalidate=120'
         return resp
     except Exception as e:
+        print(str(e))
         from flask import make_response
         resp = make_response(html)
         resp.headers['Cache-Control'] = 'public, s-maxage=60, stale-while-revalidate=120'
