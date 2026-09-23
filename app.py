@@ -671,27 +671,7 @@ def admin_add():
         # Yeni eklenen sayfa iin fiziksel .html dosyasini "hakkimizda.html"i baz alarak olustur
 
         import os
-import requests
 
-def upload_to_catbox(file_obj):
-    from flask import flash
-    try:
-        file_data = file_obj.read()
-        resp = requests.post(
-            'https://catbox.moe/user/api.php',
-            data={'reqtype': 'fileupload'},
-            files={'fileToUpload': (file_obj.filename, file_data, file_obj.content_type)},
-            timeout=15
-        )
-        if resp.status_code == 200:
-            url = resp.text.strip()
-            return url.replace('https://', '').replace('http://', '')
-        else:
-            flash("Resim yukleme hatasi (Bulut reddetti): " + str(resp.status_code))
-            return None
-    except Exception as e:
-        flash("Resim yukleme baglanti hatasi")
-        return None
 
 
         import bs4
@@ -783,27 +763,7 @@ def admin_edit(id):
         # Sitenin statik yapisi korunsun diye fiziksel HTML dosyasina da yaz!
 
         import os
-import requests
 
-def upload_to_catbox(file_obj):
-    from flask import flash
-    try:
-        file_data = file_obj.read()
-        resp = requests.post(
-            'https://catbox.moe/user/api.php',
-            data={'reqtype': 'fileupload'},
-            files={'fileToUpload': (file_obj.filename, file_data, file_obj.content_type)},
-            timeout=15
-        )
-        if resp.status_code == 200:
-            url = resp.text.strip()
-            return url.replace('https://', '').replace('http://', '')
-        else:
-            flash("Resim yukleme hatasi (Bulut reddetti): " + str(resp.status_code))
-            return None
-    except Exception as e:
-        flash("Resim yukleme baglanti hatasi")
-        return None
 
 
         import bs4
@@ -867,27 +827,7 @@ def admin_delete(id):
     
 
     import os
-import requests
 
-def upload_to_catbox(file_obj):
-    from flask import flash
-    try:
-        file_data = file_obj.read()
-        resp = requests.post(
-            'https://catbox.moe/user/api.php',
-            data={'reqtype': 'fileupload'},
-            files={'fileToUpload': (file_obj.filename, file_data, file_obj.content_type)},
-            timeout=15
-        )
-        if resp.status_code == 200:
-            url = resp.text.strip()
-            return url.replace('https://', '').replace('http://', '')
-        else:
-            flash("Resim yukleme hatasi (Bulut reddetti): " + str(resp.status_code))
-            return None
-    except Exception as e:
-        flash("Resim yukleme baglanti hatasi")
-        return None
 
 
     filename = f"{page.slug}.html"
@@ -1192,27 +1132,7 @@ def admin_upload():
     from flask import request, jsonify
 
     import os
-import requests
 
-def upload_to_catbox(file_obj):
-    from flask import flash
-    try:
-        file_data = file_obj.read()
-        resp = requests.post(
-            'https://catbox.moe/user/api.php',
-            data={'reqtype': 'fileupload'},
-            files={'fileToUpload': (file_obj.filename, file_data, file_obj.content_type)},
-            timeout=15
-        )
-        if resp.status_code == 200:
-            url = resp.text.strip()
-            return url.replace('https://', '').replace('http://', '')
-        else:
-            flash("Resim yukleme hatasi (Bulut reddetti): " + str(resp.status_code))
-            return None
-    except Exception as e:
-        flash("Resim yukleme baglanti hatasi")
-        return None
 
 
     import time
@@ -2601,27 +2521,7 @@ def apply_side_links_to_all_html():
 def apply_menus_to_all_html():
     with app.app_context():
         import os
-import requests
 
-def upload_to_catbox(file_obj):
-    from flask import flash
-    try:
-        file_data = file_obj.read()
-        resp = requests.post(
-            'https://catbox.moe/user/api.php',
-            data={'reqtype': 'fileupload'},
-            files={'fileToUpload': (file_obj.filename, file_data, file_obj.content_type)},
-            timeout=15
-        )
-        if resp.status_code == 200:
-            url = resp.text.strip()
-            return url.replace('https://', '').replace('http://', '')
-        else:
-            flash("Resim yukleme hatasi (Bulut reddetti): " + str(resp.status_code))
-            return None
-    except Exception as e:
-        flash("Resim yukleme baglanti hatasi")
-        return None
 
         import re
         menus = Menu.query.filter_by(parent_id=None, is_active=True).order_by(Menu.order).all()
