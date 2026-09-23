@@ -3945,8 +3945,11 @@ def admin_galeri_sil(id):
 
 
 import traceback
+from werkzeug.exceptions import HTTPException
 @app.errorhandler(Exception)
 def handle_exception(e):
+    if isinstance(e, HTTPException):
+        return e
     return '<pre>' + traceback.format_exc() + '</pre>', 500
 
 # Trigger deployment
