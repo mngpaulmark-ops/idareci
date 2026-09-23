@@ -957,7 +957,14 @@ def inject_dynamic_html(file_path, base_html=None):
             if kayan:
                 kayan_ul = kayan.find('ul')
                 if kayan_ul:
-                    yazilar = KoseYazisi.query.order_by(KoseYazisi.date_added.desc(), KoseYazisi.id.desc()).limit(15).all()
+                    yazilar = []
+                    for yazar_obj in Yazar.query.all():
+                        latest_yazi = KoseYazisi.query.filter_by(yazar_id=yazar_obj.id).order_by(KoseYazisi.date_added.desc(), KoseYazisi.id.desc()).first()
+                        if latest_yazi:
+                            yazilar.append(latest_yazi)
+                    from datetime import datetime
+                    yazilar.sort(key=lambda x: (x.date_added if x.date_added else datetime.min), reverse=True)
+                    yazilar = yazilar[:15]
                     kose_html = ""
                     for y in yazilar:
                         yazar = Yazar.query.get(y.yazar_id)
