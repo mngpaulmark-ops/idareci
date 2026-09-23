@@ -1912,9 +1912,9 @@ def admin_kose_ekle():
     return redirect(url_for('admin_kose'))
 
 
+from flask import flash
 @app.route('/admin/kose/edit/<int:id>', methods=['GET', 'POST'])
 @login_required
-from flask import flash
 def admin_kose_edit(id):
     yazi = KoseYazisi.query.get(id)
     if not yazi:
