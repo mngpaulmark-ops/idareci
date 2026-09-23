@@ -1914,8 +1914,12 @@ def admin_kose_ekle():
 
 @app.route('/admin/kose/edit/<int:id>', methods=['GET', 'POST'])
 @login_required
+from flask import flash
 def admin_kose_edit(id):
-    yazi = KoseYazisi.query.get_or_404(id)
+    yazi = KoseYazisi.query.get(id)
+    if not yazi:
+        flash("Köşe yazısı bulunamadı! Belki silinmiş veya ID yanlış.", "danger")
+        return redirect(url_for('admin_kose'))
     if request.method == 'POST':
         yazi.title = request.form.get('title')
         yazi.content = request.form.get('content')
