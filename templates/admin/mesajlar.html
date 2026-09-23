@@ -1,0 +1,58 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="mb-4">Gelen Mesajlar</h2>
+        
+        {% if mesajlar %}
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Tarih</th>
+                        <th>Ad Soyad</th>
+                        <th>Telefon</th>
+                        <th>E-Posta</th>
+                        <th>Mesaj</th>
+                        <th>Durum</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for m in mesajlar %}
+                    <tr class="{% if not m.is_read %}table-warning{% endif %}">
+                        <td>{{ m.date_added.strftime('%d.%m.%Y %H:%M') if m.date_added else '' }}</td>
+                        <td>{{ m.name }}</td>
+                        <td>{{ m.phone }}</td>
+                        <td>{{ m.email }}</td>
+                        <td>{{ m.comment }}</td>
+                        <td>
+                            {% if m.is_read %}
+                                <span class="badge bg-success">Okundu</span>
+                            {% else %}
+                                <span class="badge bg-danger">Yeni</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if not m.is_read %}
+                            <form action="{{ url_for('admin_mesaj_oku', id=m.id) }}" method="POST" style="display:inline;">
+                                <button type="submit" class="btn btn-sm btn-primary mb-1">Okundu İşaretle</button>
+                            </form>
+                            {% endif %}
+                            <form action="{{ url_for('admin_mesaj_sil', id=m.id) }}" method="POST" style="display:inline;">
+                                <button type="submit" class="btn btn-sm btn-danger mb-1" onclick="return confirm('Bu mesajı silmek istediğinize emin misiniz?');">Sil</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="alert alert-info">
+            Henüz gelen bir mesaj bulunmuyor.
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
