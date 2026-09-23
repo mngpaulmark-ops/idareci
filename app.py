@@ -1,6 +1,12 @@
 
 def handle_dynamic_fallback(filename):
     import re
+    if filename.startswith('data/') or filename.startswith('themes/'):
+        file_path = os.path.join(app.root_path, filename)
+        if os.path.exists(file_path):
+            return send_from_directory(app.root_path, filename)
+        return redirect('/' + filename)
+
     if filename.startswith('kose-yazilari-') and filename.endswith('.html'):
         match = re.search(r'kose-yazilari-(\d+)\.html', filename)
         if match:
@@ -12,17 +18,18 @@ def handle_dynamic_fallback(filename):
                 yazar = Yazar.query.get(yazi.yazar_id)
                 y_name = yazar.name if yazar else "Bilinmeyen"
                 y_pic = yazar.image_path if yazar and yazar.image_path else 'themes/burokratlar/tema/images/no-image.png'
+                date_prefix = (yazi.date_added.strftime("%d.%m.%Y") + " - ") if (yazi.date_added and yazi.date_added.year > 2000) else ""
                 import bs4
                 soup = bs4.BeautifulSoup(base, 'html.parser')
                 main_div = soup.find('div', class_='col-md-9')
                 if main_div:
                     new_html = f'''<div class="col-md-9" id="main"><div class="main"><div class="panel panel-primary">
-                    <div class="panel-heading">Görüş & Politika Notları / {yazi.title}</div>
+                    <div class="panel-heading">Görüş & Politika Notları / {date_prefix}{yazi.title}</div>
                     <div class="panel-body"><div class="col-md-12">
                     <div style="float: left; margin-right: 15px; margin-bottom: 15px; text-align: center;">
-                    <a href="kose-yazar-{yazi.yazar_id}.html"><img src="{y_pic}" style="max-width: 150px;"/><br/><b>{y_name}</b></a>
+                    <a href="kose-yazar-{yazi.yazar_id}.html"><img src="{y_pic}" style="max-width: 150px; border-radius: 8px;"/><br/><b>{y_name}</b></a>
                     </div>
-                    <h3>{yazi.title}</h3><hr/><div class="content-text">{yazi.content}</div>
+                    <h3>{date_prefix}{yazi.title}</h3><hr/><div class="content-text">{yazi.content}</div>
                     </div></div></div></div></div>'''
                     main_div.replace_with(bs4.BeautifulSoup(new_html, 'html.parser'))
                 return inject_dynamic_html(filename, base_html=str(soup))
@@ -41,11 +48,14 @@ def handle_dynamic_fallback(filename):
                 main_div = soup.find('div', class_='col-md-9')
                 if main_div:
                     y_pic = yazar.image_path if yazar.image_path else 'themes/burokratlar/tema/images/no-image.png'
-                    links = "".join([f'<li><a href="kose-yazilari-{y.id}.html">{y.title}</a></li>' for y in yazilar])
+                    def _ylink(y):
+                        d_str = (y.date_added.strftime("%d.%m.%Y") + " - ") if (y.date_added and y.date_added.year > 2000) else ""
+                        return f'<li><a href="kose-yazilari-{y.id}.html">{d_str}{y.title}</a></li>'
+                    links = "".join([_ylink(y) for y in yazilar])
                     new_html = f'''<div class="col-md-9" id="main"><div class="main"><div class="panel panel-primary">
                     <div class="panel-heading">Görüş & Politika Notları / {yazar.name}</div>
                     <div class="panel-body"><div class="col-md-4">
-                    <img src="{y_pic}" style="float: left; max-width: 100%; margin-bottom:10px; margin-right:10px;"/><br/><h4><b>{yazar.name}</b></h4>
+                    <img src="{y_pic}" style="float: left; max-width: 100%; margin-bottom:10px; margin-right:10px; border-radius: 8px;"/><br/><h4><b>{yazar.name}</b></h4>
                     </div><div class="col-md-8"><br/><h4>Yazarın Yazıları:</h4><ul>{links}</ul></div>
                     </div></div></div></div>'''
                     main_div.replace_with(bs4.BeautifulSoup(new_html, 'html.parser'))
@@ -885,6 +895,11 @@ def view_page(slug):
 def serve_idareci(filename=''):
     if not filename or filename == '/':
         return inject_dynamic_html('anasayfa.html')
+    if filename.startswith('data/') or filename.startswith('themes/'):
+        file_path = os.path.join(app.root_path, filename)
+        if os.path.exists(file_path):
+            return send_from_directory(app.root_path, filename)
+        return redirect('/' + filename)
     file_path = os.path.join(app.root_path, filename)
     if os.path.exists(file_path):
         if file_path.endswith('.html'): return inject_dynamic_html(file_path)
@@ -945,18 +960,19 @@ def inject_dynamic_html(file_path, base_html=None):
                         if latest_yazi:
                             yazilar.append(latest_yazi)
                     from datetime import datetime
-                    yazilar.sort(key=lambda x: (x.date_added if x.date_added else datetime.min), reverse=True)
+                    yazilar.sort(key=lambda x: (x.date_added if (x.date_added and x.date_added.year > 2000) else datetime.min, x.id), reverse=True)
                     yazilar = yazilar[:15]
                     kose_html = ""
                     for y in yazilar:
                         yazar = Yazar.query.get(y.yazar_id)
                         y_name = yazar.name if yazar else "Yazar"
                         y_pic = yazar.image_path if yazar and yazar.image_path else "themes/burokratlar/tema/images/no-image.png"
-                        date_str = y.date_added.strftime("%d.%m.%Y") if y.date_added else ""
+                        date_str = y.date_added.strftime("%d.%m.%Y") if (y.date_added and y.date_added.year > 2000) else ""
+                        display_title = f"{date_str} - {y.title}" if date_str else y.title
                         kose_html += f'''<li class="kayan"><a href="kose-yazilari-{y.id}.html">
                         <img alt="{y_name}" class="yazar" src="{y_pic}" style=" border-radius: 10px;"/>
                         <p><b>{y_name}</b></p></a>
-                        <span>{date_str} - {y.title}</span>
+                        <span>{display_title}</span>
                         <div class="clearfix"></div></li>\n'''
                     kayan_ul.clear()
                     kayan_ul.append(bs4.BeautifulSoup(kose_html, 'html.parser'))
@@ -1081,6 +1097,27 @@ def inject_dynamic_html(file_path, base_html=None):
                         blocks.append(block)
                     row.clear()
                     row.append(bs4.BeautifulSoup("\n".join(blocks), 'html.parser'))
+
+        # kose-yazarlari.html
+        if 'kose-yazarlari.html' in file_path:
+            main_div = soup.find('div', id='main')
+            if main_div:
+                panel_body = main_div.find('div', class_='panel-body')
+                if panel_body:
+                    yazarlar_all = Yazar.query.all()
+                    y_blocks = []
+                    for yz in yazarlar_all:
+                        if not yz.yazilar: continue
+                        yz_pic = yz.image_path if yz.image_path else 'themes/burokratlar/tema/images/no-image.png'
+                        y_blocks.append(f'''<div class="col-md-4" style="text-align: center; margin-bottom: 20px;">
+                            <a href="kose-yazar-{yz.id}.html">
+                                <img src="{yz_pic}" style="max-width: 150px; border-radius: 50%; height: 150px; object-fit: cover;" onerror="this.src=\'themes/burokratlar/tema/images/no-image.png\'"/>
+                                <br/><b>{yz.name}</b>
+                            </a>
+                        </div>''')
+                    if y_blocks:
+                        panel_body.clear()
+                        panel_body.append(bs4.BeautifulSoup("\n".join(y_blocks), 'html.parser'))
 
         from flask import make_response
         resp = make_response(str(soup))

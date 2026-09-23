@@ -2,11 +2,18 @@
   "builds": [
     {
       "src": "app.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": {
+        "includeFiles": ["data/**", "themes/**", "*.html", "*.css"]
+      }
     }
   ],
   "routes": [
-    { "src": "/(.*\\.html)$", "dest": "/app.py" },
+    { "src": "^/idareci/(data/.*)$", "dest": "/$1" },
+    { "src": "^/idareci/(themes/.*)$", "dest": "/$1" },
+    { "src": "^/idareci/(kurumsal\\.css)$", "dest": "/$1" },
+    { "src": "^/(.*\\.html)$", "dest": "/app.py" },
+    { "src": "^/idareci/(.*\\.html)$", "dest": "/app.py" },
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/app.py" }
   ]
