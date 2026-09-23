@@ -1,4 +1,12 @@
 
+_template_base = None
+def get_base_template():
+    global _template_base
+    if _template_base is None:
+        with open('hakkimizda.html', 'r', encoding='utf-8', errors='ignore') as f:
+            _template_base = f.read()
+    return _template_base
+
 def handle_dynamic_fallback(filename):
     import re
     if filename.startswith('data/') or filename.startswith('themes/'):
@@ -7,14 +15,21 @@ def handle_dynamic_fallback(filename):
             return send_from_directory(app.root_path, filename)
         return redirect('/' + filename)
 
+    now = time.time()
+    if filename in _page_cache and (now - _page_cache_time.get(filename, 0)) < CACHE_TTL_SECONDS:
+        from flask import make_response
+        resp = make_response(_page_cache[filename])
+        resp.headers['Cache-Control'] = 'public, max-age=120, s-maxage=300, stale-while-revalidate=600'
+        resp.headers['X-Cache'] = 'HIT'
+        return resp
+
     if filename.startswith('kose-yazilari-') and filename.endswith('.html'):
         match = re.search(r'kose-yazilari-(\d+)\.html', filename)
         if match:
             k_id = match.group(1)
             yazi = KoseYazisi.query.get(k_id)
             if yazi:
-                with open('hakkimizda.html', 'r', encoding='utf-8', errors='ignore') as f:
-                    base = f.read()
+                base = get_base_template()
                 yazar = Yazar.query.get(yazi.yazar_id)
                 y_name = yazar.name if yazar else "Bilinmeyen"
                 y_pic = yazar.image_path if yazar and yazar.image_path else 'themes/burokratlar/tema/images/no-image.png'
@@ -40,8 +55,7 @@ def handle_dynamic_fallback(filename):
             y_id = match.group(1)
             yazar = Yazar.query.get(y_id)
             if yazar:
-                with open('hakkimizda.html', 'r', encoding='utf-8', errors='ignore') as f:
-                    base = f.read()
+                base = get_base_template()
                 yazilar = KoseYazisi.query.filter_by(yazar_id=y_id).order_by(KoseYazisi.date_added.desc(), KoseYazisi.id.desc()).all()
                 import bs4
                 soup = bs4.BeautifulSoup(base, 'html.parser')
@@ -67,8 +81,7 @@ def handle_dynamic_fallback(filename):
             h_id = match.group(1)
             haber = Haber.query.get(h_id)
             if haber:
-                with open('hakkimizda.html', 'r', encoding='utf-8', errors='ignore') as f:
-                    base = f.read()
+                base = get_base_template()
                 import bs4
                 soup = bs4.BeautifulSoup(base, 'html.parser')
                 main_div = soup.find('div', class_='col-md-9')
@@ -87,26 +100,25 @@ def handle_dynamic_fallback(filename):
         match = re.search(r'galeri-resimler-(\d+)', filename)
         if match:
             g_id = match.group(1)
-            galeri = Galeri.query.get(g_id)
+            galeri = Galeri.query.options(
+                selectinload(Galeri.resimler).defer(GaleriResim.image_data)
+            ).get(g_id)
             if galeri:
-                with open('hakkimizda.html', 'r', encoding='utf-8', errors='ignore') as f:
-                    base = f.read()
+                base = get_base_template()
                 import bs4
                 soup = bs4.BeautifulSoup(base, 'html.parser')
                 main_div = soup.find('div', class_='col-md-9')
                 if main_div:
                     photos_html = ""
                     for r in galeri.resimler:
-                        if r.image_data:
-                            img_src = f"/media/resim/{r.id}"
-                        elif r.image_path and (r.image_path.startswith('http://') or r.image_path.startswith('https://')):
+                        if r.image_path and (r.image_path.startswith('http://') or r.image_path.startswith('https://')):
                             img_src = r.image_path
                         elif r.image_path and r.image_path.startswith('files.catbox.moe'):
                             img_src = f"https://{r.image_path}"
                         elif r.image_path:
                             img_src = f"/{r.image_path}"
                         else:
-                            continue
+                            img_src = f"/media/resim/{r.id}"
                         photos_html += f'''
                         <div class="col-md-4 col-sm-6 mb-4" style="margin-bottom:20px;">
                             <div class="thumbnail" style="border: 1px solid #ddd; padding: 5px; border-radius: 6px; background:#fff;">
@@ -936,7 +948,7 @@ except Exception:
 
 def inject_dynamic_html(file_path, base_html=None):
     from flask import make_response
-    cache_key = file_path if not base_html else None
+    cache_key = file_path
     if cache_key:
         now = time.time()
         if cache_key in _page_cache and (now - _page_cache_time.get(cache_key, 0)) < CACHE_TTL_SECONDS:
@@ -1043,7 +1055,7 @@ def inject_dynamic_html(file_path, base_html=None):
                             eg.decompose()
                     for h in latest[:5]:
                         img_src = h.image_path if h.image_path else 'data/haber/0.jpg'
-                        item_html = f'<div class="col-md-3 list-group-left"><a href="haber/{h.id}-{h.slug}.html"><img src="{img_src}" class="img-responsive"/></a></div><div class="col-md-9 list-group-right"><a href="haber/{h.id}-{h.slug}.html">{h.title}</a></div><div class="clearfix"></div>'
+                        item_html = f'<div class="col-md-3 list-group-left"><a href="haber/{h.id}-{h.slug}.html"><img src="{img_src}" class="img-responsive" loading="lazy"/></a></div><div class="col-md-9 list-group-right"><a href="haber/{h.id}-{h.slug}.html">{h.title}</a></div><div class="clearfix"></div>'
                         list_group.append(bs4.BeautifulSoup(item_html, 'html.parser'))
                         
             # Duyurular
@@ -1086,7 +1098,7 @@ def inject_dynamic_html(file_path, base_html=None):
                             
                             fg_html += f'''<li>
                             <a class="center-image" href="galeri-resimler-{g.id}.html">
-                            <img alt="{g.title}" class="img-rounded" src="{cover_src}" style="width: 170px; height: 115px; object-fit: cover;"/>
+                            <img alt="{g.title}" class="img-rounded" src="{cover_src}" loading="lazy" style="width: 170px; height: 115px; object-fit: cover;"/>
                             <div class="caption">
                             <h5>{g.title}</h5>
                             </div>
