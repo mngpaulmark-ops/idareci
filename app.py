@@ -1890,8 +1890,18 @@ def admin_kose_ekle():
     title = request.form.get('title')
     content = request.form.get('content')
     yazar_id = request.form.get('yazar_id')
+    date_str = request.form.get('date_added')
     
-    yeni_yazi = KoseYazisi(title=title, content=content, yazar_id=yazar_id)
+    from datetime import datetime
+    if date_str:
+        try:
+            d = datetime.strptime(date_str, '%Y-%m-%d')
+        except:
+            d = datetime.utcnow()
+    else:
+        d = datetime.utcnow()
+        
+    yeni_yazi = KoseYazisi(title=title, content=content, yazar_id=yazar_id, date_added=d)
     db.session.add(yeni_yazi)
     db.session.commit()
     
