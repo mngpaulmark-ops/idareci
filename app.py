@@ -3604,8 +3604,11 @@ def handle_exception(e):
 
 
 
-@app.route('/iletisim/gonder', methods=['POST'])
+@app.route('/iletisim/gonder', methods=['GET', 'POST'], strict_slashes=False)
+@app.route('/idareci/iletisim/gonder', methods=['GET', 'POST'], strict_slashes=False)
 def iletisim_gonder():
+    if request.method == 'GET':
+        return redirect('/iletisim.html')
     name = request.form.get('name')
     phone = request.form.get('phone')
     email = request.form.get('email')
